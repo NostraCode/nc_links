@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "fe-master"
+  },
+  "targets": {
+    "fe-master": {
+      "hosting": {
+        "target1": [
+          "fe-master"
+        ],
+        "target2": [
+          "femaster"
+        ]
+      }
+    }
+  }
+}

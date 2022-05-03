@@ -1,0 +1,55 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "fe_master",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "fe_master (profile mode)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "fe_master (release mode)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    },
+    // {
+    //   "name": "fe_master (dev)",
+    //   "request": "launch",
+    //   "type": "dart",
+    //   "program": "lib/main.dart",
+    //   "args": [
+    //     "--dart-define=env=dev",
+    //     "--dart-define=app_name=fe_master_dev"
+    //   ],
+    // },
+    // {
+    //   "name": "fe_master (stage)",
+    //   "request": "launch",
+    //   "type": "dart",
+    //   "program": "lib/main.dart",
+    //   "args": [
+    //     "--dart-define=env=stage",
+    //     "--dart-define=app_name=fe_master_stage"
+    //   ],
+    // },
+    // {
+    //   "name": "fe_master (prod)",
+    //   "request": "launch",
+    //   "type": "dart",
+    //   "program": "lib/main.dart",
+    //   "args": [
+    //     "--dart-define=env=prod",
+    //     "--dart-define=app_name=fe_master"
+    //   ],
+    // },
+  ]
+}

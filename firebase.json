@@ -1,0 +1,37 @@
+{
+  "hosting": [
+    {
+      "target": "target1",
+      "public": "build/web",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    {
+      "target": "target2",
+      "public": "build/web",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "_commentOnJson1": "-> run below commands on terminal",
+      "_commentOnJson2": "firebase target:apply hosting target1 fe-master",
+      "_commentOnJson3": "firebase target:apply hosting target2 femaster"
+    }
+  ]
+}

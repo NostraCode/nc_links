@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "835126305601",
+    "project_id": "fe-master",
+    "storage_bucket": "fe-master.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835126305601:android:7a0a89f9090e8008fa77c0",
+        "android_client_info": {
+          "package_name": "com.nostracode.fe_master"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835126305601-gfc64hmmmeumtnjhbomrk0f4rum4m2qv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nostracode.fe_master",
+            "certificate_hash": "d14d63eb24448c5dbca90b46a3064d0a1bb5f580"
+          }
+        },
+        {
+          "client_id": "835126305601-9jio1k5otc87j4iaqbmt9jhcnf4ca1d4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAd9R03fdA1EyEHvWB3m2QYIIwKrxI8qhU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835126305601-9jio1k5otc87j4iaqbmt9jhcnf4ca1d4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "835126305601-b86ib5k6jtrm6lsg8u13vvf2qdoqr5rq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nostracode.fe-master"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
