@@ -24,54 +24,46 @@ for first config we don't need "google-services.json" anymore<br/>
 
 ## 3. add fingerprint to firebase (android)<br/>
 
-<br/>
 generate sha1 & sha256 before download google-services.json file<br/>
 on mac run this command on terminal<br/>
 -> keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android<br/>
 
 ## 4. google-services.json (android)<br/>
 
-<br/>
 add fingerprint sha1 on project settings (android)<br/>
-download google-services.json put it at folder_project/android/app<br/>
+download google-services.json, put it on folder_project/android/app<br/>
 
 ## 5. fixing on configuration platform files (ios)<br/>
 
-<br/>
 on "ios" folder find and replace '9.0' to '10.0'<br/>
 on "macos" folder find and replace '10.11' to '10.15'<br/>
 
 ## 6. configure hosting (web)<br/>
 
-<br/>
--> firebase init<br/>
-will generate .firebaserc & firebase.json<br/>
-update firebase.json for multiple hosting<br/>
+-> firebase init => (will generate .firebaserc & firebase.json)<br/>
+-> firebase target:apply hosting targetName projectID => (for multiple hosting, after update firebase.json )<br/>
 -> firebase build web<br/>
 -> firebase deploy --only hosting<br/>
 
 ## 7. create launch.json file for "run and debug" configuration<br/>
 
-<br/>
 create launch.json file for "run and debug" configuration<br/>
-add dev,stage,prod configuration<br/>
+add dev, stage, prod configuration<br/>
 
 ## 8. fixing on configuration platform files (android)<br/>
 
-<br/>
-(_Add these lines on android/build.gradle_)<br/>
+[Add these lines on android/build.gradle]<br/>
 classpath 'com.google.gms:google-services:4.3.10'<br/>
 <br/>
-(_Add these lines on android/app/build.gradle_)<br/>
+[Add these lines on android/app/build.gradle]<br/>
+multiDexEnabled true<br/>
+apply plugin: 'com.google.gms.google-services'<br/>
 compileSdkVersion localProperties.getProperty('flutter.compileSdkVersion').toInteger()<br/>
 minSdkVersion localProperties.getProperty('flutter.minSdkVersion').toInteger()<br/>
 targetSdkVersion localProperties.getProperty('flutter.targetSdkVersion').toInteger()<br/>
 versionCode localProperties.getProperty('flutter.versionCode').toInteger()<br/>
 <br/>
-multiDexEnabled true<br/>
-apply plugin: 'com.google.gms.google-services'<br/>
-<br/>
-(_add these lines on local.properties_)<br/>
+[add these lines on local.properties]<br/>
 flutter.compileSdkVersion=31<br/>
 flutter.minSdkVersion=21<br/>
 flutter.targetSdkVersion=31<br/>
