@@ -17,8 +17,8 @@ don't use underscore will give error, use '-' instead of '\_'<br/>
 add new project at firebase before run below commands<br/>
 for first config we don't need "google-services.json" anymore<br/>
 <br/>
--> firebase use --add &nbsp; &nbsp; =>(to update default project value)<br/>
--> flutter pub add firebase_core &nbsp; &nbsp; =>(if needed)<br/>
+-> firebase use --add &nbsp; &nbsp; => (to update default project value)<br/>
+-> flutter pub add firebase_core &nbsp; &nbsp; => (if needed)<br/>
 -> dart pub global activate flutterfire_cli<br/>
 -> flutterfire configure<br/>
 
@@ -40,8 +40,8 @@ on "macos" folder find and replace '10.11' to '10.15'<br/>
 
 ## 6. configure hosting (web)<br/>
 
--> firebase init &nbsp; &nbsp; =>(will generate .firebaserc & firebase.json)<br/>
--> firebase target:apply hosting targetName projectID &nbsp; &nbsp; =>(for multiple hosting, after update firebase.json )<br/>
+-> firebase init &nbsp; &nbsp; => (will generate .firebaserc & firebase.json)<br/>
+-> firebase target:apply hosting targetName projectID &nbsp; &nbsp; => (for multiple hosting, after update firebase.json )<br/>
 -> firebase build web<br/>
 -> firebase deploy --only hosting<br/>
 
