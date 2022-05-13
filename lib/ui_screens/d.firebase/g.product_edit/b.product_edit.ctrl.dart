@@ -66,8 +66,8 @@ class ProductEditCtrl {
       barrierDismissible: false,
       barrierColor: Colors.black54,
     );
-    await x1XproductServ.updateProduct(dt.rmProductBuffer.st);
-    x1XproductServ.readProduct();
+    await x1ProductServ.updateProduct(dt.rmProductBuffer.st);
+    x1ProductServ.readProduct();
     RM.navigate.back();
     RM.navigate.back();
   }

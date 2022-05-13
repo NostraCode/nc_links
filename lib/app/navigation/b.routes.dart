@@ -4,10 +4,6 @@ class Routes {
   Routes._();
 
   static const root = '/'; //* init page
-  //* x_ui_screens -- ----- ----- ----- -----
-  static const cobaSatu = '/coba_satu';
-  static const cobaDua = '/coba_dua';
-  static const cobaTiga = '/coba_tiga';
   //* master -- ----- ----- ----- ----- -----
   static const splash = '/splash';
   static const home = '/';
@@ -31,6 +27,7 @@ class Routes {
   static const productInput = '/product_input';
   static const productDetail = '/product_detail';
   static const productEdit = '/product_edit';
+  static const fcm = '/fcm';
   //* restapi ------- ----- ----- ----- -----
   static const restList = '/rest_list';
   static const restInput = '/rest_input';

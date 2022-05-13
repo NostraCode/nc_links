@@ -87,7 +87,7 @@ class ProductInputCtrl {
       barrierColor: Colors.black54,
     );
     for (var product in dt.products.st) {
-      await x1XproductServ.createProduct(product);
+      await x1ProductServ.createProduct(product);
       removeById(product.id);
     }
     RM.navigate.back();

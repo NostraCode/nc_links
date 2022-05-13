@@ -9,7 +9,8 @@ Future<void> inits() async {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
-    x1XauthServ.init();
+    x1FcmServ.init();
+    x1AuthServ.init();
   }
 
   if (PlatformType.isWeb) {

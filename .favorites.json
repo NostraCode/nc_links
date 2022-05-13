@@ -1,0 +1,36 @@
+[
+    {
+        "type": "Group",
+        "name": "percobaan",
+        "parent_id": null,
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "jtqvgIzu302ZwlfL"
+    },
+    {
+        "type": "Group",
+        "name": "master",
+        "parent_id": null,
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "5lzqgR3UK907cmLe"
+    },
+    {
+        "type": "Directory",
+        "name": "d:\\NOSTRACODE\\fe_master\\lib",
+        "parent_id": "5lzqgR3UK907cmLe",
+        "fsPath": "d:\\NOSTRACODE\\fe_master\\lib",
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "6dqBPsKYaxUlVQwT"
+    },
+    {
+        "type": "Directory",
+        "name": "d:\\NOSTRACODE\\percobaan\\lib",
+        "parent_id": "jtqvgIzu302ZwlfL",
+        "fsPath": "d:\\NOSTRACODE\\percobaan\\lib",
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "pxdMiHg5E3Z0OL2r"
+    }
+]

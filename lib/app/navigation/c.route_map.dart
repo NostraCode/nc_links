@@ -29,6 +29,7 @@ class RouteMap {
     Routes.productInput: (RouteData data) => const ProductInputView(),
     Routes.productDetail: (RouteData data) => const ProductDetailView(),
     Routes.productEdit: (RouteData data) => const ProductEditView(),
+    Routes.fcm: (RouteData data) => const FcmView(),
     //* restapi ------- ----- ----- ----- -----
     Routes.restList: (RouteData data) => const RestListView(),
     Routes.restInput: (RouteData data) => const RestInputView(),

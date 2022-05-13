@@ -25,6 +25,11 @@ class HomeFirebase extends StatelessWidget {
           subtitle: 'firebase in real case',
           fun: () => nav.to(Routes.productList),
         ),
+        HomeTile(
+          title: 'FCM',
+          subtitle: 'firebase cloud message (notification)',
+          fun: () => nav.to(Routes.fcm),
+        ),
       ],
     );
   }

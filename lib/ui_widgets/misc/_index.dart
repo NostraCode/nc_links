@@ -9,3 +9,4 @@ part 'alert_dialogx.dart';
 part 'conn_notification.dart';
 part 'modal_settings.dart';
 part 'placeholderx.dart';
+part 'notification_badge.dart';

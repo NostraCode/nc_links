@@ -9,7 +9,7 @@ final x1ProductInputData = RM.inject<ProductInputData>(
 class ProductInputData {
   final title = 'ProductInput';
 
-  final colId = x1XproductData.st.colId;
+  final colId = x1ProductData.st.colId;
 
   final listKey = GlobalKey<AnimatedListState>();
 

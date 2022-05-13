@@ -7,7 +7,7 @@ class FbAuthCtrl {
 
   init() => loggerx(FbAuthCtrl).v('init...');
 
-  signInWithGoogle() => x1XauthServ.signInWithGoogle();
+  signInWithGoogle() => x1AuthServ.signInWithGoogle();
 
-  signOut() => x1XauthServ.signOut();
+  signOut() => x1AuthServ.signOut();
 }

@@ -8,15 +8,15 @@ class ProductListCtrl {
   init() => loggerx(ProductListCtrl).v('init...');
 
   Future<void> refresh() async {
-    x1XproductServ.refreshProducts();
+    x1ProductServ.refreshProducts();
   }
 
   Future<void> loadMore() async {
-    x1XproductServ.readProducts();
+    x1ProductServ.readProducts();
   }
 
   select(String id) {
-    x1XproductServ.initProduct(id);
+    x1ProductServ.initProduct(id);
     nav.to(Routes.productDetail);
   }
 }

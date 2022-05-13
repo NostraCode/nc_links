@@ -8,7 +8,7 @@ class RestDetailCtrl {
   init() => loggerx(RestDetailCtrl).v('init...');
 
   Future<void> refresh() async {
-    x1XuserServ.readUser();
+    x1UserServ.readUser();
   }
 
   Future<void> delete() async {
@@ -17,8 +17,8 @@ class RestDetailCtrl {
       barrierDismissible: false,
       barrierColor: Colors.black54,
     );
-    await x1XuserServ.deleteUser();
-    x1XuserServ.deleteOneOfUsers();
+    await x1UserServ.deleteUser();
+    x1UserServ.deleteOneOfUsers();
     RM.navigate.back();
     await Future.delayed(400.milliseconds);
     RM.navigate.back();

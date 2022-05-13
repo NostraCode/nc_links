@@ -7,14 +7,14 @@ class FbFirestoreCtrl {
 
   init() {
     loggerx(FbFirestoreCtrl).v('init...');
-    x1XproductServ.initProduct(Productx.init().id);
+    x1ProductServ.initProduct(Productx.init().id);
   }
 
-  createItem() => x1XproductServ.createProduct(Productx.init());
+  createItem() => x1ProductServ.createProduct(Productx.init());
 
-  readItem() => x1XproductServ.readProduct();
+  readItem() => x1ProductServ.readProduct();
 
-  updateItem() => x1XproductServ.updateProduct(Productx.init());
+  updateItem() => x1ProductServ.updateProduct(Productx.init());
 
-  deleteItem() => x1XproductServ.deleteProduct();
+  deleteItem() => x1ProductServ.deleteProduct();
 }

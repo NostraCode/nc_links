@@ -9,5 +9,5 @@ final x1RestDetailData = RM.inject<RestDetailData>(
 class RestDetailData {
   final title = 'RestDetail';
 
-  final rmUserFuture = x1XuserData.st.rmUserFuture;
+  final rmUserFuture = x1UserData.st.rmUserFuture;
 }

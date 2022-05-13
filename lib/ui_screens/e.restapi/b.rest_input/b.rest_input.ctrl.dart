@@ -10,7 +10,7 @@ class RestInputCtrl {
   submit() => dt.rmForm.submit();
 
   Future<void> createUser() async {
-    await x1XuserServ.createUser(Userx(
+    await x1UserServ.createUser(Userx(
       name: dt.rmName.value,
       email: dt.rmEmail.value,
       gender: dt.rmGender.value,

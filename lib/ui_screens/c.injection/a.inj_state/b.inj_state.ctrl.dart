@@ -13,12 +13,12 @@ class InjStateCtrl {
     dt.rmInt2.st = dt.rmInt2.st + 1;
   }
 
-  refresh() => x1XdummyServ.futureInit();
-  futureRandom() => x1XdummyServ.futureRandom();
-  futureIncrease() => x1XdummyServ.futureIncrease();
+  refresh() => x1DummyServ.futureInit();
+  futureRandom() => x1DummyServ.futureRandom();
+  futureIncrease() => x1DummyServ.futureIncrease();
 
-  start() => x1XdummyServ.start();
-  stop() => x1XdummyServ.stop();
-  pause() => x1XdummyServ.pause();
-  resume() => x1XdummyServ.resume();
+  start() => x1DummyServ.start();
+  stop() => x1DummyServ.stop();
+  pause() => x1DummyServ.pause();
+  resume() => x1DummyServ.resume();
 }

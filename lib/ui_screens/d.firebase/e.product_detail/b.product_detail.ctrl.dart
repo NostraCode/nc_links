@@ -15,7 +15,7 @@ class ProductDetailCtrl {
       barrierDismissible: false,
       barrierColor: Colors.black54,
     );
-    await x1XproductServ.deleteProduct();
+    await x1ProductServ.deleteProduct();
     RM.navigate.back();
     RM.navigate.back();
   }

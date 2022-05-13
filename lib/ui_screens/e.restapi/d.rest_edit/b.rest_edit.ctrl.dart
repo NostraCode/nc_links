@@ -28,9 +28,9 @@ class RestEditCtrl {
       gender: dt.rmGender.value,
       status: dt.rmStatus.value,
     );
-    await x1XuserServ.updateUser(userx);
-    x1XuserServ.readUser();
-    x1XuserServ.updateOneOfUsers(userx);
+    await x1UserServ.updateUser(userx);
+    x1UserServ.readUser();
+    x1UserServ.updateOneOfUsers(userx);
     await Future.delayed(400.milliseconds);
     RM.navigate.forceBack();
   }

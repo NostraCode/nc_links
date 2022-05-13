@@ -8,15 +8,15 @@ class RestListCtrl {
   init() => loggerx(RestListCtrl).v('init...');
 
   Future<void> refresh() async {
-    x1XuserServ.refreshUsers();
+    x1UserServ.refreshUsers();
   }
 
   Future<void> loadMore() async {
-    x1XuserServ.readUsers();
+    x1UserServ.readUsers();
   }
 
   select(int id) {
-    x1XuserServ.setSelectedId(id);
+    x1UserServ.setSelectedId(id);
     nav.to(Routes.restDetail);
   }
 }
