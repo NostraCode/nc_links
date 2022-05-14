@@ -14,7 +14,7 @@ class DummyRepo {
 
   Future<int> futureInit() async {
     try {
-      return await dummySource.st.futureInit();
+      return await x1DummySource.st.futureInit();
     } catch (e) {
       Fun.handleException(e);
       return 0;
@@ -23,7 +23,7 @@ class DummyRepo {
 
   Future<int> futureIncrease(int val) async {
     try {
-      return await dummySource.st.futureIncrease(val);
+      return await x1DummySource.st.futureIncrease(val);
     } catch (e) {
       Fun.handleException(e);
       return 0;
@@ -32,7 +32,7 @@ class DummyRepo {
 
   Future<int> futureRandom() async {
     try {
-      return await dummySource.st.futureRandom();
+      return await x1DummySource.st.futureRandom();
     } catch (e) {
       Fun.handleException(e);
       return 0;

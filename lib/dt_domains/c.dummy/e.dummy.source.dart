@@ -1,6 +1,6 @@
 part of '_index.dart';
 
-final dummySource = RM.inject<DummySource>(() => DummySource());
+final x1DummySource = RM.inject<DummySource>(() => DummySource());
 
 class DummySource {
   Future<int> futureInit() async {
