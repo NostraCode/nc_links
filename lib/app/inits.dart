@@ -13,6 +13,8 @@ Future<void> inits() async {
     x1AuthServ.init();
   }
 
+  setPathUrlStrategy();
+
   x1ConnServ.init();
 
   logx.wtf('inits success');

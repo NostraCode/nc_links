@@ -30,6 +30,7 @@ dependencies:
   fake_cloud_firestore: ^1.2.1
   #
   states_rebuilder: "6.0.0"
+  url_strategy: ^0.2.0
   logger: ^1.1.0
   device_preview: ^1.0.0
   validators: ^3.0.0

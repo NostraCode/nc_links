@@ -10,7 +10,8 @@ void main() async {
   await inits();
   runApp(
     DevicePreview(
-      enabled: PlatformType.isWeb,
+      // enabled: PlatformType.isWeb,
+      enabled: false,
       builder: (context) => const App(), // Wrap your app
     ),
   );
