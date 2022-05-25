@@ -11,9 +11,9 @@ class HomeMisc extends StatelessWidget {
     return Column(
       children: [
         HomeTile(
-          title: 'Test Logger',
+          title: 'Test logx',
           subtitle: 'tap then check console.',
-          fun: () => ct.taptestLogger(),
+          fun: () => ct.taptestLogx(),
         ),
         HomeTile(
           title: 'Popup',
@@ -21,15 +21,20 @@ class HomeMisc extends StatelessWidget {
           fun: () => nav.to(Routes.popup),
         ),
         HomeTile(
-          title: 'Need Login',
-          subtitle: 'can be accessed only if auth no null',
-          fun: () => nav.to(Routes.needLogin),
+          title: 'Not Found',
+          subtitle: 'redirect to "not found page"',
+          fun: () => nav.to(Routes.blablabla),
         ),
-        HomeTile(
-          title: 'Only Admin',
-          subtitle: 'can be accessed by admin only',
-          fun: () => nav.to(Routes.adminOnly),
-        ),
+        // HomeTile(
+        //   title: 'Need Login',
+        //   subtitle: 'can be accessed only if auth no null',
+        //   fun: () => nav.push(Routes.needLogin),
+        // ),
+        // HomeTile(
+        //   title: 'Only Admin',
+        //   subtitle: 'can be accessed by admin only',
+        //   fun: () => nav.push(Routes.adminOnly),
+        // ),
       ],
     );
   }

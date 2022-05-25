@@ -13,7 +13,7 @@ class HttpDio {
     ));
 
     initInterceptors();
-    loggerx(HttpDio).wtf('success init for dio and interceptors.');
+    logxx.wtf(HttpDio, 'success init for dio and interceptors.');
     return this;
   }
 
@@ -23,19 +23,19 @@ class HttpDio {
       InterceptorsWrapper(
         onRequest: (requestOptions, handler) {
           final req = requestOptions;
-          loggerx(HttpDio).v('[req] method => ${req.method}');
-          loggerx(HttpDio).v('[req] path => ${req.path}');
-          loggerx(HttpDio).v('[req] parameters => ${req.queryParameters}');
-          loggerx(HttpDio).v('[req] headers => ${req.headers}');
+          logxx.wtf(HttpDio, '[req] method => ${req.method}');
+          logxx.wtf(HttpDio, '[req] path => ${req.path}');
+          logxx.wtf(HttpDio, '[req] parameters => ${req.queryParameters}');
+          logxx.wtf(HttpDio, '[req] headers => ${req.headers}');
           return handler.next(requestOptions);
         },
         onResponse: (response, handler) {
-          loggerx(HttpDio).v('[res] code => ${response.statusCode}');
-          loggerx(HttpDio).v('[res] data => ${response.data}');
+          logxx.wtf(HttpDio, '[res] code => ${response.statusCode}');
+          logxx.wtf(HttpDio, '[res] data => ${response.data}');
           return handler.next(response);
         },
         onError: (err, handler) {
-          loggerx(HttpDio).e("Error[${err.response?.statusCode}]");
+          logxx.e(HttpDio, "Error[${err.response?.statusCode}]");
           return handler.next(err);
         },
       ),
@@ -118,16 +118,16 @@ class HttpDio {
         throw Exception("Something does wen't wrong");
       }
     } on SocketException catch (e) {
-      logger.e(e);
+      logx.e(e.message);
       throw Exception("Not Internet Connection");
     } on FormatException catch (e) {
-      logger.e(e);
+      logx.e(e.message);
       throw Exception("Bad response format");
     } on DioError catch (e) {
-      logger.e(e);
+      logx.e(e.message);
       throw Exception(e);
     } catch (e) {
-      logger.e(e);
+      logx.e(e.toString());
       throw Exception("Something wen't wrong");
     }
   }

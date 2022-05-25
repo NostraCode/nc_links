@@ -115,7 +115,7 @@ class InjThemeColumn extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             InjThemeButton(
-              label: 'Light Normal',
+              label: 'Light Norxal',
               fun: () {
                 themeRM.state = ThemeName.normal;
                 themeRM.themeMode = ThemeMode.light;
@@ -123,7 +123,7 @@ class InjThemeColumn extends StatelessWidget {
             ),
             const SizedBoxW(20),
             InjThemeButton(
-              label: 'Black Normal',
+              label: 'Black Norxal',
               fun: () {
                 themeRM.state = ThemeName.normal;
                 themeRM.themeMode = ThemeMode.dark;

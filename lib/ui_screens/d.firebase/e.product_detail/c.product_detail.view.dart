@@ -16,7 +16,7 @@ class ProductDetailView extends StatelessWidget {
       floatingActionButton: const ProductDetailFab(),
       body: Center(
         child: OnBuilder<Productx?>.all(
-          listenTo: dt.rmProduct,
+          listenTo: dt.rxProduct,
           onWaiting: () => const CircularProgressIndicator(),
           onError: (_, __) => const Text('error'),
           onData: (data) => data == null

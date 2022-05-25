@@ -13,11 +13,11 @@ class RestListLoadmore extends StatelessWidget {
         height: 80,
         child: Center(
           child: OnBuilder<List<Userx>>.all(
-            listenToMany: [dt.rmUserList, dt.rmLoadMore],
+            listenToMany: [dt.rxUserList, dt.rxLoadMore],
             onWaiting: () => const CircularProgressIndicator(),
             onError: (_, __) => const Text('error'),
-            onData: (_) => dt.rmIsEnd.st
-                ? Text(dt.rmUserList.st.isEmpty ? 'empty' : 'end of list.')
+            onData: (_) => dt.rxIsEnd.st
+                ? Text(dt.rxUserList.st.isEmpty ? 'empty' : 'end of list.')
                 : OutlinedButton(
                     child: const Text('load more'),
                     onPressed: () => ct.loadMore(),

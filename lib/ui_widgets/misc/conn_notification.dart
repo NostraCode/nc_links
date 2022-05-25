@@ -14,9 +14,9 @@ class ConnNotification extends ReactiveStatelessWidget {
 
     return AnimatedContainer(
       duration: const Duration(milliseconds: 300),
-      height: dt.rmIsShowNotification.st ? 20 : 0,
+      height: dt.rxIsShowNotification.st ? 20 : 0,
       child: Container(
-        color: dt.rmIsOnline.st ? Colors.green[600] : Colors.grey[900],
+        color: dt.rxIsOnline.st ? Colors.green[600] : Colors.grey[900],
         child: SizedBox(
           height: 20,
           child: ListView(
@@ -30,7 +30,7 @@ class ConnNotification extends ReactiveStatelessWidget {
                     height: 20,
                     child: Center(
                       child: Text(
-                        dt.rmIsOnline.st ? 'Back online' : 'No connection',
+                        dt.rxIsOnline.st ? 'Back online' : 'No connection',
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 10,

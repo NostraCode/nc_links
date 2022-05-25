@@ -15,10 +15,10 @@ class ProductListLoadmore extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             OnBuilder<List<Productx>>.all(
-              listenTo: dt.rmLoadMore,
+              listenTo: dt.rxLoadMore,
               onWaiting: () => const CircularProgressIndicator(),
               onError: (_, __) => const Text('error'),
-              onData: (_) => dt.rmIsEnd.st
+              onData: (_) => dt.rxIsEnd.st
                   ? const Text('... end of list ...')
                   : OutlinedButton(
                       child: const Text('load more'),

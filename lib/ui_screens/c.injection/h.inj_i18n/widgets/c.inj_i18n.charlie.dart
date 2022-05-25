@@ -10,7 +10,7 @@ class InjI18nCharlie extends StatelessWidget {
   Widget build(BuildContext context) {
     return OnReactive(
       () => Center(
-        child: Text('${dt.rmInt.st}'),
+        child: Text('${dt.rxInt.st}'),
       ),
     );
   }

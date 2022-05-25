@@ -5,7 +5,7 @@ final x1ProductDetailCtrl = ProductDetailCtrl();
 class ProductDetailCtrl {
   ProductDetailData get dt => x1ProductDetailData.st;
 
-  init() => loggerx(ProductDetailCtrl).v('init...');
+  init() => logxx.i(ProductDetailCtrl, '...');
 
   action() {}
 

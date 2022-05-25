@@ -6,7 +6,7 @@ class FbFirestoreCtrl {
   FbFirestoreData get dt => x1FbFirestoreData.st;
 
   init() {
-    loggerx(FbFirestoreCtrl).v('init...');
+    logxx.i(FbFirestoreCtrl, '...');
     x1ProductServ.initProduct(Productx.init().id);
   }
 

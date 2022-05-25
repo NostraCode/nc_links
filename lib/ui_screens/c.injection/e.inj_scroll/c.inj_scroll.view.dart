@@ -13,7 +13,7 @@ class InjScrollView extends ReactiveStatelessWidget {
         preferredSize: Size.fromHeight(56),
         child: InjScrollAppbar(),
       ),
-      floatingActionButton: dt.rmShowFab.st ? const InjScrollFab() : null,
+      floatingActionButton: dt.rxShowFab.st ? const InjScrollFab() : null,
       body: ListView(
         padding: const EdgeInsets.all(5),
         controller: dt.fmScroll.controller,

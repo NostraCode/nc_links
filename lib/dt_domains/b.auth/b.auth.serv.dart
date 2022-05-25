@@ -6,10 +6,10 @@ class AuthServ {
   AuthData get dt => x1AuthData.st;
 
   init() {
-    loggerx(AuthServ).v('init...');
+    logxx.i(AuthServ, '...');
     dt.subsAuth = x1FbAuth.st.instance.userChanges().listen((event) {
-      dt.rmUser.st = event;
-      loggerx(AuthServ).v('user => ${dt.rmUser.st}');
+      dt.rxUser.st = event;
+      logxx.wtf(AuthServ, 'user => ${dt.rxUser.st}');
     });
   }
 

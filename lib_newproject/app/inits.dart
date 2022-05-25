@@ -11,9 +11,5 @@ Future<void> inits() async {
     );
   }
 
-  if (PlatformType.isWeb) {
-    setPathUrlStrategy();
-  }
-
   logger.wtf('inits success');
 }

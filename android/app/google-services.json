@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "835126305601",
+    "firebase_url": "https://fe-master-default-rtdb.firebaseio.com",
     "project_id": "fe-master",
     "storage_bucket": "fe-master.appspot.com"
   },

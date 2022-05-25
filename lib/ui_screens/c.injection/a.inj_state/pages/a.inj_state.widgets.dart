@@ -40,7 +40,7 @@ class InjStateWidgets extends StatelessWidget {
                 textA: 'immutable',
                 textB: 'rx1',
                 child: OnReactive(
-                  () => InjStateBigText('${dt.rmInt1.st}'),
+                  () => InjStateBigText('${dt.rxInt1.st}'),
                 ),
               ),
             ],
@@ -59,7 +59,7 @@ class InjStateWidgets extends StatelessWidget {
                 textA: 'widget-like',
                 textB: 'rx1',
                 child: OnBuilder<int>.all(
-                  listenTo: dt.rmInt1,
+                  listenTo: dt.rxInt1,
                   onWaiting: () => const Text('loading...'),
                   onError: (_, __) => const Text('error'),
                   onData: (data) => InjStateBigText('$data'),
@@ -68,7 +68,7 @@ class InjStateWidgets extends StatelessWidget {
               InjStateColumnX(
                 textA: 'method-like',
                 textB: 'rx1',
-                child: dt.rmInt1.rebuild.onAll(
+                child: dt.rxInt1.rebuild.onAll(
                   onWaiting: () => const Text('loading...'),
                   onError: (_, __) => const Text('error'),
                   onData: (data) => InjStateBigText('$data'),
@@ -116,7 +116,7 @@ class InjStateCharlieX extends ReactiveStatelessWidget {
             InjStateColumnX(
               textA: 'immutable',
               textB: 'rx1',
-              child: InjStateBigText('${dt.rmInt1.st}'),
+              child: InjStateBigText('${dt.rxInt1.st}'),
             ),
           ],
         ),

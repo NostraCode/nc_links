@@ -19,7 +19,7 @@ class InjStateStream extends StatelessWidget {
         const InjStateStreamBtnV1(),
         const SizedBoxH(50),
         OnBuilder<int>.orElse(
-          listenTo: dt.rmIntStream,
+          listenTo: dt.rxIntStream,
           onWaiting: () => const CircularProgressIndicator(),
           onIdle: () => const Text('idle'),
           orElse: (data) => Text('$data', textScaleFactor: 2),

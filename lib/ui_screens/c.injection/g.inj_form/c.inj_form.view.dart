@@ -11,26 +11,26 @@ class InjFormView extends ReactiveStatelessWidget {
     return Scaffold(
       appBar: const PreferredSize(
         preferredSize: Size.fromHeight(56),
-        child: InjFormAppbar(),
+        child: InjForxAppbar(),
       ),
-      // floatingActionButton: const InjFormFab(),
+      // floatingActionButton: const InjForxFab(),
       body: Padding(
         padding: const EdgeInsets.all(12),
         child: Center(
           child: OnFormBuilder(
-            listenTo: dt.rmForm,
+            listenTo: dt.rxForx,
             builder: () {
               return ListView(
                 children: [
-                  const InjFormCharlie(),
+                  const InjForxCharlie(),
                   const SizedBoxH(10),
-                  const InjFormDelta(),
+                  const InjForxDelta(),
                   const SizedBoxH(10),
                   const SizedBoxH(10),
                   const InjFormEcho(),
                   const SizedBoxH(10),
-                  if (dt.rmForm.isDirty)
-                    const Text('The form is changed but not submitted yet!')
+                  if (dt.rxForx.isDirty)
+                    const Text('The forx is changed but not submitted yet!')
                 ],
               );
             },

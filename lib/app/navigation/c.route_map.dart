@@ -30,6 +30,7 @@ class RouteMap {
     Routes.productDetail: (RouteData data) => const ProductDetailView(),
     Routes.productEdit: (RouteData data) => const ProductEditView(),
     Routes.fcm: (RouteData data) => const FcmView(),
+    Routes.analytics: (RouteData data) => const AnalyticsView(),
     //* restapi ------- ----- ----- ----- -----
     Routes.restList: (RouteData data) => const RestListView(),
     Routes.restInput: (RouteData data) => const RestInputView(),

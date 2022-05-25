@@ -6,54 +6,54 @@ class DummyServ {
   DummyData get dt => x1DummyData.st;
 
   init() {
-    loggerx(DummyServ).v('init...');
-    dt.rmIntList.st = [];
+    logxx.i(DummyServ, '...');
+    dt.rxIntList.st = [];
     futureInit();
   }
 
   // ----- ----- ----- ----- -----
 
   addToList() {
-    dt.rmIntList.st = [...dt.rmIntList.st, dt.rmIntFuture.st];
+    dt.rxIntList.st = [...dt.rxIntList.st, dt.rxIntFuture.st];
   }
 
   Future<void> futureInit() async {
-    dt.rmIntFuture.stateAsync = x1DummyRepo.st.futureInit();
+    dt.rxIntFuture.stateAsync = x1DummyRepo.st.futureInit();
   }
 
   futureIncrease() {
-    dt.rmIntFuture.stateAsync =
-        x1DummyRepo.st.futureIncrease(dt.rmIntFuture.st);
+    dt.rxIntFuture.stateAsync =
+        x1DummyRepo.st.futureIncrease(dt.rxIntFuture.st);
   }
 
   futureRandom() {
-    dt.rmIntFuture.stateAsync = x1DummyRepo.st.futureRandom();
+    dt.rxIntFuture.stateAsync = x1DummyRepo.st.futureRandom();
   }
 
   // ----- ----- ----- ----- -----
 
   streamSubs() => x1DummyRepo.st
       .streamIncrease()
-      .listen((event) => dt.rmIntStream.st = event);
+      .listen((event) => dt.rxIntStream.st = event);
 
   start() {
     stop();
-    dt.rmIntStream.subscription = streamSubs();
-    dt.rmSubsStatus.st = 'start';
+    dt.rxIntStream.subscription = streamSubs();
+    dt.rxSubsStatus.st = 'start';
   }
 
   stop() {
-    dt.rmIntStream.subscription!.cancel();
-    dt.rmSubsStatus.st = 'stop';
+    dt.rxIntStream.subscription!.cancel();
+    dt.rxSubsStatus.st = 'stop';
   }
 
   pause() {
-    dt.rmIntStream.subscription!.pause();
-    dt.rmSubsStatus.st = 'pause';
+    dt.rxIntStream.subscription!.pause();
+    dt.rxSubsStatus.st = 'pause';
   }
 
   resume() {
-    dt.rmIntStream.subscription!.resume();
-    dt.rmSubsStatus.st = 'resume';
+    dt.rxIntStream.subscription!.resume();
+    dt.rxSubsStatus.st = 'resume';
   }
 }

@@ -12,8 +12,8 @@ class FcmSender extends StatelessWidget {
       () => Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('title: fcm by api ${dt.rmInt.st}'),
-          Text('body: its working fine ${dt.rmInt.st}'),
+          Text('title: fcm by api ${dt.rxInt.st}'),
+          Text('body: its working fine ${dt.rxInt.st}'),
         ],
       ),
     );

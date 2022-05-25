@@ -5,7 +5,7 @@ final x1InjAnimCtrl = InjAnimCtrl();
 class InjAnimCtrl {
   InjAnimData get dt => x1InjAnimData.st;
 
-  init() => loggerx(InjAnimCtrl).v('init...');
+  init() => logxx.i(InjAnimCtrl, '...');
 
   action() => dt.animation1.triggerAnimation();
 }

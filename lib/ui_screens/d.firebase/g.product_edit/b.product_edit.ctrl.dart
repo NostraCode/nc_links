@@ -5,42 +5,42 @@ final x1ProductEditCtrl = ProductEditCtrl();
 class ProductEditCtrl {
   ProductEditData get dt => x1ProductEditData.st;
 
-  init() => loggerx(ProductEditCtrl).v('init...');
+  init() => logxx.i(ProductEditCtrl, '...');
 
   initProductBuffer() async {
-    dt.rmProductBuffer.st = x1ProductDetailCtrl.dt.rmProduct.st!;
-    if (dt.rmProductBuffer.st.images.isNotEmpty) {
+    dt.rxProductBuffer.st = x1ProductDetailCtrl.dt.rxProduct.st!;
+    if (dt.rxProductBuffer.st.images.isNotEmpty) {
       Map<String, String> mapx = {};
-      for (var image in dt.rmProductBuffer.st.images.entries) {
+      for (var image in dt.rxProductBuffer.st.images.entries) {
         final file = await DefaultCacheManager().getSingleFile(image.value);
         mapx[image.key] = file.path;
       }
-      dt.rmProductBuffer.st = dt.rmProductBuffer.st.copyWith(images: mapx);
+      dt.rxProductBuffer.st = dt.rxProductBuffer.st.copyWith(images: mapx);
     }
-    dt.rmProductBackup.st = dt.rmProductBuffer.st;
+    dt.rxProductBackup.st = dt.rxProductBuffer.st;
   }
 
   reset() {
-    dt.rmProductBuffer.st = dt.rmProductBackup.st;
+    dt.rxProductBuffer.st = dt.rxProductBackup.st;
   }
 
   increase() {
-    final total = dt.rmProductBuffer.st.total;
-    final newProductBuffer = dt.rmProductBuffer.st.copyWith(total: total + 1);
-    dt.rmProductBuffer.st = newProductBuffer;
+    final total = dt.rxProductBuffer.st.total;
+    final newProductBuffer = dt.rxProductBuffer.st.copyWith(total: total + 1);
+    dt.rxProductBuffer.st = newProductBuffer;
   }
 
   decrease() {
-    final total = dt.rmProductBuffer.st.total;
-    final newProductBuffer = dt.rmProductBuffer.st.copyWith(total: total - 1);
-    dt.rmProductBuffer.st = newProductBuffer;
+    final total = dt.rxProductBuffer.st.total;
+    final newProductBuffer = dt.rxProductBuffer.st.copyWith(total: total - 1);
+    dt.rxProductBuffer.st = newProductBuffer;
   }
 
   Future pickImages() async {
-    final id = dt.rmProductBuffer.st.id;
+    final id = dt.rxProductBuffer.st.id;
     List<String> listImages = [];
     Map<String, String> mapImages = {};
-    dt.rmProductBuffer.st.images.forEach((key, value) {
+    dt.rxProductBuffer.st.images.forEach((key, value) {
       listImages.add(value);
     });
     final pickedFiles = await ImagePicker().pickMultiImage();
@@ -50,13 +50,13 @@ class ProductEditCtrl {
     listImages.asMap().forEach((key, value) {
       mapImages['${dt.colId}/$id/$id-${key.toString()}'] = value;
     });
-    dt.rmProductBuffer.st = dt.rmProductBuffer.st.copyWith(images: mapImages);
+    dt.rxProductBuffer.st = dt.rxProductBuffer.st.copyWith(images: mapImages);
   }
 
   removeImage(String key) {
-    final mapx = {...dt.rmProductBuffer.st.images}..remove(key);
-    final newProductBuffer = dt.rmProductBuffer.st.copyWith(images: mapx);
-    dt.rmProductBuffer.st = newProductBuffer;
+    final mapx = {...dt.rxProductBuffer.st.images}..remove(key);
+    final newProductBuffer = dt.rxProductBuffer.st.copyWith(images: mapx);
+    dt.rxProductBuffer.st = newProductBuffer;
   }
 
   update() async {
@@ -66,7 +66,7 @@ class ProductEditCtrl {
       barrierDismissible: false,
       barrierColor: Colors.black54,
     );
-    await x1ProductServ.updateProduct(dt.rmProductBuffer.st);
+    await x1ProductServ.updateProduct(dt.rxProductBuffer.st);
     x1ProductServ.readProduct();
     RM.navigate.back();
     RM.navigate.back();

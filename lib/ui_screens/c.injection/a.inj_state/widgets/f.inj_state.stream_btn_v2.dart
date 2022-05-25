@@ -12,7 +12,7 @@ class InjStateStreamBtnV2 extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         OnBuilder<String>.data(
-          listenTo: dt.rmSubsStatus,
+          listenTo: dt.rxSubsStatus,
           builder: (data) {
             Icon icon;
             Function() func;
@@ -42,7 +42,7 @@ class InjStateStreamBtnV2 extends StatelessWidget {
           },
         ),
         OnBuilder<String>.data(
-          listenTo: dt.rmSubsStatus,
+          listenTo: dt.rxSubsStatus,
           builder: (data) {
             return IconButton(
               icon: Icon(

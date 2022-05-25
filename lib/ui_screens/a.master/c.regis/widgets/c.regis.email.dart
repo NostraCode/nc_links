@@ -9,17 +9,17 @@ class RegisEmail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OnFormBuilder(
-      listenTo: dt.rmForm,
+      listenTo: dt.rxForx,
       builder: () {
         return TextField(
-          controller: dt.rmEmail.controller,
-          focusNode: dt.rmEmail.focusNode,
+          controller: dt.rxEmail.controller,
+          focusNode: dt.rxEmail.focusNode,
           keyboardType: TextInputType.emailAddress,
-          onEditingComplete: () => dt.rmPwdA.focusNode.requestFocus(),
+          onEditingComplete: () => dt.rxPwdA.focusNode.requestFocus(),
           decoration: InputDecoration(
             labelText: 'Email',
             hintText: 'type your email',
-            errorText: dt.rmEmail.error,
+            errorText: dt.rxEmail.error,
           ),
         );
       },

@@ -5,7 +5,7 @@ final x1InjScrollCtrl = InjScrollCtrl();
 class InjScrollCtrl {
   InjScrollData get dt => x1InjScrollData.st;
 
-  init() => loggerx(InjScrollCtrl).v('init...');
+  init() => logxx.i(InjScrollCtrl, '...');
 
   scrollToTop() {
     dt.fmScroll.controller.animateTo(

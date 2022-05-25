@@ -6,7 +6,7 @@ class SplashCtrl {
   SplashData get dt => x1SplashData.st;
 
   init() {
-    loggerx(SplashCtrl).v('init...');
+    logxx.i(SplashCtrl, '...');
     delayedNavigation();
   }
 

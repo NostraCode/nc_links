@@ -23,7 +23,7 @@ class FbStorage {
     final snapshot = await task;
     final bytesTransferred = snapshot.bytesTransferred;
     final url = await snapshot.ref.getDownloadURL();
-    loggerx(FbStorage).i('$ref [$bytesTransferred bytes] uploaded.');
+    logxx.i(FbStorage, '$ref [$bytesTransferred bytes] uploaded.');
     return url;
   }
 
@@ -37,7 +37,7 @@ class FbStorage {
     ListResult result = await instance.ref(folder).listAll();
     for (var ref in result.items) {
       instance.ref(ref.fullPath).delete().then((_) {
-        loggerx(FbStorage).i('${ref.fullPath} deleted.');
+        logxx.i(FbStorage, '${ref.fullPath} deleted.');
       });
     }
   }

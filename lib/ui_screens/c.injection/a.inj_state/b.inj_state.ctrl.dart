@@ -5,12 +5,12 @@ final x1InjStateCtrl = InjStateCtrl();
 class InjStateCtrl {
   InjStateData get dt => x1InjStateData.st;
 
-  init() => loggerx(InjStateCtrl).v('init...');
+  init() => logxx.i(InjStateCtrl, '...');
 
   increase() {
     dt.int0 = dt.int0 + 1;
-    dt.rmInt1.st = dt.rmInt1.st + 1;
-    dt.rmInt2.st = dt.rmInt2.st + 1;
+    dt.rxInt1.st = dt.rxInt1.st + 1;
+    dt.rxInt2.st = dt.rxInt2.st + 1;
   }
 
   refresh() => x1DummyServ.futureInit();

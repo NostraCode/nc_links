@@ -2,14 +2,14 @@ part of '_index.dart';
 
 final x1InjStateData = RM.inject<InjStateData>(
   () => InjStateData(),
+  debugPrintWhenNotifiedPreMessage: '',
   sideEffects: SideEffects(initState: () => x1InjStateCtrl.init()),
-  debugPrintWhenNotifiedPreMessage: 'InjStateData',
 );
 
 class InjStateData {
   final title = 'RM State';
 
-  final rmTab = RM.injectTabPageView(
+  final rxTab = RM.injectTabPageView(
     length: 3,
     initialIndex: 0,
   );
@@ -18,16 +18,16 @@ class InjStateData {
   int int0 = 0;
 
   //immutable
-  final rmInt1 = 0.inj();
-  final rmInt2 = RM.inject<int>(() => 0);
+  final rxInt1 = 0.inj();
+  final rxInt2 = RM.inject<int>(() => 0);
 
   // ----- ----- ----- ----- -----
 
-  final rmSubsStatus = x1DummyData.st.rmSubsStatus;
+  final rxSubsStatus = x1DummyData.st.rxSubsStatus;
 
-  final rmIntStream = x1DummyData.st.rmIntStream;
+  final rxIntStream = x1DummyData.st.rxIntStream;
 
-  var rmIntList = x1DummyData.st.rmIntList;
+  var rxIntList = x1DummyData.st.rxIntList;
 
-  final rmIntFuture = x1DummyData.st.rmIntFuture;
+  final rxIntFuture = x1DummyData.st.rxIntFuture;
 }

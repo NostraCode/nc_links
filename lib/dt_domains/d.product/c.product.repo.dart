@@ -20,7 +20,7 @@ class ProductRepo {
   Future<Productx> readProduct() async {
     final docSnapshot = await x1FbFirestore.readDocument(
       colId: x1ProductData.st.colId,
-      docId: x1ProductData.st.rmSelectedId.st,
+      docId: x1ProductData.st.rxSelectedId.st,
     );
     return Productx.fromMap(docSnapshot.data() ?? {});
   }
@@ -29,9 +29,9 @@ class ProductRepo {
     final querySnapshot = await x1FbFirestore.readCollection(
       colId: x1ProductData.st.colId,
       limit: x1ProductData.st.limit,
-      lastCreateTime: x1ProductData.st.rmProductList.st.isEmpty
+      lastCreateTime: x1ProductData.st.rxProductList.st.isEmpty
           ? '9999-01-01 00:00:00.000000'
-          : x1ProductData.st.rmProductList.st.last.createdAt,
+          : x1ProductData.st.rxProductList.st.last.createdAt,
     );
     List<Productx> products = [];
     for (var item in querySnapshot.docs) {
@@ -41,10 +41,10 @@ class ProductRepo {
   }
 
   Future<void> updateProduct(Productx product) async {
-    int lengthImages = x1ProductData.st.rmProductFuture.st?.images.length ?? 0;
+    int lengthImages = x1ProductData.st.rxProductFuture.st?.images.length ?? 0;
     if (lengthImages > 0) {
       final mainFolder = x1ProductData.st.colId;
-      final subFolder = x1ProductData.st.rmProductFuture.st?.id;
+      final subFolder = x1ProductData.st.rxProductFuture.st?.id;
       await x1FbStorage.st.deleteFolder('/$mainFolder/$subFolder');
     }
     Productx productx = product;
@@ -61,15 +61,15 @@ class ProductRepo {
   }
 
   Future<void> deleteProduct() async {
-    int lengthImages = x1ProductData.st.rmProductFuture.st?.images.length ?? 0;
+    int lengthImages = x1ProductData.st.rxProductFuture.st?.images.length ?? 0;
     if (lengthImages > 0) {
       final mainFolder = x1ProductData.st.colId;
-      final subFolder = x1ProductData.st.rmProductFuture.st?.id;
+      final subFolder = x1ProductData.st.rxProductFuture.st?.id;
       await x1FbStorage.st.deleteFolder('/$mainFolder/$subFolder');
     }
     await x1FbFirestore.deleteDocument(
       colId: x1ProductData.st.colId,
-      docId: x1ProductData.st.rmSelectedId.st,
+      docId: x1ProductData.st.rxSelectedId.st,
     );
   }
 
@@ -77,7 +77,7 @@ class ProductRepo {
 
   Stream<Productx?> streamProduct() {
     final colId = x1ProductData.st.colId;
-    final docId = x1ProductData.st.rmSelectedId.st;
+    final docId = x1ProductData.st.rxSelectedId.st;
 
     return x1FbFirestore
         .streamDocument(colId: colId, docId: docId)

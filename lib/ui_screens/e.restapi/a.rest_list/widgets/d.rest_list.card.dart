@@ -16,7 +16,7 @@ class RestListCard extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       child: OnReactive(
         () => ListTile(
-          selected: user.id == dt.rmSelectedId.st,
+          selected: user.id == dt.rxSelectedId.st,
           horizontalTitleGap: 0,
           dense: true,
           title: Text('[${user.id}] ${user.name}'),

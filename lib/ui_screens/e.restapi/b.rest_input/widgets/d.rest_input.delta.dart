@@ -12,9 +12,9 @@ class RestInputDelta extends StatelessWidget {
       children: [
         OnReactive(
           () => OnFormFieldBuilder<String>(
-            listenTo: dt.rmGender,
+            listenTo: dt.rxGender,
             inputDecoration: InputDecoration(
-              errorText: dt.rmGender.error,
+              errorText: dt.rxGender.error,
               errorBorder: const UnderlineInputBorder(
                 borderSide: BorderSide(color: Colors.red),
               ),
@@ -35,9 +35,9 @@ class RestInputDelta extends StatelessWidget {
         const SizedBoxH(20),
         OnReactive(
           () => OnFormFieldBuilder<String>(
-            listenTo: dt.rmStatus,
+            listenTo: dt.rxStatus,
             inputDecoration: InputDecoration(
-              errorText: dt.rmStatus.error,
+              errorText: dt.rxStatus.error,
               errorBorder: const UnderlineInputBorder(
                 borderSide: BorderSide(color: Colors.red),
               ),

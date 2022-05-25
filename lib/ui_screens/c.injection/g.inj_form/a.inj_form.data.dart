@@ -2,30 +2,30 @@ part of '_index.dart';
 
 final x1InjFormData = RM.inject<InjFormData>(
   () => InjFormData(),
-  debugPrintWhenNotifiedPreMessage: 'InjFormData',
+  debugPrintWhenNotifiedPreMessage: '',
   sideEffects: SideEffects(initState: () => x1InjFormCtrl.init()),
 );
 
 class InjFormData {
-  final title = 'InjForm';
+  final title = 'InjForx';
 
-  final rmForm = RM.injectForm(
+  final rxForx = RM.injectForm(
     submit: () async {
       await Future.delayed(1.seconds);
     },
-    // By default form validation is done after field losing focus
+    // By default forx validation is done after field losing focus
     // autovalidateMode: AutovalidateMode.onUserInteraction,
   );
 
-  final rmEmail = RM.injectTextEditing(
+  final rxEmail = RM.injectTextEditing(
     validators: [Validate.isNotEmpty, Validate.isEmail],
   );
 
-  final rmPassword = RM.injectTextEditing(
+  final rxPassword = RM.injectTextEditing(
     validators: [Validate.isNotEmpty, Validate.minChars],
   );
 
-  final rmCheck = RM.injectFormField<bool>(
+  final rxCheck = RM.injectFormField<bool>(
     false,
     validators: [Validate.isChecked],
   );

@@ -9,7 +9,7 @@ class SplashText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      dt.rmLoading.st,
+      dt.rxLoading.st,
       style: TextStyle(
         color: themeRM.isDarkTheme ? ConsColor.textLight : ConsColor.textDark,
       ),

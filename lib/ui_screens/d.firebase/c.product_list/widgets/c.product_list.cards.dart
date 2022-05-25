@@ -22,7 +22,7 @@ class ProductListCards extends StatelessWidget {
                 ),
               ),
             ),
-            for (var item in dt.rmProductList.st)
+            for (var item in dt.rxProductList.st)
               ProductListCard(product: item),
             const ProductListLoadmore(),
           ],

@@ -20,7 +20,10 @@ class App extends TopStatelessWidget {
         // ----- ----- ----- ----- -----
         routeInformationParser: nav.routeInformationParser,
         routerDelegate: nav.routerDelegate,
-        // routerDelegate: RM.navigate.navigatorState.context.,
+        //* device preview settings ----
+        useInheritedMediaQuery: true,
+        builder: DevicePreview.appBuilder,
+        // locale: DevicePreview.locale(context),
       ),
     );
   }

@@ -5,7 +5,7 @@ final x1RestDetailCtrl = RestDetailCtrl();
 class RestDetailCtrl {
   RestDetailData get dt => x1RestDetailData.st;
 
-  init() => loggerx(RestDetailCtrl).v('init...');
+  init() => logxx.i(RestDetailCtrl, '...');
 
   Future<void> refresh() async {
     x1UserServ.readUser();

@@ -5,19 +5,19 @@ final x1LoginCtrl = LoginCtrl();
 class LoginCtrl {
   LoginData get dt => x1LoginData.st;
 
-  init() => loggerx(LoginCtrl).v('init...');
+  init() => logxx.i(LoginCtrl, '...');
 
-  tooglePwdA() => dt.rmIsObscuredPwd.toggle();
+  tooglePwdA() => dt.rxIsObscuredPwd.toggle();
 
   signInViaEmail() {
-    dt.rmForm.submit();
-    logger.wtf(dt.rmEmail.value);
-    logger.wtf(dt.rmPwd.value);
+    dt.rxForx.submit();
+    logx.wtf(dt.rxEmail.value);
+    logx.wtf(dt.rxPwd.value);
   }
 
   signInViaGoogle() {
-    dt.rmForm.submit();
-    logger.wtf(dt.rmEmail.value);
-    logger.wtf(dt.rmPwd.value);
+    dt.rxForx.submit();
+    logx.wtf(dt.rxEmail.value);
+    logx.wtf(dt.rxPwd.value);
   }
 }

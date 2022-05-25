@@ -20,9 +20,9 @@ class ProductListView extends StatelessWidget {
             child1: const ProductListCards(),
             child2: const CircularProgressIndicator(),
             builder: (child1, child2) {
-              return dt.rmProductList.st.isNotEmpty
+              return dt.rxProductList.st.isNotEmpty
                   ? child1
-                  : dt.rmLoadMore.rebuild.onOrElse(
+                  : dt.rxLoadMore.rebuild.onOrElse(
                       onWaiting: () => child2,
                       orElse: (data) => const ProductListLoadmore(),
                     );

@@ -1,7 +1,7 @@
 part of '../_index.dart';
 
-class InjFormDelta extends StatelessWidget {
-  const InjFormDelta({Key? key}) : super(key: key);
+class InjForxDelta extends StatelessWidget {
+  const InjForxDelta({Key? key}) : super(key: key);
 
   InjFormCtrl get ct => x1InjFormCtrl;
   InjFormData get dt => x1InjFormData.st;
@@ -10,9 +10,9 @@ class InjFormDelta extends StatelessWidget {
   Widget build(BuildContext context) {
     return OnReactive(
       () => OnFormFieldBuilder<bool>(
-        listenTo: dt.rmCheck,
+        listenTo: dt.rxCheck,
         inputDecoration: InputDecoration(
-          errorText: dt.rmCheck.error,
+          errorText: dt.rxCheck.error,
           errorBorder: const UnderlineInputBorder(
             borderSide: BorderSide(color: Colors.red),
           ),

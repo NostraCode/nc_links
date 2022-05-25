@@ -2,12 +2,12 @@ part of '_index.dart';
 
 final x1<FTName | pascalcase>Data = RM.inject<<FTName | pascalcase>Data>(
   () => <FTName | pascalcase>Data(),
-  debugPrintWhenNotifiedPreMessage: '<FTName | pascalcase>Data',
+  debugPrintWhenNotifiedPreMessage: '',
   sideEffects: SideEffects(initState: () => x1<FTName | pascalcase>Ctrl.init()),
 );
 
 class <FTName | pascalcase>Data {
-  final rmTitle = '<FTName | pascalcase>'.inj();
+  final rxTitle = '<FTName | pascalcase>'.inj();
 
-  final rmInt = 0.inj();
+  final rxInt = 0.inj();
 }

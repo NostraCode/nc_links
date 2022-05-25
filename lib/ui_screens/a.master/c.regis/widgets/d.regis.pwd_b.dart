@@ -9,15 +9,15 @@ class RegisPwdB extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OnFormBuilder(
-      listenTo: dt.rmForm,
+      listenTo: dt.rxForx,
       builder: () {
         return TextField(
-          controller: dt.rmPwdB.controller,
-          focusNode: dt.rmPwdB.focusNode,
-          obscureText: dt.rmIsObscuredPwdB.st,
-          onEditingComplete: () => dt.rmPwdB.focusNode.unfocus(),
+          controller: dt.rxPwdB.controller,
+          focusNode: dt.rxPwdB.focusNode,
+          obscureText: dt.rxIsObscuredPwdB.st,
+          onEditingComplete: () => dt.rxPwdB.focusNode.unfocus(),
           decoration: InputDecoration(
-            errorText: dt.rmPwdB.error,
+            errorText: dt.rxPwdB.error,
             labelText: 'Retype Password',
             hintText: 'retype your password',
             suffixIcon: IconButton(

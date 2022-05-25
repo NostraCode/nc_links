@@ -9,7 +9,7 @@ class FbAuthD extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OnReactive(
-      () => dt.rmUser.st == null
+      () => dt.rxUser.st == null
           ? ElevatedButton(
               child: const Text('sign in with google'),
               onPressed: () => ct.signInWithGoogle(),

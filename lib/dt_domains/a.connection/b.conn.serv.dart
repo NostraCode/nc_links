@@ -6,7 +6,7 @@ class ConnServ {
   ConnData get dt => x1ConnData.st;
 
   init() {
-    loggerx(ConnServ).v('init...');
+    logxx.i(ConnServ, '...');
     check();
     dt.subsConnx = dt.connx.onConnectivityChanged
         .listen((result) => updateIsOnline(result));
@@ -19,21 +19,21 @@ class ConnServ {
       final result = await x1ConnRepo.st.getResult();
       updateIsOnline(result);
     } on PlatformException catch (e) {
-      loggerx(ConnServ).e('Couldn\'t check connectivity status', e);
+      logxx.e(ConnServ, 'Couldn\'t check connectivity status. ${e.toString()}');
       return;
     }
   }
 
   updateIsOnline(ConnectivityResult result) {
-    dt.rmIsOnline.st = !(result == ConnectivityResult.none);
-    loggerx(ConnServ).wtf('$result');
+    dt.rxIsOnline.st = !(result == ConnectivityResult.none);
+    logxx.wtf(ConnServ, '$result');
     updateNotification();
   }
 
   updateNotification() async {
     await Future.delayed(
-      dt.rmIsOnline.st ? 2000.milliseconds : 100.milliseconds,
+      dt.rxIsOnline.st ? 2000.milliseconds : 100.milliseconds,
     );
-    dt.rmIsShowNotification.st = !dt.rmIsOnline.st;
+    dt.rxIsShowNotification.st = !dt.rxIsOnline.st;
   }
 }

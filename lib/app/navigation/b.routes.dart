@@ -3,13 +3,15 @@ part of '_index.dart';
 class Routes {
   Routes._();
 
-  static const root = '/'; //* init page
+  // static const root = '/';
   //* master -- ----- ----- ----- ----- -----
-  static const splash = '/splash';
   static const home = '/';
+  static const splash = '/splash';
   static const login = '/login';
   static const regis = '/registration';
+  //* misc ----- ----- ----- ----- ----- ----
   static const popup = '/popup';
+  static const blablabla = '/blablabla';
   static const needLogin = '/need_login';
   static const adminOnly = '/admin_only';
   //* injection ----- ----- ----- ----- -----
@@ -28,6 +30,7 @@ class Routes {
   static const productDetail = '/product_detail';
   static const productEdit = '/product_edit';
   static const fcm = '/fcm';
+  static const analytics = '/analytics';
   //* restapi ------- ----- ----- ----- -----
   static const restList = '/rest_list';
   static const restInput = '/rest_input';

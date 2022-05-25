@@ -15,7 +15,7 @@ class RestDetailAppbar extends StatelessWidget {
           iconDatax: Icons.delete,
           funcx: () => RM.navigate.toCupertinoDialog(
             AlertDialogX(
-              title: 'Confirmation',
+              title: 'Confirxation',
               message: 'are you sure?',
               widgets: [
                 CupertinoDialogAction(

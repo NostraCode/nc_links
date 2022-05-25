@@ -12,25 +12,25 @@ class RestInputCharlie extends StatelessWidget {
       () => Column(
         children: [
           TextField(
-            controller: dt.rmName.controller,
-            focusNode: dt.rmName.focusNode,
+            controller: dt.rxName.controller,
+            focusNode: dt.rxName.focusNode,
             onEditingComplete: () => dt.focusScopeNode.nextFocus(),
             decoration: InputDecoration(
               hintText: "Name",
               labelText: 'Name',
-              errorText: dt.rmName.error,
+              errorText: dt.rxName.error,
             ),
           ),
           const SizedBoxH(20),
           TextField(
-            controller: dt.rmEmail.controller,
-            focusNode: dt.rmEmail.focusNode,
+            controller: dt.rxEmail.controller,
+            focusNode: dt.rxEmail.focusNode,
             onEditingComplete: () => dt.focusScopeNode.unfocus(),
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
               hintText: "your@email.com",
               labelText: "Email Address",
-              errorText: dt.rmEmail.error,
+              errorText: dt.rxEmail.error,
             ),
           ),
         ],

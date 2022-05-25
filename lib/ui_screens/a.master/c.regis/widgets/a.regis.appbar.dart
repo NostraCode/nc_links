@@ -9,7 +9,7 @@ class RegisAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: OnReactive(() => Text(dt.rmTitle.st)),
+      title: OnReactive(() => Text(dt.rxTitle.st)),
     );
   }
 }

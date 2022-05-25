@@ -2,7 +2,7 @@ part of '_index.dart';
 
 final x1ConnData = RM.inject<ConnData>(
   () => ConnData(),
-  debugPrintWhenNotifiedPreMessage: 'ConnData',
+  debugPrintWhenNotifiedPreMessage: '',
 );
 
 class ConnData {
@@ -10,7 +10,7 @@ class ConnData {
 
   late StreamSubscription<ConnectivityResult> subsConnx;
 
-  final rmIsOnline = false.inj();
+  final rxIsOnline = false.inj();
 
-  final rmIsShowNotification = false.inj();
+  final rxIsShowNotification = false.inj();
 }

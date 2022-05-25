@@ -17,7 +17,7 @@ class InjTabDelta extends StatelessWidget {
             const Text('Delta'),
             ElevatedButton(
               child: const Text('next'),
-              onPressed: () => dt.rmTab.nextView(),
+              onPressed: () => dt.rxTab.nextView(),
             ),
           ],
         ),

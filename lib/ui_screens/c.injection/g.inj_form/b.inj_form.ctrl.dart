@@ -5,11 +5,11 @@ final x1InjFormCtrl = InjFormCtrl();
 class InjFormCtrl {
   InjFormData get dt => x1InjFormData.st;
 
-  init() => loggerx(InjFormCtrl).v('init...');
+  init() => logxx.i(InjFormCtrl, '...');
 
   submit() async {
-    dt.rmForm.submit();
-    logger.wtf(dt.rmEmail.value);
-    logger.wtf(dt.rmPassword.value);
+    dt.rxForx.submit();
+    logx.i(dt.rxEmail.value);
+    logx.i(dt.rxPassword.value);
   }
 }

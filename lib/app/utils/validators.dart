@@ -110,7 +110,7 @@ class Validate {
   }
 
   static String? pwdEquals(String? str1) {
-    final str2 = x1RegisData.st.rmPwdA.value;
+    final str2 = x1RegisData.st.rxPwdA.value;
     if (str1 != str2) {
       return "not equals";
     }

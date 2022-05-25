@@ -2,7 +2,7 @@ part of '_index.dart';
 
 final x1ProductEditData = RM.inject<ProductEditData>(
   () => ProductEditData(),
-  debugPrintWhenNotifiedPreMessage: 'ProductEditData',
+  debugPrintWhenNotifiedPreMessage: '',
   sideEffects: SideEffects(initState: () => x1ProductEditCtrl.init()),
 );
 
@@ -11,9 +11,9 @@ class ProductEditData {
 
   final colId = x1ProductData.st.colId;
 
-  final rmProductBackup = RM.inject<Productx>(() => Productx());
+  final rxProductBackup = RM.inject<Productx>(() => Productx());
 
-  final rmProductBuffer = RM.inject<Productx>(
+  final rxProductBuffer = RM.inject<Productx>(
     () => Productx(),
     sideEffects: SideEffects(
       initState: () => x1ProductEditCtrl.initProductBuffer(),

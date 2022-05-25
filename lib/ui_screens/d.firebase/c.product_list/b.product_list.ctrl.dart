@@ -5,7 +5,7 @@ final x1ProductListCtrl = ProductListCtrl();
 class ProductListCtrl {
   ProductListData get dt => x1ProductListData.st;
 
-  init() => loggerx(ProductListCtrl).v('init...');
+  init() => logxx.i(ProductListCtrl, '...');
 
   Future<void> refresh() async {
     x1ProductServ.refreshProducts();

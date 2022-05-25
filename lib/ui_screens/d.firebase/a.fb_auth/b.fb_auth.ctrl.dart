@@ -5,7 +5,7 @@ final x1FbAuthCtrl = FbAuthCtrl();
 class FbAuthCtrl {
   FbAuthData get dt => x1FbAuthData.st;
 
-  init() => loggerx(FbAuthCtrl).v('init...');
+  init() => logxx.i(FbAuthCtrl, '...');
 
   signInWithGoogle() => x1AuthServ.signInWithGoogle();
 

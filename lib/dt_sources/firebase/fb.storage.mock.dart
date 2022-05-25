@@ -22,7 +22,7 @@ class FbStorageMock implements FbStorage {
     final snapshot = await task;
     final bytesTransferred = snapshot.bytesTransferred;
     final url = await snapshot.ref.getDownloadURL();
-    loggerx(FbStorage).i('$ref [$bytesTransferred bytes] uploaded.');
+    logxx.i(FbStorageMock, '$ref [$bytesTransferred bytes] uploaded.');
     return url;
   }
 
@@ -36,7 +36,7 @@ class FbStorageMock implements FbStorage {
     ListResult result = await instance.ref(folder).listAll();
     for (var ref in result.items) {
       instance.ref(ref.fullPath).delete().then((_) {
-        loggerx(FbStorage).i('${ref.fullPath} deleted.');
+        logxx.i(FbStorageMock, '${ref.fullPath} deleted.');
       });
     }
   }

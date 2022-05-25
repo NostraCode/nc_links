@@ -15,7 +15,7 @@ class FbFirestoreC extends StatelessWidget {
             children: [
               const Text('future'),
               OnBuilder<Productx?>.all(
-                listenTo: dt.rmProductFuture,
+                listenTo: dt.rxProductFuture,
                 onWaiting: () => const Text('loading...'),
                 onError: (_, __) => const Text('error'),
                 onData: (data) {
@@ -35,7 +35,7 @@ class FbFirestoreC extends StatelessWidget {
             children: [
               const Text('stream'),
               OnBuilder<Productx?>.all(
-                listenTo: dt.rmProductStream,
+                listenTo: dt.rxProductStream,
                 onWaiting: () => const Text('loading...'),
                 onError: (_, __) => const Text('error'),
                 onData: (data) => Text('${(data?.total) ?? 'null'}'),

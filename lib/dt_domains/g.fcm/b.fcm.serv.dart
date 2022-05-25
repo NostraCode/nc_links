@@ -6,7 +6,7 @@ class FcmServ {
   FcmData get dt => x1FcmData.st;
 
   init() async {
-    loggerx(FcmServ).v('init...');
+    logxx.i(FcmServ, '...');
     registerNotification();
     checkForInitialMessage();
     listenOnMessageOpenedApp();
@@ -27,11 +27,11 @@ class FcmServ {
       // criticalAlert: false,
     );
     if (settings.authorizationStatus == AuthorizationStatus.authorized) {
-      loggerx(FcmServ).v('User granted permission');
+      logxx.wtf(FcmServ, 'User granted permission');
       listenOnMessage();
       // getToken();
     } else {
-      loggerx(FcmServ).v('User declined or has not accepted permission');
+      logxx.wtf(FcmServ, 'User declined or has not accepted permission');
     }
   }
 
@@ -43,16 +43,16 @@ class FcmServ {
       dataType: message.data['type'],
       dataScreen: message.data['screen'],
     );
-    dt.rmPushNotification.st = notification;
-    dt.rmTotalNotifications.setState((s) => s + 1);
-    loggerx(FcmServ).v(dt.rmPushNotification.st.toString());
+    dt.rxPushNotification.st = notification;
+    dt.rxTotalNotifications.setState((s) => s + 1);
+    logxx.wtf(FcmServ, dt.rxPushNotification.st.toString());
   }
 
   displayNotif() {
     showSimpleNotification(
-      Text(dt.rmPushNotification.st!.title!),
-      leading: NotificationBadge(total: dt.rmTotalNotifications.st),
-      subtitle: Text(dt.rmPushNotification.st!.body!),
+      Text(dt.rxPushNotification.st!.title!),
+      leading: NotificationBadge(total: dt.rxTotalNotifications.st),
+      subtitle: Text(dt.rxPushNotification.st!.body!),
       background: Colors.cyan.shade700,
       duration: const Duration(seconds: 2),
     );
@@ -63,11 +63,11 @@ class FcmServ {
     // final fcmToken = await FirebaseMessaging.instance.getToken(
     // vapidKey: 'BJvWQDZpubre_8yf11hrd0dDhX3-UWyV-GuegPa72Ml5yvPqeVPVy2Eya22ypIlDMkhR7VNljskkLRNXOWEGlTI',
     // );
-    loggerx(FcmServ).v(fcmToken);
+    logxx.wtf(FcmServ, fcmToken.toString());
   }
 
   goToScreen() {
-    final screen = dt.rmPushNotification.st?.dataScreen;
+    final screen = dt.rxPushNotification.st?.dataScreen;
     if (screen != null) {
       nav.to(screen);
       cleanNotificationState();
@@ -75,19 +75,19 @@ class FcmServ {
   }
 
   cleanNotificationState() {
-    dt.rmPushNotification.st = null;
+    dt.rxPushNotification.st = null;
   }
 
   listenOnMessage() {
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-      loggerx(FcmServ).v('Message title: ${message.notification?.title}');
-      loggerx(FcmServ).v('Message body: ${message.notification?.body}');
-      loggerx(FcmServ).v('Message data: ${message.data}');
+      logxx.wtf(FcmServ, 'Message title: ${message.notification?.title}');
+      logxx.wtf(FcmServ, 'Message body: ${message.notification?.body}');
+      logxx.wtf(FcmServ, 'Message data: ${message.data}');
       updateState(message);
-      if (dt.rmPushNotification.st != null) {
+      if (dt.rxPushNotification.st != null) {
         displayNotif();
         cleanNotificationState();
-        loggerx(FcmServ).v('foreground..!!!');
+        logxx.wtf(FcmServ, 'foreground..!!!');
       }
       // goToScreen();
     });
@@ -97,7 +97,7 @@ class FcmServ {
   listenOnMessageOpenedApp() {
     FirebaseMessaging.onMessageOpenedApp.listen((message) {
       updateState(message);
-      loggerx(FcmServ).v('background, NOT terminated..!!!');
+      logxx.wtf(FcmServ, 'background, NOT terminated..!!!');
       goToScreen();
     });
   }
@@ -108,7 +108,7 @@ class FcmServ {
     final initialMessage = await FirebaseMessaging.instance.getInitialMessage();
     if (initialMessage != null) {
       updateState(initialMessage);
-      loggerx(FcmServ).v('background, terminated..!!!');
+      logxx.wtf(FcmServ, 'background, terminated..!!!');
       goToScreen();
     }
   }
@@ -116,7 +116,8 @@ class FcmServ {
 
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   await Firebase.initializeApp();
-  loggerx(FcmServ).v(
+  logxx.wtf(
+    FcmServ,
     "Handling a background message: ${message.messageId}",
   );
 }

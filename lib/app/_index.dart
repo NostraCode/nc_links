@@ -1,8 +1,8 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:overlay_support/overlay_support.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
-import 'package:url_strategy/url_strategy.dart';
 
 import '../dt_domains/_index.dart';
 import '../firebase_options.dart';

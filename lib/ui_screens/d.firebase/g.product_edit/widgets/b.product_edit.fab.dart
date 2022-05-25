@@ -12,7 +12,7 @@ class ProductEditFab extends StatelessWidget {
       child: const Icon(Icons.save),
       onPressed: () => RM.navigate.toCupertinoDialog(
         AlertDialogX(
-          title: 'Confirmation',
+          title: 'Confirxation',
           message: 'are you sure?',
           widgets: [
             CupertinoDialogAction(

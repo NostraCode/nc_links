@@ -5,13 +5,13 @@ final x1FcmCtrl = FcmCtrl();
 class FcmCtrl {
   FcmData get dt => x1FcmData.st;
 
-  init() => loggerx(FcmCtrl).v('init...');
+  init() => logxx.i(FcmCtrl, '...');
 
   void send() {
-    dt.rmInt.setState((s) => s + 1);
+    dt.rxInt.setState((s) => s + 1);
     callOnFcmApiSendPushNotifications(
-      title: 'fcm by api${dt.rmInt.st}',
-      body: 'its working fine${dt.rmInt.st}',
+      title: 'fcm by api${dt.rxInt.st}',
+      body: 'its working fine${dt.rxInt.st}',
       id: 'Order',
       type: '123',
       route: Routes.restList,
@@ -27,7 +27,7 @@ class FcmCtrl {
   }) async {
     const postUrl = 'https://fcm.googleapis.com/fcm/send';
     final data = {
-      "to": "/topics/${dt.rmTopic.st}",
+      "to": "/topics/${dt.rxTopic.st}",
       "notification": {
         "title": title,
         "body": body,
@@ -53,10 +53,10 @@ class FcmCtrl {
     );
 
     if (response.statusCode == 200) {
-      loggerx(FcmCtrl).wtf('test ok push CFM');
+      logxx.wtf(FcmCtrl, 'test ok push CFM');
       return true;
     } else {
-      loggerx(FcmCtrl).e('CFM error');
+      logxx.e(FcmCtrl, 'CFM error');
       return false;
     }
   }

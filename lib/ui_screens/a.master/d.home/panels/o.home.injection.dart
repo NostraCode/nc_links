@@ -36,7 +36,7 @@ class HomeInj extends StatelessWidget {
           fun: () => nav.to(Routes.injScroll),
         ),
         HomeTile(
-          title: 'Inj Form',
+          title: 'Inj Forx',
           subtitle: 'injected From & TextField',
           fun: () => nav.to(Routes.injForm),
         ),

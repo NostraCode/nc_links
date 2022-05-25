@@ -34,7 +34,7 @@ class FbFirestore {
             .orderBy('created_at', descending: true)
             .startAfter([lastCreateTime]).get())
         .catchError((e) {
-      loggerx(FbFirestore).e('error on create', e);
+      logxx.e(FbFirestore, 'error on read. ${e.toString()}');
     });
   }
 
@@ -45,7 +45,7 @@ class FbFirestore {
   }) async {
     return Future.value(instance.collection(colId).doc(docId).get())
         .catchError((e) {
-      loggerx(FbFirestore).e('error on create', e);
+      logxx.e(FbFirestore, 'error on read. ${e.toString()}');
     });
   }
 
@@ -60,7 +60,7 @@ class FbFirestore {
     try {
       await instance.collection(colId).doc(docId).set(data);
     } catch (e) {
-      loggerx(FbFirestore).e('error on create', e);
+      logxx.e(FbFirestore, 'error on create. ${e.toString()}');
     }
   }
 
@@ -73,7 +73,7 @@ class FbFirestore {
     try {
       await instance.collection(colId).doc(docId).update(data);
     } catch (e) {
-      loggerx(FbFirestore).e('error on update', e);
+      logxx.e(FbFirestore, 'error on update. ${e.toString()}');
     }
   }
 
@@ -85,7 +85,7 @@ class FbFirestore {
     try {
       await instance.collection(colId).doc(docId).delete();
     } catch (e) {
-      loggerx(FbFirestore).e('error on delete', e);
+      logxx.e(FbFirestore, 'error on delete. ${e.toString()}');
     }
   }
 }

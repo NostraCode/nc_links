@@ -2,7 +2,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:overlay_support/overlay_support.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
-import 'package:url_strategy/url_strategy.dart';
 
 import '../firebase_options.dart';
 import 'configs/_index.dart';
@@ -21,5 +20,3 @@ export 'utils/_index.dart';
 part 'app.dart';
 part 'inits.dart';
 part 'mocks.dart';
-// part 'navigator.dart';
-// part 'routes.dart';

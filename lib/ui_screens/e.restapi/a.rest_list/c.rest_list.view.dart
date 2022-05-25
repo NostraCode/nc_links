@@ -19,8 +19,8 @@ class RestListView extends StatelessWidget {
         child2: const RestListLoadmore(),
         builder: (child1, child2) {
           return OnBuilder.data(
-            listenTo: dt.rmUserList,
-            builder: (data) => dt.rmUserList.st.isNotEmpty ? child1 : child2,
+            listenTo: dt.rxUserList,
+            builder: (data) => dt.rxUserList.st.isNotEmpty ? child1 : child2,
           );
         },
       ),

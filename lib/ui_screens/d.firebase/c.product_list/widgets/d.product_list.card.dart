@@ -16,7 +16,7 @@ class ProductListCard extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       child: OnReactive(
         () => ListTile(
-          selected: product.id == dt.rmSelectedId.st,
+          selected: product.id == dt.rxSelectedId.st,
           dense: true,
           leading: Icon(
             Icons.image,

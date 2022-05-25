@@ -5,40 +5,40 @@ final x1UserServ = XuserServ();
 class XuserServ {
   UserData get dt => x1UserData.st;
 
-  init() => loggerx(XuserServ).v('init...');
+  init() => logxx.i(XuserServ, '...');
 
   // ----- ----- ----- ----- ----- ----- ----- ----- -----
 
   refreshUsers() {
-    dt.rmPage.refresh();
-    dt.rmIsEnd.refresh();
-    dt.rmSelectedId.refresh();
-    dt.rmUserList.refresh();
+    dt.rxPage.refresh();
+    dt.rxIsEnd.refresh();
+    dt.rxSelectedId.refresh();
+    dt.rxUserList.refresh();
     readUsers();
   }
 
   readUsers() {
-    dt.rmPage.setState((s) => s + 1);
-    dt.rmLoadMore.stateAsync = x1UserRepo.st.readUsers(dt.rmPage.st);
+    dt.rxPage.setState((s) => s + 1);
+    dt.rxLoadMore.stateAsync = x1UserRepo.st.readUsers(dt.rxPage.st);
   }
 
   addToList(List<Userx> moreUsers) {
-    dt.rmUserList.setState((s) => [...s, ...moreUsers]);
+    dt.rxUserList.setState((s) => [...s, ...moreUsers]);
     if (moreUsers.isEmpty) {
-      dt.rmIsEnd.setState((s) => true);
+      dt.rxIsEnd.setState((s) => true);
     }
   }
 
   deleteOneOfUsers() {
-    dt.rmUserList.setState((s) {
-      final i = s.indexWhere((item) => item.id == dt.rmSelectedId.st);
+    dt.rxUserList.setState((s) {
+      final i = s.indexWhere((item) => item.id == dt.rxSelectedId.st);
       return s.removeAt(i);
     });
   }
 
   updateOneOfUsers(Userx user) {
-    dt.rmUserList.setState((s) {
-      final i = s.indexWhere((item) => item.id == dt.rmSelectedId.st);
+    dt.rxUserList.setState((s) {
+      final i = s.indexWhere((item) => item.id == dt.rxSelectedId.st);
       return s[i] = user;
     });
   }
@@ -46,11 +46,12 @@ class XuserServ {
   // ----- ----- ----- ----- ----- ----- ----- ----- -----
 
   setSelectedId(int id) {
-    dt.rmSelectedId.setState((s) => id);
+    dt.rxSelectedId.refresh();
+    dt.rxSelectedId.setState((s) => id);
   }
 
   readUser() {
-    dt.rmUserFuture.stateAsync = x1UserRepo.st.readUser();
+    dt.rxUserFuture.stateAsync = x1UserRepo.st.readUser();
   }
 
   Future<void> createUser(Userx user) {
@@ -62,6 +63,6 @@ class XuserServ {
   }
 
   Future<void> deleteUser() {
-    return x1UserRepo.st.deleteUser(dt.rmSelectedId.st);
+    return x1UserRepo.st.deleteUser(dt.rxSelectedId.st);
   }
 }

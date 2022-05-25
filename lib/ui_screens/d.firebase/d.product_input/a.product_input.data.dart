@@ -2,7 +2,7 @@ part of '_index.dart';
 
 final x1ProductInputData = RM.inject<ProductInputData>(
   () => ProductInputData(),
-  debugPrintWhenNotifiedPreMessage: 'ProductInputData',
+  debugPrintWhenNotifiedPreMessage: '',
   sideEffects: SideEffects(initState: () => x1ProductInputCtrl.init()),
 );
 

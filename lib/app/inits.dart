@@ -1,7 +1,7 @@
 part of '_index.dart';
 
 Future<void> inits() async {
-  logger.wtf('inits start');
+  logx.wtf('inits start');
 
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -13,11 +13,7 @@ Future<void> inits() async {
     x1AuthServ.init();
   }
 
-  if (PlatformType.isWeb) {
-    setPathUrlStrategy();
-  }
-
   x1ConnServ.init();
 
-  logger.wtf('inits success');
+  logx.wtf('inits success');
 }

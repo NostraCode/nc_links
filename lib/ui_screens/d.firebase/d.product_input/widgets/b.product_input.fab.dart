@@ -13,7 +13,7 @@ class ProductInputFab extends ReactiveStatelessWidget {
         child: const Icon(Icons.upload),
         onPressed: () => RM.navigate.toCupertinoDialog(
           AlertDialogX(
-            title: 'Confirmation',
+            title: 'Confirxation',
             message: 'are you sure?',
             widgets: [
               CupertinoDialogAction(

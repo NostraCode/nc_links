@@ -25,13 +25,13 @@ class InjStateFuture extends StatelessWidget {
           const SizedBoxH(50),
           Center(
             child: OnReactive(
-              () => Text('${dt.rmIntList.st}'),
+              () => Text('${dt.rxIntList.st}'),
             ),
           ),
           const SizedBoxH(50),
           Center(
             child: OnBuilder<int>.orElse(
-              listenTo: dt.rmIntFuture,
+              listenTo: dt.rxIntFuture,
               onWaiting: () => const Text('loading...'),
               orElse: (data) => Text('$data'),
             ),

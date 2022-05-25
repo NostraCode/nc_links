@@ -5,7 +5,7 @@ final x1RestListCtrl = RestListCtrl();
 class RestListCtrl {
   RestListData get dt => x1RestListData.st;
 
-  init() => loggerx(RestListCtrl).v('init...');
+  init() => logxx.i(RestListCtrl, '...');
 
   Future<void> refresh() async {
     x1UserServ.refreshUsers();

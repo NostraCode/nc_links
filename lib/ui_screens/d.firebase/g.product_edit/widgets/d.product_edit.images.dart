@@ -17,13 +17,13 @@ class ProductEditImages extends StatelessWidget {
             textScaleFactor: 0.7,
           ),
           const SizedBoxH(10),
-          dt.rmProductBuffer.st.images.isEmpty
+          dt.rxProductBuffer.st.images.isEmpty
               ? const Text('image is empty')
               : Wrap(
                   runSpacing: 3,
                   spacing: 3,
                   children: [
-                    for (var item in dt.rmProductBuffer.st.images.entries)
+                    for (var item in dt.rxProductBuffer.st.images.entries)
                       ProductEditImage(map: item),
                   ],
                 ),
@@ -33,7 +33,7 @@ class ProductEditImages extends StatelessWidget {
             textScaleFactor: 0.7,
           ),
           const SizedBoxH(10),
-          for (var item in dt.rmProductBuffer.st.images.entries)
+          for (var item in dt.rxProductBuffer.st.images.entries)
             Padding(
               padding: const EdgeInsets.all(5.0),
               child: Text(item.toString(), textScaleFactor: 0.6),

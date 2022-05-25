@@ -2,7 +2,7 @@ part of '_index.dart';
 
 final x1ProductListData = RM.inject<ProductListData>(
   () => ProductListData(),
-  debugPrintWhenNotifiedPreMessage: 'ProductListData',
+  debugPrintWhenNotifiedPreMessage: '',
   sideEffects: SideEffects(initState: () => x1ProductListCtrl.init()),
 );
 
@@ -11,11 +11,11 @@ class ProductListData {
 
   final limit = x1ProductData.st.limit;
 
-  final rmIsEnd = x1ProductData.st.rmIsEnd;
+  final rxIsEnd = x1ProductData.st.rxIsEnd;
 
-  final rmSelectedId = x1ProductData.st.rmSelectedId;
+  final rxSelectedId = x1ProductData.st.rxSelectedId;
 
-  final rmProductList = x1ProductData.st.rmProductList;
+  final rxProductList = x1ProductData.st.rxProductList;
 
-  final rmLoadMore = x1ProductData.st.rmLoadMore;
+  final rxLoadMore = x1ProductData.st.rxLoadMore;
 }

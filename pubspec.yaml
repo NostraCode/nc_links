@@ -11,9 +11,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   #
   firebase_core: ^1.13.1
-  #
   firebase_app_check: ^0.0.6+7
-  firebase_analytics: ^9.1.2
+  firebase_analytics: ^9.1.8
   firebase_messaging: ^11.3.0
   #
   cloud_firestore: ^3.1.10
@@ -30,11 +29,15 @@ dependencies:
   firebase_storage_mocks: ^0.5.0
   fake_cloud_firestore: ^1.2.1
   #
-  states_rebuilder: ^6.0.0
-  google_fonts: ^2.3.1
-  # get: ^4.6.1
-  fluttertoast: ^8.0.9
+  states_rebuilder: "6.0.0"
   logger: ^1.1.0
+  device_preview: ^1.0.0
+  validators: ^3.0.0
+  dio: ^4.0.4
+  flutter_alice: ^1.0.2
+  overlay_support: ^1.2.1
+  google_fonts: ^2.3.1
+  fluttertoast: ^8.0.9
   connectivity_plus: ^2.2.1
   keyboard_dismisser: ^2.0.1
   english_words: ^4.0.0
@@ -43,11 +46,6 @@ dependencies:
   shimmer: ^2.0.0
   image_picker: ^0.8.4+11
   flutter_cache_manager: ^3.3.0
-  url_strategy: ^0.2.0
-  validators: ^3.0.0
-  dio: ^4.0.4
-  flutter_alice: ^1.0.2
-  overlay_support: ^1.2.1
 
   # pkg_master:
   #   path: ./packages/pkg_master

@@ -20,7 +20,7 @@ class InjTabView extends StatelessWidget {
           children: [
             OnTabPageViewBuilder(
               builder: (index) => TabBar(
-                controller: dt.rmTab.tabController,
+                controller: dt.rxTab.tabController,
                 // isScrollable: true,
                 indicatorColor: Colors.transparent,
                 unselectedLabelStyle:
@@ -46,7 +46,7 @@ class InjTabView extends StatelessWidget {
       ),
       body: OnTabPageViewBuilder(
         builder: (index) => PageView(
-          controller: dt.rmTab.pageController,
+          controller: dt.rxTab.pageController,
           children: const [
             InjTabCharlie(),
             InjTabDelta(),

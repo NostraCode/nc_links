@@ -5,7 +5,7 @@ final x1ProductInputCtrl = ProductInputCtrl();
 class ProductInputCtrl {
   ProductInputData get dt => x1ProductInputData.st;
 
-  init() => loggerx(ProductInputCtrl).v('init...');
+  init() => logxx.i(ProductInputCtrl, '...');
 
   // * animated list ----- ----- ----- ----- ----- ----- -----
 

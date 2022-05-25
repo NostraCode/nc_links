@@ -29,7 +29,7 @@ class RegisView extends StatelessWidget {
                   child: Container(
                     constraints: const BoxConstraints(maxWidth: 300),
                     child: OnFormBuilder(
-                        listenTo: dt.rmForm,
+                        listenTo: dt.rxForx,
                         builder: () {
                           return Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -58,8 +58,8 @@ class RegisView extends StatelessWidget {
         ),
       ),
       // body: KeyboardDismisser(
-      //   child: Form(
-      //     key: dt.formKey,
+      //   child: Forx(
+      //     key: dt.forxKey,
       //     child: FocusScope(
       //       node: dt.focusScopeNode,
       //       child: Center(
@@ -77,9 +77,9 @@ class RegisView extends StatelessWidget {
       //                     mainAxisAlignment: MainAxisAlignment.center,
       //                     crossAxisAlignment: CrossAxisAlignment.center,
       //                     children: const [
-      //                       RegisFormEmail(),
-      //                       RegisFormPwdA(),
-      //                       RegisFormPwdB(),
+      //                       RegisForxEmail(),
+      //                       RegisForxPwdA(),
+      //                       RegisForxPwdB(),
       //                       SizedBoxH(20),
       //                       RegisBtnSubmit(),
       //                       SizedBoxH(35),

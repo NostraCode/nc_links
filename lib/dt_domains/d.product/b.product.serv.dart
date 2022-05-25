@@ -5,23 +5,23 @@ final x1ProductServ = ProductServ();
 class ProductServ {
   ProductData get dt => x1ProductData.st;
 
-  init() => loggerx(ProductServ).v('init...');
+  init() => logxx.i(ProductServ, '...');
 
   // ----- ----- ----- ----- ----- ----- ----- ----- -----
 
   // setAppCheck() async {
   //   await dt.appCheck.activate();
-  //   loggerx(ProductxService).wtf('activated!!');
+  //   logxx.(ProductxService).wtf('activated!!');
   //   await dt.appCheck.setTokenAutoRefreshEnabled(true);
   //   final token = await dt.appCheck.getToken(true);
-  //   loggerx(ProductxService).wtf('your token: $token');
+  //   logxx.(ProductxService).wtf('your token: $token');
   // }
 
   // ----- ----- ----- ----- ----- ----- ----- ----- -----
 
   initProduct(String id) {
-    dt.rmSelectedId.refresh();
-    dt.rmSelectedId.st = id;
+    dt.rxSelectedId.refresh();
+    dt.rxSelectedId.st = id;
   }
 
   Future<void> createProduct(Productx product) {
@@ -29,7 +29,7 @@ class ProductServ {
   }
 
   readProduct() {
-    dt.rmProductFuture.stateAsync = x1ProductRepo.st.readProduct();
+    dt.rxProductFuture.stateAsync = x1ProductRepo.st.readProduct();
   }
 
   Future<void> updateProduct(Productx product) {
@@ -41,46 +41,46 @@ class ProductServ {
   }
 
   listenProduct() {
-    dt.rmProductStream.initializeState();
-    dt.rmProductStream.subscription = x1ProductRepo.st
+    dt.rxProductStream.initializeState();
+    dt.rxProductStream.subscription = x1ProductRepo.st
         .streamProduct()
-        .listen((event) => dt.rmProductStream.st = event);
+        .listen((event) => dt.rxProductStream.st = event);
   }
 
   // ----- ----- ----- ----- ----- ----- ----- ----- -----
 
   initProducts() {
-    dt.rmIsFirstEvent.st = true;
+    dt.rxIsFirstEvent.st = true;
     listenProducts();
     refreshProducts();
   }
 
   refreshProducts() {
-    dt.rmIsEnd.st = false;
-    dt.rmProductList.st = [];
-    dt.rmSelectedId.st = '';
+    dt.rxIsEnd.st = false;
+    dt.rxProductList.st = [];
+    dt.rxSelectedId.st = '';
     readProducts();
   }
 
   readProducts() {
-    dt.rmLoadMore.stateAsync = x1ProductRepo.st.readProducts();
+    dt.rxLoadMore.stateAsync = x1ProductRepo.st.readProducts();
   }
 
   addToList(List<Productx> moreProducts) {
-    dt.rmProductList.st = [...dt.rmProductList.st, ...moreProducts];
+    dt.rxProductList.st = [...dt.rxProductList.st, ...moreProducts];
     if (moreProducts.length < dt.limit) {
-      dt.rmIsEnd.st = true;
+      dt.rxIsEnd.st = true;
     }
   }
 
   listenProducts() {
-    dt.rmProductList.subscription = x1ProductRepo.st.streamProductsX().listen(
+    dt.rxProductList.subscription = x1ProductRepo.st.streamProductsX().listen(
       (event) {
         if (event.isNotEmpty) {
-          if (dt.rmIsFirstEvent.st) {
-            dt.rmIsFirstEvent.st = false;
+          if (dt.rxIsFirstEvent.st) {
+            dt.rxIsFirstEvent.st = false;
           } else {
-            dt.rmProductList.st = newListProducts(event);
+            dt.rxProductList.st = newListProducts(event);
           }
         }
       },
@@ -88,20 +88,20 @@ class ProductServ {
   }
 
   List<Productx> newListProducts(List<Map<String, Productx>> event) {
-    var newList = [...dt.rmProductList.st];
+    var newList = [...dt.rxProductList.st];
     for (var map in event) {
       final changeType = map.entries.first.key;
       final product = map.entries.first.value;
       final i = newList.indexWhere((e) => e.id == product.id);
 
       if (changeType == 'modified') {
-        loggerx(ProductServ).i('modified => ${product.name}');
+        logxx.i(ProductServ, 'modified => ${product.name}');
         newList[i] = product;
       } else if (changeType == 'removed') {
-        loggerx(ProductServ).i('removed => ${product.name}');
+        logxx.i(ProductServ, 'removed => ${product.name}');
         newList.removeAt(i);
       } else if (changeType == 'added') {
-        loggerx(ProductServ).i('added => ${product.name}');
+        logxx.i(ProductServ, 'added => ${product.name}');
         newList.insert(0, product);
       }
     }

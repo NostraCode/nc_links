@@ -29,7 +29,7 @@ class LoginView extends StatelessWidget {
                   child: Container(
                     constraints: const BoxConstraints(maxWidth: 300),
                     child: OnFormBuilder(
-                        listenTo: dt.rmForm,
+                        listenTo: dt.rxForx,
                         builder: () {
                           return Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -56,8 +56,8 @@ class LoginView extends StatelessWidget {
             ),
           ),
         ),
-        // child: Form(
-        //   key: dt.formKey,
+        // child: Forx(
+        //   key: dt.forxKey,
         //   child: FocusScope(
         //     node: dt.focusScopeNode,
         //     child: Center(
@@ -75,8 +75,8 @@ class LoginView extends StatelessWidget {
         //                   mainAxisAlignment: MainAxisAlignment.center,
         //                   crossAxisAlignment: CrossAxisAlignment.center,
         //                   children: const [
-        //                     LoginFormEmail(),
-        //                     LoginFormPwd(),
+        //                     LoginForxEmail(),
+        //                     LoginForxPwd(),
         //                     SizedBoxH(20),
         //                     LoginBtnSubmit(),
         //                     SizedBoxH(35),

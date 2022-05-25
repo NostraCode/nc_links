@@ -2,7 +2,7 @@ part of '_index.dart';
 
 final x1RestInputData = RM.inject<RestInputData>(
   () => RestInputData(),
-  debugPrintWhenNotifiedPreMessage: 'RestInputData',
+  debugPrintWhenNotifiedPreMessage: '',
   sideEffects: SideEffects(initState: () => x1RestInputCtrl.init()),
 );
 
@@ -11,26 +11,26 @@ class RestInputData {
 
   final focusScopeNode = FocusScopeNode();
 
-  final rmForm = RM.injectForm(
+  final rxForx = RM.injectForm(
     submit: () async {
       await x1RestInputCtrl.createUser();
     },
   );
 
-  final rmName = RM.injectTextEditing(
+  final rxName = RM.injectTextEditing(
     validators: [Validate.isNotEmpty, Validate.minChars],
   );
 
-  final rmEmail = RM.injectTextEditing(
+  final rxEmail = RM.injectTextEditing(
     validators: [Validate.isNotEmpty, Validate.isEmail],
   );
 
-  final rmGender = RM.injectFormField<String>(
+  final rxGender = RM.injectFormField<String>(
     'female',
     validators: [Validate.isNotEmpty],
   );
 
-  final rmStatus = RM.injectFormField<String>(
+  final rxStatus = RM.injectFormField<String>(
     'inactive',
     validators: [Validate.isNotEmpty],
   );

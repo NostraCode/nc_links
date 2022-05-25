@@ -2,7 +2,7 @@ part of '_index.dart';
 
 final x1FbFirestoreData = RM.inject<FbFirestoreData>(
   () => FbFirestoreData(),
-  debugPrintWhenNotifiedPreMessage: 'FbFirestoreData',
+  debugPrintWhenNotifiedPreMessage: '',
   sideEffects: SideEffects(
     initState: () => x1FbFirestoreCtrl.init(),
   ),
@@ -11,9 +11,9 @@ final x1FbFirestoreData = RM.inject<FbFirestoreData>(
 class FbFirestoreData {
   final title = 'FbFirestore';
 
-  final rmSelectedId = x1ProductData.st.rmSelectedId;
+  final rxSelectedId = x1ProductData.st.rxSelectedId;
 
-  final rmProductFuture = x1ProductData.st.rmProductFuture;
+  final rxProductFuture = x1ProductData.st.rxProductFuture;
 
-  final rmProductStream = x1ProductData.st.rmProductStream;
+  final rxProductStream = x1ProductData.st.rxProductStream;
 }

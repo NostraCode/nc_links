@@ -2,13 +2,13 @@ part of '_index.dart';
 
 final x1FcmData = RM.inject<FcmData>(
   () => FcmData(),
-  debugPrintWhenNotifiedPreMessage: 'FcmData',
+  debugPrintWhenNotifiedPreMessage: '',
 );
 
 class FcmData {
   late final FirebaseMessaging messaging;
 
-  final rmTotalNotifications = 0.inj();
+  final rxTotalNotifications = 0.inj();
 
-  final rmPushNotification = RM.inject<PushNotification?>(() => null);
+  final rxPushNotification = RM.inject<PushNotification?>(() => null);
 }

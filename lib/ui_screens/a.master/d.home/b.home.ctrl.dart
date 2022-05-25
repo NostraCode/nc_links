@@ -5,7 +5,7 @@ final x1HomexCtrl = HomeCtrl();
 class HomeCtrl {
   HomeData get dt => x1HomeData.st;
 
-  init() => loggerx(HomeCtrl).v('init...');
+  init() => logxx.i(HomeCtrl, '...');
 
   togglePanel(int index) {
     if (!dt.listOfStatus[index].st) {
@@ -16,14 +16,13 @@ class HomeCtrl {
     dt.listOfStatus[index].toggle();
   }
 
-  taptestLogger() {
-    logger.e('message on level error');
-    logger.v('message on level verbose');
-    logger.w('message on level warning');
-    logger.i('message on level info');
-    logger.d('message on level debug');
-    logger.wtf('message on level wtf');
-    loggerx(HomeCtrl).v('logger with classname');
+  taptestLogx() {
+    logx.i('message of info');
+    logx.s('message of success');
+    logx.w('message of warning');
+    logx.e('message of error');
+    logx.wtf('message of wtf');
+    logxx.wtf(HomeCtrl, 'logxx with classname (double x)');
   }
 
   tapAlice() {

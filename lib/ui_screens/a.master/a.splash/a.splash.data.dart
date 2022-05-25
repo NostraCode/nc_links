@@ -2,7 +2,7 @@ part of '_index.dart';
 
 final x1SplashData = RM.inject<SplashData>(
   () => SplashData(),
-  debugPrintWhenNotifiedPreMessage: 'SplashxData',
+  debugPrintWhenNotifiedPreMessage: '',
   sideEffects: SideEffects(initState: () => x1SplashCtrl.init()),
 );
 
@@ -11,5 +11,5 @@ class SplashData {
 
   final pathImage = 'assets/icons/splash.png';
 
-  final rmLoading = 'loading...'.inj();
+  final rxLoading = 'loading...'.inj();
 }

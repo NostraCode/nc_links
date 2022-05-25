@@ -21,7 +21,7 @@ class RestInputView extends StatelessWidget {
         ],
         child: Center(
           child: OnFormBuilder(
-            listenTo: dt.rmForm,
+            listenTo: dt.rxForx,
             builder: () {
               return FocusScope(
                 node: dt.focusScopeNode,
@@ -35,10 +35,10 @@ class RestInputView extends StatelessWidget {
                     const SizedBoxH(20),
                     const RestInputEcho(),
                     const SizedBoxH(10),
-                    if (dt.rmForm.isDirty)
+                    if (dt.rxForx.isDirty)
                       const Center(
                         child:
-                            Text('The form is changed but not submitted yet!'),
+                            Text('The forx is changed but not submitted yet!'),
                       )
                   ],
                 ),

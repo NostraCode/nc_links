@@ -6,7 +6,7 @@ class SnakeCtrl {
   SnakeData get dt => x1SnakeData.st;
 
   init() {
-    loggerx(SnakeCtrl).v('init...');
+    logxx.i(SnakeCtrl, '...');
     initGrid();
     randFood();
     setSnake();

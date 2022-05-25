@@ -5,7 +5,7 @@ final x1InjThemeCtrl = InjThemeCtrl();
 class InjThemeCtrl {
   InjThemeData get dt => x1InjThemeData.st;
 
-  init() => loggerx(InjThemeCtrl).v('init...');
+  init() => logxx.i(InjThemeCtrl, '...');
 
-  action() => dt.rmInt.st = dt.rmInt.st + 1;
+  action() => dt.rxInt.st = dt.rxInt.st + 1;
 }

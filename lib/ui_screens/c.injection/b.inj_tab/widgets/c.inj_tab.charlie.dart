@@ -17,7 +17,7 @@ class InjTabCharlie extends StatelessWidget {
             const Text('Charlie'),
             ElevatedButton(
               child: const Text('next'),
-              onPressed: () => dt.rmTab.nextView(),
+              onPressed: () => dt.rxTab.nextView(),
             ),
           ],
         ),

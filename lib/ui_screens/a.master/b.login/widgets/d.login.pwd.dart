@@ -9,15 +9,15 @@ class LoginPwd extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OnFormBuilder(
-      listenTo: dt.rmForm,
+      listenTo: dt.rxForx,
       builder: () {
         return TextField(
-          controller: dt.rmPwd.controller,
-          focusNode: dt.rmPwd.focusNode,
-          obscureText: dt.rmIsObscuredPwd.st,
-          onEditingComplete: () => dt.rmPwd.focusNode.unfocus(),
+          controller: dt.rxPwd.controller,
+          focusNode: dt.rxPwd.focusNode,
+          obscureText: dt.rxIsObscuredPwd.st,
+          onEditingComplete: () => dt.rxPwd.focusNode.unfocus(),
           decoration: InputDecoration(
-            errorText: dt.rmPwd.error,
+            errorText: dt.rxPwd.error,
             labelText: 'Password',
             hintText: 'type your password',
             suffixIcon: IconButton(

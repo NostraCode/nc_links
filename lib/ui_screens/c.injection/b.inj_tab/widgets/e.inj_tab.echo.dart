@@ -17,11 +17,11 @@ class InjTabEcho extends StatelessWidget {
             const Text('Echo'),
             ElevatedButton(
               child: const Text('previouse'),
-              onPressed: () => dt.rmTab.previousView(),
+              onPressed: () => dt.rxTab.previousView(),
             ),
             ElevatedButton(
               child: const Text('first'),
-              onPressed: () => dt.rmTab.animateTo(0),
+              onPressed: () => dt.rxTab.animateTo(0),
             ),
           ],
         ),

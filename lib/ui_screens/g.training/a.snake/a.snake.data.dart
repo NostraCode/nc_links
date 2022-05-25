@@ -2,7 +2,7 @@ part of '_index.dart';
 
 final x1SnakeData = RM.inject<SnakeData>(
   () => SnakeData(),
-  debugPrintWhenNotifiedPreMessage: 'SnakeData',
+  debugPrintWhenNotifiedPreMessage: '',
   sideEffects: SideEffects(initState: () => x1SnakeCtrl.init()),
 );
 

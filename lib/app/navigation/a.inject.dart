@@ -5,4 +5,5 @@ final nav = RM.injectNavigator(
   routes: RouteMap.data,
   onNavigate: (data) => OnNavigate.action(data),
   onNavigateBack: (data) => OnNavigateBack.action(data),
-);
+  // debugPrintWhenRouted: true,
+)..routerDelegate.addListener(RouteListeners.analytics);

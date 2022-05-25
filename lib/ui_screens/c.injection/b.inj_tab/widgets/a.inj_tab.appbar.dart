@@ -14,7 +14,7 @@ class InjTabAppbar extends StatelessWidget {
         preferredSize: const Size(0, 40),
         child: OnTabPageViewBuilder(
           builder: (index) => TabBar(
-            controller: dt.rmTab.tabController,
+            controller: dt.rxTab.tabController,
             isScrollable: true,
             tabs: const [
               Tab(child: Text('charlie')),

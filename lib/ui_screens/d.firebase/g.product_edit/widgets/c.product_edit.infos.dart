@@ -13,11 +13,11 @@ class ProductEditInfos extends StatelessWidget {
         const ProductEditReset(),
         const SizedBoxH(10),
         OnReactive(
-          () => Text(dt.rmProductBuffer.st.id),
+          () => Text(dt.rxProductBuffer.st.id),
         ),
         const SizedBoxH(10),
         OnReactive(
-          () => Text(dt.rmProductBuffer.st.name),
+          () => Text(dt.rxProductBuffer.st.name),
         ),
         const SizedBoxH(10),
         Row(
@@ -32,7 +32,7 @@ class ProductEditInfos extends StatelessWidget {
               children: [
                 const Opacity(opacity: 0.3, child: Text('stock')),
                 OnReactive(
-                  () => Text('${dt.rmProductBuffer.st.total}'),
+                  () => Text('${dt.rxProductBuffer.st.total}'),
                 ),
               ],
             ),

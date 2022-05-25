@@ -2,18 +2,18 @@ part of '_index.dart';
 
 final x1RestListData = RM.inject<RestListData>(
   () => RestListData(),
-  debugPrintWhenNotifiedPreMessage: 'RestListData',
+  debugPrintWhenNotifiedPreMessage: '',
   sideEffects: SideEffects(initState: () => x1RestListCtrl.init()),
 );
 
 class RestListData {
   final title = 'RestList';
 
-  final rmIsEnd = x1UserData.st.rmIsEnd;
+  final rxIsEnd = x1UserData.st.rxIsEnd;
 
-  final rmSelectedId = x1UserData.st.rmSelectedId;
+  final rxSelectedId = x1UserData.st.rxSelectedId;
 
-  final rmUserList = x1UserData.st.rmUserList;
+  final rxUserList = x1UserData.st.rxUserList;
 
-  final rmLoadMore = x1UserData.st.rmLoadMore;
+  final rxLoadMore = x1UserData.st.rxLoadMore;
 }
