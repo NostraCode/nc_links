@@ -10,7 +10,7 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
   #
-  firebase_core: ^1.13.1
+  firebase_core: "1.13.1"
   firebase_app_check: ^0.0.6+7
   firebase_analytics: ^9.1.8
   firebase_messaging: ^11.3.0
@@ -30,6 +30,8 @@ dependencies:
   fake_cloud_firestore: ^1.2.1
   #
   states_rebuilder: "6.0.0"
+  hive_flutter: ^1.1.0
+  shared_preferences: ^2.0.15
   url_strategy: ^0.2.0
   logger: ^1.1.0
   device_preview: ^1.0.0

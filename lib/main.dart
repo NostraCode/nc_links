@@ -7,11 +7,12 @@ import 'app/_index.dart';
 void main() async {
   // Mocks.inject();
   RM.env = Flavor.dev;
+
   await inits();
   runApp(
     DevicePreview(
-      // enabled: PlatformType.isWeb,
-      enabled: false,
+      enabled: PlatformType.isWeb,
+      storage: DevicePreviewStorage.preferences(),
       builder: (context) => const App(), // Wrap your app
     ),
   );

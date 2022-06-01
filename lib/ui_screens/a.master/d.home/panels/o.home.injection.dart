@@ -16,6 +16,11 @@ class HomeInj extends StatelessWidget {
           fun: () => nav.to(Routes.injState),
         ),
         HomeTile(
+          title: 'Inj Persist',
+          subtitle: 'injected persistance state',
+          fun: () => nav.to(Routes.injPersist),
+        ),
+        HomeTile(
           title: 'Inj Tab PageView',
           subtitle: 'injected tab controller',
           fun: () => nav.to(Routes.injTab),
@@ -36,7 +41,7 @@ class HomeInj extends StatelessWidget {
           fun: () => nav.to(Routes.injScroll),
         ),
         HomeTile(
-          title: 'Inj Forx',
+          title: 'Inj Form',
           subtitle: 'injected From & TextField',
           fun: () => nav.to(Routes.injForm),
         ),

@@ -4,6 +4,7 @@ class Routes {
   Routes._();
 
   // static const root = '/';
+  static const cobaDoang = '/coba_doang';
   //* master -- ----- ----- ----- ----- -----
   static const home = '/';
   static const splash = '/splash';
@@ -22,6 +23,7 @@ class Routes {
   static const injScroll = '/inj_scroll';
   static const injForm = '/inj_form';
   static const injI18n = '/inj_i18n';
+  static const injPersist = '/inj_persist';
   //* firebase ------ ----- ----- ----- -----
   static const fbAuth = '/fb_auth';
   static const fbFirestore = '/fb_firestore';

@@ -8,7 +8,7 @@ class App extends TopStatelessWidget {
     return OverlaySupport(
       child: MaterialApp.router(
         title: config.st.appName,
-        debugShowCheckedModeBanner: false,
+        debugShowCheckedModeBanner: true,
         // ----- ----- ----- ----- -----
         theme: themeRM.lightTheme,
         darkTheme: themeRM.darkTheme,
@@ -22,7 +22,7 @@ class App extends TopStatelessWidget {
         routerDelegate: nav.routerDelegate,
         //* device preview settings ----
         useInheritedMediaQuery: true,
-        builder: DevicePreview.appBuilder,
+        // builder: DevicePreview.appBuilder,
         // locale: DevicePreview.locale(context),
       ),
     );

@@ -38,11 +38,7 @@
     "*fe_master.*": true,
     "*firebase": true,
     "*firebase.*": true,
-    "*ios": true,
-    "*ios.*": true,
     "*lib.*": true,
-    "*macos": true,
-    "*macos.*": true,
     "*test": true,
     "*test.*": true,
     "*web": true,
@@ -50,6 +46,8 @@
     "*windows": true,
     "*windows.*": true,
     "android": true,
-    ".fttemplates": true
+    ".fttemplates": true,
+    "ios": true,
+    "macos": true
   }
 }

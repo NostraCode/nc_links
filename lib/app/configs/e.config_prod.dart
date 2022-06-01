@@ -5,4 +5,5 @@ part of '_index.dart';
 class ConfigProd implements IConfig {
   String get apiHost => 'example.com';
   String get appName => 'FeMaster';
+  IPersistStore get store => StoreSharedPreferences();
 }

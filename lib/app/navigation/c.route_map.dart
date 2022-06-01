@@ -22,6 +22,7 @@ class RouteMap {
     Routes.injScroll: (RouteData data) => const InjScrollView(),
     Routes.injForm: (RouteData data) => const InjFormView(),
     Routes.injI18n: (RouteData data) => const InjI18nView(),
+    Routes.injPersist: (RouteData data) => const InjPersistView(),
     //* firebase ------ ----- ----- ----- -----
     Routes.fbAuth: (RouteData data) => const FbAuthView(),
     Routes.fbFirestore: (RouteData data) => const FbFirestoreView(),

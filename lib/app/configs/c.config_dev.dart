@@ -5,4 +5,5 @@ part of '_index.dart';
 class ConfigDev implements IConfig {
   String get apiHost => 'https://gorest.co.in';
   String get appName => 'DEV_FeMaster';
+  IPersistStore get store => StoreFake();
 }

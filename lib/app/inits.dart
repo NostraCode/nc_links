@@ -5,6 +5,9 @@ Future<void> inits() async {
 
   WidgetsFlutterBinding.ensureInitialized();
 
+  // await RM.storageInitializer(localStore.state);
+  await RM.storageInitializer(config.st.store);
+
   if (!PlatformType.isWindows) {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
