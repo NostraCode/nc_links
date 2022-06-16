@@ -5,7 +5,7 @@ final x1CobaTigaCtrl = CobaTigaCtrl();
 class CobaTigaCtrl {
   CobaTigaData get dt => x1CobaTigaData.st;
 
-  init() => loggerx(CobaTigaCtrl).v('init...');
+  init() => logxx.i(CobaTigaCtrl, '...');
 
-  action() => dt.rmInt.setState((s) => s + 1);
+  action() => dt.rxInt.setState((s) => s + 1);
 }

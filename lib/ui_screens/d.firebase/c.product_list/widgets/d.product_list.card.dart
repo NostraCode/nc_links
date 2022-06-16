@@ -1,7 +1,7 @@
 part of '../_index.dart';
 
 class ProductListCard extends StatelessWidget {
-  final Productx product;
+  final Product product;
   const ProductListCard({
     Key? key,
     required this.product,

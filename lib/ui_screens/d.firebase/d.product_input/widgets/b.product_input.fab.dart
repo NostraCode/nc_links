@@ -24,9 +24,9 @@ class ProductInputFab extends ReactiveStatelessWidget {
                 onPressed: () => RM.navigate.back(),
               ),
               CupertinoDialogAction(
-                child: const Text("OK"),
                 isDefaultAction: true,
                 onPressed: () => ct.create(),
+                child: const Text("OK"),
               ),
             ],
           ),

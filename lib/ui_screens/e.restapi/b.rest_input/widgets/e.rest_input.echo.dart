@@ -10,7 +10,7 @@ class RestInputEcho extends StatelessWidget {
   Widget build(BuildContext context) {
     return OnReactive(
       () => Center(
-        child: dt.rxForx.isWaiting
+        child: dt.rxForm.isWaiting
             ? const CircularProgressIndicator()
             : ElevatedButton(
                 child: const Text("submit"),

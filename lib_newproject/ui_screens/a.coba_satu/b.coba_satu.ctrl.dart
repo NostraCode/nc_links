@@ -5,7 +5,7 @@ final x1CobaSatuCtrl = CobaSatuCtrl();
 class CobaSatuCtrl {
   CobaSatuData get dt => x1CobaSatuData.st;
 
-  init() => loggerx(CobaSatuCtrl).v('init...');
+  init() => logxx.i(CobaSatuCtrl, '...');
 
-  action() => dt.rmInt.setState((s) => s + 1);
+  action() => dt.rxInt.setState((s) => s + 1);
 }

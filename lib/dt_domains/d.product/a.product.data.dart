@@ -18,9 +18,9 @@ class ProductData {
 
   late StreamSubscription subsItem;
 
-  final rxProductFuture = RM.injectFuture<Productx?>(() => Future.value(null));
+  final rxProductFuture = RM.injectFuture<Product?>(() => Future.value(null));
 
-  final rxProductStream = RM.injectStream<Productx?>(() => Stream.value(null));
+  final rxProductStream = RM.injectStream<Product?>(() => Stream.value(null));
 
   final rxSelectedId = RM.inject<String>(
     () => '',
@@ -42,15 +42,15 @@ class ProductData {
 
   final rxIsEnd = false.inj();
 
-  final rxProductList = RM.inject<List<Productx>>(() => []);
+  final rxProductList = RM.inject<List<Product>>(() => []);
 
-  final rxLoadMore = RM.injectFuture<List<Productx>>(
+  final rxLoadMore = RM.injectFuture<List<Product>>(
     () => Future.value([]),
     sideEffects: SideEffects(
       initState: () => x1ProductServ.initProducts(),
       onSetState: (snap) {
         if (snap.hasData) {
-          final moreProducts = snap.state.whereType<Productx>().toList();
+          final moreProducts = snap.state.whereType<Product>().toList();
           x1ProductServ.addToList(moreProducts);
         }
       },

@@ -26,13 +26,13 @@ class RestDetailAppbar extends StatelessWidget {
                   onPressed: () => RM.navigate.back(),
                 ),
                 CupertinoDialogAction(
-                  child: const Text("DELETE"),
                   isDestructiveAction: true,
                   isDefaultAction: true,
                   onPressed: () {
                     RM.navigate.back();
                     ct.delete();
                   },
+                  child: const Text("DELETE"),
                 ),
               ],
             ),

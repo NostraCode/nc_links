@@ -1,7 +1,7 @@
 part of '../_index.dart';
 
 class ProductDetailImages extends StatelessWidget {
-  final Productx product;
+  final Product product;
   const ProductDetailImages({
     required this.product,
     Key? key,

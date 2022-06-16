@@ -13,16 +13,16 @@ class PopupEcho extends ReactiveStatelessWidget {
       message: const Text('Message'),
       actions: <CupertinoActionSheetAction>[
         CupertinoActionSheetAction(
-          child: const Text('Action One'),
           onPressed: () {},
           isDefaultAction: true,
+          child: const Text('Action One'),
           // isDestructiveAction: true,
         ),
         CupertinoActionSheetAction(
-          child: const Text('Action Two'),
           onPressed: () {},
           // isDefaultAction: true,
           isDestructiveAction: true,
+          child: const Text('Action Two'),
         ),
       ],
       cancelButton: CupertinoActionSheetAction(

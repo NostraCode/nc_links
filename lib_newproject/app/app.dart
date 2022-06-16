@@ -5,22 +5,18 @@ class App extends TopStatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OverlaySupport(
-      child: MaterialApp.router(
-        title: config.st.appName,
-        debugShowCheckedModeBanner: false,
-        // ----- ----- ----- ----- -----
-        theme: themeRM.lightTheme,
-        darkTheme: themeRM.darkTheme,
-        themeMode: themeRM.themeMode,
-        // ----- ----- ----- ----- -----
-        locale: i18nRM.locale,
-        localeResolutionCallback: i18nRM.localeResolutionCallback,
-        localizationsDelegates: i18nRM.localizationsDelegates,
-        // ----- ----- ----- ----- -----
-        routeInformationParser: nav.routeInformationParser,
-        routerDelegate: nav.routerDelegate,
-      ),
+    // return const MaterialApp(
+    //   debugShowCheckedModeBanner: false,
+    //   home: CobaSatuView(),
+    // );
+    return MaterialApp(
+      useInheritedMediaQuery: true,
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
+      themeMode: ThemeMode.dark,
+      home: const CobaSatuView(),
     );
   }
 }

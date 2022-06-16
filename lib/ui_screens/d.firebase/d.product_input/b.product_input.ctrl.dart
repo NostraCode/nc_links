@@ -12,7 +12,7 @@ class ProductInputCtrl {
   clearProducts() => dt.products.st = [];
 
   addAt(int index) {
-    dt.products.st = [...dt.products.st]..insert(index, Productx.random());
+    dt.products.st = [...dt.products.st]..insert(index, Product.random());
     animateIn(index);
   }
 
@@ -41,7 +41,7 @@ class ProductInputCtrl {
     dt.listKey.currentState?.insertItem(index);
   }
 
-  animateOut(int animIndex, Productx product) {
+  animateOut(int animIndex, Product product) {
     dt.listKey.currentState?.removeItem(
       animIndex,
       (context, animation) => ProductInputTile(

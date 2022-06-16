@@ -8,19 +8,24 @@ class RestDetailCtrl {
   init() => logxx.i(RestDetailCtrl, '...');
 
   Future<void> refresh() async {
-    x1UserServ.readUser();
+    try {
+      x1UserServ.readUser();
+    } catch (obj) {
+      Fun.handleException(obj);
+    }
   }
 
   Future<void> delete() async {
-    RM.navigate.toDialog(
-      const Center(child: CircularProgressIndicator()),
-      barrierDismissible: false,
-      barrierColor: Colors.black54,
-    );
-    await x1UserServ.deleteUser();
-    x1UserServ.deleteOneOfUsers();
-    RM.navigate.back();
-    await Future.delayed(400.milliseconds);
-    RM.navigate.back();
+    try {
+      Fun.showOverlayLoading();
+      await x1UserServ.deleteUser();
+      x1UserServ.deleteOneOfUsers();
+      RM.navigate.back();
+      await Future.delayed(400.milliseconds);
+      RM.navigate.back();
+    } catch (obj) {
+      RM.navigate.back();
+      Fun.handleException(obj);
+    }
   }
 }

@@ -14,7 +14,7 @@ class ProductListLoadmore extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            OnBuilder<List<Productx>>.all(
+            OnBuilder<List<Product>>.all(
               listenTo: dt.rxLoadMore,
               onWaiting: () => const CircularProgressIndicator(),
               onError: (_, __) => const Text('error'),

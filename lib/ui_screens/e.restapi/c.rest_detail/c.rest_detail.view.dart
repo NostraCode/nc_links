@@ -15,7 +15,7 @@ class RestDetailView extends StatelessWidget {
       ),
       floatingActionButton: const RestDetailFab(),
       body: Center(
-        child: OnBuilder<Userx?>.all(
+        child: OnBuilder<User?>.all(
           listenTo: dt.rxUserFuture,
           onWaiting: () => const CircularProgressIndicator(),
           onError: (e, s) => const Text('error'),

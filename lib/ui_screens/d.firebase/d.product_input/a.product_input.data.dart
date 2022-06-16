@@ -13,5 +13,5 @@ class ProductInputData {
 
   final listKey = GlobalKey<AnimatedListState>();
 
-  final products = RM.inject<List<Productx>>(() => []);
+  final products = RM.inject<List<Product>>(() => []);
 }

@@ -11,14 +11,14 @@ class HomeRestapi extends StatelessWidget {
     return Column(
       children: [
         HomeTile(
-          title: 'Alice',
-          subtitle: 'show alice inspector',
-          fun: () => ct.tapAlice(),
-        ),
-        HomeTile(
           title: 'Rest List',
           subtitle: 'rest api list',
           fun: () => nav.to(Routes.restList),
+        ),
+        HomeTile(
+          title: 'Dio Log',
+          subtitle: 'show dio log (http inspector)',
+          fun: () => ct.showDioLog(context),
         ),
       ],
     );

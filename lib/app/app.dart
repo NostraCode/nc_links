@@ -5,7 +5,12 @@ class App extends TopStatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OverlaySupport(
+    return OverlaySupport.global(
+      toastTheme: ToastThemeData(
+        background: Colors.grey.shade200,
+        textColor: Colors.grey.shade900,
+        alignment: Alignment.bottomCenter,
+      ),
       child: MaterialApp.router(
         title: config.st.appName,
         debugShowCheckedModeBanner: true,
@@ -21,9 +26,14 @@ class App extends TopStatelessWidget {
         routeInformationParser: nav.routeInformationParser,
         routerDelegate: nav.routerDelegate,
         //* device preview settings ----
-        useInheritedMediaQuery: true,
-        // builder: DevicePreview.appBuilder,
         // locale: DevicePreview.locale(context),
+        // useInheritedMediaQuery: true,
+        // builder: (context, widget) {
+        //   return DevicePreview.appBuilder(
+        //     context,
+        //     nav.routerDelegate.build(context),
+        //   );
+        // },
       ),
     );
   }

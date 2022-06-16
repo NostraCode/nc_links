@@ -11,7 +11,7 @@ class CobaTigaCharlie extends StatelessWidget {
     return Column(
       children: [
         Text(Random().nextInt(100).toString()),
-        OnReactive(() => Text('${dt.rmInt.st}')),
+        OnReactive(() => Text('${dt.rxInt.st}')),
       ],
     );
   }

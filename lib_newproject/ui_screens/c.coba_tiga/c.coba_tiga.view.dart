@@ -17,10 +17,15 @@ class CobaTigaView extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            CobaTigaCharlie(),
-            CobaTigaDelta(),
-            CobaTigaEcho(),
+          children: [
+            const CobaTigaCharlie(),
+            const CobaTigaDelta(),
+            const CobaTigaEcho(),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text("back"),
+            ),
           ],
         ),
       ),

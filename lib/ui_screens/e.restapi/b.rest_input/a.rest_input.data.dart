@@ -11,7 +11,7 @@ class RestInputData {
 
   final focusScopeNode = FocusScopeNode();
 
-  final rxForx = RM.injectForm(
+  final rxForm = RM.injectForm(
     submit: () async {
       await x1RestInputCtrl.createUser();
     },

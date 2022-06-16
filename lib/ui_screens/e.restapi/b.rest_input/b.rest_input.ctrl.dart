@@ -7,17 +7,21 @@ class RestInputCtrl {
 
   init() => logxx.i(RestInputCtrl, '...');
 
-  submit() => dt.rxForx.submit();
+  submit() => dt.rxForm.submit();
 
   Future<void> createUser() async {
-    await x1UserServ.createUser(Userx(
-      name: dt.rxName.value,
-      email: dt.rxEmail.value,
-      gender: dt.rxGender.value,
-      status: dt.rxStatus.value,
-    ));
-    x1RestListCtrl.refresh();
-    await Future.delayed(400.milliseconds);
-    RM.navigate.forceBack();
+    try {
+      await x1UserServ.createUser(User(
+        name: dt.rxName.value,
+        email: dt.rxEmail.value,
+        gender: dt.rxGender.value,
+        status: dt.rxStatus.value,
+      ));
+      x1RestListCtrl.refresh();
+      await Future.delayed(400.milliseconds);
+      RM.navigate.forceBack();
+    } catch (obj) {
+      Fun.handleException(obj);
+    }
   }
 }

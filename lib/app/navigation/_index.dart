@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
 
 import '../../dt_sources/_index.dart';

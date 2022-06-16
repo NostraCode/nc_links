@@ -20,14 +20,14 @@ class InjPersistData {
     ),
   );
 
-  final rxProductPersist = RM.inject<Productx>(
-    () => Productx(),
+  final rxProductPersist = RM.inject<Product>(
+    () => Product(),
     persist: () => PersistState(
       key: 'rxProductPersist',
       throttleDelay: 500,
       shouldRecreateTheState: false,
       toJson: (s) => s.toJson(),
-      fromJson: (j) => Productx.fromJson(j),
+      fromJson: (j) => Product.fromJson(j),
     ),
   );
 }

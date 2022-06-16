@@ -11,7 +11,7 @@ void main() async {
   await inits();
   runApp(
     DevicePreview(
-      enabled: PlatformType.isWeb,
+      enabled: PlatformType.isLinux,
       storage: DevicePreviewStorage.preferences(),
       builder: (context) => const App(), // Wrap your app
     ),

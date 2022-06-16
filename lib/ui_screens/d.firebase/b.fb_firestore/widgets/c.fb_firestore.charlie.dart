@@ -14,7 +14,7 @@ class FbFirestoreC extends StatelessWidget {
           child: Column(
             children: [
               const Text('future'),
-              OnBuilder<Productx?>.all(
+              OnBuilder<Product?>.all(
                 listenTo: dt.rxProductFuture,
                 onWaiting: () => const Text('loading...'),
                 onError: (_, __) => const Text('error'),
@@ -34,7 +34,7 @@ class FbFirestoreC extends StatelessWidget {
           child: Column(
             children: [
               const Text('stream'),
-              OnBuilder<Productx?>.all(
+              OnBuilder<Product?>.all(
                 listenTo: dt.rxProductStream,
                 onWaiting: () => const Text('loading...'),
                 onError: (_, __) => const Text('error'),

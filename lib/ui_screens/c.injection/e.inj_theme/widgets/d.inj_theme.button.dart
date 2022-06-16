@@ -17,8 +17,8 @@ class InjThemeButton extends StatelessWidget {
     return SizedBox(
       width: 120,
       child: ElevatedButton(
-        child: Text(label),
         onPressed: fun,
+        child: Text(label),
       ),
     );
   }

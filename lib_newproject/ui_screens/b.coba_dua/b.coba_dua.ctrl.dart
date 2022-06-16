@@ -5,7 +5,7 @@ final x1CobaDuaCtrl = CobaDuaCtrl();
 class CobaDuaCtrl {
   CobaDuaData get dt => x1CobaDuaData.st;
 
-  init() => loggerx(CobaDuaCtrl).v('init...');
+  init() => logxx.i(CobaDuaCtrl, '...');
 
-  action() => dt.rmInt.setState((s) => s + 1);
+  action() => dt.rxInt.setState((s) => s + 1);
 }

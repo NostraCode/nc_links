@@ -3,8 +3,8 @@ part of '_index.dart';
 class ThColor {
   ThColor._();
 
-  static _CustomColors get light {
-    return _CustomColors(
+  static CustomColors get light {
+    return CustomColors(
       brand: Colors.pink,
       primary: Colors.blue,
       secondary: Colors.orange,
@@ -15,8 +15,8 @@ class ThColor {
     );
   }
 
-  static _CustomColors get dark {
-    return _CustomColors(
+  static CustomColors get dark {
+    return CustomColors(
       brand: Colors.pink,
       primary: Colors.blue,
       secondary: Colors.orange,
@@ -28,7 +28,7 @@ class ThColor {
   }
 }
 
-class _CustomColors {
+class CustomColors {
   final MaterialColor brand;
   final Color primary;
   final Color secondary;
@@ -36,7 +36,7 @@ class _CustomColors {
   final Color appBarBackground;
   final Color appBarForeground;
   final Color barrier;
-  _CustomColors({
+  CustomColors({
     required this.brand,
     required this.primary,
     required this.secondary,

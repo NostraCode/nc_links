@@ -7,7 +7,7 @@ final x1InjFormData = RM.inject<InjFormData>(
 );
 
 class InjFormData {
-  final title = 'InjForx';
+  final title = 'InjForm';
 
   final rxForx = RM.injectForm(
     submit: () async {

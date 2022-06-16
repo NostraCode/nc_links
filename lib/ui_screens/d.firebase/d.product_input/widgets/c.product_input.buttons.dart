@@ -18,15 +18,15 @@ class ProductInputButtons extends StatelessWidget {
         const SizedBoxW(10),
         OnReactive(
           () => ElevatedButton(
-            child: const Text('remove at top'),
             onPressed: dt.products.st.isEmpty ? null : () => ct.removeAt(0),
+            child: const Text('remove at top'),
           ),
         ),
         const SizedBoxW(10),
         OnReactive(
           () => ElevatedButton(
-            child: const Text('clear all'),
             onPressed: dt.products.st.isEmpty ? null : () => ct.removeAll(),
+            child: const Text('clear all'),
           ),
         ),
       ],

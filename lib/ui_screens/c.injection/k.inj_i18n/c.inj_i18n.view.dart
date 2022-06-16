@@ -20,7 +20,7 @@ class InjI18nView extends ReactiveStatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _i18n = i18nRM.of(context);
+    final i18n = i18nRM.of(context);
     final textStyle = Theme.of(context).textTheme.headline6;
 
     return Scaffold(
@@ -43,58 +43,58 @@ class InjI18nView extends ReactiveStatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () => i18nRM.locale = SystemLocale(),
-                  child: const Text('system'),
                   style: i18nRM.locale is SystemLocale ? null : unselectedStyle,
+                  child: const Text('system'),
                 ),
                 const SizedBox(width: 12),
                 ElevatedButton(
                   onPressed: () => i18nRM.locale = const Locale('en'),
-                  child: const Text('English'),
                   style: checkLocale('en') ? null : unselectedStyle,
+                  child: const Text('English'),
                 ),
                 const SizedBox(width: 12),
                 ElevatedButton(
                   onPressed: () => i18nRM.locale = const Locale('es'),
-                  child: const Text('spanish'),
                   style: checkLocale('es') ? null : unselectedStyle,
+                  child: const Text('spanish'),
                 ),
                 const SizedBox(width: 12),
                 ElevatedButton(
                   onPressed: () => i18nRM.locale = const Locale('ar'),
-                  child: const Text('arabic'),
                   style: checkLocale('ar') ? null : unselectedStyle,
+                  child: const Text('arabic'),
                 ),
               ],
             ),
             const Spacer(),
             Text(
-              _i18n.welcome('Bob'),
+              i18n.welcome('Bob'),
               style: textStyle,
             ),
             const Divider(),
             Text(
-              _i18n.gender('male'),
+              i18n.gender('male'),
               style: textStyle,
             ),
             Text(
-              _i18n.gender('female'),
+              i18n.gender('female'),
               style: textStyle,
             ),
             Text(
-              _i18n.gender('other'),
+              i18n.gender('other'),
               style: textStyle,
             ),
             const Divider(),
             Text(
-              _i18n.plural(_counter.state),
+              i18n.plural(_counter.state),
               style: textStyle,
             ),
             Text(
-              _i18n.formattedNumber(_counter.state * 10000000),
+              i18n.formattedNumber(_counter.state * 10000000),
               style: textStyle,
             ),
             Text(
-              _i18n.date(DateTime.now()),
+              i18n.date(DateTime.now()),
               style: textStyle,
             ),
             const Spacer(),

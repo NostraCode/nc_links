@@ -25,8 +25,8 @@ class RestInputDelta extends StatelessWidget {
                 decoration: const InputDecoration(isDense: true),
                 value: value,
                 items: const [
-                  DropdownMenuItem(child: Text('female'), value: 'female'),
-                  DropdownMenuItem(child: Text('male'), value: 'male'),
+                  DropdownMenuItem(value: 'female', child: Text('female')),
+                  DropdownMenuItem(value: 'male', child: Text('male')),
                 ],
               );
             },
@@ -48,8 +48,8 @@ class RestInputDelta extends StatelessWidget {
                 decoration: const InputDecoration(isDense: true),
                 value: value,
                 items: const [
-                  DropdownMenuItem(child: Text('active'), value: 'active'),
-                  DropdownMenuItem(child: Text('inactive'), value: 'inactive'),
+                  DropdownMenuItem(value: 'active', child: Text('active')),
+                  DropdownMenuItem(value: 'inactive', child: Text('inactive')),
                 ],
               );
             },

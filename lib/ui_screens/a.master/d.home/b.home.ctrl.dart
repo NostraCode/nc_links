@@ -25,7 +25,21 @@ class HomeCtrl {
     logxx.wtf(HomeCtrl, 'logxx with classname (double x)');
   }
 
-  tapAlice() {
-    x1HttpAlice.showInspector();
+  toogleSwitch(BuildContext context) {
+    if (debugBtnIsShow()) {
+      dismissDebugBtn();
+      dt.rxSwitch.st = false;
+    } else {
+      showDebugBtn(context);
+      dt.rxSwitch.st = true;
+    }
+  }
+
+  showDioLog(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => HttpLogListWidget(),
+      ),
+    );
   }
 }

@@ -23,7 +23,7 @@ class HomeView extends StatelessWidget {
         preferredSize: Size.fromHeight(56),
         child: HomeAppbar(),
       ),
-      // floatingActionButton: const HomexFab(),
+      // floatingActionButton: const HomeFab(),
       body: Column(
         children: [
           Expanded(

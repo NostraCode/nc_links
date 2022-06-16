@@ -21,6 +21,11 @@ class HomeMisc extends StatelessWidget {
           fun: () => nav.to(Routes.popup),
         ),
         HomeTile(
+          title: 'Overlay Widgets',
+          subtitle: 'toast & notification from overlay package',
+          fun: () => nav.to(Routes.overlayWidgets),
+        ),
+        HomeTile(
           title: 'Not Found',
           subtitle: 'redirect to "not found page"',
           fun: () => nav.to(Routes.blablabla),

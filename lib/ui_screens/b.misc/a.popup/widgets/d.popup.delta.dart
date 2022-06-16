@@ -23,9 +23,9 @@ class PopupDelta extends StatelessWidget {
           onPressed: () => RM.navigate.back(),
         ),
         CupertinoDialogAction(
-          child: const Text("OK"),
           isDefaultAction: true,
           onPressed: () => RM.navigate.back(),
+          child: const Text("OK"),
         ),
       ],
     );

@@ -1,7 +1,7 @@
 part of '../_index.dart';
 
 class ProductInputTile extends StatelessWidget {
-  final Productx product;
+  final Product product;
   final Animation<double> animation;
   const ProductInputTile({
     Key? key,

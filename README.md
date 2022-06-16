@@ -65,5 +65,5 @@ versionCode localProperties.getProperty('flutter.versionCode').toInteger()<br/>
 <br/>
 [add these lines on local.properties]<br/>
 flutter.compileSdkVersion=31<br/>
-flutter.minSdkVersion=21<br/>
+flutter.minSdkVersion=22<br/>
 flutter.targetSdkVersion=31<br/>

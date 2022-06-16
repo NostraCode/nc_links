@@ -10,6 +10,6 @@ class InjPersistCtrl {
   action() {
     dt.rxInt.setState((s) => s + 1);
     dt.rxIntPersist.setState((s) => s + 2);
-    dt.rxProductPersist.setState((s) => Productx.random());
+    dt.rxProductPersist.setState((s) => Product.random());
   }
 }

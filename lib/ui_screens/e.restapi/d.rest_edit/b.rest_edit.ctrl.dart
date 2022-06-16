@@ -21,17 +21,21 @@ class RestEditCtrl {
   submit() => dt.rxForx.submit();
 
   Future<void> updateUser() async {
-    final userx = Userx(
-      id: dt.selectedId.st,
-      name: dt.rxName.value,
-      email: dt.rxEmail.value,
-      gender: dt.rxGender.value,
-      status: dt.rxStatus.value,
-    );
-    await x1UserServ.updateUser(userx);
-    x1UserServ.readUser();
-    x1UserServ.updateOneOfUsers(userx);
-    await Future.delayed(400.milliseconds);
-    RM.navigate.forceBack();
+    try {
+      final userx = User(
+        id: dt.selectedId.st,
+        name: dt.rxName.value,
+        email: dt.rxEmail.value,
+        gender: dt.rxGender.value,
+        status: dt.rxStatus.value,
+      );
+      await x1UserServ.updateUser(userx);
+      x1UserServ.readUser();
+      x1UserServ.updateOneOfUsers(userx);
+      await Future.delayed(400.milliseconds);
+      RM.navigate.forceBack();
+    } catch (obj) {
+      Fun.handleException(obj);
+    }
   }
 }

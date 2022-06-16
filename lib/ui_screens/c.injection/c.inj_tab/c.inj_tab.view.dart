@@ -27,16 +27,16 @@ class InjTabView extends StatelessWidget {
                     const TextStyle(color: Colors.transparent),
                 tabs: const [
                   Tab(
-                    child: Text('charlie', textScaleFactor: 0.7),
                     icon: Icon(Icons.flare),
+                    child: Text('charlie', textScaleFactor: 0.7),
                   ),
                   Tab(
-                    child: Text('delta', textScaleFactor: 0.7),
                     icon: Icon(Icons.blur_on),
+                    child: Text('delta', textScaleFactor: 0.7),
                   ),
                   Tab(
-                    child: Text('echo', textScaleFactor: 0.7),
                     icon: Icon(Icons.auto_awesome),
+                    child: Text('echo', textScaleFactor: 0.7),
                   ),
                 ],
               ),

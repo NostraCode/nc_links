@@ -11,11 +11,7 @@ class CobaSatuCharlie extends StatelessWidget {
     return Column(
       children: [
         Text(Random().nextInt(100).toString()),
-        OnReactive(() => Text('${dt.rmInt.st}')),
-        ElevatedButton(
-          child: const Text('to coba dua'),
-          onPressed: () => nav.to(Routes.cobaDua),
-        ),
+        OnReactive(() => Text('${dt.rxInt.st}')),
       ],
     );
   }

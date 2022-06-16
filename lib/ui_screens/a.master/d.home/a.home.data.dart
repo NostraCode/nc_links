@@ -11,5 +11,7 @@ class HomeData {
 
   final rxInt = 0.inj();
 
+  final rxSwitch = false.inj();
+
   final listOfStatus = List.generate(5, (i) => false.inj());
 }

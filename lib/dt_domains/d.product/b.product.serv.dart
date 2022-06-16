@@ -24,7 +24,7 @@ class ProductServ {
     dt.rxSelectedId.st = id;
   }
 
-  Future<void> createProduct(Productx product) {
+  Future<void> createProduct(Product product) {
     return x1ProductRepo.st.createProduct(product);
   }
 
@@ -32,7 +32,7 @@ class ProductServ {
     dt.rxProductFuture.stateAsync = x1ProductRepo.st.readProduct();
   }
 
-  Future<void> updateProduct(Productx product) {
+  Future<void> updateProduct(Product product) {
     return x1ProductRepo.st.updateProduct(product);
   }
 
@@ -66,7 +66,7 @@ class ProductServ {
     dt.rxLoadMore.stateAsync = x1ProductRepo.st.readProducts();
   }
 
-  addToList(List<Productx> moreProducts) {
+  addToList(List<Product> moreProducts) {
     dt.rxProductList.st = [...dt.rxProductList.st, ...moreProducts];
     if (moreProducts.length < dt.limit) {
       dt.rxIsEnd.st = true;
@@ -87,7 +87,7 @@ class ProductServ {
     );
   }
 
-  List<Productx> newListProducts(List<Map<String, Productx>> event) {
+  List<Product> newListProducts(List<Map<String, Product>> event) {
     var newList = [...dt.rxProductList.st];
     for (var map in event) {
       final changeType = map.entries.first.key;

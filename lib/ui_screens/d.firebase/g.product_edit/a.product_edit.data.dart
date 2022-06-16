@@ -11,10 +11,10 @@ class ProductEditData {
 
   final colId = x1ProductData.st.colId;
 
-  final rxProductBackup = RM.inject<Productx>(() => Productx());
+  final rxProductBackup = RM.inject<Product>(() => Product());
 
-  final rxProductBuffer = RM.inject<Productx>(
-    () => Productx(),
+  final rxProductBuffer = RM.inject<Product>(
+    () => Product(),
     sideEffects: SideEffects(
       initState: () => x1ProductEditCtrl.initProductBuffer(),
     ),

@@ -23,9 +23,9 @@ class ProductEditFab extends StatelessWidget {
               onPressed: () => RM.navigate.back(),
             ),
             CupertinoDialogAction(
-              child: const Text("OK"),
               isDefaultAction: true,
               onPressed: () => ct.update(),
+              child: const Text("OK"),
             ),
           ],
         ),

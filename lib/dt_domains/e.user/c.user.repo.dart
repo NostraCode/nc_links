@@ -3,30 +3,30 @@ part of '_index.dart';
 final x1UserRepo = RM.inject<UserRepo>(() => UserRepo());
 
 class UserRepo {
-  Future<List<Userx>> readUsers(int page) async {
+  Future<List<User>> readUsers(int page) async {
     final result = await x1HttpDio.request(
       path: '/public/v2/users?page=$page',
       method: ReqMethod.get,
       token: x1UserData.st.token,
     );
-    List<Userx> userList = [];
+    List<User> userList = [];
     for (var item in result.data) {
-      userList.add(Userx.fromMap(item));
+      userList.add(User.fromMap(item));
     }
     return userList;
   }
 
-  Future<Userx> readUser() async {
+  Future<User> readUser() async {
     final id = x1UserData.st.rxSelectedId.st;
     final result = await x1HttpDio.request(
       path: '/public/v2/users/$id',
       method: ReqMethod.get,
       token: x1UserData.st.token,
     );
-    return Userx.fromMap(result.data);
+    return User.fromMap(result.data);
   }
 
-  Future<void> createUser(Userx user) async {
+  Future<void> createUser(User user) async {
     await x1HttpDio.request(
       path: '/public/v2/users',
       method: ReqMethod.post,
@@ -35,7 +35,7 @@ class UserRepo {
     );
   }
 
-  Future<void> updateUser(Userx user) async {
+  Future<void> updateUser(User user) async {
     await x1HttpDio.request(
       path: '/public/v2/users/${user.id}',
       method: ReqMethod.put,

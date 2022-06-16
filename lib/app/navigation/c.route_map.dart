@@ -12,6 +12,7 @@ class RouteMap {
     Routes.regis: (RouteData data) => const RegisView(),
     //* misc ---- ----- ----- ----- ----- -----
     Routes.popup: (RouteData data) => const PopupView(),
+    Routes.overlayWidgets: (RouteData data) => const OverlayWidgetsView(),
     Routes.needLogin: (RouteData data) => const NeedLoginView(),
     Routes.adminOnly: (RouteData data) => const OnlyAdminView(),
     //* injection ----- ----- ----- ----- -----

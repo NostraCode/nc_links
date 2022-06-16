@@ -17,10 +17,25 @@ class CobaDuaView extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            CobaDuaCharlie(),
-            CobaDuaDelta(),
-            CobaDuaEcho(),
+          children: [
+            const CobaDuaCharlie(),
+            const CobaDuaDelta(),
+            const CobaDuaEcho(),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () {
+                final route = MaterialPageRoute(
+                  builder: (context) => const CobaTigaView(),
+                );
+                Navigator.push(context, route);
+              },
+              child: const Text("go to next page"),
+            ),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text("back"),
+            ),
           ],
         ),
       ),

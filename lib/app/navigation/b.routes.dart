@@ -13,6 +13,7 @@ class Routes {
   //* misc ----- ----- ----- ----- ----- ----
   static const popup = '/popup';
   static const blablabla = '/blablabla';
+  static const overlayWidgets = '/overlay_widgets';
   static const needLogin = '/need_login';
   static const adminOnly = '/admin_only';
   //* injection ----- ----- ----- ----- -----

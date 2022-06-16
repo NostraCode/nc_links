@@ -22,7 +22,7 @@ class XuserServ {
     dt.rxLoadMore.stateAsync = x1UserRepo.st.readUsers(dt.rxPage.st);
   }
 
-  addToList(List<Userx> moreUsers) {
+  addToList(List<User> moreUsers) {
     dt.rxUserList.setState((s) => [...s, ...moreUsers]);
     if (moreUsers.isEmpty) {
       dt.rxIsEnd.setState((s) => true);
@@ -36,7 +36,7 @@ class XuserServ {
     });
   }
 
-  updateOneOfUsers(Userx user) {
+  updateOneOfUsers(User user) {
     dt.rxUserList.setState((s) {
       final i = s.indexWhere((item) => item.id == dt.rxSelectedId.st);
       return s[i] = user;
@@ -54,11 +54,11 @@ class XuserServ {
     dt.rxUserFuture.stateAsync = x1UserRepo.st.readUser();
   }
 
-  Future<void> createUser(Userx user) {
+  Future<void> createUser(User user) {
     return x1UserRepo.st.createUser(user);
   }
 
-  Future<void> updateUser(Userx user) {
+  Future<void> updateUser(User user) {
     return x1UserRepo.st.updateUser(user);
   }
 

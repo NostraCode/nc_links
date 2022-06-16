@@ -4,7 +4,7 @@ class Dialogs {
   static Future<T?> alert<T>(String message) {
     return RM.navigate.toDialog<T>(
       AlertDialog(
-        title: const Text('Exception'),
+        title: const Text('Exception Handler'),
         content: Text(message),
         actions: [
           TextButton(
@@ -25,17 +25,10 @@ class Dialogs {
         actions: [
           TextButton(
             child: const Text('No'),
-            onPressed: () {
-              RM.navigate.back();
-            },
+            onPressed: () => RM.navigate.back(),
           ),
           TextButton(
             child: const Text('Yes'),
-            // onPressed: () {
-            //   RM.navigate.back();
-            //   RM.navigate.back();
-
-            // },
             onPressed: () => RM.navigate.forceBack(),
           ),
         ],
