@@ -9,6 +9,34 @@ class RestInputCtrl {
 
   submit() => dt.rxForm.submit();
 
+  Future<void> pickImages() async {
+    dt.rxPickedFile.setState(
+      (s) => ImagePicker().pickImage(source: ImageSource.gallery),
+    );
+  }
+
+  Future<void> uploadImage() async {
+    // todo: don't forget to modify the key name (ex: "productImage")
+    // todo: it is needed by server
+    // todo: to identify the data when hanlde the request
+    final file = dt.rxPickedFile.st;
+    if (file != null) {
+      try {
+        String fileName = file.path.split('/').last;
+        FormData formData = FormData.fromMap({
+          "productImage": await MultipartFile.fromFile(
+            file.path,
+            filename: fileName,
+          ),
+        });
+        final result = await x1UserServ.upload(formData);
+        dt.rxImageUrl.setState((s) => result.data['data']['image_url']);
+      } catch (obj) {
+        Fun.handleException(obj);
+      }
+    }
+  }
+
   Future<void> createUser() async {
     final userx = User(
       name: dt.rxName.value,

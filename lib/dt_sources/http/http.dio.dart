@@ -2,8 +2,6 @@ part of '_index.dart';
 
 final x1HttpDio = HttpDio()..init();
 
-enum ReqMethod { post, get, put, delete, patch, postMultiPartFormData }
-
 class ReqX {
   String path;
   Map<String, dynamic>? params;
@@ -72,11 +70,31 @@ class HttpDio {
 
   Future<dynamic> delete(ReqX reqx) async {
     try {
-      await Future.delayed(const Duration(seconds: 1));
       final response = await dio.delete(
         reqx.path,
         queryParameters: reqx.params,
         data: reqx.data,
+      );
+      return response;
+    } catch (obj) {
+      rethrow;
+    }
+  }
+
+  Future<dynamic> upload(ReqX reqx) async {
+    try {
+      final response = await dio.put(
+        reqx.path,
+        queryParameters: reqx.params,
+        data: reqx.data,
+        options: Options(
+          contentType: 'multipart/form-data',
+          responseType: ResponseType.json,
+          // headers: {
+          //   'Accept': 'application/json',
+          //   'Content-Type': 'multipart/form-data',
+          // },
+        ),
       );
       return response;
     } catch (obj) {

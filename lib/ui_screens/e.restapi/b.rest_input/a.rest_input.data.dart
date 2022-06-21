@@ -34,4 +34,8 @@ class RestInputData {
     'inactive',
     validators: [Validate.isNotEmpty],
   );
+
+  final rxPickedFile = RM.inject<XFile?>(() => null);
+
+  final rxImageUrl = RM.inject<String?>(() => null);
 }

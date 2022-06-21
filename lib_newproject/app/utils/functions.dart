@@ -3,20 +3,46 @@ part of '_index.dart';
 class Fun {
   Fun._();
 
-  static void handleException(obj) {
+  static dynamic handleException(obj) {
+    String str = '';
+    try {
+      throw obj;
+    } on DioError catch (e) {
+      str = dioErrorMessage(e);
+    } on SocketException catch (e) {
+      str = e.message;
+    } on FormatException catch (e) {
+      str = e.message;
+    } on Exception {
+      str = 'Unknown exception: ${obj.toString()}';
+    } on Object {
+      str = 'Something really unknown: ${obj.toString()}';
+    }
+    logx.e(str);
+    Dialogs.alert(str);
+  }
+
+  static String dioErrorMessage(DioError e) {
+    if (e.type == DioErrorType.response) {
+      final str1 = e.response?.statusCode.toString() ?? '';
+      final str2 = e.response?.statusMessage ?? '';
+      return '[$str1] $str2';
+    } else {
+      return e.message;
+    }
+  }
+
+  static dynamic handleDummyException(obj) {
+    String str = '';
     try {
       throw obj;
     } on IncreaseException catch (e) {
-      Dialogs.alert(e.message);
+      str = e.message;
     } on RandomException catch (e) {
-      Dialogs.alert(e.message);
-    } on DioError catch (e) {
-      Dialogs.alert(e.response?.statusMessage ?? e.message);
-    } on Exception {
-      Dialogs.alert('Unknown exception: ${obj.toString()}');
-    } on Object {
-      Dialogs.alert('Something really unknown: $obj');
+      str = e.message;
     }
+    logx.e(str);
+    Dialogs.alert(str);
   }
 
   static Future<String> fetchJsonAsset(String path) {
@@ -38,21 +64,4 @@ class Fun {
       barrierColor: Colors.black54,
     );
   }
-
-  // static void showToast(String message) {
-  //   if (GetPlatform.isAndroid || GetPlatform.isIOS || GetPlatform.isWeb) {
-  //     Fluttertoast.cancel();
-  //     Fluttertoast.showToast(
-  //       msg: message,
-  //       timeInSecForIosWeb: 2,
-  //       textColor: Get.isDarkMode ? Colors.white : Colors.black,
-  //       backgroundColor: Get.isDarkMode
-  //           ? Colors.grey.shade800.withOpacity(0.7)
-  //           : Colors.grey.shade100.withOpacity(0.6),
-  //       webBgColor: Get.isDarkMode
-  //           ? "linear-gradient(to right, #ffffff, #ffffff)"
-  //           : "linear-gradient(to right, #000000, #000000)",
-  //     );
-  //   }
-  // }
 }

@@ -62,4 +62,15 @@ class UserRepo {
       rethrow;
     }
   }
+
+  Future<dynamic> upload(FormData formData) async {
+    try {
+      await x1HttpDio.upload(ReqX(
+        path: '/public/v2/images',
+        data: formData,
+      ));
+    } catch (e) {
+      rethrow;
+    }
+  }
 }

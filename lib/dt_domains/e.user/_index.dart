@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
 
 import '../../app/_index.dart';

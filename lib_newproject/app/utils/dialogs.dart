@@ -33,7 +33,6 @@ class Dialogs {
           ),
         ],
       ),
-      postponeToNextFrame: true,
     );
   }
 
@@ -55,7 +54,6 @@ class Dialogs {
           ),
         ],
       ),
-      postponeToNextFrame: true,
     );
   }
 }

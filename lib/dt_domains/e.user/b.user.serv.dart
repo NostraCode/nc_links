@@ -135,4 +135,13 @@ class XuserServ {
       rethrow;
     }
   }
+
+  Future<dynamic> upload(FormData formData) async {
+    try {
+      final imageUrl = await x1UserRepo.st.upload(formData);
+      return imageUrl;
+    } catch (e) {
+      rethrow;
+    }
+  }
 }
