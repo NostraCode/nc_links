@@ -30,7 +30,7 @@ class InjFormView extends ReactiveStatelessWidget {
                   const InjFormEcho(),
                   const SizedBoxH(10),
                   if (dt.rxForx.isDirty)
-                    const Text('The forx is changed but not submitted yet!')
+                    const Text('The form is changed but not submitted yet!')
                 ],
               );
             },

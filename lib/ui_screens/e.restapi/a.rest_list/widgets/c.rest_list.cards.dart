@@ -15,7 +15,7 @@ class RestListCards extends StatelessWidget {
         return RefreshIndicator(
           onRefresh: () => ct.refresh(),
           child: OnBuilder.data(
-            listenToMany: [dt.rxUserList, dt.rxLoadMore],
+            listenToMany: [dt.rxUserList, dt.rxUserLoader],
             builder: (_) => ListView(
               padding: const EdgeInsets.all(2),
               children: [

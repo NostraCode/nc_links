@@ -15,7 +15,7 @@ class ProductDetailAppbar extends StatelessWidget {
           iconDatax: Icons.delete,
           funcx: () => RM.navigate.toCupertinoDialog(
             AlertDialogX(
-              title: 'Confirxation',
+              title: 'Confirmation',
               message: 'are you sure?',
               widgets: [
                 CupertinoDialogAction(

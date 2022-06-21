@@ -18,19 +18,19 @@ class RestEditCtrl {
     dt.rxStatus.value = userx.status;
   }
 
-  submit() => dt.rxForx.submit();
+  submit() => dt.rxForm.submit();
 
   Future<void> updateUser() async {
+    final userx = User(
+      id: dt.selectedId.st,
+      name: dt.rxName.value,
+      email: dt.rxEmail.value,
+      gender: dt.rxGender.value,
+      status: dt.rxStatus.value,
+    );
     try {
-      final userx = User(
-        id: dt.selectedId.st,
-        name: dt.rxName.value,
-        email: dt.rxEmail.value,
-        gender: dt.rxGender.value,
-        status: dt.rxStatus.value,
-      );
       await x1UserServ.updateUser(userx);
-      x1UserServ.readUser();
+      x1UserServ.initUserDetail();
       x1UserServ.updateOneOfUsers(userx);
       await Future.delayed(400.milliseconds);
       RM.navigate.forceBack();

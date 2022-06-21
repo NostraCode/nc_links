@@ -17,13 +17,14 @@ class RouteMap {
     Routes.adminOnly: (RouteData data) => const OnlyAdminView(),
     //* injection ----- ----- ----- ----- -----
     Routes.injState: (RouteData data) => const InjStateView(),
+    Routes.injPersist: (RouteData data) => const InjPersistView(),
+    Routes.injPessimistic: (RouteData data) => const InjPessimisticView(),
     Routes.injTab: (RouteData data) => const InjTabView(),
     Routes.injAnim: (RouteData data) => const InjAnimView(),
     Routes.injTheme: (RouteData data) => const InjThemeView(),
     Routes.injScroll: (RouteData data) => const InjScrollView(),
     Routes.injForm: (RouteData data) => const InjFormView(),
     Routes.injI18n: (RouteData data) => const InjI18nView(),
-    Routes.injPersist: (RouteData data) => const InjPersistView(),
     //* firebase ------ ----- ----- ----- -----
     Routes.fbAuth: (RouteData data) => const FbAuthView(),
     Routes.fbFirestore: (RouteData data) => const FbFirestoreView(),

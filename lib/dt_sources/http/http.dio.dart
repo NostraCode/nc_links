@@ -2,91 +2,85 @@ part of '_index.dart';
 
 final x1HttpDio = HttpDio()..init();
 
-enum ReqMethod { post, get, put, delete, patch }
+enum ReqMethod { post, get, put, delete, patch, postMultiPartFormData }
+
+class ReqX {
+  String path;
+  Map<String, dynamic>? params;
+  Options? options;
+  dynamic data;
+  ReqX({
+    required this.path,
+    this.params,
+    this.options,
+    this.data,
+  });
+}
 
 class HttpDio {
   late Dio dio;
 
   void init() {
-    dio = Dio(BaseOptions(baseUrl: config.st.apiHost));
+    dio = Dio();
+    dio.options = BaseOptions(
+      baseUrl: config.st.apiHost,
+      headers: config.st.token == ''
+          ? null
+          : {'Authorization': 'Bearer ${config.st.token}'},
+    );
     dio.interceptors.add(DioLogInterceptor());
     logxx.wtf(HttpDio, 'success init for dio and add interceptors.');
   }
 
-  Options setOptionsHeader(String token) {
-    if (token.isEmpty) {
-      return Options(
-        headers: {
-          'Accept': 'application/json',
-        },
+  Future<dynamic> post(ReqX reqx) async {
+    try {
+      final response = await dio.post(
+        reqx.path,
+        queryParameters: reqx.params,
+        data: reqx.data,
       );
-    } else {
-      return Options(headers: {
-        'Accept': 'application/json',
-        "Content-Type": "application/json",
-        "Authorization": "Bearer $token",
-      });
+      return response;
+    } catch (obj) {
+      rethrow;
     }
   }
 
-  Future<Response> request({
-    required String path,
-    required ReqMethod method,
-    Map<String, dynamic>? params,
-    String token = '',
-    dynamic data,
-  }) async {
-    Options optionsHeader = setOptionsHeader(token);
-    Response response;
-
+  Future<dynamic> get(ReqX reqx) async {
     try {
-      if (method == ReqMethod.post) {
-        response = await dio.post(
-          path,
-          queryParameters: params,
-          options: optionsHeader,
-          data: data,
-        );
-      } else if (method == ReqMethod.put) {
-        response = await dio.put(
-          path,
-          queryParameters: params,
-          options: optionsHeader,
-          data: data,
-        );
-      } else if (method == ReqMethod.delete) {
-        response = await dio.delete(
-          path,
-          options: optionsHeader,
-          data: data,
-        );
-      } else if (method == ReqMethod.patch) {
-        response = await dio.patch(
-          path,
-          options: optionsHeader,
-          data: data,
-        );
-      } else {
-        response = await dio.get(
-          path,
-          queryParameters: params,
-          options: optionsHeader,
-        );
-      }
-
+      final response = await dio.get(
+        reqx.path,
+        queryParameters: reqx.params,
+      );
       return response;
-    } on SocketException catch (e) {
-      logx.e(e.message);
-      throw Exception("Not Internet Connection");
-    } on FormatException catch (e) {
-      logx.e(e.message);
-      throw Exception("Bad response format");
-    } on DioError catch (e) {
-      logx.e(e.message);
+    } catch (obj) {
       rethrow;
-    } catch (e) {
-      logx.e(e.toString());
-      throw Exception("Something wen't wrong");
+    }
+  }
+
+  Future<dynamic> put(ReqX reqx) async {
+    try {
+      final response = await dio.put(
+        reqx.path,
+        queryParameters: reqx.params,
+        data: reqx.data,
+      );
+      return response;
+    } catch (obj) {
+      rethrow;
+    }
+  }
+
+  Future<dynamic> delete(ReqX reqx) async {
+    try {
+      await Future.delayed(const Duration(seconds: 1));
+      final response = await dio.delete(
+        reqx.path,
+        queryParameters: reqx.params,
+        data: reqx.data,
+      );
+      return response;
+    } catch (obj) {
+      rethrow;
     }
   }
 }

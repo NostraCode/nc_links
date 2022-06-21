@@ -9,7 +9,7 @@ class RestDetailCtrl {
 
   Future<void> refresh() async {
     try {
-      x1UserServ.readUser();
+      await x1UserServ.readUserDetail();
     } catch (obj) {
       Fun.handleException(obj);
     }

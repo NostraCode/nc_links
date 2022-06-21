@@ -4,7 +4,6 @@ class Routes {
   Routes._();
 
   // static const root = '/';
-  static const cobaDoang = '/coba_doang';
   //* master -- ----- ----- ----- ----- -----
   static const home = '/';
   static const splash = '/splash';
@@ -18,13 +17,14 @@ class Routes {
   static const adminOnly = '/admin_only';
   //* injection ----- ----- ----- ----- -----
   static const injState = '/inj_state';
+  static const injPersist = '/inj_persist';
+  static const injPessimistic = '/inj_pessimistic';
   static const injTab = '/inj_tab';
   static const injAnim = '/inj_animation';
   static const injTheme = '/inj_theme';
   static const injScroll = '/inj_scroll';
   static const injForm = '/inj_form';
   static const injI18n = '/inj_i18n';
-  static const injPersist = '/inj_persist';
   //* firebase ------ ----- ----- ----- -----
   static const fbAuth = '/fb_auth';
   static const fbFirestore = '/fb_firestore';

@@ -15,5 +15,5 @@ class RestListData {
 
   final rxUserList = x1UserData.st.rxUserList;
 
-  final rxLoadMore = x1UserData.st.rxLoadMore;
+  final rxUserLoader = x1UserData.st.rxUsersLoader;
 }

@@ -6,38 +6,38 @@ final x1UserData = RM.inject<UserData>(
 );
 
 class UserData {
-  final token =
-      // '3fadf85785ef22fc9fda7a03578770d6da459f72b8b5bf7137da7d073bc1e11f';
-      '3fadf85785ef22fc9fda7a03578770d6da459f72b8b5bf7137da7d073bc1e11fccc';
-
   final rxPage = 0.inj();
 
   final rxIsEnd = false.inj();
 
-  final rxUserFuture = RM.injectFuture<User?>(() => Future.value(null));
-
   final rxUserList = RM.inject<List<User>>(() => []);
 
-  final rxSelectedId = RM.inject<int>(
-    () => 0,
+  final rxSelectedId = 0.inj();
+
+  final rxUserDetail = RM.injectFuture<User?>(
+    () => Future.value(null),
     sideEffects: SideEffects(
-      onSetState: (snap) {
-        if (snap.data != 0) {
-          x1UserServ.readUser();
-        }
-      },
+      initState: () => x1UserServ.initUserDetail(),
     ),
   );
 
-  final rxLoadMore = RM.injectFuture<List<User>>(
+  final rxUsersLoader = RM.injectFuture<List<User>?>(
     () => Future.value([]),
     sideEffects: SideEffects(
-      initState: () => x1UserServ.readUsers(),
+      initState: () => x1UserServ.initUsersLoader(),
       onSetState: (snap) {
-        if (snap.hasData) {
-          final moreUsers = snap.state.whereType<User>().toList();
-          x1UserServ.addToList(moreUsers);
-        }
+        snap.onAll(
+          onIdle: () => logx.s('from snap rxUsersLoader: onIdle...'),
+          onWaiting: () => logx.s('from snap rxUsersLoader: onWaiting...'),
+          onError: (_, __) => logx.s('from snap rxUsersLoader: onError...'),
+          onData: (data) {
+            logx.s('from snap rxLoadMore: onData...');
+            final moreUsers = data;
+            if (moreUsers != null) {
+              x1UserServ.addToList(moreUsers);
+            }
+          },
+        );
       },
     ),
   );

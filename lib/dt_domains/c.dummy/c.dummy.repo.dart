@@ -16,7 +16,7 @@ class DummyRepo {
     try {
       return await x1DummySource.st.futureInit();
     } catch (e) {
-      Fun.handleException(e);
+      Fun.handleDummyException(e);
       return 0;
     }
   }
@@ -25,7 +25,7 @@ class DummyRepo {
     try {
       return await x1DummySource.st.futureIncrease(val);
     } catch (e) {
-      Fun.handleException(e);
+      Fun.handleDummyException(e);
       return 0;
     }
   }
@@ -34,7 +34,7 @@ class DummyRepo {
     try {
       return await x1DummySource.st.futureRandom();
     } catch (e) {
-      Fun.handleException(e);
+      Fun.handleDummyException(e);
       return 0;
     }
   }

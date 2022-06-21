@@ -5,7 +5,6 @@ Future<void> inits() async {
 
   WidgetsFlutterBinding.ensureInitialized();
 
-  // await RM.storageInitializer(localStore.state);
   await RM.storageInitializer(config.st.store);
 
   if (!PlatformType.isWindows) {
@@ -16,9 +15,9 @@ Future<void> inits() async {
     x1AuthServ.init();
   }
 
-  setPathUrlStrategy();
-
   x1ConnServ.init();
+
+  setPathUrlStrategy();
 
   logx.wtf('inits success');
 }

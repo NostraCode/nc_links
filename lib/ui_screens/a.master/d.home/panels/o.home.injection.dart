@@ -21,6 +21,11 @@ class HomeInj extends StatelessWidget {
           fun: () => nav.to(Routes.injPersist),
         ),
         HomeTile(
+          title: 'Inj Pessimistic',
+          subtitle: 'injected state with exception handler',
+          fun: () => nav.to(Routes.injPessimistic),
+        ),
+        HomeTile(
           title: 'Inj Tab PageView',
           subtitle: 'injected tab controller',
           fun: () => nav.to(Routes.injTab),

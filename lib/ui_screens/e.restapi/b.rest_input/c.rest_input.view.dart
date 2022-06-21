@@ -38,7 +38,7 @@ class RestInputView extends StatelessWidget {
                     if (dt.rxForm.isDirty)
                       const Center(
                         child:
-                            Text('The forx is changed but not submitted yet!'),
+                            Text('The form is changed but not submitted yet!'),
                       )
                   ],
                 ),

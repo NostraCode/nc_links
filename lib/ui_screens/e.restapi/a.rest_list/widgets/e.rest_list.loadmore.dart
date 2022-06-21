@@ -13,7 +13,7 @@ class RestListLoadmore extends StatelessWidget {
         height: 80,
         child: Center(
           child: OnBuilder<List<User>>.all(
-            listenToMany: [dt.rxUserList, dt.rxLoadMore],
+            listenToMany: [dt.rxUserList, dt.rxUserLoader],
             onWaiting: () => const CircularProgressIndicator(),
             onError: (_, __) => const Text('error'),
             onData: (_) => dt.rxIsEnd.st
