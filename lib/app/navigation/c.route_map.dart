@@ -41,5 +41,9 @@ class RouteMap {
     Routes.restEdit: (RouteData data) => const RestEditView(),
     //* training ------- ----- ----- ----- -----
     Routes.snake: (RouteData data) => const SnakeView(),
+    //* chat --- ------- ----- ----- ----- -----
+    Routes.chatList: (RouteData data) => const ChatListView(),
+    Routes.chatDetail: (RouteData data) => const ChatDetailView(),
+    Routes.chatLogin: (RouteData data) => const ChatLoginView(),
   };
 }

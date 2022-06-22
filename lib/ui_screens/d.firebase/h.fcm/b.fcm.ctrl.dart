@@ -42,22 +42,22 @@ class FcmCtrl {
 
     final headers = {
       'content-type': 'application/json',
-      'Authorization': 'key=${dt.serverKey}'
+      'Authorization': 'key=${config.st.fcmServerKey}'
     };
 
-    final response = await http.post(
-      Uri.parse(postUrl),
-      body: json.encode(data),
-      encoding: Encoding.getByName('utf-8'),
-      headers: headers,
-    );
-
-    if (response.statusCode == 200) {
-      logxx.wtf(FcmCtrl, 'test ok push CFM');
+    try {
+      await Dio().post(
+        postUrl,
+        data: json.encode(data),
+        options: Options(
+          headers: headers,
+        ),
+      );
+      logxx.s(FcmCtrl, 'test ok push CFM');
       return true;
-    } else {
-      logxx.e(FcmCtrl, 'CFM error');
-      return false;
+    } catch (e) {
+      Fun.handleException(e);
     }
+    return false;
   }
 }

@@ -13,13 +13,15 @@ class Fun {
       str = e.message;
     } on FormatException catch (e) {
       str = e.message;
+    } on FirebaseException catch (e) {
+      str = e.message ?? e.code;
     } on Exception {
       str = 'Unknown exception: ${obj.toString()}';
     } on Object {
       str = 'Something really unknown: ${obj.toString()}';
     }
-    logx.e(str);
     Dialogs.alert(str);
+    logx.e(str);
   }
 
   static String dioErrorMessage(DioError e) {

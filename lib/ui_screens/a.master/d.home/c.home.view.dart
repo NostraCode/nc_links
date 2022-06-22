@@ -13,6 +13,7 @@ class HomeView extends StatelessWidget {
       ['Firebase (not for windows)', const HomeFirebase()],
       ['Rest API', const HomeRestapi()],
       ['Training', const HomeTraining()],
+      ['Chat', const HomeChat()],
     ];
   }
 

@@ -41,4 +41,8 @@ class Routes {
   static const restEdit = '/rest_edit';
   //* training ------ ----- ----- ----- -----
   static const snake = '/snake';
+  //* training ------ ----- ----- ----- -----
+  static const chatList = '/chat_list';
+  static const chatDetail = '/chat_detail';
+  static const chatLogin = '/chat_login';
 }

@@ -22,9 +22,9 @@ class HttpDio {
     dio = Dio();
     dio.options = BaseOptions(
       baseUrl: config.st.apiHost,
-      headers: config.st.token == ''
+      headers: config.st.authToken == ''
           ? null
-          : {'Authorization': 'Bearer ${config.st.token}'},
+          : {'Authorization': 'Bearer ${config.st.authToken}'},
     );
     dio.interceptors.add(DioLogInterceptor());
     logxx.wtf(HttpDio, 'success init for dio and add interceptors.');
