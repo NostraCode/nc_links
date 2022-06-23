@@ -17,12 +17,16 @@ class HomeCtrl {
   }
 
   taptestLogx() {
-    logx.i('message of info');
-    logx.s('message of success');
-    logx.w('message of warning');
-    logx.e('message of error');
-    logx.wtf('message of wtf');
-    logxx.wtf(HomeCtrl, 'logxx with classname (double x)');
+    logx.wtf('logx wtf');
+    logx.i('logx info');
+    logx.s('logx success');
+    logx.w('logx warning');
+    logx.e('logx error');
+    logxx.wtf(HomeCtrl, 'logxx wtf');
+    logxx.i(HomeCtrl, 'logxx info');
+    logxx.s(HomeCtrl, 'logxx success');
+    logxx.w(HomeCtrl, 'logxx warning');
+    logxx.e(HomeCtrl, 'logxx error');
   }
 
   toogleSwitch(BuildContext context) {
