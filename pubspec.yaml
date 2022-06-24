@@ -48,6 +48,7 @@ dependencies:
   connectivity_plus: ^2.2.1
   keyboard_dismisser: ^3.0.0
   english_words: ^4.0.0
+  flutter_chat_bubble: ^2.0.0
 
   # pkg_master:
   #   path: ./packages/pkg_master
