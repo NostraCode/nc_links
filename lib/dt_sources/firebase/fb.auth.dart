@@ -6,23 +6,35 @@ class FbAuth {
   final instance = FirebaseAuth.instance;
 
   Future<void> signInWithEmailAndPassword(String email, String password) async {
-    await instance.signInWithEmailAndPassword(
-      email: email,
-      password: password,
-    );
+    try {
+      await instance.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+    } catch (e) {
+      Fun.handleException(e);
+    }
   }
 
   Future<void> signInWithGoogle() async {
-    final googleUser = await GoogleSignIn().signIn();
-    final googleAuth = await googleUser?.authentication;
-    final credential = GoogleAuthProvider.credential(
-      accessToken: googleAuth?.accessToken,
-      idToken: googleAuth?.idToken,
-    );
-    await instance.signInWithCredential(credential);
+    try {
+      final googleUser = await GoogleSignIn().signIn();
+      final googleAuth = await googleUser?.authentication;
+      final credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth?.accessToken,
+        idToken: googleAuth?.idToken,
+      );
+      await instance.signInWithCredential(credential);
+    } catch (e) {
+      Fun.handleException(e);
+    }
   }
 
   Future<void> signOut() async {
-    await instance.signOut();
+    try {
+      await instance.signOut();
+    } catch (e) {
+      Fun.handleException(e);
+    }
   }
 }

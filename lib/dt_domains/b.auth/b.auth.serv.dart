@@ -7,14 +7,13 @@ class AuthServ {
 
   init() {
     logxx.i(AuthServ, '...');
-    dt.subsAuth = x1FbAuth.st.instance.userChanges().listen((event) {
-      dt.rxUser.st = event;
-      logxx.wtf(AuthServ, 'user => ${dt.rxUser.st}');
-    });
+    dt.rxUser.subscription = x1FbAuth.st.instance
+        .authStateChanges()
+        .listen((event) => dt.rxUser.st = event);
   }
 
   close() {
-    dt.subsAuth.cancel();
+    dt.rxUser.subscription?.cancel();
   }
 
   signInWithEmailAndPassword(String email, String password) {

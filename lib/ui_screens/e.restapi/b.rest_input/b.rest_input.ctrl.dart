@@ -29,7 +29,7 @@ class RestInputCtrl {
             filename: fileName,
           ),
         });
-        final result = await x1UserServ.upload(formData);
+        final result = await x1UserxServ.upload(formData);
         dt.rxImageUrl.setState((s) => result.data['data']['image_url']);
       } catch (obj) {
         Fun.handleException(obj);
@@ -38,14 +38,14 @@ class RestInputCtrl {
   }
 
   Future<void> createUser() async {
-    final userx = User(
+    final userx = Userx(
       name: dt.rxName.value,
       email: dt.rxEmail.value,
       gender: dt.rxGender.value,
       status: dt.rxStatus.value,
     );
     try {
-      await x1UserServ.createUser(userx);
+      await x1UserxServ.createUser(userx);
       x1RestListCtrl.refresh();
       await Future.delayed(400.milliseconds);
       RM.navigate.forceBack();

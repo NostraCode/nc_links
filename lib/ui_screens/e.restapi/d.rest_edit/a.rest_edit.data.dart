@@ -9,7 +9,7 @@ final x1RestEditData = RM.inject<RestEditData>(
 class RestEditData {
   final title = 'RestEdit';
 
-  final selectedId = x1UserData.st.rxSelectedId;
+  final selectedId = x1UserxData.st.rxSelectedId;
 
   final focusScopeNode = FocusScopeNode();
 

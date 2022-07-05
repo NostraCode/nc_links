@@ -12,19 +12,22 @@ class SnakeButtons extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         ElevatedButton(
-          child: const Text('D'),
+          child: const Icon(Icons.keyboard_arrow_down),
           onPressed: () => ct.moveSnake('D'),
         ),
+        const SizedBoxW(5),
         ElevatedButton(
-          child: const Text('U'),
+          child: const Icon(Icons.keyboard_arrow_up),
           onPressed: () => ct.moveSnake('U'),
         ),
+        const SizedBoxW(5),
         ElevatedButton(
-          child: const Text('L'),
+          child: const Icon(Icons.keyboard_arrow_left),
           onPressed: () => ct.moveSnake('L'),
         ),
+        const SizedBoxW(5),
         ElevatedButton(
-          child: const Text('R'),
+          child: const Icon(Icons.keyboard_arrow_right),
           onPressed: () => ct.moveSnake('R'),
         ),
       ],

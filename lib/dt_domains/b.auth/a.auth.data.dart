@@ -6,10 +6,14 @@ final x1AuthData = RM.inject<AuthData>(
 );
 
 class AuthData {
-  late StreamSubscription<User?> subsAuth;
-
-  final rxUser = RM.inject<User?>(
-    () => null,
+  final rxUser = RM.injectStream<User?>(
+    () => Stream.value(null),
     autoDisposeWhenNotUsed: false,
+    sideEffects: SideEffects(
+      onSetState: (snap) {
+        logxx.wtf(AuthData, 'user => ${snap.data}');
+        x1ChatServ.updateChatUser(snap.data);
+      },
+    ),
   );
 }

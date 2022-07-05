@@ -8,7 +8,7 @@ class RestListCtrl {
   init() => logxx.i(RestListCtrl, '...');
 
   Future<void> refresh() async {
-    await x1UserServ.initUsersLoader();
+    await x1UserxServ.initUsersLoader();
     // try {
     //   await x1UserServ.refreshUserList();
     // } catch (obj) {
@@ -17,7 +17,7 @@ class RestListCtrl {
   }
 
   Future<void> loadMore() async {
-    await x1UserServ.nextUsersLoader();
+    await x1UserxServ.nextUsersLoader();
     // try {
     //   await x1UserServ.readUsersLoader();
     // } catch (obj) {
@@ -26,7 +26,7 @@ class RestListCtrl {
   }
 
   select(int id) {
-    x1UserServ.setSelectedId(id);
+    x1UserxServ.setSelectedId(id);
     nav.to(Routes.restDetail);
     // try {
     //   x1UserServ.setSelectedId(id);

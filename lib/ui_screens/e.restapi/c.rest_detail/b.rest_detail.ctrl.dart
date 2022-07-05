@@ -9,7 +9,7 @@ class RestDetailCtrl {
 
   Future<void> refresh() async {
     try {
-      await x1UserServ.readUserDetail();
+      await x1UserxServ.readUserDetail();
     } catch (obj) {
       Fun.handleException(obj);
     }
@@ -18,8 +18,8 @@ class RestDetailCtrl {
   Future<void> delete() async {
     try {
       Fun.showOverlayLoading();
-      await x1UserServ.deleteUser();
-      x1UserServ.deleteOneOfUsers();
+      await x1UserxServ.deleteUser();
+      x1UserxServ.deleteOneOfUsers();
       RM.navigate.back();
       await Future.delayed(400.milliseconds);
       RM.navigate.back();

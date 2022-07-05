@@ -42,8 +42,10 @@ class RouteMap {
     //* training ------- ----- ----- ----- -----
     Routes.snake: (RouteData data) => const SnakeView(),
     //* chat --- ------- ----- ----- ----- -----
-    Routes.chatList: (RouteData data) => const ChatListView(),
-    Routes.chatDetail: (RouteData data) => const ChatDetailView(),
     Routes.chatLogin: (RouteData data) => const ChatLoginView(),
+    Routes.chatUser: (RouteData data) => const ChatUserView(),
+    Routes.chatFriend: (RouteData data) => const ChatFriendView(),
+    Routes.chatRoom: (RouteData data) => const ChatRoomView(),
+    Routes.chatMessage: (RouteData data) => const ChatMessageView(),
   };
 }

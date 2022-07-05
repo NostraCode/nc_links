@@ -11,19 +11,29 @@ class HomeChat extends StatelessWidget {
     return Column(
       children: [
         HomeTile(
-          title: 'Chat List',
-          subtitle: '***** ***** ***** ***** *****',
-          fun: () => nav.to(Routes.chatList),
-        ),
-        HomeTile(
-          title: 'Chat Detail',
-          subtitle: '***** ***** ***** ***** *****',
-          fun: () => nav.to(Routes.chatDetail),
-        ),
-        HomeTile(
           title: 'Chat Login',
-          subtitle: '***** ***** ***** ***** *****',
+          subtitle: 'confirm auth',
           fun: () => nav.to(Routes.chatLogin),
+        ),
+        HomeTile(
+          title: 'Chat Users',
+          subtitle: 'only for admin',
+          fun: () => nav.to(Routes.chatUser),
+        ),
+        HomeTile(
+          title: 'Chat Contacts',
+          subtitle: 'users that ready tobe invited by you',
+          fun: () => nav.to(Routes.chatFriend),
+        ),
+        HomeTile(
+          title: 'Chat Rooms',
+          subtitle: 'list of personal or group chats',
+          fun: () => nav.to(Routes.chatRoom),
+        ),
+        HomeTile(
+          title: 'Chat Messages',
+          subtitle: 'list of messages of active room',
+          fun: () => nav.to(Routes.chatMessage),
         ),
       ],
     );

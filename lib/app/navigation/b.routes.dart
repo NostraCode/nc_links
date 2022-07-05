@@ -43,6 +43,9 @@ class Routes {
   static const snake = '/snake';
   //* training ------ ----- ----- ----- -----
   static const chatList = '/chat_list';
-  static const chatDetail = '/chat_detail';
+  static const chatMessage = '/chat_detail';
   static const chatLogin = '/chat_login';
+  static const chatRoom = '/chat_room';
+  static const chatUser = '/chat_user';
+  static const chatFriend = '/chat_friend';
 }

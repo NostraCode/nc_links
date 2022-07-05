@@ -10,7 +10,6 @@
     ".gitignore": true,
     ".metadata": true,
     ".packages": true,
-    ".vscode": true,
     "README.md": true,
     "analysis_options.yaml": true,
     "android": true,
@@ -24,7 +23,8 @@
     "pubspec.lock": true,
     "test": true,
     "web": true,
-    "windows": true
+    "windows": true,
+    ".vscode": true
   },
   "dart.flutterSdkPath": "/Users/veritas/fvm/versions/3.0.2"
 }

@@ -1,7 +1,7 @@
 part of '../_index.dart';
 
 class RestListCard extends StatelessWidget {
-  final User user;
+  final Userx user;
   const RestListCard({
     Key? key,
     required this.user,
