@@ -26,5 +26,5 @@
     "windows": true,
     ".vscode": true
   },
-  "dart.flutterSdkPath": "/Users/veritas/fvm/versions/3.0.2"
+  "dart.flutterSdkPath": "/Users/veritas/fvm/versions/3.0.3"
 }

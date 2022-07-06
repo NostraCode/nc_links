@@ -18,7 +18,25 @@ class HomeAppbar extends StatelessWidget {
             onChanged: (_) => ct.toogleSwitch(context),
           ),
         ),
-        const SizedBoxW(8),
+        IconButton(
+          onPressed: () => RM.navigate.toBottomSheet(
+            const HomeBottomSheet(),
+            enableDrag: true,
+            isDismissible: true,
+            isScrollControlled: true,
+            // backgroundColor: Colors.transparent,
+            // barrierColor: Colors.yellow,
+            // clipBehavior: Clip.hardEdge,
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(10),
+                topRight: Radius.circular(10),
+              ),
+            ),
+          ),
+          icon: const Icon(Icons.more_vert),
+        ),
+        const SizedBoxW(4),
         // OnReactive(
         //   () => Switch(
         //     value: dt.rxSwitch.st,
