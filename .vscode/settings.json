@@ -1,5 +1,6 @@
 {
   "files.exclude": {
+    ".DS_Store": true,
     ".dart_tool": true,
     ".firebase": true,
     ".firebaserc": true,
@@ -8,23 +9,25 @@
     ".fttemplates": true,
     ".git": true,
     ".gitignore": true,
+    ".idea": true,
     ".metadata": true,
-    ".packages": true,
+    ".vscode": true,
     "README.md": true,
     "analysis_options.yaml": true,
     "android": true,
     "assets": true,
     "build": true,
+    "fe_master.iml": true,
     "firebase.json": true,
     "ios": true,
     "lib_newproject": true,
     "linux": true,
     "macos": true,
     "pubspec.lock": true,
+    "pubspec.yaml": true,
     "test": true,
     "web": true,
-    "windows": true,
-    ".vscode": true
+    "windows": true
   },
-  "dart.flutterSdkPath": "/Users/veritas/fvm/versions/3.0.3"
+  "dart.flutterSdkPath": "/Users/veritas/fvm/versions/3.3.4"
 }

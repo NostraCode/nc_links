@@ -6,8 +6,8 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.0'
-        classpath 'com.google.gms:google-services:4.3.10' //! Add this line
+        classpath 'com.android.tools.build:gradle:7.1.2'
+        classpath 'com.google.gms:google-services:4.3.13' //! Add this line
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -17,14 +17,13 @@ allprojects {
         google()
         mavenCentral()
     }
-
-    gradle.projectsEvaluated {
-        tasks.withType(JavaCompile) {
-            options.encoding = 'UTF-8'
-            options.compilerArgs << "-Xlint:deprecation"
-        }
-    }
-
+    
+    // gradle.projectsEvaluated {
+    //     tasks.withType(JavaCompile) {
+    //         options.encoding = 'UTF-8'
+    //         options.compilerArgs << "-Xlint:deprecation"
+    //     }
+    // }
 }
 
 rootProject.buildDir = '../build'
