@@ -62,9 +62,9 @@ class ProductInputCtrl {
       listImages.add(value);
     });
     final pickedFiles = await ImagePicker().pickMultiImage();
-    pickedFiles?.forEach((item) {
+    for (var item in pickedFiles) {
       listImages.add(item.path);
-    });
+    }
     listImages.asMap().forEach((key, value) {
       mapImages['${dt.colId}/$id/$id-${key.toString()}'] = value;
     });
