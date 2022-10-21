@@ -22,13 +22,14 @@ if (flutterVersionName == null) {
 }
 
 apply plugin: 'com.android.application'
-apply plugin: 'com.google.gms.google-services' //! add this line
+// START: FlutterFire Configuration
+apply plugin: 'com.google.gms.google-services'
+// END: FlutterFire Configuration
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-    // compileSdkVersion flutter.compileSdkVersion
-    compileSdkVersion localProperties.getProperty('flutter.compileSdkVersion').toInteger() //! Add this line
+    compileSdkVersion 33 //! update this line
     ndkVersion flutter.ndkVersion
 
     compileOptions {
@@ -50,16 +51,11 @@ android {
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-build-configuration.
 
-        minSdkVersion localProperties.getProperty('flutter.minSdkVersion').toInteger() //! Add this line
-        targetSdkVersion localProperties.getProperty('flutter.targetSdkVersion').toInteger() //! Add this line
-        versionCode localProperties.getProperty('flutter.versionCode').toInteger() //! Add this line
+        minSdkVersion 22 //! update this line
+        targetSdkVersion 33 //! update this line
+        versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         // multiDexEnabled true //! Add this line
-
-        // minSdkVersion flutter.minSdkVersion
-        // targetSdkVersion flutter.targetSdkVersion
-        // versionCode flutterVersionCode.toInteger()
-        // versionName flutterVersionName
     }
 
     buildTypes {
