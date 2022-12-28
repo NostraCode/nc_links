@@ -27,7 +27,7 @@ class PopupEcho extends ReactiveStatelessWidget {
       ],
       cancelButton: CupertinoActionSheetAction(
         child: const Text('Cancel'),
-        onPressed: () => RM.navigate.back(),
+        onPressed: () => nav.back(),
         // isDefaultAction: true,
         // isDestructiveAction: true,
       ),

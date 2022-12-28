@@ -20,11 +20,11 @@ class PopupDelta extends StatelessWidget {
           // textStyle: TextStyle(
           //   color: Get.theme.textTheme.headline6?.color,
           // ),
-          onPressed: () => RM.navigate.back(),
+          onPressed: () => nav.back(),
         ),
         CupertinoDialogAction(
           isDefaultAction: true,
-          onPressed: () => RM.navigate.back(),
+          onPressed: () => nav.back(),
           child: const Text("OK"),
         ),
       ],

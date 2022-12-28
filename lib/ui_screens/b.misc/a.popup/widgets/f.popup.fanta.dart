@@ -22,9 +22,7 @@ class PopupFanta extends ReactiveStatelessWidget {
           child: dt.rxInt.st < 1
               ? const XshowFantaHeader()
               : SingleChildScrollView(
-                  physics: dt.rxInt.st < 1
-                      ? const NeverScrollableScrollPhysics()
-                      : null,
+                  physics: dt.rxInt.st < 1 ? const NeverScrollableScrollPhysics() : null,
                   controller: controller,
                   child: Column(
                     children: [
@@ -66,7 +64,7 @@ class XshowFantaHeader extends ReactiveStatelessWidget {
                 alignment: Alignment.topRight,
                 child: IconButton(
                   icon: const Icon(Icons.clear),
-                  onPressed: () => RM.navigate.back(),
+                  onPressed: () => nav.back(),
                 ),
               ),
               Align(

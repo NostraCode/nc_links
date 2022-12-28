@@ -14,3 +14,5 @@ part 'widgets/c.popup.charlie.dart';
 part 'widgets/d.popup.delta.dart';
 part 'widgets/e.popup.echo.dart';
 part 'widgets/f.popup.fanta.dart';
+part 'widgets/g.popup.golf.dart';
+part 'widgets/h.popup.hotel.dart';

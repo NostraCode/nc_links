@@ -14,11 +14,11 @@ class PopupCharlie extends StatelessWidget {
       actions: [
         TextButton(
           child: const Text('Cancel'),
-          onPressed: () => RM.navigate.back(),
+          onPressed: () => nav.back(),
         ),
         TextButton(
           child: const Text('YES'),
-          onPressed: () => RM.navigate.back(),
+          onPressed: () => nav.back(),
         ),
       ],
     );

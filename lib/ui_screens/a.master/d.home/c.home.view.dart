@@ -8,12 +8,12 @@ class HomeView extends StatelessWidget {
 
   List<List<dynamic>> get items {
     return [
-      ['Chat', const HomeChat()],
       ['Misc', const HomeMisc()],
       ['Injection', const HomeInj()],
       ['Firebase (not for windows)', const HomeFirebase()],
       ['Rest API', const HomeRestapi()],
       ['Training', const HomeTraining()],
+      ['Chat (not finished yet)', const HomeChat()],
     ];
   }
 

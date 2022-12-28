@@ -10,6 +10,4 @@ class PopupData {
   final title = 'Popup';
 
   final rxInt = 0.inj();
-
-  final rxShow = false.inj();
 }

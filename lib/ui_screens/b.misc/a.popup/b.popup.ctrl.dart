@@ -12,8 +12,4 @@ class PopupCtrl {
   increase() => dt.rxInt.st = dt.rxInt.st + 1;
 
   decrease() => dt.rxInt.st = dt.rxInt.st - 1;
-
-  showPersistentBottomSheet() => dt.rxShow.st = true;
-
-  hidePersistentBottomSheet() => dt.rxShow.st = false;
 }
