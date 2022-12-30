@@ -15,18 +15,24 @@ class SnakeView extends StatelessWidget {
       ),
       // floatingActionButton: const SnakeFab(),
       body: Column(
-        children: [
-          const SizedBox(
+        children: const [
+          SizedBox(
             height: 100,
             child: SnakeButtons(),
           ),
-          Container(
-            constraints: const BoxConstraints(
-              maxWidth: 600,
-              maxHeight: 600,
+          Expanded(
+            child: AspectRatio(
+              aspectRatio: 1,
+              child: SnakeGrid(),
             ),
-            child: const Flexible(child: SnakeGrid()),
           ),
+          // Container(
+          //   constraints: const BoxConstraints(
+          //     maxWidth: 600,
+          //     maxHeight: 600,
+          //   ),
+          //   child: const Flexible(child: SnakeGrid()),
+          // ),
         ],
       ),
     );
