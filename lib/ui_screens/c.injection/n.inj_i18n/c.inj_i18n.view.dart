@@ -25,7 +25,7 @@ class InjI18nView extends ReactiveStatelessWidget {
   @override
   Widget build(BuildContext context) {
     final i18n = i18nRM.of(context);
-    final textStyle = Theme.of(context).textTheme.headline6;
+    final textStyle = Theme.of(context).textTheme.titleLarge;
 
     return Scaffold(
       appBar: const PreferredSize(
