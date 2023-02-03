@@ -8,17 +8,6 @@ class UserxServ {
   init() => logxx.i(UserxServ, '...');
 
   // ----- ----- ----- ----- ----- ----- ----- ----- -----
-
-  // Future<dynamic> refreshUserList() async {
-  //   await dt.rxPage.refresh();
-  //   await dt.rxIsEnd.refresh();
-  //   await dt.rxSelectedId.refresh();
-  //   await dt.rxUserList.refresh();
-
-  //   initUsersLoader();
-  //   logx.s(dt.rxPage.st.toString());
-  // }
-
   setSelectedId(int id) {
     dt.rxSelectedId.refresh();
     dt.rxSelectedId.setState((s) => id);
@@ -52,16 +41,11 @@ class UserxServ {
     await dt.rxIsEnd.refresh();
     await dt.rxSelectedId.refresh();
     await dt.rxUserList.refresh();
-
-    // logx.s(dt.rxPage.st.toString());
-    dt.rxUsersLoader.stateAsync =
-        dt.rxUsersLoader.setState((s) => handleUsersLoader());
+    dt.rxUsersLoader.stateAsync = dt.rxUsersLoader.setState((s) => handleUsersLoader());
   }
 
   Future<dynamic> nextUsersLoader() async {
-    // logx.s(dt.rxPage.st.toString());
-    dt.rxUsersLoader.stateAsync =
-        dt.rxUsersLoader.setState((s) => handleUsersLoader());
+    dt.rxUsersLoader.stateAsync = dt.rxUsersLoader.setState((s) => handleUsersLoader());
   }
 
   Future<dynamic> handleUsersLoader() async {
@@ -85,23 +69,20 @@ class UserxServ {
   }
 
   //* triggered on initstate ----- ----- ----- ----- -----
-
   initUserDetail() {
-    dt.rxUserDetail.stateAsync =
-        dt.rxUserDetail.setState((s) => handleUserDetail());
+    dt.rxUserDetail.stateAsync = handleUserDetail();
   }
 
-  Future<dynamic> handleUserDetail() async {
+  Future<Userx> handleUserDetail() async {
     try {
       final user = await readUserDetail();
-      dt.rxUserDetail.setToHasData(user);
+      return user;
     } catch (e) {
-      dt.rxUserDetail.setToHasError(e);
       return Fun.handleException(e);
     }
   }
 
-  Future<dynamic> readUserDetail() async {
+  Future<Userx> readUserDetail() async {
     try {
       final user = await x1UserxRepo.st.readUser();
       return user;
@@ -112,7 +93,7 @@ class UserxServ {
 
   // ----- ----- ----- ----- ----- ----- ----- ----- -----
 
-  Future<dynamic> createUser(Userx user) async {
+  Future<void> createUser(Userx user) async {
     try {
       await x1UserxRepo.st.createUser(user);
     } catch (e) {
@@ -120,7 +101,7 @@ class UserxServ {
     }
   }
 
-  Future<dynamic> updateUser(Userx user) async {
+  Future<void> updateUser(Userx user) async {
     try {
       await x1UserxRepo.st.updateUser(user);
     } catch (e) {
@@ -128,7 +109,7 @@ class UserxServ {
     }
   }
 
-  Future<dynamic> deleteUser() async {
+  Future<void> deleteUser() async {
     try {
       await x1UserxRepo.st.deleteUser(dt.rxSelectedId.st);
     } catch (e) {
