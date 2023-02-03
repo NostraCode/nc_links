@@ -4,7 +4,7 @@ class ConnNotification extends ReactiveStatelessWidget {
   const ConnNotification({Key? key}) : super(key: key);
 
   ConnServ get ct => x1ConnServ;
-  ConnData get dt => x1ConnData.st;
+  ConnProv get dt => x1ConnProv.st;
 
   @override
   Widget build(BuildContext context) {

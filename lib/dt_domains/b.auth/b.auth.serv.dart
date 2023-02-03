@@ -3,17 +3,15 @@ part of '_index.dart';
 final x1AuthServ = AuthServ();
 
 class AuthServ {
-  AuthData get dt => x1AuthData.st;
+  AuthProv get pv => x1AuthProv.st;
 
   init() {
     logxx.i(AuthServ, '...');
-    dt.rxUser.subscription = x1FbAuth.st.instance
-        .authStateChanges()
-        .listen((event) => dt.rxUser.st = event);
+    pv.rxUser.subscription = x1FbAuth.st.instance.authStateChanges().listen((event) => pv.rxUser.st = event);
   }
 
   close() {
-    dt.rxUser.subscription?.cancel();
+    pv.rxUser.subscription?.cancel();
   }
 
   signInWithEmailAndPassword(String email, String password) {

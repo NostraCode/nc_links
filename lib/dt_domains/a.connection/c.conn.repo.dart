@@ -4,6 +4,6 @@ final x1ConnRepo = RM.inject<ConnRepo>(() => ConnRepo());
 
 class ConnRepo {
   Future<ConnectivityResult> getResult() async {
-    return x1ConnData.st.connx.checkConnectivity();
+    return x1ConnProv.st.connx.checkConnectivity();
   }
 }

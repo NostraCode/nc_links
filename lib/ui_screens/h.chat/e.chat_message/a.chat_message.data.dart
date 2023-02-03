@@ -13,5 +13,5 @@ class ChatMessageData {
 
   final rxTxtField = RM.injectTextEditing();
 
-  final rxChatMessages = x1ChatData.st.rxChatMessages;
+  final rxChatMessages = x1ChatProv.st.rxChatMessages;
 }

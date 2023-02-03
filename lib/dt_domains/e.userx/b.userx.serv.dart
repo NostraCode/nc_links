@@ -3,33 +3,33 @@ part of '_index.dart';
 final x1UserxServ = UserxServ();
 
 class UserxServ {
-  UserxData get dt => x1UserxData.st;
+  UserxProv get pv => x1UserxProv.st;
 
   init() => logxx.i(UserxServ, '...');
 
   // ----- ----- ----- ----- ----- ----- ----- ----- -----
   setSelectedId(int id) {
-    dt.rxSelectedId.refresh();
-    dt.rxSelectedId.setState((s) => id);
+    pv.rxSelectedId.refresh();
+    pv.rxSelectedId.setState((s) => id);
   }
 
   addToList(List<Userx> moreUsers) {
-    dt.rxUserList.setState((s) => [...s, ...moreUsers]);
+    pv.rxUserList.setState((s) => [...s, ...moreUsers]);
     if (moreUsers.isEmpty) {
-      dt.rxIsEnd.setState((s) => true);
+      pv.rxIsEnd.setState((s) => true);
     }
   }
 
   deleteOneOfUsers() {
-    dt.rxUserList.setState((s) {
-      final i = s.indexWhere((item) => item.id == dt.rxSelectedId.st);
+    pv.rxUserList.setState((s) {
+      final i = s.indexWhere((item) => item.id == pv.rxSelectedId.st);
       return s.removeAt(i);
     });
   }
 
   updateOneOfUsers(Userx user) {
-    dt.rxUserList.setState((s) {
-      final i = s.indexWhere((item) => item.id == dt.rxSelectedId.st);
+    pv.rxUserList.setState((s) {
+      final i = s.indexWhere((item) => item.id == pv.rxSelectedId.st);
       return s[i] = user;
     });
   }
@@ -37,31 +37,31 @@ class UserxServ {
   //* triggered on initstate ----- ----- ----- ----- -----
 
   Future<dynamic> initUsersLoader() async {
-    await dt.rxPage.refresh();
-    await dt.rxIsEnd.refresh();
-    await dt.rxSelectedId.refresh();
-    await dt.rxUserList.refresh();
-    dt.rxUsersLoader.stateAsync = dt.rxUsersLoader.setState((s) => handleUsersLoader());
+    await pv.rxPage.refresh();
+    await pv.rxIsEnd.refresh();
+    await pv.rxSelectedId.refresh();
+    await pv.rxUserList.refresh();
+    pv.rxUsersLoader.stateAsync = pv.rxUsersLoader.setState((s) => handleUsersLoader());
   }
 
   Future<dynamic> nextUsersLoader() async {
-    dt.rxUsersLoader.stateAsync = dt.rxUsersLoader.setState((s) => handleUsersLoader());
+    pv.rxUsersLoader.stateAsync = pv.rxUsersLoader.setState((s) => handleUsersLoader());
   }
 
   Future<dynamic> handleUsersLoader() async {
     try {
       final initRxLoadMore = await readUsersLoader();
-      dt.rxUsersLoader.setToHasData(initRxLoadMore);
+      pv.rxUsersLoader.setToHasData(initRxLoadMore);
     } catch (e) {
-      dt.rxUsersLoader.setToHasError(e);
+      pv.rxUsersLoader.setToHasError(e);
       return Fun.handleException(e);
     }
   }
 
   Future<dynamic> readUsersLoader() async {
     try {
-      dt.rxPage.setState((s) => s + 1);
-      final users = await x1UserxRepo.st.readUsers(dt.rxPage.st);
+      pv.rxPage.setState((s) => s + 1);
+      final users = await x1UserxRepo.st.readUsers(pv.rxPage.st);
       return users;
     } catch (e) {
       rethrow;
@@ -70,7 +70,7 @@ class UserxServ {
 
   //* triggered on initstate ----- ----- ----- ----- -----
   initUserDetail() {
-    dt.rxUserDetail.stateAsync = handleUserDetail();
+    pv.rxUserDetail.stateAsync = handleUserDetail();
   }
 
   Future<Userx> handleUserDetail() async {
@@ -111,7 +111,7 @@ class UserxServ {
 
   Future<void> deleteUser() async {
     try {
-      await x1UserxRepo.st.deleteUser(dt.rxSelectedId.st);
+      await x1UserxRepo.st.deleteUser(pv.rxSelectedId.st);
     } catch (e) {
       rethrow;
     }

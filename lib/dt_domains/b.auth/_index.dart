@@ -7,5 +7,5 @@ import '../../app/_index.dart';
 import '../../dt_sources/_index.dart';
 import '../_index.dart';
 
-part 'a.auth.data.dart';
+part 'a.auth.prov.dart';
 part 'b.auth.serv.dart';

@@ -8,7 +8,7 @@ import '../../app/_index.dart';
 import '../../dt_sources/_index.dart';
 import '../_index.dart';
 
-part 'a.chat.data.dart';
+part 'a.chat.prov.dart';
 part 'b.chat.serv.dart';
 part 'c.chat.repo.dart';
 part 'd.chat.repo.mock.dart';

@@ -11,9 +11,9 @@ final x1FbFirestoreData = RM.inject<FbFirestoreData>(
 class FbFirestoreData {
   final title = 'FbFirestore';
 
-  final rxSelectedId = x1ProductData.st.rxSelectedId;
+  final rxSelectedId = x1ProductProv.st.rxSelectedId;
 
-  final rxProductFuture = x1ProductData.st.rxProductFuture;
+  final rxProductFuture = x1ProductProv.st.rxProductFuture;
 
-  final rxProductStream = x1ProductData.st.rxProductStream;
+  final rxProductStream = x1ProductProv.st.rxProductStream;
 }

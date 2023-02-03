@@ -3,7 +3,7 @@ part of '_index.dart';
 final x1ProductServ = ProductServ();
 
 class ProductServ {
-  ProductData get dt => x1ProductData.st;
+  ProductProv get pv => x1ProductProv.st;
 
   init() => logxx.i(ProductServ, '...');
 
@@ -20,8 +20,8 @@ class ProductServ {
   // ----- ----- ----- ----- ----- ----- ----- ----- -----
 
   initProduct(String id) {
-    dt.rxSelectedId.refresh();
-    dt.rxSelectedId.st = id;
+    pv.rxSelectedId.refresh();
+    pv.rxSelectedId.st = id;
   }
 
   Future<void> createProduct(Product product) {
@@ -29,7 +29,7 @@ class ProductServ {
   }
 
   readProduct() {
-    dt.rxProductFuture.stateAsync = x1ProductRepo.st.readProduct();
+    pv.rxProductFuture.stateAsync = x1ProductRepo.st.readProduct();
   }
 
   Future<void> updateProduct(Product product) {
@@ -41,46 +41,44 @@ class ProductServ {
   }
 
   listenProduct() {
-    dt.rxProductStream.initializeState();
-    dt.rxProductStream.subscription = x1ProductRepo.st
-        .streamProduct()
-        .listen((event) => dt.rxProductStream.st = event);
+    pv.rxProductStream.initializeState();
+    pv.rxProductStream.subscription = x1ProductRepo.st.streamProduct().listen((event) => pv.rxProductStream.st = event);
   }
 
   // ----- ----- ----- ----- ----- ----- ----- ----- -----
 
   initProducts() {
-    dt.rxIsFirstEvent.st = true;
+    pv.rxIsFirstEvent.st = true;
     listenProducts();
     refreshProducts();
   }
 
   refreshProducts() {
-    dt.rxIsEnd.st = false;
-    dt.rxProductList.st = [];
-    dt.rxSelectedId.st = '';
+    pv.rxIsEnd.st = false;
+    pv.rxProductList.st = [];
+    pv.rxSelectedId.st = '';
     readProducts();
   }
 
   readProducts() {
-    dt.rxLoadMore.stateAsync = x1ProductRepo.st.readProducts();
+    pv.rxLoadMore.stateAsync = x1ProductRepo.st.readProducts();
   }
 
   addToList(List<Product> moreProducts) {
-    dt.rxProductList.st = [...dt.rxProductList.st, ...moreProducts];
-    if (moreProducts.length < dt.limit) {
-      dt.rxIsEnd.st = true;
+    pv.rxProductList.st = [...pv.rxProductList.st, ...moreProducts];
+    if (moreProducts.length < pv.limit) {
+      pv.rxIsEnd.st = true;
     }
   }
 
   listenProducts() {
-    dt.rxProductList.subscription = x1ProductRepo.st.streamProductsX().listen(
+    pv.rxProductList.subscription = x1ProductRepo.st.streamProductsX().listen(
       (event) {
         if (event.isNotEmpty) {
-          if (dt.rxIsFirstEvent.st) {
-            dt.rxIsFirstEvent.st = false;
+          if (pv.rxIsFirstEvent.st) {
+            pv.rxIsFirstEvent.st = false;
           } else {
-            dt.rxProductList.st = newListProducts(event);
+            pv.rxProductList.st = newListProducts(event);
           }
         }
       },
@@ -88,7 +86,7 @@ class ProductServ {
   }
 
   List<Product> newListProducts(List<Map<String, Product>> event) {
-    var newList = [...dt.rxProductList.st];
+    var newList = [...pv.rxProductList.st];
     for (var map in event) {
       final changeType = map.entries.first.key;
       final product = map.entries.first.value;

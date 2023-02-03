@@ -10,7 +10,7 @@ class ChatUserCards extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: OnBuilder<List<ChatUser>>.all(
-        listenTo: x1ChatData.st.rxChatUsers,
+        listenTo: x1ChatProv.st.rxChatUsers,
         onWaiting: () => const Text('waiting...'),
         onError: (_, __) => const Text('error...'),
         onData: (data) => data.isEmpty

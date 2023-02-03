@@ -9,7 +9,7 @@ final x1ProductEditData = RM.inject<ProductEditData>(
 class ProductEditData {
   final title = 'ProductEdit';
 
-  final colId = x1ProductData.st.colId;
+  final colId = x1ProductProv.st.colId;
 
   final rxProductBackup = RM.inject<Product>(() => Product());
 

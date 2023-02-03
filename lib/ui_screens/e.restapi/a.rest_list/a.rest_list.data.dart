@@ -9,11 +9,11 @@ final x1RestListData = RM.inject<RestListData>(
 class RestListData {
   final title = 'RestList';
 
-  final rxIsEnd = x1UserxData.st.rxIsEnd;
+  final rxIsEnd = x1UserxProv.st.rxIsEnd;
 
-  final rxSelectedId = x1UserxData.st.rxSelectedId;
+  final rxSelectedId = x1UserxProv.st.rxSelectedId;
 
-  final rxUserList = x1UserxData.st.rxUserList;
+  final rxUserList = x1UserxProv.st.rxUserList;
 
-  final rxUserLoader = x1UserxData.st.rxUsersLoader;
+  final rxUserLoader = x1UserxProv.st.rxUsersLoader;
 }

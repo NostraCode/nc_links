@@ -9,13 +9,13 @@ final x1ProductListData = RM.inject<ProductListData>(
 class ProductListData {
   final title = 'ProductList';
 
-  final limit = x1ProductData.st.limit;
+  final limit = x1ProductProv.st.limit;
 
-  final rxIsEnd = x1ProductData.st.rxIsEnd;
+  final rxIsEnd = x1ProductProv.st.rxIsEnd;
 
-  final rxSelectedId = x1ProductData.st.rxSelectedId;
+  final rxSelectedId = x1ProductProv.st.rxSelectedId;
 
-  final rxProductList = x1ProductData.st.rxProductList;
+  final rxProductList = x1ProductProv.st.rxProductList;
 
-  final rxLoadMore = x1ProductData.st.rxLoadMore;
+  final rxLoadMore = x1ProductProv.st.rxLoadMore;
 }

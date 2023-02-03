@@ -9,5 +9,5 @@ final x1FbAuthData = RM.inject<FbAuthData>(
 class FbAuthData {
   final title = 'FbAuth';
 
-  final rxUser = x1AuthData.st.rxUser;
+  final rxUser = x1AuthProv.st.rxUser;
 }

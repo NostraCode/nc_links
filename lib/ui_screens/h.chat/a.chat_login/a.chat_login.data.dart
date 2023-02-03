@@ -11,5 +11,5 @@ class ChatLoginData {
 
   final rxInt = 0.inj();
 
-  final rxUser = x1AuthData.st.rxUser;
+  final rxUser = x1AuthProv.st.rxUser;
 }

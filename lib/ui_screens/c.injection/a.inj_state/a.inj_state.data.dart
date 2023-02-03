@@ -23,11 +23,11 @@ class InjStateData {
 
   // ----- ----- ----- ----- -----
 
-  final rxSubsStatus = x1DummyData.st.rxSubsStatus;
+  final rxSubsStatus = x1DummyProv.st.rxSubsStatus;
 
-  final rxIntStream = x1DummyData.st.rxIntStream;
+  final rxIntStream = x1DummyProv.st.rxIntStream;
 
-  var rxIntList = x1DummyData.st.rxIntList;
+  var rxIntList = x1DummyProv.st.rxIntList;
 
-  final rxIntFuture = x1DummyData.st.rxIntFuture;
+  final rxIntFuture = x1DummyProv.st.rxIntFuture;
 }

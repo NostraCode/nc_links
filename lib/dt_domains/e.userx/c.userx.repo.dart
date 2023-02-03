@@ -21,7 +21,7 @@ class UserxRepo {
 
   Future<Userx> readUser() async {
     try {
-      final id = x1UserxData.st.rxSelectedId.st;
+      final id = x1UserxProv.st.rxSelectedId.st;
       final result = await x1HttpDio.get(ReqX(
         path: '/public/v2/users/$id',
       ));

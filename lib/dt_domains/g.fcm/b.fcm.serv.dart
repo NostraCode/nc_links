@@ -3,7 +3,7 @@ part of '_index.dart';
 final x1FcmServ = FcmServ();
 
 class FcmServ {
-  FcmData get dt => x1FcmData.st;
+  FcmProv get pv => x1FcmProv.st;
 
   init() async {
     logxx.i(FcmServ, '...');
@@ -14,10 +14,10 @@ class FcmServ {
 
   void registerNotification() async {
     await Firebase.initializeApp();
-    dt.messaging = FirebaseMessaging.instance;
+    pv.messaging = FirebaseMessaging.instance;
 
     FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
-    final settings = await dt.messaging.requestPermission(
+    final settings = await pv.messaging.requestPermission(
       alert: true,
       badge: true,
       provisional: false,
@@ -43,16 +43,16 @@ class FcmServ {
       dataType: message.data['type'],
       dataScreen: message.data['screen'],
     );
-    dt.rxPushNotification.st = notification;
-    dt.rxTotalNotifications.setState((s) => s + 1);
-    logxx.wtf(FcmServ, dt.rxPushNotification.st.toString());
+    pv.rxPushNotification.st = notification;
+    pv.rxTotalNotifications.setState((s) => s + 1);
+    logxx.wtf(FcmServ, pv.rxPushNotification.st.toString());
   }
 
   displayNotif() {
     showSimpleNotification(
-      Text(dt.rxPushNotification.st!.title!),
-      leading: NotificationBadge(total: dt.rxTotalNotifications.st),
-      subtitle: Text(dt.rxPushNotification.st!.body!),
+      Text(pv.rxPushNotification.st!.title!),
+      leading: NotificationBadge(total: pv.rxTotalNotifications.st),
+      subtitle: Text(pv.rxPushNotification.st!.body!),
       background: Colors.cyan.shade700,
       duration: const Duration(seconds: 2),
     );
@@ -67,7 +67,7 @@ class FcmServ {
   }
 
   goToScreen() {
-    final screen = dt.rxPushNotification.st?.dataScreen;
+    final screen = pv.rxPushNotification.st?.dataScreen;
     if (screen != null) {
       nav.to(screen);
       cleanNotificationState();
@@ -75,7 +75,7 @@ class FcmServ {
   }
 
   cleanNotificationState() {
-    dt.rxPushNotification.st = null;
+    pv.rxPushNotification.st = null;
   }
 
   listenOnMessage() {
@@ -84,7 +84,7 @@ class FcmServ {
       logxx.wtf(FcmServ, 'Message body: ${message.notification?.body}');
       logxx.wtf(FcmServ, 'Message data: ${message.data}');
       updateState(message);
-      if (dt.rxPushNotification.st != null) {
+      if (pv.rxPushNotification.st != null) {
         displayNotif();
         cleanNotificationState();
         logxx.wtf(FcmServ, 'foreground..!!!');

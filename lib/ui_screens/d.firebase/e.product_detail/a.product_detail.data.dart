@@ -9,5 +9,5 @@ final x1ProductDetailData = RM.inject<ProductDetailData>(
 class ProductDetailData {
   final title = 'ProductDetail';
 
-  final rxProduct = x1ProductData.st.rxProductFuture;
+  final rxProduct = x1ProductProv.st.rxProductFuture;
 }

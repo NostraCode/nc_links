@@ -8,7 +8,7 @@ import '../../app/_index.dart';
 import '../../dt_sources/_index.dart';
 import '../_models/_index.dart';
 
-part 'a.product.data.dart';
+part 'a.product.prov.dart';
 part 'b.product.serv.dart';
 part 'c.product.repo.dart';
 part 'd.product.repo.mock.dart';
