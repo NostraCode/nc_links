@@ -3,8 +3,8 @@ part of '_index.dart';
 class FbFirestoreView extends StatelessWidget {
   const FbFirestoreView({Key? key}) : super(key: key);
 
-  FbFirestoreCtrl get ct => x1FbFirestoreCtrl;
-  FbFirestoreData get dt => x1FbFirestoreData.st;
+  FbFirestoreCtrl get ct => Ctrl.fbFirestore;
+  FbFirestoreData get dt => Data.fbFirestore.st;
 
   @override
   Widget build(BuildContext context) {

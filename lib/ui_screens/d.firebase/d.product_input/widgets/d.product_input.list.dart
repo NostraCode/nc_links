@@ -3,8 +3,8 @@ part of '../_index.dart';
 class ProductInputList extends StatelessWidget {
   const ProductInputList({Key? key}) : super(key: key);
 
-  ProductInputCtrl get ct => x1ProductInputCtrl;
-  ProductInputData get dt => x1ProductInputData.st;
+  ProductInputCtrl get ct => Ctrl.productInput;
+  ProductInputData get dt => Data.productInput.st;
 
   @override
   Widget build(BuildContext context) {

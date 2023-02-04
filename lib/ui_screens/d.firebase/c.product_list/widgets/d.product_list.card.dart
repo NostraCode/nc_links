@@ -7,8 +7,8 @@ class ProductListCard extends StatelessWidget {
     required this.product,
   }) : super(key: key);
 
-  ProductListCtrl get ct => x1ProductListCtrl;
-  ProductListData get dt => x1ProductListData.st;
+  ProductListCtrl get ct => Ctrl.productList;
+  ProductListData get dt => Data.productList.st;
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +20,7 @@ class ProductListCard extends StatelessWidget {
           dense: true,
           leading: Icon(
             Icons.image,
-            color: product.images.isEmpty
-                ? themeRM.activeTheme().iconTheme.color?.withOpacity(0.1)
-                : null,
+            color: product.images.isEmpty ? themeRM.activeTheme().iconTheme.color?.withOpacity(0.1) : null,
           ),
           title: Text(product.name),
           onTap: () => ct.select(product.id),

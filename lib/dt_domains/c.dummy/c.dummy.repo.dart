@@ -1,7 +1,5 @@
 part of '_index.dart';
 
-final x1DummyRepo = RM.inject<DummyRepo>(() => DummyRepo());
-
 class DummyRepo {
   Stream<int> streamIncrease() {
     return Stream.periodic(

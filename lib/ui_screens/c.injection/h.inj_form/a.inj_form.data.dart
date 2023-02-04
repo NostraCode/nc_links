@@ -1,11 +1,5 @@
 part of '_index.dart';
 
-final x1InjFormData = RM.inject<InjFormData>(
-  () => InjFormData(),
-  debugPrintWhenNotifiedPreMessage: '',
-  sideEffects: SideEffects(initState: () => x1InjFormCtrl.init()),
-);
-
 class InjFormData {
   final title = 'InjForm';
 

@@ -3,6 +3,7 @@ import 'package:states_rebuilder/states_rebuilder.dart';
 
 import '../../../app/_index.dart';
 import '../../../dt_domains/_index.dart';
+import '../../../xtras/_index.dart';
 
 part 'a.rest_list.data.dart';
 part 'b.rest_list.ctrl.dart';

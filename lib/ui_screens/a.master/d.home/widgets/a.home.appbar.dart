@@ -3,8 +3,8 @@ part of '../_index.dart';
 class HomeAppbar extends StatelessWidget {
   const HomeAppbar({Key? key}) : super(key: key);
 
-  HomeCtrl get ct => x1HomexCtrl;
-  HomeData get dt => x1HomeData.st;
+  HomeCtrl get ct => Ctrl.home;
+  HomeData get dt => Data.home.st;
 
   @override
   Widget build(BuildContext context) {

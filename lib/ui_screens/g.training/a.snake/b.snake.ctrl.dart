@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1SnakeCtrl = SnakeCtrl();
-
 class SnakeCtrl {
-  SnakeData get dt => x1SnakeData.st;
+  SnakeData get dt => Data.snake.st;
 
   init() {
     logxx.i(SnakeCtrl, '...');

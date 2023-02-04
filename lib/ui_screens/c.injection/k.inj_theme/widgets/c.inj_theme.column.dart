@@ -3,8 +3,8 @@ part of '../_index.dart';
 class InjThemeColumn extends StatelessWidget {
   const InjThemeColumn({Key? key}) : super(key: key);
 
-  InjThemeCtrl get ct => x1InjThemeCtrl;
-  InjThemeData get dt => x1InjThemeData.st;
+  InjThemeCtrl get ct => Ctrl.injTheme;
+  InjThemeData get dt => Data.injTheme.st;
 
   @override
   Widget build(BuildContext context) {

@@ -3,8 +3,8 @@ part of '../_index.dart';
 class RestEditCharlie extends StatelessWidget {
   const RestEditCharlie({Key? key}) : super(key: key);
 
-  RestEditCtrl get ct => x1RestEditCtrl;
-  RestEditData get dt => x1RestEditData.st;
+  RestEditCtrl get ct => Ctrl.restEdit;
+  RestEditData get dt => Data.restEdit.st;
 
   @override
   Widget build(BuildContext context) {

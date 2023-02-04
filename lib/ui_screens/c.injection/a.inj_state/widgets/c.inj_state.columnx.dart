@@ -11,8 +11,8 @@ class InjStateColumnX extends StatelessWidget {
     required this.child,
   }) : super(key: key);
 
-  InjStateCtrl get ct => x1InjStateCtrl;
-  InjStateData get dt => x1InjStateData.st;
+  InjStateCtrl get ct => Ctrl.injState;
+  InjStateData get dt => Data.injState.st;
 
   @override
   Widget build(BuildContext context) {

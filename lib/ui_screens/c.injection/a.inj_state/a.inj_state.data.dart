@@ -1,11 +1,5 @@
 part of '_index.dart';
 
-final x1InjStateData = RM.inject<InjStateData>(
-  () => InjStateData(),
-  debugPrintWhenNotifiedPreMessage: '',
-  sideEffects: SideEffects(initState: () => x1InjStateCtrl.init()),
-);
-
 class InjStateData {
   final title = 'RM State';
 
@@ -23,11 +17,11 @@ class InjStateData {
 
   // ----- ----- ----- ----- -----
 
-  final rxSubsStatus = x1DummyProv.st.rxSubsStatus;
+  final rxSubsStatus = Prov.dummy.st.rxSubsStatus;
 
-  final rxIntStream = x1DummyProv.st.rxIntStream;
+  final rxIntStream = Prov.dummy.st.rxIntStream;
 
-  var rxIntList = x1DummyProv.st.rxIntList;
+  var rxIntList = Prov.dummy.st.rxIntList;
 
-  final rxIntFuture = x1DummyProv.st.rxIntFuture;
+  final rxIntFuture = Prov.dummy.st.rxIntFuture;
 }

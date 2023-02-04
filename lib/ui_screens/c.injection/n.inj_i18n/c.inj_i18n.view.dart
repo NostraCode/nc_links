@@ -3,8 +3,8 @@ part of '_index.dart';
 class InjI18nView extends ReactiveStatelessWidget {
   const InjI18nView({Key? key}) : super(key: key);
 
-  InjI18nCtrl get ct => x1InjI18nCtrl;
-  InjI18nData get dt => x1InjI18nData.st;
+  InjI18nCtrl get ct => Ctrl.injI18n;
+  InjI18nData get dt => Data.injI18n.st;
 
   static final _counter = 0.inj();
   // static final unselectedStyle = ElevatedButton.styleFrom(

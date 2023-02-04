@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
 
 import '../../app/_index.dart';
+import '../../xtras/_index.dart';
 import '../_index.dart';
 
 part 'a.coba_satu.data.dart';

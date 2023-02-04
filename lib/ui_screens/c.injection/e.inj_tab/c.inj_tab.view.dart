@@ -3,8 +3,8 @@ part of '_index.dart';
 class InjTabView extends StatelessWidget {
   const InjTabView({Key? key}) : super(key: key);
 
-  InjTabCtrl get ct => x1InjTabCtrl;
-  InjTabData get dt => x1InjTabData.st;
+  InjTabCtrl get ct => Ctrl.injTab;
+  InjTabData get dt => Data.injTab.st;
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +23,7 @@ class InjTabView extends StatelessWidget {
                 controller: dt.rxTab.tabController,
                 // isScrollable: true,
                 indicatorColor: Colors.transparent,
-                unselectedLabelStyle:
-                    const TextStyle(color: Colors.transparent),
+                unselectedLabelStyle: const TextStyle(color: Colors.transparent),
                 tabs: const [
                   Tab(
                     icon: Icon(Icons.flare),

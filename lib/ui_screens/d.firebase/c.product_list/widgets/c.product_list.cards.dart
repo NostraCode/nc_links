@@ -3,8 +3,8 @@ part of '../_index.dart';
 class ProductListCards extends StatelessWidget {
   const ProductListCards({Key? key}) : super(key: key);
 
-  ProductListCtrl get ct => x1ProductListCtrl;
-  ProductListData get dt => x1ProductListData.st;
+  ProductListCtrl get ct => Ctrl.productList;
+  ProductListData get dt => Data.productList.st;
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +22,7 @@ class ProductListCards extends StatelessWidget {
                 ),
               ),
             ),
-            for (var item in dt.rxProductList.st)
-              ProductListCard(product: item),
+            for (var item in dt.rxProductList.st) ProductListCard(product: item),
             const ProductListLoadmore(),
           ],
         ),

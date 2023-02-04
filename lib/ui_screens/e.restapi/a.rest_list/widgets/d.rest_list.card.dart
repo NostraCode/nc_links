@@ -7,8 +7,8 @@ class RestListCard extends StatelessWidget {
     required this.user,
   }) : super(key: key);
 
-  RestListCtrl get ct => x1RestListCtrl;
-  RestListData get dt => x1RestListData.st;
+  RestListCtrl get ct => Ctrl.restList;
+  RestListData get dt => Data.restList.st;
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +22,7 @@ class RestListCard extends StatelessWidget {
           title: Text('[${user.id}] ${user.name}'),
           subtitle: Text(user.email),
           leading: Icon(user.gender == 'male' ? Icons.male : Icons.female),
-          trailing: user.status == 'active'
-              ? const Icon(Icons.check, size: 18)
-              : null,
+          trailing: user.status == 'active' ? const Icon(Icons.check, size: 18) : null,
           onTap: () => ct.select(user.id),
         ),
       ),

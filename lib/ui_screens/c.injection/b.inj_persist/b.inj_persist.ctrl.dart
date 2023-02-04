@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1InjPersistCtrl = InjPersistCtrl();
-
 class InjPersistCtrl {
-  InjPersistData get dt => x1InjPersistData.st;
+  InjPersistData get dt => Data.injPersist.st;
 
   init() => logxx.i(InjPersistCtrl, '...');
 

@@ -9,8 +9,8 @@ class ProductInputTile extends StatelessWidget {
     required this.animation,
   }) : super(key: key);
 
-  ProductInputCtrl get ct => x1ProductInputCtrl;
-  ProductInputData get dt => x1ProductInputData.st;
+  ProductInputCtrl get ct => Ctrl.productInput;
+  ProductInputData get dt => Data.productInput.st;
 
   @override
   Widget build(BuildContext context) {

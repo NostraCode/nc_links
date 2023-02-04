@@ -1,10 +1,5 @@
 part of '_index.dart';
 
-final x1FcmProv = RM.inject<FcmProv>(
-  () => FcmProv(),
-  debugPrintWhenNotifiedPreMessage: '',
-);
-
 class FcmProv {
   late final FirebaseMessaging messaging;
 

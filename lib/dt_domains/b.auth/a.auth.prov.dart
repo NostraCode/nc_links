@@ -1,10 +1,5 @@
 part of '_index.dart';
 
-final x1AuthProv = RM.inject<AuthProv>(
-  () => AuthProv(),
-  debugPrintWhenNotifiedPreMessage: '',
-);
-
 class AuthProv {
   final rxUser = RM.injectStream<User?>(
     () => Stream.value(null),
@@ -12,7 +7,7 @@ class AuthProv {
     sideEffects: SideEffects(
       onSetState: (snap) {
         logxx.wtf(AuthProv, 'user => ${snap.data}');
-        x1ChatServ.updateChatUser(snap.data);
+        Serv.chat.updateChatUser(snap.data);
       },
     ),
   );

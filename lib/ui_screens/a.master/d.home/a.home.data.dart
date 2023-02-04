@@ -1,11 +1,5 @@
 part of '_index.dart';
 
-final x1HomeData = RM.inject<HomeData>(
-  () => HomeData(),
-  debugPrintWhenNotifiedPreMessage: '',
-  sideEffects: SideEffects(initState: () => x1HomexCtrl.init()),
-);
-
 class HomeData {
   final title = 'Home';
 

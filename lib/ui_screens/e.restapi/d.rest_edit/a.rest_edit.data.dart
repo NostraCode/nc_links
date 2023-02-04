@@ -1,21 +1,15 @@
 part of '_index.dart';
 
-final x1RestEditData = RM.inject<RestEditData>(
-  () => RestEditData(),
-  debugPrintWhenNotifiedPreMessage: '',
-  sideEffects: SideEffects(initState: () => x1RestEditCtrl.init()),
-);
-
 class RestEditData {
   final title = 'RestEdit';
 
-  final selectedId = x1UserxProv.st.rxSelectedId;
+  final selectedId = Prov.userx.st.rxSelectedId;
 
   final focusScopeNode = FocusScopeNode();
 
   final rxForm = RM.injectForm(
     submit: () async {
-      await x1RestEditCtrl.updateUser();
+      await Ctrl.restEdit.updateUser();
     },
   );
 

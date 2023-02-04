@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1ChatUserCtrl = ChatUserCtrl();
-
 class ChatUserCtrl {
-  ChatUserData get dt => x1ChatUserData.st;
+  ChatUserData get dt => Data.chatUser.st;
 
   init() => logxx.i(ChatUserCtrl, '...');
 

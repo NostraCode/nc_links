@@ -1,11 +1,5 @@
 part of '_index.dart';
 
-final x1RegisData = RM.inject<RegisData>(
-  () => RegisData(),
-  debugPrintWhenNotifiedPreMessage: '',
-  sideEffects: SideEffects(initState: () => x1RegisCtrl.init()),
-);
-
 class RegisData {
   final rxTitle = 'Regis'.inj();
 

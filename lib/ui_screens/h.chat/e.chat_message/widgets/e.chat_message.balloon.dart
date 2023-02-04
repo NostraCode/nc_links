@@ -11,8 +11,8 @@ class ChatMessageBalloon extends StatelessWidget {
     required this.isNip,
   }) : super(key: key);
 
-  ChatMessageCtrl get ct => x1ChatMessageCtrl;
-  ChatMessageData get dt => x1ChatMessageData.st;
+  ChatMessageCtrl get ct => Ctrl.chatMessage;
+  ChatMessageData get dt => Data.chatMessage.st;
 
   @override
   Widget build(BuildContext context) {
@@ -22,13 +22,10 @@ class ChatMessageBalloon extends StatelessWidget {
       padding: EdgeInsets.only(top: isNip ? 8 : 1.5),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment:
-            isSend ? MainAxisAlignment.end : MainAxisAlignment.start,
+        mainAxisAlignment: isSend ? MainAxisAlignment.end : MainAxisAlignment.start,
         children: [
           SizedBox(width: isSend ? 50 : 10),
-          isNip && !isSend
-              ? CustomPaint(painter: NipLeft(getColor()))
-              : const SizedBox.shrink(),
+          isNip && !isSend ? CustomPaint(painter: NipLeft(getColor())) : const SizedBox.shrink(),
           Flexible(
             child: Stack(
               alignment: Alignment.bottomRight,
@@ -98,9 +95,7 @@ class ChatMessageBalloon extends StatelessWidget {
               ],
             ),
           ),
-          isNip && isSend
-              ? CustomPaint(painter: NipRight(getColor()))
-              : const SizedBox.shrink(),
+          isNip && isSend ? CustomPaint(painter: NipRight(getColor())) : const SizedBox.shrink(),
           SizedBox(width: isSend ? 10 : 50),
         ],
       ),

@@ -1,7 +1,5 @@
 part of '_index.dart';
 
-final x1ChatRepo = RM.inject<ChatRepo>(() => ChatRepo());
-
 class ChatRepo {
   Stream<List<ChatUser>> listenUsers() {
     const path = 'users';
@@ -49,9 +47,7 @@ class ChatRepo {
 
   Stream<List<ChatRoom>> listenRooms(ChatUser chatUser) {
     const path = 'rooms';
-    return x1FbDatabase.st
-        .listen(path, orderByChild: 'members/${chatUser.idUser}', equalTo: true)
-        .map((event) {
+    return x1FbDatabase.st.listen(path, orderByChild: 'members/${chatUser.idUser}', equalTo: true).map((event) {
       List<ChatRoom> chatRooms = [];
       if (event.snapshot.value != null) {
         final eventMap = hackEvent(event);

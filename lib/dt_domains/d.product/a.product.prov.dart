@@ -1,10 +1,5 @@
 part of '_index.dart';
 
-final x1ProductProv = RM.inject<ProductProv>(
-  () => ProductProv(),
-  debugPrintWhenNotifiedPreMessage: '',
-);
-
 class ProductProv {
   final appCheck = FirebaseAppCheck.instance;
 
@@ -27,8 +22,8 @@ class ProductProv {
     sideEffects: SideEffects(
       onSetState: (snap) {
         if (snap.data != '') {
-          x1ProductServ.readProduct();
-          x1ProductServ.listenProduct();
+          Serv.product.readProduct();
+          Serv.product.listenProduct();
         }
       },
     ),
@@ -47,11 +42,11 @@ class ProductProv {
   final rxLoadMore = RM.injectFuture<List<Product>>(
     () => Future.value([]),
     sideEffects: SideEffects(
-      initState: () => x1ProductServ.initProducts(),
+      initState: () => Serv.product.initProducts(),
       onSetState: (snap) {
         if (snap.hasData) {
           final moreProducts = snap.state.whereType<Product>().toList();
-          x1ProductServ.addToList(moreProducts);
+          Serv.product.addToList(moreProducts);
         }
       },
     ),

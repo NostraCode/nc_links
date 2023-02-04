@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1UserxServ = UserxServ();
-
 class UserxServ {
-  UserxProv get pv => x1UserxProv.st;
+  UserxProv get pv => Prov.userx.st;
 
   init() => logxx.i(UserxServ, '...');
 
@@ -61,7 +59,7 @@ class UserxServ {
   Future<dynamic> readUsersLoader() async {
     try {
       pv.rxPage.setState((s) => s + 1);
-      final users = await x1UserxRepo.st.readUsers(pv.rxPage.st);
+      final users = await Repo.userx.st.readUsers(pv.rxPage.st);
       return users;
     } catch (e) {
       rethrow;
@@ -84,7 +82,7 @@ class UserxServ {
 
   Future<Userx> readUserDetail() async {
     try {
-      final user = await x1UserxRepo.st.readUser();
+      final user = await Repo.userx.st.readUser();
       return user;
     } catch (e) {
       rethrow;
@@ -95,7 +93,7 @@ class UserxServ {
 
   Future<void> createUser(Userx user) async {
     try {
-      await x1UserxRepo.st.createUser(user);
+      await Repo.userx.st.createUser(user);
     } catch (e) {
       rethrow;
     }
@@ -103,7 +101,7 @@ class UserxServ {
 
   Future<void> updateUser(Userx user) async {
     try {
-      await x1UserxRepo.st.updateUser(user);
+      await Repo.userx.st.updateUser(user);
     } catch (e) {
       rethrow;
     }
@@ -111,7 +109,7 @@ class UserxServ {
 
   Future<void> deleteUser() async {
     try {
-      await x1UserxRepo.st.deleteUser(pv.rxSelectedId.st);
+      await Repo.userx.st.deleteUser(pv.rxSelectedId.st);
     } catch (e) {
       rethrow;
     }
@@ -119,7 +117,7 @@ class UserxServ {
 
   Future<dynamic> upload(FormData formData) async {
     try {
-      final imageUrl = await x1UserxRepo.st.upload(formData);
+      final imageUrl = await Repo.userx.st.upload(formData);
       return imageUrl;
     } catch (e) {
       rethrow;

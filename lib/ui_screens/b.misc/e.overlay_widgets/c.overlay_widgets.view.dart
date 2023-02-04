@@ -3,8 +3,8 @@ part of '_index.dart';
 class OverlayWidgetsView extends StatelessWidget {
   const OverlayWidgetsView({Key? key}) : super(key: key);
 
-  OverlayWidgetsCtrl get ct => x1OverlayWidgetsCtrl;
-  OverlayWidgetsData get dt => x1OverlayWidgetsData.st;
+  OverlayWidgetsCtrl get ct => Ctrl.overlayWidget;
+  OverlayWidgetsData get dt => Data.overlayWidget.st;
 
   @override
   Widget build(BuildContext context) {
@@ -61,9 +61,7 @@ class OverlayWidgetsView extends StatelessWidget {
                     onPressed: () {
                       showOverlay((context, t) {
                         return CustomAnimationToast(value: t);
-                      },
-                          key: const ValueKey('hello'),
-                          curve: Curves.decelerate);
+                      }, key: const ValueKey('hello'), curve: Curves.decelerate);
                     },
                     child: const Text('custom animation overlay'),
                   ),
@@ -71,11 +69,9 @@ class OverlayWidgetsView extends StatelessWidget {
                     onPressed: () {
                       showOverlay((context, t) {
                         return Container(
-                          color:
-                              Color.lerp(Colors.transparent, Colors.black54, t),
+                          color: Color.lerp(Colors.transparent, Colors.black54, t),
                           child: FractionalTranslation(
-                            translation: Offset.lerp(
-                                const Offset(0, -1), const Offset(0, 0), t)!,
+                            translation: Offset.lerp(const Offset(0, -1), const Offset(0, 0), t)!,
                             child: Column(
                               children: <Widget>[
                                 MessageNotification(
@@ -176,8 +172,7 @@ class OverlayWidgetsView extends StatelessWidget {
                     onPressed: () async {
                       final random = Random();
                       for (var i = 0; i < messages.length; i++) {
-                        await Future.delayed(
-                            Duration(milliseconds: 200 + random.nextInt(200)));
+                        await Future.delayed(Duration(milliseconds: 200 + random.nextInt(200)));
                         showOverlayNotification((context) {
                           return MessageNotification(
                             message: messages[i],
@@ -186,9 +181,7 @@ class OverlayWidgetsView extends StatelessWidget {
                               toast('you checked this message');
                             },
                           );
-                        },
-                            duration: const Duration(milliseconds: 4000),
-                            key: const ValueKey('message'));
+                        }, duration: const Duration(milliseconds: 4000), key: const ValueKey('message'));
                       }
                     },
                     child: const Text('message sequence'),

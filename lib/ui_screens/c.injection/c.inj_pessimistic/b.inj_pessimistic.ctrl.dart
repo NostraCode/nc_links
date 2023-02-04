@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1InjPessimisticCtrl = InjPessimisticCtrl();
-
 class InjPessimisticCtrl {
-  InjPessimisticData get dt => x1InjPessimisticData.st;
+  InjPessimisticData get dt => Data.injPessimistic.st;
 
   init() => logxx.i(InjPessimisticCtrl, '...');
 

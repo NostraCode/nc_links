@@ -3,8 +3,8 @@ part of '../_index.dart';
 class InjStateWidgets extends StatelessWidget {
   const InjStateWidgets({Key? key}) : super(key: key);
 
-  InjStateCtrl get ct => x1InjStateCtrl;
-  InjStateData get dt => x1InjStateData.st;
+  InjStateCtrl get ct => Ctrl.injState;
+  InjStateData get dt => Data.injState.st;
 
   @override
   Widget build(BuildContext context) {
@@ -91,8 +91,8 @@ class InjStateWidgets extends StatelessWidget {
 class InjStateCharlieX extends ReactiveStatelessWidget {
   const InjStateCharlieX({Key? key}) : super(key: key);
 
-  InjStateCtrl get ct => x1InjStateCtrl;
-  InjStateData get dt => x1InjStateData.st;
+  InjStateCtrl get ct => Ctrl.injState;
+  InjStateData get dt => Data.injState.st;
 
   @override
   Widget build(BuildContext context) {

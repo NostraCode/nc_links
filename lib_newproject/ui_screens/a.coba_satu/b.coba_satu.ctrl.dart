@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1CobaSatuCtrl = CobaSatuCtrl();
-
 class CobaSatuCtrl {
-  CobaSatuData get dt => x1CobaSatuData.st;
+  CobaSatuData get dt => Data.cobaSatu.st;
 
   init() => logxx.i(CobaSatuCtrl, '...');
 

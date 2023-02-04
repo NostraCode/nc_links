@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1RegisCtrl = RegisCtrl();
-
 class RegisCtrl {
-  RegisData get dt => x1RegisData.st;
+  RegisData get dt => Data.regis.st;
 
   init() => logxx.i(RegisCtrl, '...');
 

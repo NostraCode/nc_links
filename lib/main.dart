@@ -12,7 +12,7 @@ void main() async {
     DevicePreview(
       enabled: PlatformType.isLinux,
       storage: DevicePreviewStorage.preferences(),
-      builder: (context) => const App(), // Wrap your app
+      builder: (context) => const App(), //* Wrap your app
     ),
   );
 }

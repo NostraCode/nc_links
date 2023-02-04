@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1DummyServ = DummyServ();
-
 class DummyServ {
-  DummyProv get pv => x1DummyProv.st;
+  DummyProv get pv => Prov.dummy.st;
 
   init() {
     logxx.i(DummyServ, '...');
@@ -18,20 +16,20 @@ class DummyServ {
   }
 
   Future<void> futureInit() async {
-    pv.rxIntFuture.stateAsync = x1DummyRepo.st.futureInit();
+    pv.rxIntFuture.stateAsync = Repo.dummy.st.futureInit();
   }
 
   futureIncrease() {
-    pv.rxIntFuture.stateAsync = x1DummyRepo.st.futureIncrease(pv.rxIntFuture.st);
+    pv.rxIntFuture.stateAsync = Repo.dummy.st.futureIncrease(pv.rxIntFuture.st);
   }
 
   futureRandom() {
-    pv.rxIntFuture.stateAsync = x1DummyRepo.st.futureRandom();
+    pv.rxIntFuture.stateAsync = Repo.dummy.st.futureRandom();
   }
 
   // ----- ----- ----- ----- -----
 
-  streamSubs() => x1DummyRepo.st.streamIncrease().listen((event) => pv.rxIntStream.st = event);
+  streamSubs() => Repo.dummy.st.streamIncrease().listen((event) => pv.rxIntStream.st = event);
 
   start() {
     stop();

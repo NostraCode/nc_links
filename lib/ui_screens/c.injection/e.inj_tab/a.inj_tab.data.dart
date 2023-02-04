@@ -1,11 +1,5 @@
 part of '_index.dart';
 
-final x1InjTabData = RM.inject<InjTabData>(
-  () => InjTabData(),
-  debugPrintWhenNotifiedPreMessage: '',
-  sideEffects: SideEffects(initState: () => x1InjTabCtrl.init()),
-);
-
 class InjTabData {
   final title = 'InjTab';
 

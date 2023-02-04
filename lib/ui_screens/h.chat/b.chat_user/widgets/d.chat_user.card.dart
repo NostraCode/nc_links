@@ -7,8 +7,8 @@ class ChatUserCard extends StatelessWidget {
     required this.chatUser,
   }) : super(key: key);
 
-  ChatUserCtrl get ct => x1ChatUserCtrl;
-  ChatUserData get dt => x1ChatUserData.st;
+  ChatUserCtrl get ct => Ctrl.chatUser;
+  ChatUserData get dt => Data.chatUser.st;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class ChatUserCard extends StatelessWidget {
                   ),
           ),
           trailing: IconButton(
-            onPressed: () => x1ChatServ.addToContacts(chatUser),
+            onPressed: () => Serv.chat.addToContacts(chatUser),
             icon: const Icon(Icons.add),
           ),
           // onTap: () => x1ChatServ.addToChatFriends(chatUser),

@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1ChatRoomCtrl = ChatRoomCtrl();
-
 class ChatRoomCtrl {
-  ChatRoomData get dt => x1ChatRoomData.st;
+  ChatRoomData get dt => Data.chatRoom.st;
 
   init() => logxx.i(ChatRoomCtrl, '...');
 

@@ -1,21 +1,15 @@
 part of '_index.dart';
 
-final x1ProductListData = RM.inject<ProductListData>(
-  () => ProductListData(),
-  debugPrintWhenNotifiedPreMessage: '',
-  sideEffects: SideEffects(initState: () => x1ProductListCtrl.init()),
-);
-
 class ProductListData {
   final title = 'ProductList';
 
-  final limit = x1ProductProv.st.limit;
+  final limit = Prov.product.st.limit;
 
-  final rxIsEnd = x1ProductProv.st.rxIsEnd;
+  final rxIsEnd = Prov.product.st.rxIsEnd;
 
-  final rxSelectedId = x1ProductProv.st.rxSelectedId;
+  final rxSelectedId = Prov.product.st.rxSelectedId;
 
-  final rxProductList = x1ProductProv.st.rxProductList;
+  final rxProductList = Prov.product.st.rxProductList;
 
-  final rxLoadMore = x1ProductProv.st.rxLoadMore;
+  final rxLoadMore = Prov.product.st.rxLoadMore;
 }

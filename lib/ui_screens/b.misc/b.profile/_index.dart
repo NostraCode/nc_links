@@ -3,6 +3,7 @@ import 'package:states_rebuilder/states_rebuilder.dart';
 
 import '../../../app/_index.dart';
 import '../../../ui_widgets/_index.dart';
+import '../../../xtras/_index.dart';
 
 part 'a.profile.data.dart';
 part 'b.profile.ctrl.dart';

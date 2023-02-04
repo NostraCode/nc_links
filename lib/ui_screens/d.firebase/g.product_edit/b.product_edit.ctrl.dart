@@ -1,14 +1,12 @@
 part of '_index.dart';
 
-final x1ProductEditCtrl = ProductEditCtrl();
-
 class ProductEditCtrl {
-  ProductEditData get dt => x1ProductEditData.st;
+  ProductEditData get dt => Data.productEdit.st;
 
   init() => logxx.i(ProductEditCtrl, '...');
 
   initProductBuffer() async {
-    dt.rxProductBuffer.st = x1ProductDetailCtrl.dt.rxProduct.st!;
+    dt.rxProductBuffer.st = Ctrl.productDetail.dt.rxProduct.st!;
     if (dt.rxProductBuffer.st.images.isNotEmpty) {
       Map<String, String> mapx = {};
       for (var image in dt.rxProductBuffer.st.images.entries) {
@@ -66,8 +64,8 @@ class ProductEditCtrl {
       barrierDismissible: false,
       barrierColor: Colors.black54,
     );
-    await x1ProductServ.updateProduct(dt.rxProductBuffer.st);
-    x1ProductServ.readProduct();
+    await Serv.product.updateProduct(dt.rxProductBuffer.st);
+    Serv.product.readProduct();
     RM.navigate.back();
     RM.navigate.back();
   }

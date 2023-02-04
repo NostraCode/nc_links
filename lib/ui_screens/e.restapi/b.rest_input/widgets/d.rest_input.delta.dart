@@ -3,8 +3,8 @@ part of '../_index.dart';
 class RestInputDelta extends StatelessWidget {
   const RestInputDelta({Key? key}) : super(key: key);
 
-  RestInputCtrl get ct => x1RestInputCtrl;
-  RestInputData get dt => x1RestInputData.st;
+  RestInputCtrl get ct => Ctrl.restInput;
+  RestInputData get dt => Data.restInput.st;
 
   @override
   Widget build(BuildContext context) {

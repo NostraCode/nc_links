@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1RestEditCtrl = RestEditCtrl();
-
 class RestEditCtrl {
-  RestEditData get dt => x1RestEditData.st;
+  RestEditData get dt => Data.restEdit.st;
 
   init() {
     logxx.i(RestEditCtrl, '...');
@@ -11,7 +9,7 @@ class RestEditCtrl {
   }
 
   setControllersValues() {
-    var userx = x1RestDetailData.st.rxUserFuture.st!;
+    var userx = Data.restDetail.st.rxUserFuture.st!;
     dt.rxName.controller.text = userx.name;
     dt.rxEmail.controller.text = userx.email;
     dt.rxGender.value = userx.gender;
@@ -29,9 +27,9 @@ class RestEditCtrl {
       status: dt.rxStatus.value,
     );
     try {
-      await x1UserxServ.updateUser(userx);
-      x1UserxServ.initUserDetail();
-      x1UserxServ.updateOneOfUsers(userx);
+      await Serv.userx.updateUser(userx);
+      Serv.userx.initUserDetail();
+      Serv.userx.updateOneOfUsers(userx);
       await Future.delayed(400.milliseconds);
       RM.navigate.forceBack();
     } catch (obj) {

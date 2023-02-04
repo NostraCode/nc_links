@@ -3,8 +3,8 @@ part of '_index.dart';
 class InjAnimView extends StatelessWidget {
   const InjAnimView({Key? key}) : super(key: key);
 
-  InjAnimCtrl get ct => x1InjAnimCtrl;
-  InjAnimData get dt => x1InjAnimData.st;
+  InjAnimCtrl get ct => Ctrl.injAnim;
+  InjAnimData get dt => Data.injAnim.st;
 
   @override
   Widget build(BuildContext context) {

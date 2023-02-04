@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1InjStateCtrl = InjStateCtrl();
-
 class InjStateCtrl {
-  InjStateData get dt => x1InjStateData.st;
+  InjStateData get dt => Data.injState.st;
 
   init() => logxx.i(InjStateCtrl, '...');
 
@@ -13,12 +11,12 @@ class InjStateCtrl {
     dt.rxInt2.st = dt.rxInt2.st + 1;
   }
 
-  refresh() => x1DummyServ.futureInit();
-  futureRandom() => x1DummyServ.futureRandom();
-  futureIncrease() => x1DummyServ.futureIncrease();
+  refresh() => Serv.dummy.futureInit();
+  futureRandom() => Serv.dummy.futureRandom();
+  futureIncrease() => Serv.dummy.futureIncrease();
 
-  start() => x1DummyServ.start();
-  stop() => x1DummyServ.stop();
-  pause() => x1DummyServ.pause();
-  resume() => x1DummyServ.resume();
+  start() => Serv.dummy.start();
+  stop() => Serv.dummy.stop();
+  pause() => Serv.dummy.pause();
+  resume() => Serv.dummy.resume();
 }

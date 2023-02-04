@@ -3,14 +3,14 @@ part of '../_index.dart';
 class ChatFriendCards extends StatelessWidget {
   const ChatFriendCards({Key? key}) : super(key: key);
 
-  ChatFriendCtrl get ct => x1ChatFriendCtrl;
-  ChatFriendData get dt => x1ChatFriendData.st;
+  ChatFriendCtrl get ct => Ctrl.chatFriend;
+  ChatFriendData get dt => Data.chatFriend.st;
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: OnBuilder<List<ChatUser>>.all(
-        listenTo: x1ChatProv.st.rxChatFriends,
+        listenTo: Prov.chat.st.rxChatFriends,
         onWaiting: () => const Text('waiting...'),
         onError: (_, __) => const Text('error...'),
         onData: (data) => data.isEmpty

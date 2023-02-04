@@ -3,8 +3,8 @@ part of '../_index.dart';
 class ChatRoomFab extends StatelessWidget {
   const ChatRoomFab({Key? key}) : super(key: key);
 
-  ChatRoomCtrl get ct => x1ChatRoomCtrl;
-  ChatRoomData get dt => x1ChatRoomData.st;
+  ChatRoomCtrl get ct => Ctrl.chatRoom;
+  ChatRoomData get dt => Data.chatRoom.st;
 
   @override
   Widget build(BuildContext context) {

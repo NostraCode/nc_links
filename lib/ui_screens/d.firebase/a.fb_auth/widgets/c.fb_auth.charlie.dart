@@ -3,8 +3,8 @@ part of '../_index.dart';
 class FbAuthC extends StatelessWidget {
   const FbAuthC({Key? key}) : super(key: key);
 
-  FbAuthCtrl get ct => x1FbAuthCtrl;
-  FbAuthData get dt => x1FbAuthData.st;
+  FbAuthCtrl get ct => Ctrl.fbAuth;
+  FbAuthData get dt => Data.fbAuth.st;
 
   @override
   Widget build(BuildContext context) {

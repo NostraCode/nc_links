@@ -1,10 +1,5 @@
 part of '_index.dart';
 
-final x1DummyProv = RM.inject<DummyProv>(
-  () => DummyProv(),
-  debugPrintWhenNotifiedPreMessage: '',
-);
-
 class DummyProv {
   late ReactiveModel<StreamSubscription<int>> x;
 
@@ -21,10 +16,10 @@ class DummyProv {
   final rxIntFuture = RM.injectFuture<int>(
     () => Future.value(123),
     sideEffects: SideEffects(
-      initState: () => x1DummyServ.init(),
+      initState: () => Serv.dummy.init(),
       onSetState: (snap) {
         if (snap.hasData) {
-          x1DummyServ.addToList();
+          Serv.dummy.addToList();
         }
       },
     ),

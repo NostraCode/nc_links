@@ -3,8 +3,8 @@ part of '../_index.dart';
 class InjTabDelta extends StatelessWidget {
   const InjTabDelta({Key? key}) : super(key: key);
 
-  InjTabCtrl get ct => x1InjTabCtrl;
-  InjTabData get dt => x1InjTabData.st;
+  InjTabCtrl get ct => Ctrl.injTab;
+  InjTabData get dt => Data.injTab.st;
 
   @override
   Widget build(BuildContext context) {

@@ -3,8 +3,8 @@ part of '../_index.dart';
 class ProductEditImages extends StatelessWidget {
   const ProductEditImages({Key? key}) : super(key: key);
 
-  ProductEditCtrl get ct => x1ProductEditCtrl;
-  ProductEditData get dt => x1ProductEditData.st;
+  ProductEditCtrl get ct => Ctrl.productEdit;
+  ProductEditData get dt => Data.productEdit.st;
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +23,7 @@ class ProductEditImages extends StatelessWidget {
                   runSpacing: 3,
                   spacing: 3,
                   children: [
-                    for (var item in dt.rxProductBuffer.st.images.entries)
-                      ProductEditImage(map: item),
+                    for (var item in dt.rxProductBuffer.st.images.entries) ProductEditImage(map: item),
                   ],
                 ),
           const SizedBoxH(30),

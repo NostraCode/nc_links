@@ -3,8 +3,8 @@ part of '../_index.dart';
 class FbFirestoreC extends StatelessWidget {
   const FbFirestoreC({Key? key}) : super(key: key);
 
-  FbFirestoreCtrl get ct => x1FbFirestoreCtrl;
-  FbFirestoreData get dt => x1FbFirestoreData.st;
+  FbFirestoreCtrl get ct => Ctrl.fbFirestore;
+  FbFirestoreData get dt => Data.fbFirestore.st;
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +19,7 @@ class FbFirestoreC extends StatelessWidget {
                 onWaiting: () => const Text('loading...'),
                 onError: (_, __) => const Text('error'),
                 onData: (data) {
-                  return data == null
-                      ? const Text('null')
-                      : Text('${data.total}');
+                  return data == null ? const Text('null') : Text('${data.total}');
                 },
                 // sideEffects: SideEffects(
                 //   initState: () => ct.init(),

@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1CobaTigaCtrl = CobaTigaCtrl();
-
 class CobaTigaCtrl {
-  CobaTigaData get dt => x1CobaTigaData.st;
+  CobaTigaData get dt => Data.cobaTiga.st;
 
   init() => logxx.i(CobaTigaCtrl, '...');
 

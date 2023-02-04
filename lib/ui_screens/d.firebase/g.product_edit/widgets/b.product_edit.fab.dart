@@ -3,8 +3,8 @@ part of '../_index.dart';
 class ProductEditFab extends StatelessWidget {
   const ProductEditFab({Key? key}) : super(key: key);
 
-  ProductEditCtrl get ct => x1ProductEditCtrl;
-  ProductEditData get dt => x1ProductEditData.st;
+  ProductEditCtrl get ct => Ctrl.productEdit;
+  ProductEditData get dt => Data.productEdit.st;
 
   @override
   Widget build(BuildContext context) {

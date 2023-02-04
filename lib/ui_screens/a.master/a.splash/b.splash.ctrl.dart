@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1SplashCtrl = SplashCtrl();
-
 class SplashCtrl {
-  SplashData get dt => x1SplashData.st;
+  SplashData get dt => Data.splash.st;
 
   init() {
     logxx.i(SplashCtrl, '...');

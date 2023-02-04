@@ -3,8 +3,8 @@ part of '_index.dart';
 class InjFormView extends ReactiveStatelessWidget {
   const InjFormView({Key? key}) : super(key: key);
 
-  InjFormCtrl get ct => x1InjFormCtrl;
-  InjFormData get dt => x1InjFormData.st;
+  InjFormCtrl get ct => Ctrl.injForm;
+  InjFormData get dt => Data.injForm.st;
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +29,7 @@ class InjFormView extends ReactiveStatelessWidget {
                   const SizedBoxH(10),
                   const InjFormEcho(),
                   const SizedBoxH(10),
-                  if (dt.rxForx.isDirty)
-                    const Text('The form is changed but not submitted yet!')
+                  if (dt.rxForx.isDirty) const Text('The form is changed but not submitted yet!')
                 ],
               );
             },

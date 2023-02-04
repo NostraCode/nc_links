@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1NeedLoginCtrl = NeedLoginCtrl();
-
 class NeedLoginCtrl {
-  NeedLoginData get dt => x1NeedLoginData.st;
+  NeedLoginData get dt => Data.needLogin.st;
 
   init() => logxx.i(NeedLoginCtrl, '...');
 

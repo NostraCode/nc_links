@@ -4,7 +4,7 @@ part of '../_index.dart';
 //   const FcmEcho({Key? key}) : super(key: key);
 
 //   FcmCtrl get ct => x1FcmCtrl;
-//   FcmData get dt => x1FcmData.st;
+//   FcmData get dt => Data.fcm.st;
 
 //   @override
 //   Widget build(BuildContext context) {

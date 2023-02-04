@@ -1,11 +1,5 @@
 part of '_index.dart';
 
-final x1InjThemeData = RM.inject<InjThemeData>(
-  () => InjThemeData(),
-  debugPrintWhenNotifiedPreMessage: '',
-  sideEffects: SideEffects(initState: () => x1InjThemeCtrl.init()),
-);
-
 class InjThemeData {
   final title = 'InjTheme';
 

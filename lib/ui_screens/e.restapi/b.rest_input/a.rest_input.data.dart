@@ -1,11 +1,5 @@
 part of '_index.dart';
 
-final x1RestInputData = RM.inject<RestInputData>(
-  () => RestInputData(),
-  debugPrintWhenNotifiedPreMessage: '',
-  sideEffects: SideEffects(initState: () => x1RestInputCtrl.init()),
-);
-
 class RestInputData {
   final title = 'RestInput';
 
@@ -13,7 +7,7 @@ class RestInputData {
 
   final rxForm = RM.injectForm(
     submit: () async {
-      await x1RestInputCtrl.createUser();
+      await Ctrl.restInput.createUser();
     },
   );
 

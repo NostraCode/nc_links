@@ -1,14 +1,12 @@
 part of '_index.dart';
 
-final x1RestListCtrl = RestListCtrl();
-
 class RestListCtrl {
-  RestListData get dt => x1RestListData.st;
+  RestListData get dt => Data.restList.st;
 
   init() => logxx.i(RestListCtrl, '...');
 
   Future<void> refresh() async {
-    await x1UserxServ.initUsersLoader();
+    await Serv.userx.initUsersLoader();
     // try {
     //   await x1UserServ.refreshUserList();
     // } catch (obj) {
@@ -17,7 +15,7 @@ class RestListCtrl {
   }
 
   Future<void> loadMore() async {
-    await x1UserxServ.nextUsersLoader();
+    await Serv.userx.nextUsersLoader();
     // try {
     //   await x1UserServ.readUsersLoader();
     // } catch (obj) {
@@ -26,7 +24,7 @@ class RestListCtrl {
   }
 
   select(int id) {
-    x1UserxServ.setSelectedId(id);
+    Serv.userx.setSelectedId(id);
     nav.to(Routes.restDetail);
     // try {
     //   x1UserServ.setSelectedId(id);

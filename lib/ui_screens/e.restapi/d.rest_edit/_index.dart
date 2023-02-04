@@ -5,7 +5,7 @@ import 'package:states_rebuilder/states_rebuilder.dart';
 import '../../../app/_index.dart';
 import '../../../dt_domains/_index.dart';
 import '../../../ui_widgets/_index.dart';
-import '../_index.dart';
+import '../../../xtras/_index.dart';
 
 part 'a.rest_edit.data.dart';
 part 'b.rest_edit.ctrl.dart';

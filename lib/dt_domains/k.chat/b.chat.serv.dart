@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1ChatServ = ChatServ();
-
 class ChatServ {
-  ChatProv get pv => x1ChatProv.st;
+  ChatProv get pv => Prov.chat.st;
 
   init() {
     logxx.i(ChatServ, '...');
@@ -30,42 +28,42 @@ class ChatServ {
   addToUsers() {
     final chatUser = pv.rxChatUser.st;
     if (chatUser != null) {
-      x1ChatRepo.st.addToUsers(chatUser);
+      Repo.chat.st.addToUsers(chatUser);
     }
   }
 
   addToContacts(ChatUser friend) {
     final chatUser = pv.rxChatUser.st;
     if (chatUser != null) {
-      x1ChatRepo.st.addToContacts(chatUser.idUser, friend);
+      Repo.chat.st.addToContacts(chatUser.idUser, friend);
     }
   }
 
   //* ----- ----- ----- ----- ----- ----- ----- ----- -----
 
   listenUsers() {
-    pv.rxChatUsers.subscription = x1ChatRepo.st.listenUsers().listen((event) => pv.rxChatUsers.st = event);
+    pv.rxChatUsers.subscription = Repo.chat.st.listenUsers().listen((event) => pv.rxChatUsers.st = event);
   }
 
   listenFriends() {
     final chatUser = pv.rxChatUser.st;
     if (chatUser != null) {
       pv.rxChatFriends.subscription =
-          x1ChatRepo.st.listenContacts(chatUser).listen((event) => pv.rxChatFriends.st = event);
+          Repo.chat.st.listenContacts(chatUser).listen((event) => pv.rxChatFriends.st = event);
     }
   }
 
   listenRooms() {
     final chatUser = pv.rxChatUser.st;
     if (chatUser != null) {
-      pv.rxChatRooms.subscription = x1ChatRepo.st.listenRooms(chatUser).listen((event) => pv.rxChatRooms.st = event);
+      pv.rxChatRooms.subscription = Repo.chat.st.listenRooms(chatUser).listen((event) => pv.rxChatRooms.st = event);
     }
   }
 
   // listenMembers() {
   //   final chatUser = dt.rxChatUser.st;
   //   if (chatUser != null) {
-  //     dt.rxChatMembers.subscription = x1ChatRepo.st
+  //     dt.rxChatMembers.subscription = Repo.chat.st
   //         .listenMembers(chatUser)
   //         .listen((event) => dt.rxChatMembers.st = event);
   //   }
@@ -74,7 +72,7 @@ class ChatServ {
   //* ----- ----- ----- ----- ----- ----- ----- ----- -----
 
   listenMessages() {
-    pv.rxChatMessages.subscription = x1ChatRepo.st.listenChatMessages().listen(
+    pv.rxChatMessages.subscription = Repo.chat.st.listenChatMessages().listen(
       (event) {
         pv.rxChatMessages.setState((s) => event);
         if (event.isNotEmpty) {}
@@ -90,7 +88,7 @@ class ChatServ {
       title: 'wowww',
     );
     if (chatUser != null) {
-      x1ChatRepo.st.sendMessage(
+      Repo.chat.st.sendMessage(
         idUser: chatUser.idUser,
         idRoom: pv.rxActiveIdRoom.st,
         chatMessage: chatMessage,

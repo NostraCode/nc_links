@@ -12,11 +12,10 @@ import 'package:states_rebuilder/states_rebuilder.dart';
 import 'package:validators/sanitizers.dart' as sanitizers;
 import 'package:validators/validators.dart' as validators;
 
-import '../../ui_screens/_index.dart';
+import '../../xtras/_index.dart';
 
 part 'dialogs.dart';
 part 'exceptions.dart';
-part 'extensions.dart';
 part 'functions.dart';
 part 'logx.dart';
 part 'platform_type.dart';

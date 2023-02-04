@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1ProductInputCtrl = ProductInputCtrl();
-
 class ProductInputCtrl {
-  ProductInputData get dt => x1ProductInputData.st;
+  ProductInputData get dt => Data.productInput.st;
 
   init() => logxx.i(ProductInputCtrl, '...');
 
@@ -87,7 +85,7 @@ class ProductInputCtrl {
       barrierColor: Colors.black54,
     );
     for (var product in dt.products.st) {
-      await x1ProductServ.createProduct(product);
+      await Serv.product.createProduct(product);
       removeById(product.id);
     }
     RM.navigate.back();

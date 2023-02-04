@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1OverlayWidgetsCtrl = OverlayWidgetsCtrl();
-
 class OverlayWidgetsCtrl {
-  OverlayWidgetsData get dt => x1OverlayWidgetsData.st;
+  OverlayWidgetsData get dt => Data.overlayWidget.st;
 
   init() => logxx.i(OverlayWidgetsCtrl, '...');
 

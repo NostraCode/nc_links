@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1PopupCtrl = PopupCtrl();
-
 class PopupCtrl {
-  PopupData get dt => x1PopupData.st;
+  PopupData get dt => Data.popup.st;
 
   init() => logxx.i(PopupCtrl, '...');
 

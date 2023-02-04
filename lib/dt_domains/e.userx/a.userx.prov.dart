@@ -1,10 +1,5 @@
 part of '_index.dart';
 
-final x1UserxProv = RM.inject<UserxProv>(
-  () => UserxProv(),
-  debugPrintWhenNotifiedPreMessage: '',
-);
-
 class UserxProv {
   final rxPage = 0.inj();
 
@@ -17,14 +12,16 @@ class UserxProv {
   final rxUserDetail = RM.injectFuture<Userx?>(
     () => Future.value(null),
     sideEffects: SideEffects(
-      initState: () => x1UserxServ.initUserDetail(),
+      // initState: () => x1UserxServ.initUserDetail(),
+      initState: () => Serv.userx.initUserDetail(),
     ),
   );
 
   final rxUsersLoader = RM.injectFuture<List<Userx>?>(
     () => Future.value([]),
     sideEffects: SideEffects(
-      initState: () => x1UserxServ.initUsersLoader(),
+      // initState: () => x1UserxServ.initUsersLoader(),
+      initState: () => Serv.userx.initUsersLoader(),
       onSetState: (snap) {
         snap.onAll(
           onIdle: () => logx.s('from snap rxUsersLoader: onIdle...'),
@@ -34,7 +31,8 @@ class UserxProv {
             logx.s('from snap rxLoadMore: onData...');
             final moreUsers = data;
             if (moreUsers != null) {
-              x1UserxServ.addToList(moreUsers);
+              // x1UserxServ.addToList(moreUsers);
+              Serv.userx.addToList(moreUsers);
             }
           },
         );

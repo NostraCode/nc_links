@@ -3,8 +3,8 @@ part of '../_index.dart';
 class <FTName | pascalcase>Charlie extends StatelessWidget {
   const <FTName | pascalcase>Charlie({Key? key}) : super(key: key);
 
-  <FTName | pascalcase>Ctrl get ct => x1<FTName | pascalcase>Ctrl;
-  <FTName | pascalcase>Data get dt => x1<FTName | pascalcase>Data.st;
+  <FTName | pascalcase>Ctrl get ct => Ctrl.<FTName | camelcase>;
+  <FTName | pascalcase>Data get dt => Data.<FTName | camelcase>.st;
 
   @override
   Widget build(BuildContext context) {

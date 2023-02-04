@@ -1,16 +1,14 @@
 part of '_index.dart';
 
-final x1ChatMessageCtrl = ChatMessageCtrl();
-
 class ChatMessageCtrl {
-  ChatMessageData get dt => x1ChatMessageData.st;
+  ChatMessageData get dt => Data.chatMessage.st;
 
   init() => logxx.i(ChatMessageCtrl, '...');
 
   action() => dt.rxInt.setState((s) => s + 1);
 
   bool isSend(String ownnerID) {
-    return ownnerID == x1AuthProv.st.rxUser.st?.uid;
+    return ownnerID == Prov.auth.st.rxUser.st?.uid;
   }
 
   bool isNip(int i) {
@@ -68,14 +66,14 @@ class ChatMessageCtrl {
   send() {
     final trimmedMessage = trimLastLine(dt.rxTxtField.controller.text);
     if (trimmedMessage.isNotEmpty) {
-      final user = x1AuthProv.st.rxUser.st;
+      final user = Prov.auth.st.rxUser.st;
       final chatMessage = ChatMessage(
         displayName: user?.displayName ?? 'anonymous',
         idUser: user?.uid ?? 'anonymous',
         timestamp: DateTime.now().millisecondsSinceEpoch,
         message: trimmedMessage,
       );
-      x1ChatServ.sendMessage(chatMessage);
+      Serv.chat.sendMessage(chatMessage);
       dt.rxTxtField.controller.clear();
     }
   }

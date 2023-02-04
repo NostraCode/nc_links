@@ -3,8 +3,8 @@ part of '_index.dart';
 class RestInputView extends StatelessWidget {
   const RestInputView({Key? key}) : super(key: key);
 
-  RestInputCtrl get ct => x1RestInputCtrl;
-  RestInputData get dt => x1RestInputData.st;
+  RestInputCtrl get ct => Ctrl.restInput;
+  RestInputData get dt => Data.restInput.st;
 
   @override
   Widget build(BuildContext context) {
@@ -37,8 +37,7 @@ class RestInputView extends StatelessWidget {
                     const SizedBoxH(10),
                     if (dt.rxForm.isDirty)
                       const Center(
-                        child:
-                            Text('The form is changed but not submitted yet!'),
+                        child: Text('The form is changed but not submitted yet!'),
                       )
                   ],
                 ),

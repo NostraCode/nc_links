@@ -3,8 +3,8 @@ part of '_index.dart';
 class RestEditView extends StatelessWidget {
   const RestEditView({Key? key}) : super(key: key);
 
-  RestEditCtrl get ct => x1RestEditCtrl;
-  RestEditData get dt => x1RestEditData.st;
+  RestEditCtrl get ct => Ctrl.restEdit;
+  RestEditData get dt => Data.restEdit.st;
 
   @override
   Widget build(BuildContext context) {
@@ -37,8 +37,7 @@ class RestEditView extends StatelessWidget {
                     const SizedBoxH(10),
                     if (dt.rxForm.isDirty)
                       const Center(
-                        child:
-                            Text('The form is changed but not submitted yet!'),
+                        child: Text('The form is changed but not submitted yet!'),
                       )
                   ],
                 ),

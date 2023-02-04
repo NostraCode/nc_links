@@ -3,8 +3,8 @@ part of '../_index.dart';
 class RegisPwdA extends StatelessWidget {
   const RegisPwdA({Key? key}) : super(key: key);
 
-  RegisCtrl get ct => x1RegisCtrl;
-  RegisData get dt => x1RegisData.st;
+  RegisCtrl get ct => Ctrl.regis;
+  RegisData get dt => Data.regis.st;
 
   @override
   Widget build(BuildContext context) {

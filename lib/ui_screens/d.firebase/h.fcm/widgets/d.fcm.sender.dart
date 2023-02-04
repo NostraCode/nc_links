@@ -3,8 +3,8 @@ part of '../_index.dart';
 class FcmSender extends StatelessWidget {
   const FcmSender({Key? key}) : super(key: key);
 
-  FcmCtrl get ct => x1FcmCtrl;
-  FcmData get dt => x1FcmData.st;
+  FcmCtrl get ct => Ctrl.fcm;
+  FcmData get dt => Data.fcm.st;
 
   @override
   Widget build(BuildContext context) {

@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1ProfileCtrl = ProfileCtrl();
-
 class ProfileCtrl {
-  ProfileData get dt => x1ProfileData.st;
+  ProfileData get dt => Data.profile.st;
 
   init() => logxx.i(ProfileCtrl, '...');
 

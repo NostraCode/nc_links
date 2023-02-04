@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:states_rebuilder/states_rebuilder.dart';
 
 import '../../app/_index.dart';
+import '../../xtras/_index.dart';
 
 part 'a.dummy.prov.dart';
 part 'b.dummy.serv.dart';

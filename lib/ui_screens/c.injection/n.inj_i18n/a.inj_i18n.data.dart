@@ -1,11 +1,5 @@
 part of '_index.dart';
 
-final x1InjI18nData = RM.inject<InjI18nData>(
-  () => InjI18nData(),
-  debugPrintWhenNotifiedPreMessage: '',
-  sideEffects: SideEffects(initState: () => x1InjI18nCtrl.init()),
-);
-
 class InjI18nData {
   final title = 'InjI18n';
 

@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1ProductDetailCtrl = ProductDetailCtrl();
-
 class ProductDetailCtrl {
-  ProductDetailData get dt => x1ProductDetailData.st;
+  ProductDetailData get dt => Data.productDetail.st;
 
   init() => logxx.i(ProductDetailCtrl, '...');
 
@@ -15,7 +13,7 @@ class ProductDetailCtrl {
       barrierDismissible: false,
       barrierColor: Colors.black54,
     );
-    await x1ProductServ.deleteProduct();
+    await Serv.product.deleteProduct();
     RM.navigate.back();
     RM.navigate.back();
   }

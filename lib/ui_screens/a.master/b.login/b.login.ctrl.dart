@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1LoginCtrl = LoginCtrl();
-
 class LoginCtrl {
-  LoginData get dt => x1LoginData.st;
+  LoginData get dt => Data.login.st;
 
   init() => logxx.i(LoginCtrl, '...');
 

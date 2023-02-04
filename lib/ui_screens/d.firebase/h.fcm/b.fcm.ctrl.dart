@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1FcmCtrl = FcmCtrl();
-
 class FcmCtrl {
-  FcmData get dt => x1FcmData.st;
+  FcmData get dt => Data.fcm.st;
 
   init() => logxx.i(FcmCtrl, '...');
 
@@ -40,10 +38,7 @@ class FcmCtrl {
       }
     };
 
-    final headers = {
-      'content-type': 'application/json',
-      'Authorization': 'key=${config.st.fcmServerKey}'
-    };
+    final headers = {'content-type': 'application/json', 'Authorization': 'key=${config.st.fcmServerKey}'};
 
     try {
       await Dio().post(

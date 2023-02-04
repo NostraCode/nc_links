@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1ProductServ = ProductServ();
-
 class ProductServ {
-  ProductProv get pv => x1ProductProv.st;
+  ProductProv get pv => Prov.product.st;
 
   init() => logxx.i(ProductServ, '...');
 
@@ -25,24 +23,24 @@ class ProductServ {
   }
 
   Future<void> createProduct(Product product) {
-    return x1ProductRepo.st.createProduct(product);
+    return Repo.product.st.createProduct(product);
   }
 
   readProduct() {
-    pv.rxProductFuture.stateAsync = x1ProductRepo.st.readProduct();
+    pv.rxProductFuture.stateAsync = Repo.product.st.readProduct();
   }
 
   Future<void> updateProduct(Product product) {
-    return x1ProductRepo.st.updateProduct(product);
+    return Repo.product.st.updateProduct(product);
   }
 
   Future<void> deleteProduct() {
-    return x1ProductRepo.st.deleteProduct();
+    return Repo.product.st.deleteProduct();
   }
 
   listenProduct() {
     pv.rxProductStream.initializeState();
-    pv.rxProductStream.subscription = x1ProductRepo.st.streamProduct().listen((event) => pv.rxProductStream.st = event);
+    pv.rxProductStream.subscription = Repo.product.st.streamProduct().listen((event) => pv.rxProductStream.st = event);
   }
 
   // ----- ----- ----- ----- ----- ----- ----- ----- -----
@@ -61,7 +59,7 @@ class ProductServ {
   }
 
   readProducts() {
-    pv.rxLoadMore.stateAsync = x1ProductRepo.st.readProducts();
+    pv.rxLoadMore.stateAsync = Repo.product.st.readProducts();
   }
 
   addToList(List<Product> moreProducts) {
@@ -72,7 +70,7 @@ class ProductServ {
   }
 
   listenProducts() {
-    pv.rxProductList.subscription = x1ProductRepo.st.streamProductsX().listen(
+    pv.rxProductList.subscription = Repo.product.st.streamProductsX().listen(
       (event) {
         if (event.isNotEmpty) {
           if (pv.rxIsFirstEvent.st) {

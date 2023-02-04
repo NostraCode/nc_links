@@ -1,11 +1,5 @@
 part of '_index.dart';
 
-final x1ChatProv = RM.inject<ChatProv>(
-  () => ChatProv(),
-  debugPrintWhenNotifiedPreMessage: '',
-  autoDisposeWhenNotUsed: false,
-);
-
 class ChatProv {
   final rxActiveIdRoom = RM.inject<String?>(
     () => null,
@@ -24,7 +18,7 @@ class ChatProv {
       onSetState: (snap) {
         logxx.s(ChatProv, 'chatUser => ${snap.data}');
         if (snap.data != null) {
-          x1ChatServ.init();
+          Serv.chat.init();
         }
       },
     ),

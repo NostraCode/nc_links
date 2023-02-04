@@ -3,8 +3,8 @@ part of '../_index.dart';
 class InjForxDelta extends StatelessWidget {
   const InjForxDelta({Key? key}) : super(key: key);
 
-  InjFormCtrl get ct => x1InjFormCtrl;
-  InjFormData get dt => x1InjFormData.st;
+  InjFormCtrl get ct => Ctrl.injForm;
+  InjFormData get dt => Data.injForm.st;
 
   @override
   Widget build(BuildContext context) {

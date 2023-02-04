@@ -3,8 +3,8 @@ part of '../_index.dart';
 class InjStateFuture extends StatelessWidget {
   const InjStateFuture({Key? key}) : super(key: key);
 
-  InjStateCtrl get ct => x1InjStateCtrl;
-  InjStateData get dt => x1InjStateData.st;
+  InjStateCtrl get ct => Ctrl.injState;
+  InjStateData get dt => Data.injState.st;
 
   @override
   Widget build(BuildContext context) {

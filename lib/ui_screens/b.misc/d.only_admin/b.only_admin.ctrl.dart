@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1OnlyAdminCtrl = OnlyAdminCtrl();
-
 class OnlyAdminCtrl {
-  OnlyAdminData get dt => x1OnlyAdminData.st;
+  OnlyAdminData get dt => Data.onlyAdmin.st;
 
   init() => logxx.i(OnlyAdminCtrl, '...');
 

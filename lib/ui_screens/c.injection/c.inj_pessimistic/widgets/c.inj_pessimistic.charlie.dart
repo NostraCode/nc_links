@@ -3,8 +3,8 @@ part of '../_index.dart';
 class InjPessimisticCharlie extends StatelessWidget {
   const InjPessimisticCharlie({Key? key}) : super(key: key);
 
-  InjPessimisticCtrl get ct => x1InjPessimisticCtrl;
-  InjPessimisticData get dt => x1InjPessimisticData.st;
+  InjPessimisticCtrl get ct => Ctrl.injPessimistic;
+  InjPessimisticData get dt => Data.injPessimistic.st;
 
   @override
   Widget build(BuildContext context) {

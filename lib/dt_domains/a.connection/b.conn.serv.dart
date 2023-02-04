@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1ConnServ = ConnServ();
-
 class ConnServ {
-  ConnProv get pv => x1ConnProv.st;
+  ConnProv get pv => Prov.conn.st;
 
   init() {
     logxx.i(ConnServ, '...');
@@ -15,7 +13,7 @@ class ConnServ {
 
   check() async {
     try {
-      final result = await x1ConnRepo.st.getResult();
+      final result = await Repo.conn.st.getResult();
       updateIsOnline(result);
     } on PlatformException catch (e) {
       logxx.e(ConnServ, 'Couldn\'t check connectivity status. ${e.toString()}');

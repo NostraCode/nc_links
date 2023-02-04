@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1InjFormCtrl = InjFormCtrl();
-
 class InjFormCtrl {
-  InjFormData get dt => x1InjFormData.st;
+  InjFormData get dt => Data.injForm.st;
 
   init() => logxx.i(InjFormCtrl, '...');
 

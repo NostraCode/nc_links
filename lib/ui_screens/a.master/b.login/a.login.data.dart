@@ -1,11 +1,5 @@
 part of '_index.dart';
 
-final x1LoginData = RM.inject<LoginData>(
-  () => LoginData(),
-  debugPrintWhenNotifiedPreMessage: '',
-  sideEffects: SideEffects(initState: () => x1LoginCtrl.init()),
-);
-
 class LoginData {
   final rxTitle = 'Login'.inj();
 

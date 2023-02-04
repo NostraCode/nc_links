@@ -1,11 +1,5 @@
 part of '_index.dart';
 
-final x1InjScrollData = RM.inject<InjScrollData>(
-  () => InjScrollData(),
-  debugPrintWhenNotifiedPreMessage: '',
-  sideEffects: SideEffects(initState: () => x1InjScrollCtrl.init()),
-);
-
 class InjScrollData {
   final title = 'InjScroll';
 
@@ -17,14 +11,14 @@ class InjScrollData {
     endScrollDelay: 300,
     onScrolling: (scroll) {
       if (scroll.hasReachedMinExtent) {
-        x1InjScrollCtrl.dt.rxShowFab.st = false;
+        Ctrl.injScroll.dt.rxShowFab.st = false;
         logxx.i(
           InjScrollData,
           'Scrolling vertical list is in its top position',
         );
       }
       if (scroll.hasReachedMaxExtent) {
-        x1InjScrollCtrl.dt.rxShowFab.st = true;
+        Ctrl.injScroll.dt.rxShowFab.st = true;
         logxx.i(
           InjScrollData,
           'Scrolling vertical list is in its bottom position',

@@ -1,11 +1,5 @@
 part of '_index.dart';
 
-final x1InjPersistData = RM.inject<InjPersistData>(
-  () => InjPersistData(),
-  debugPrintWhenNotifiedPreMessage: '',
-  sideEffects: SideEffects(initState: () => x1InjPersistCtrl.init()),
-);
-
 class InjPersistData {
   final rxTitle = 'InjPersist'.inj();
 

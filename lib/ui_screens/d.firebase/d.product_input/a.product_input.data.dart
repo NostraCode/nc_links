@@ -1,15 +1,9 @@
 part of '_index.dart';
 
-final x1ProductInputData = RM.inject<ProductInputData>(
-  () => ProductInputData(),
-  debugPrintWhenNotifiedPreMessage: '',
-  sideEffects: SideEffects(initState: () => x1ProductInputCtrl.init()),
-);
-
 class ProductInputData {
   final title = 'ProductInput';
 
-  final colId = x1ProductProv.st.colId;
+  final colId = Prov.product.st.colId;
 
   final listKey = GlobalKey<AnimatedListState>();
 

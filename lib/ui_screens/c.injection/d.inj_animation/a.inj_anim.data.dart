@@ -1,11 +1,5 @@
 part of '_index.dart';
 
-final x1InjAnimData = RM.inject<InjAnimData>(
-  () => InjAnimData(),
-  debugPrintWhenNotifiedPreMessage: '',
-  sideEffects: SideEffects(initState: () => x1InjAnimCtrl.init()),
-);
-
 class InjAnimData {
   final title = 'InjAnim';
 

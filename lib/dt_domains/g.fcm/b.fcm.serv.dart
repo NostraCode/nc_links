@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1FcmServ = FcmServ();
-
 class FcmServ {
-  FcmProv get pv => x1FcmProv.st;
+  FcmProv get pv => Prov.fcm.st;
 
   init() async {
     logxx.i(FcmServ, '...');

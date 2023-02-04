@@ -3,8 +3,8 @@ part of '../_index.dart';
 class ChatMessageTextBtn extends StatelessWidget {
   const ChatMessageTextBtn({Key? key}) : super(key: key);
 
-  ChatMessageCtrl get ct => x1ChatMessageCtrl;
-  ChatMessageData get dt => x1ChatMessageData.st;
+  ChatMessageCtrl get ct => Ctrl.chatMessage;
+  ChatMessageData get dt => Data.chatMessage.st;
 
   @override
   Widget build(BuildContext context) {

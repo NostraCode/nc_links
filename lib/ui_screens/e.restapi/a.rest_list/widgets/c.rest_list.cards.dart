@@ -3,8 +3,8 @@ part of '../_index.dart';
 class RestListCards extends StatelessWidget {
   const RestListCards({Key? key}) : super(key: key);
 
-  RestListCtrl get ct => x1RestListCtrl;
-  RestListData get dt => x1RestListData.st;
+  RestListCtrl get ct => Ctrl.restList;
+  RestListData get dt => Data.restList.st;
 
   @override
   Widget build(BuildContext context) {

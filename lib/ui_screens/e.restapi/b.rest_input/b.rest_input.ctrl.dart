@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1RestInputCtrl = RestInputCtrl();
-
 class RestInputCtrl {
-  RestInputData get dt => x1RestInputData.st;
+  RestInputData get dt => Data.restInput.st;
 
   init() => logxx.i(RestInputCtrl, '...');
 
@@ -29,7 +27,7 @@ class RestInputCtrl {
             filename: fileName,
           ),
         });
-        final result = await x1UserxServ.upload(formData);
+        final result = await Serv.userx.upload(formData);
         dt.rxImageUrl.setState((s) => result.data['data']['image_url']);
       } catch (obj) {
         Fun.handleException(obj);
@@ -45,8 +43,8 @@ class RestInputCtrl {
       status: dt.rxStatus.value,
     );
     try {
-      await x1UserxServ.createUser(userx);
-      x1RestListCtrl.refresh();
+      await Serv.userx.createUser(userx);
+      Ctrl.restList.refresh();
       await Future.delayed(400.milliseconds);
       RM.navigate.forceBack();
     } catch (obj) {

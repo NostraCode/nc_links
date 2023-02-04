@@ -5,6 +5,7 @@ import 'package:states_rebuilder/states_rebuilder.dart';
 
 import '../../../app/_index.dart';
 import '../../../dt_domains/_index.dart';
+import '../../../xtras/_index.dart';
 
 part 'a.chat_message.data.dart';
 part 'b.chat_message.ctrl.dart';

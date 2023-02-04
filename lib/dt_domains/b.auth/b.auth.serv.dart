@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1AuthServ = AuthServ();
-
 class AuthServ {
-  AuthProv get pv => x1AuthProv.st;
+  AuthProv get pv => Prov.auth.st;
 
   init() {
     logxx.i(AuthServ, '...');

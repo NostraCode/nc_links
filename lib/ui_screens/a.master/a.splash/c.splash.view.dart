@@ -3,8 +3,8 @@ part of '_index.dart';
 class SplashView extends StatelessWidget {
   const SplashView({Key? key}) : super(key: key);
 
-  SplashCtrl get ct => x1SplashCtrl;
-  SplashData get dt => x1SplashData.st;
+  SplashCtrl get ct => Ctrl.splash;
+  SplashData get dt => Data.splash.st;
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +15,7 @@ class SplashView extends StatelessWidget {
         //   child: SplashxAppbar(),
         // ),
         // floatingActionButton: const SplashxFab(),
-        backgroundColor: themeRM.isDarkTheme
-            ? ConsColor.backgroundDark
-            : ConsColor.backgroundLight,
+        backgroundColor: themeRM.isDarkTheme ? ConsColor.backgroundDark : ConsColor.backgroundLight,
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

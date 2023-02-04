@@ -13,7 +13,6 @@ import 'package:validators/validators.dart' as validators;
 
 part 'dialogs.dart';
 part 'exceptions.dart';
-part 'extensions.dart';
 part 'functions.dart';
 part 'logx.dart';
 part 'platform_type.dart';

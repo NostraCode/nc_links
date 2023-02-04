@@ -11,11 +11,11 @@ Future<void> inits() async {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
-    x1FcmServ.init();
-    x1AuthServ.init();
+    Serv.fcm.init();
+    Serv.auth.init();
   }
 
-  x1ConnServ.init();
+  Serv.conn.init();
 
   setPathUrlStrategy();
 

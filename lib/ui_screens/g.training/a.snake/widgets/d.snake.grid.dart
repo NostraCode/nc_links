@@ -3,8 +3,8 @@ part of '../_index.dart';
 class SnakeGrid extends StatelessWidget {
   const SnakeGrid({Key? key}) : super(key: key);
 
-  SnakeCtrl get ct => x1SnakeCtrl;
-  SnakeData get dt => x1SnakeData.st;
+  SnakeCtrl get ct => Ctrl.snake;
+  SnakeData get dt => Data.snake.st;
 
   Color? getColor(int? val) {
     switch (val) {

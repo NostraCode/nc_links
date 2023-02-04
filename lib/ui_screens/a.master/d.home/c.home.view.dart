@@ -3,8 +3,8 @@ part of '_index.dart';
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
 
-  HomeCtrl get ct => x1HomexCtrl;
-  HomeData get dt => x1HomeData.st;
+  HomeCtrl get ct => Ctrl.home;
+  HomeData get dt => Data.home.st;
 
   List<List<dynamic>> get items {
     return [

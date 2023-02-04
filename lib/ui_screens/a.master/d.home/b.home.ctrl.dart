@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1HomexCtrl = HomeCtrl();
-
 class HomeCtrl {
-  HomeData get dt => x1HomeData.st;
+  HomeData get dt => Data.home.st;
 
   init() => logxx.i(HomeCtrl, '...');
 

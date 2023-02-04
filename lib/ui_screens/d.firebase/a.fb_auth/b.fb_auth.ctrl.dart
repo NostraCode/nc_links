@@ -1,13 +1,11 @@
 part of '_index.dart';
 
-final x1FbAuthCtrl = FbAuthCtrl();
-
 class FbAuthCtrl {
-  FbAuthData get dt => x1FbAuthData.st;
+  FbAuthData get dt => Data.fbAuth.st;
 
   init() => logxx.i(FbAuthCtrl, '...');
 
-  signInWithGoogle() => x1AuthServ.signInWithGoogle();
+  signInWithGoogle() => Serv.auth.signInWithGoogle();
 
-  signOut() => x1AuthServ.signOut();
+  signOut() => Serv.auth.signOut();
 }

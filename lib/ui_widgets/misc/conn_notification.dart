@@ -3,8 +3,8 @@ part of '_index.dart';
 class ConnNotification extends ReactiveStatelessWidget {
   const ConnNotification({Key? key}) : super(key: key);
 
-  ConnServ get ct => x1ConnServ;
-  ConnProv get dt => x1ConnProv.st;
+  ConnServ get ct => Serv.conn;
+  ConnProv get dt => Prov.conn.st;
 
   @override
   Widget build(BuildContext context) {

@@ -3,8 +3,8 @@ part of '_index.dart';
 class ProductInputView extends ReactiveStatelessWidget {
   const ProductInputView({Key? key}) : super(key: key);
 
-  ProductInputCtrl get ct => x1ProductInputCtrl;
-  ProductInputData get dt => x1ProductInputData.st;
+  ProductInputCtrl get ct => Ctrl.productInput;
+  ProductInputData get dt => Data.productInput.st;
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +13,7 @@ class ProductInputView extends ReactiveStatelessWidget {
         preferredSize: Size.fromHeight(56),
         child: ProductInputAppbar(),
       ),
-      floatingActionButton:
-          dt.products.st.isEmpty ? null : const ProductInputFab(),
+      floatingActionButton: dt.products.st.isEmpty ? null : const ProductInputFab(),
       body: Column(
         children: const [
           ProductInputButtons(),

@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1InjAnimCtrl = InjAnimCtrl();
-
 class InjAnimCtrl {
-  InjAnimData get dt => x1InjAnimData.st;
+  InjAnimData get dt => Data.injAnim.st;
 
   init() => logxx.i(InjAnimCtrl, '...');
 

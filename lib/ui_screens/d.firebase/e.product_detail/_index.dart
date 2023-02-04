@@ -5,6 +5,7 @@ import 'package:shimmer/shimmer.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
 import 'package:transparent_image/transparent_image.dart';
 
+import '../../../xtras/_index.dart';
 import '../../../app/_index.dart';
 import '../../../dt_domains/_index.dart';
 import '../../../ui_widgets/_index.dart';

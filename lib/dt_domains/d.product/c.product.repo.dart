@@ -1,7 +1,5 @@
 part of '_index.dart';
 
-final x1ProductRepo = RM.inject<ProductRepo>(() => ProductRepo());
-
 class ProductRepo {
   Future<void> createProduct(Product product) async {
     Product productx = product;
@@ -11,7 +9,7 @@ class ProductRepo {
       productx = product.copyWith(images: imagesWithUrls);
     }
     await x1FbFirestore.createDocument(
-      colId: x1ProductProv.st.colId,
+      colId: Prov.product.st.colId,
       docId: product.id,
       data: productx.toMap(),
     );
@@ -19,19 +17,19 @@ class ProductRepo {
 
   Future<Product> readProduct() async {
     final docSnapshot = await x1FbFirestore.readDocument(
-      colId: x1ProductProv.st.colId,
-      docId: x1ProductProv.st.rxSelectedId.st,
+      colId: Prov.product.st.colId,
+      docId: Prov.product.st.rxSelectedId.st,
     );
     return Product.fromMap(docSnapshot.data() ?? {});
   }
 
   Future<List<Product>> readProducts() async {
     final querySnapshot = await x1FbFirestore.readCollection(
-      colId: x1ProductProv.st.colId,
-      limit: x1ProductProv.st.limit,
-      lastCreateTime: x1ProductProv.st.rxProductList.st.isEmpty
+      colId: Prov.product.st.colId,
+      limit: Prov.product.st.limit,
+      lastCreateTime: Prov.product.st.rxProductList.st.isEmpty
           ? '9999-01-01 00:00:00.000000'
-          : x1ProductProv.st.rxProductList.st.last.createdAt,
+          : Prov.product.st.rxProductList.st.last.createdAt,
     );
     List<Product> products = [];
     for (var item in querySnapshot.docs) {
@@ -41,10 +39,10 @@ class ProductRepo {
   }
 
   Future<void> updateProduct(Product product) async {
-    int lengthImages = x1ProductProv.st.rxProductFuture.st?.images.length ?? 0;
+    int lengthImages = Prov.product.st.rxProductFuture.st?.images.length ?? 0;
     if (lengthImages > 0) {
-      final mainFolder = x1ProductProv.st.colId;
-      final subFolder = x1ProductProv.st.rxProductFuture.st?.id;
+      final mainFolder = Prov.product.st.colId;
+      final subFolder = Prov.product.st.rxProductFuture.st?.id;
       await x1FbStorage.st.deleteFolder('/$mainFolder/$subFolder');
     }
     Product productx = product;
@@ -54,30 +52,30 @@ class ProductRepo {
       productx = product.copyWith(images: imagesWithUrls);
     }
     await x1FbFirestore.updateDocument(
-      colId: x1ProductProv.st.colId,
+      colId: Prov.product.st.colId,
       docId: product.id,
       data: productx.toMap(),
     );
   }
 
   Future<void> deleteProduct() async {
-    int lengthImages = x1ProductProv.st.rxProductFuture.st?.images.length ?? 0;
+    int lengthImages = Prov.product.st.rxProductFuture.st?.images.length ?? 0;
     if (lengthImages > 0) {
-      final mainFolder = x1ProductProv.st.colId;
-      final subFolder = x1ProductProv.st.rxProductFuture.st?.id;
+      final mainFolder = Prov.product.st.colId;
+      final subFolder = Prov.product.st.rxProductFuture.st?.id;
       await x1FbStorage.st.deleteFolder('/$mainFolder/$subFolder');
     }
     await x1FbFirestore.deleteDocument(
-      colId: x1ProductProv.st.colId,
-      docId: x1ProductProv.st.rxSelectedId.st,
+      colId: Prov.product.st.colId,
+      docId: Prov.product.st.rxSelectedId.st,
     );
   }
 
   // ----- ----- ----- ----- ----- ----- ----- -----
 
   Stream<Product?> streamProduct() {
-    final colId = x1ProductProv.st.colId;
-    final docId = x1ProductProv.st.rxSelectedId.st;
+    final colId = Prov.product.st.colId;
+    final docId = Prov.product.st.rxSelectedId.st;
 
     return x1FbFirestore.streamDocument(colId: colId, docId: docId).map((event) {
       final data = event.data();
@@ -90,7 +88,7 @@ class ProductRepo {
   }
 
   Stream<List<Product>> streamProducts() {
-    final colId = x1ProductProv.st.colId;
+    final colId = Prov.product.st.colId;
 
     return x1FbFirestore.streamCollection(colId: colId).map((event) {
       List<Product> listx = [];
@@ -104,7 +102,7 @@ class ProductRepo {
   }
 
   Stream<List<Map<String, Product>>> streamProductsX() {
-    final colId = x1ProductProv.st.colId;
+    final colId = Prov.product.st.colId;
 
     return x1FbFirestore.streamCollection(colId: colId).map((event) {
       List<Map<String, Product>> listx = [];

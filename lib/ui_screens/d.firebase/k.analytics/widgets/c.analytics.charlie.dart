@@ -3,8 +3,8 @@ part of '../_index.dart';
 class AnalyticsCharlie extends StatelessWidget {
   const AnalyticsCharlie({Key? key}) : super(key: key);
 
-  AnalyticsCtrl get ct => x1AnalyticsCtrl;
-  AnalyticsData get dt => x1AnalyticsData.st;
+  AnalyticsCtrl get ct => Ctrl.analytics;
+  AnalyticsData get dt => Data.analytics.st;
 
   @override
   Widget build(BuildContext context) {

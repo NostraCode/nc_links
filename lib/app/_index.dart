@@ -6,11 +6,8 @@ import 'package:url_strategy/url_strategy.dart';
 
 import '../dt_domains/_index.dart';
 import '../firebase_options.dart';
-import 'configs/_index.dart';
-import 'i18n/_index.dart';
-import 'navigation/_index.dart';
-import 'themes/_index.dart';
-import 'utils/_index.dart';
+import '../xtras/_index.dart';
+import '_index.dart';
 
 export 'configs/_index.dart';
 export 'constants/_index.dart';

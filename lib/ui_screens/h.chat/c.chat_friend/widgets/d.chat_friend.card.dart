@@ -7,8 +7,8 @@ class ChatFriendCard extends StatelessWidget {
     required this.chatUser,
   }) : super(key: key);
 
-  ChatFriendCtrl get ct => x1ChatFriendCtrl;
-  ChatFriendData get dt => x1ChatFriendData.st;
+  ChatFriendCtrl get ct => Ctrl.chatFriend;
+  ChatFriendData get dt => Data.chatFriend.st;
 
   @override
   Widget build(BuildContext context) {

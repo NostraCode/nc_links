@@ -1,20 +1,18 @@
 part of '_index.dart';
 
-final x1FbFirestoreCtrl = FbFirestoreCtrl();
-
 class FbFirestoreCtrl {
-  FbFirestoreData get dt => x1FbFirestoreData.st;
+  FbFirestoreData get dt => Data.fbFirestore.st;
 
   init() {
     logxx.i(FbFirestoreCtrl, '...');
-    x1ProductServ.initProduct(Product.init().id);
+    Serv.product.initProduct(Product.init().id);
   }
 
-  createItem() => x1ProductServ.createProduct(Product.init());
+  createItem() => Serv.product.createProduct(Product.init());
 
-  readItem() => x1ProductServ.readProduct();
+  readItem() => Serv.product.readProduct();
 
-  updateItem() => x1ProductServ.updateProduct(Product.init());
+  updateItem() => Serv.product.updateProduct(Product.init());
 
-  deleteItem() => x1ProductServ.deleteProduct();
+  deleteItem() => Serv.product.deleteProduct();
 }

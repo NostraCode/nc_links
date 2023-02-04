@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1InjScrollCtrl = InjScrollCtrl();
-
 class InjScrollCtrl {
-  InjScrollData get dt => x1InjScrollData.st;
+  InjScrollData get dt => Data.injScroll.st;
 
   init() => logxx.i(InjScrollCtrl, '...');
 

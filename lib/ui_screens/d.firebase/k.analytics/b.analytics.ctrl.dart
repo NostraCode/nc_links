@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1AnalyticsCtrl = AnalyticsCtrl();
-
 class AnalyticsCtrl {
-  AnalyticsData get dt => x1AnalyticsData.st;
+  AnalyticsData get dt => Data.analytics.st;
 
   init() => logxx.i(AnalyticsCtrl, '...');
 
@@ -74,8 +72,7 @@ class AnalyticsCtrl {
   }
 
   Future<void> testSetSessionTimeoutDuration() async {
-    await dt.analytics
-        .setSessionTimeoutDuration(const Duration(milliseconds: 20000));
+    await dt.analytics.setSessionTimeoutDuration(const Duration(milliseconds: 20000));
     dt.rxMessage.setState((s) => 'setSessionTimeoutDuration succeeded');
   }
 
@@ -128,8 +125,7 @@ class AnalyticsCtrl {
       level: 70,
       character: 'tiefling cleric',
     );
-    await dt.analytics
-        .logPurchase(currency: 'USD', transactionId: 'transaction-id');
+    await dt.analytics.logPurchase(currency: 'USD', transactionId: 'transaction-id');
     await dt.analytics.logSearch(
       searchTerm: 'hotel',
       numberOfNights: 2,

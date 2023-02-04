@@ -3,8 +3,8 @@ part of '_index.dart';
 class InjScrollView extends ReactiveStatelessWidget {
   const InjScrollView({Key? key}) : super(key: key);
 
-  InjScrollCtrl get ct => x1InjScrollCtrl;
-  InjScrollData get dt => x1InjScrollData.st;
+  InjScrollCtrl get ct => Ctrl.injScroll;
+  InjScrollData get dt => Data.injScroll.st;
 
   @override
   Widget build(BuildContext context) {

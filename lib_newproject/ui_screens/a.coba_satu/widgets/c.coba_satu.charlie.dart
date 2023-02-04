@@ -3,9 +3,8 @@ part of '../_index.dart';
 class CobaSatuCharlie extends StatelessWidget {
   const CobaSatuCharlie({Key? key}) : super(key: key);
 
-  CobaSatuCtrl get ct => x1CobaSatuCtrl;
-  CobaSatuData get dt => x1CobaSatuData.st;
-
+  CobaSatuCtrl get ct => Ctrl.cobaSatu;
+  CobaSatuData get dt => Data.cobaSatu.st;
   @override
   Widget build(BuildContext context) {
     return Column(

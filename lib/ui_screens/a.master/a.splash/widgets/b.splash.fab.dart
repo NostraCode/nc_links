@@ -3,8 +3,8 @@ part of '../_index.dart';
 class SplashFab extends StatelessWidget {
   const SplashFab({Key? key}) : super(key: key);
 
-  SplashCtrl get ct => x1SplashCtrl;
-  SplashData get dt => x1SplashData.st;
+  SplashCtrl get ct => Ctrl.splash;
+  SplashData get dt => Data.splash.st;
 
   @override
   Widget build(BuildContext context) {

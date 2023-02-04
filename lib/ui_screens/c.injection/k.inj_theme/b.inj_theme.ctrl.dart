@@ -1,9 +1,7 @@
 part of '_index.dart';
 
-final x1InjThemeCtrl = InjThemeCtrl();
-
 class InjThemeCtrl {
-  InjThemeData get dt => x1InjThemeData.st;
+  InjThemeData get dt => Data.injTheme.st;
 
   init() => logxx.i(InjThemeCtrl, '...');
 
