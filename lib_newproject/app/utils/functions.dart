@@ -3,6 +3,24 @@ part of '_index.dart';
 class Fun {
   Fun._();
 
+  static Future loadJson(String path) async {
+    final dataStr = await rootBundle.loadString(path);
+    final dataMap = json.decode(dataStr);
+    return dataMap;
+  }
+
+  static Future<void> delayForMock([int? secs]) async {
+    if (RM.env == Flavor.test) {
+      await Future.delayed(Duration.zero);
+      debugPrint('run delayForMock with Duration.zero...');
+    } else {
+      final second = secs ?? 1;
+      await Future.delayed(Duration(seconds: secs ?? second));
+      final secondString = second > 1 ? 'seconds' : 'second';
+      debugPrint('run delayForMock in $second $secondString...');
+    }
+  }
+
   static dynamic handleException(obj) {
     String str = '';
     try {

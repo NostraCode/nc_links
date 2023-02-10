@@ -23,31 +23,60 @@ class FbFirestore {
   // ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 
   //* read multiple items
-  Future<QuerySnapshot<Map<String, dynamic>>> readCollection({
+  Future<dynamic> readCollection({
     required String colId,
     required int limit,
     required String lastCreateTime,
   }) async {
-    return Future.value(instance
-            .collection(colId)
-            .limit(limit)
-            .orderBy('created_at', descending: true)
-            .startAfter([lastCreateTime]).get())
-        .catchError((e) {
+    try {
+      return Future.value(instance
+          .collection(colId)
+          .limit(limit)
+          .orderBy('created_at', descending: true)
+          .startAfter([lastCreateTime]).get());
+    } catch (e) {
       logxx.e(FbFirestore, 'error on read. ${e.toString()}');
-    });
+    }
   }
 
+  //!  this syntax have a warning
+  // Future<QuerySnapshot<Map<String, dynamic>>> readCollection({
+  //   required String colId,
+  //   required int limit,
+  //   required String lastCreateTime,
+  // }) async {
+  //   return Future.value(instance
+  //           .collection(colId)
+  //           .limit(limit)
+  //           .orderBy('created_at', descending: true)
+  //           .startAfter([lastCreateTime]).get())
+  //       .catchError((e) {
+  //     logxx.e(FbFirestore, 'error on read. ${e.toString()}');
+  //   });
+  // }
+
   //* read single item
-  Future<DocumentSnapshot<Map<String, dynamic>>> readDocument({
+  Future<dynamic> readDocument({
     required String colId,
     required String docId,
   }) async {
-    return Future.value(instance.collection(colId).doc(docId).get())
-        .catchError((e) {
+    try {
+      return Future.value(instance.collection(colId).doc(docId).get());
+    } catch (e) {
       logxx.e(FbFirestore, 'error on read. ${e.toString()}');
-    });
+    }
   }
+
+  //! this syntax have a warning
+  // Future<DocumentSnapshot<Map<String, dynamic>>> readDocument({
+  //   required String colId,
+  //   required String docId,
+  // }) async {
+  //   return Future.value(instance.collection(colId).doc(docId).get())
+  //       .catchError((e) {
+  //     logxx.e(FbFirestore, 'error on read. ${e.toString()}');
+  //   });
+  // }
 
   // ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 

@@ -5,14 +5,14 @@ import 'package:states_rebuilder/states_rebuilder.dart';
 import 'app/_index.dart';
 
 void main() async {
-  // Mocks.inject();
+  // Mocks.instance.init();
   RM.env = Flavor.dev;
-  // await inits();
+  await inits();
   runApp(
     DevicePreview(
       enabled: PlatformType.isLinux,
       storage: DevicePreviewStorage.preferences(),
-      builder: (context) => const App(), // Wrap your app
+      builder: (context) => const App(), //* Wrap your app
     ),
   );
 }
