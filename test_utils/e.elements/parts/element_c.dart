@@ -1,7 +1,10 @@
 part of '../_index.dart';
 
-//* Product Detail Elements
+//* CobaTiga Elements
 class ElementC {
-  final titleDetail = find.text('ProductDetail');
-  final addButtonDetail = find.widgetWithIcon(FloatingActionButton, Icons.add);
+  final titlePage = find.text('CobaTiga');
+  final textCounter = find.text('0');
+  final btnPlus = find.widgetWithIcon(FloatingActionButton, Icons.add);
+  final btnNext = find.widgetWithText(ElevatedButton, 'go to next page');
+  final btnBack = find.widgetWithText(ElevatedButton, 'back');
 }

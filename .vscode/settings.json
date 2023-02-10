@@ -1,3 +1,28 @@
 {
-  "files.exclude": {}
+  "files.exclude": {
+    ".dart_tool": true,
+    ".firebase": true,
+    ".firebaserc": true,
+    ".flutter-plugins": true,
+    ".flutter-plugins-dependencies": true,
+    ".fttemplates": true,
+    ".git": true,
+    ".gitignore": true,
+    ".metadata": true,
+    ".vscode": true,
+    "analysis_options.yaml": true,
+    "android": true,
+    "assets": true,
+    "build": true,
+    "firebase.json": true,
+    "ios": true,
+    "lib_old": true,
+    "linux": true,
+    "macos": true,
+    "pubspec.lock": true,
+    "pubspec.yaml": true,
+    "README.md": true,
+    "web": true,
+    "windows": true
+  }
 }

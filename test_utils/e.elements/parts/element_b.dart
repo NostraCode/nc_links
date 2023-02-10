@@ -1,10 +1,10 @@
 part of '../_index.dart';
 
-//* Product List Elements
+//* CobaDua Elements
 class ElementB {
-  final titleProductList = find.text('ProductList');
-  final cardProduct = find.widgetWithText(Card, DataProduct.productName);
-  final loadingIndicator = find.byType(CircularProgressIndicator);
-  final btnCart = find.widgetWithIcon(IconButton, Icons.shopping_cart_rounded);
-  final notifCard = find.byType(Stack);
+  final titlePage = find.text('CobaDua');
+  final textCounter = find.text('0');
+  final btnPlus = find.widgetWithIcon(FloatingActionButton, Icons.add);
+  final btnNext = find.widgetWithText(ElevatedButton, 'go to next page');
+  final btnBack = find.widgetWithText(ElevatedButton, 'back');
 }

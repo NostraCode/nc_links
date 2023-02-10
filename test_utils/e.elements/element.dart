@@ -1,23 +1,16 @@
 part of '_index.dart';
 
 /// Elements on Each Page
-/// _ElementsA => elements of Home
-/// _ElementsB => elements of ProductList
-/// _ElementsA => elements of ProductDetail
-/// _ElementsA => elements of Cart
-
+/// _ElementsA => elements of cobaSatu
+/// _ElementsB => elements of cobaDua
+/// _ElementsC => elements of cobaTiga
 abstract class Elm {
-  /// element at Home
-  static ElementA get home => ElementA();
+  /// element at cobaSatu
+  static ElementA get cobaSatu => ElementA();
 
-  /// element at ProductList
-  static ElementB get prodList => ElementB();
+  /// element at cobaDua
+  static ElementB get cobaDua => ElementB();
 
-  /// element at Product Detail
-  static ElementC get prodDetail => ElementC();
-
-  /// element at Cart
-  static ElementD get cart => ElementD();
-
-  static ElementZ get zzz => ElementZ();
+  /// element at cobaTiga
+  static ElementC get cobaTiga => ElementC();
 }

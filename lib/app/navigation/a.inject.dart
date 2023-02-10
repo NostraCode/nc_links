@@ -1,8 +1,7 @@
 part of '_index.dart';
 
 final nav = RM.injectNavigator(
-  initialLocation: Routes.home,
-  // initialLocation: Routes.chatList,
+  initialLocation: Routes.cobaSatu,
   routes: RouteMap.data,
   onNavigate: (data) => OnNavigate.action(data),
   onNavigateBack: (data) => OnNavigateBack.action(data),
@@ -12,7 +11,5 @@ final nav = RM.injectNavigator(
   //   context,
   //   routerOutlet,
   // ),
-  navigatorObservers: [
-    FirebaseAnalyticsObserver(analytics: x1FbAnalytics.st.instance),
-  ],
+  navigatorObservers: [],
 );

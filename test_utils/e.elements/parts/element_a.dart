@@ -1,7 +1,10 @@
 part of '../_index.dart';
 
-//* Home Elements
+//* CobaSatu Elements
 class ElementA {
-  final titleHome = find.text('Home');
-  final btnGoToProductList = find.widgetWithText(ElevatedButton, 'PRODUCT');
+  final titlePage = find.text('CobaSatu');
+  final textCounter = find.text('0');
+  final btnPlus = find.widgetWithIcon(FloatingActionButton, Icons.add);
+  final btnNext = find.widgetWithText(ElevatedButton, 'go to next page');
+  final btnBack = find.widgetWithText(ElevatedButton, 'back');
 }

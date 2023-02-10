@@ -27,12 +27,8 @@ final kThemeMasterLight = ThemeData(
   ),
   // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
   inputDecorationTheme: const InputDecorationTheme().copyWith(
-    isDense: true,
-    alignLabelWithHint: true,
-    floatingLabelBehavior: FloatingLabelBehavior.auto,
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(10),
-      borderSide: const BorderSide().copyWith(width: 1),
     ),
   ),
 );

@@ -1,18 +1,21 @@
 part of '_index.dart';
 
-/// Matchers that explained Page Positions
+/// To confirm that element exist on specified page
 ///
+/// matchA1 => _matchA1<br>
+/// matchA2 => _matchA2<br>
+/// mathcA3 => _matchA3<br>
 ///
 abstract class MatchA {
-  /// a1 => _atHome
+  /// <strong>matchA1 => _matchA1</strong><br><br>
+  /// check element on page coba-satu
   static Future<void> Function(WidgetTester) get matchA1 => _matchA1;
 
-  /// a2 => _atProductList
+  /// <strong>matchA2 => _matchA2</strong><br><br>
+  /// check element on page coba-dua
   static Future<void> Function(WidgetTester) get matchA2 => _matchA2;
 
-  /// a3 => _atCart
-  static Future<void> Function(WidgetTester) get mathcA3 => _matchA3;
-
-  /// a4 => _atProductDetail
-  static Future<void> Function(WidgetTester) get matchA4 => _matchA4;
+  /// <strong>mathcA3 => _matchA3</strong><br><br>
+  /// check element on page coba-tiga
+  static Future<void> Function(WidgetTester) get matchA3 => _matchA3;
 }

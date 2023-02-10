@@ -19,10 +19,4 @@ class FeatA {
     // todo: insert steps...
     await CaseA.caseA3(tester);
   }
-
-  static Future<void> featA4(WidgetTester tester) async {
-    await Helper.starterSteps(tester);
-    // todo: insert steps...
-    await CaseA.caseA4(tester);
-  }
 }
