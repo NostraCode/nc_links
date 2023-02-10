@@ -7,15 +7,15 @@ Future<void> inits() async {
 
   await RM.storageInitializer(config.st.store);
 
-  // if (!PlatformType.isWindows) {
-  //   await Firebase.initializeApp(
-  //     options: DefaultFirebaseOptions.currentPlatform,
-  //   );
-  //   x1FcmServ.init();
-  //   x1AuthServ.init();
-  // }
+  if (!PlatformType.isWindows) {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+    Serv.fcm.init();
+    Serv.auth.init();
+  }
 
-  // x1ConnServ.init();
+  Serv.conn.init();
 
   setPathUrlStrategy();
 
