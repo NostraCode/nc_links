@@ -17,9 +17,9 @@ class ChatUserView extends StatelessWidget {
       body: Center(
         child: Container(
           constraints: const BoxConstraints(maxWidth: 600),
-          child: Column(
+          child: const Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
+            children: [
               ChatUserCards(),
               // ChatUserDelta(),
               // ChatUserEcho(),

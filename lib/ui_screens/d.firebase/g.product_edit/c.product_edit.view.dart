@@ -8,15 +8,15 @@ class ProductEditView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const PreferredSize(
+    return const Scaffold(
+      appBar: PreferredSize(
         preferredSize: Size.fromHeight(56),
         child: ProductEditAppbar(),
       ),
-      floatingActionButton: const ProductEditFab(),
+      floatingActionButton: ProductEditFab(),
       body: Center(
         child: Column(
-          children: const [
+          children: [
             ProductEditInfos(),
             ProductEditImages(),
             // Expanded(

@@ -19,9 +19,9 @@ class IosStyleToast extends StatelessWidget {
                   vertical: 8,
                   horizontal: 16,
                 ),
-                child: Column(
+                child: const Column(
                   mainAxisSize: MainAxisSize.min,
-                  children: const [
+                  children: [
                     Icon(
                       Icons.check,
                       color: Colors.white,

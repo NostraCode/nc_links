@@ -8,16 +8,16 @@ class NeedLoginView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const PreferredSize(
+    return const Scaffold(
+      appBar: PreferredSize(
         preferredSize: Size.fromHeight(56),
         child: NeedLoginAppbar(),
       ),
-      floatingActionButton: const NeedLoginFab(),
+      floatingActionButton: NeedLoginFab(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
             NeedLoginCharlie(),
             NeedLoginDelta(),
             NeedLoginEcho(),

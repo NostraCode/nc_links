@@ -8,8 +8,8 @@ class FbAuthView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const PreferredSize(
+    return const Scaffold(
+      appBar: PreferredSize(
         preferredSize: Size.fromHeight(56),
         child: FbAuthAppbar(),
       ),
@@ -17,7 +17,7 @@ class FbAuthView extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
             FbAuthC(),
             SizedBoxH(10),
             FbAuthD(),

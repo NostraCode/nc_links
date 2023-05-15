@@ -16,10 +16,10 @@ class SplashView extends StatelessWidget {
         // ),
         // floatingActionButton: const SplashxFab(),
         backgroundColor: themeRM.isDarkTheme ? ConsColor.backgroundDark : ConsColor.backgroundLight,
-        body: Center(
+        body: const Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
+            children: [
               SplashLogo(),
               SizedBoxH(10),
               SplashText(),

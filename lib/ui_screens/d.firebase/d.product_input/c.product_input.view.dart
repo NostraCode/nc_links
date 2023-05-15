@@ -14,8 +14,8 @@ class ProductInputView extends ReactiveStatelessWidget {
         child: ProductInputAppbar(),
       ),
       floatingActionButton: dt.products.st.isEmpty ? null : const ProductInputFab(),
-      body: Column(
-        children: const [
+      body: const Column(
+        children: [
           ProductInputButtons(),
           Expanded(
             child: ProductInputList(),

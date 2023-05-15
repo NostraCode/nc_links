@@ -10,9 +10,9 @@ class ChatMessageInput extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.black.withOpacity(0.1),
-      child: Row(
+      child: const Row(
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: const [
+        children: [
           SizedBox(width: 2),
           Expanded(
             child: ChatMessageTextField(),

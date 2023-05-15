@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "835126305601-62j33lo2p2ts8egj775t0hl02168itur.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nostracode.fe_master",
+            "certificate_hash": "a0e9c69242159bd11e4fc16bbff02b12e5e8967e"
+          }
+        },
+        {
           "client_id": "835126305601-gfc64hmmmeumtnjhbomrk0f4rum4m2qv.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

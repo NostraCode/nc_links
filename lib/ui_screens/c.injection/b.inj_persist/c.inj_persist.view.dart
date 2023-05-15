@@ -8,16 +8,16 @@ class InjPersistView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const PreferredSize(
+    return const Scaffold(
+      appBar: PreferredSize(
         preferredSize: Size.fromHeight(56),
         child: InjPersistAppbar(),
       ),
-      floatingActionButton: const InjPersistFab(),
+      floatingActionButton: InjPersistFab(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
             InjPersistCharlie(),
             InjPersistDelta(),
             InjPersistEcho(),

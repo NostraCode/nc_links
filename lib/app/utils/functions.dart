@@ -43,12 +43,12 @@ class Fun {
   }
 
   static String dioErrorMessage(DioError e) {
-    if (e.type == DioErrorType.response) {
+    if (e.type == DioErrorType.badResponse) {
       final str1 = e.response?.statusCode.toString() ?? '';
       final str2 = e.response?.statusMessage ?? '';
       return '[$str1] $str2';
     } else {
-      return e.message;
+      return e.message ?? 'unknwon dio error message';
     }
   }
 

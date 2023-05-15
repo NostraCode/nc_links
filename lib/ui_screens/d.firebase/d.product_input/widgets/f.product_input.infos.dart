@@ -15,17 +15,17 @@ class ProductInputInfos extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Column(
+        const Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
+          children: [
             Text('name'),
             Text('stock'),
           ],
         ),
-        Column(
+        const Column(
           mainAxisAlignment: MainAxisAlignment.start,
-          children: const [
+          children: [
             Text(' :  '),
             Text(' :  '),
           ],

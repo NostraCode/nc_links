@@ -8,8 +8,8 @@ class InjThemeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const PreferredSize(
+    return const Scaffold(
+      appBar: PreferredSize(
         preferredSize: Size.fromHeight(56),
         child: InjThemeAppbar(),
       ),
@@ -17,7 +17,7 @@ class InjThemeView extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
             InjThemeColumn(),
             // InjThemeDelta(),
             // InjThemeEcho(),

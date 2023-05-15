@@ -8,16 +8,16 @@ class FcmView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const PreferredSize(
+    return const Scaffold(
+      appBar: PreferredSize(
         preferredSize: Size.fromHeight(56),
         child: FcmAppbar(),
       ),
-      floatingActionButton: const FcmFab(),
+      floatingActionButton: FcmFab(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const [
+          children: [
             FcmSubscriber(),
             Divider(),
             FcmSender(),

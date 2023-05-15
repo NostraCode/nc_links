@@ -8,16 +8,16 @@ class OnlyAdminView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const PreferredSize(
+    return const Scaffold(
+      appBar: PreferredSize(
         preferredSize: Size.fromHeight(56),
         child: OnlyAdminAppbar(),
       ),
-      floatingActionButton: const OnlyAdminFab(),
+      floatingActionButton: OnlyAdminFab(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
             OnlyAdminCharlie(),
             OnlyAdminDelta(),
             OnlyAdminEcho(),

@@ -6,7 +6,7 @@ import FlutterMacOS
 import Foundation
 
 import cloud_firestore
-import connectivity_plus_macos
+import connectivity_plus
 import firebase_analytics
 import firebase_app_check
 import firebase_auth

@@ -8,16 +8,16 @@ class InjAnimView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const PreferredSize(
+    return const Scaffold(
+      appBar: PreferredSize(
         preferredSize: Size.fromHeight(56),
         child: InjAnimAppbar(),
       ),
-      floatingActionButton: const InjAnimFab(),
+      floatingActionButton: InjAnimFab(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const [
+          children: [
             Expanded(
               child: Center(
                 child: InjAnimCharlie(),

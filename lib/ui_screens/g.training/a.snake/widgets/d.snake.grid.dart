@@ -35,14 +35,11 @@ class SnakeGrid extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('[$x,$y]', textScaleFactor: 0.6),
+                Text('[$x,$y]', textScaleFactor: 1),
                 const SizedBoxH(2),
-                Text(
-                  '${(Random().nextInt(100))}',
-                  textScaleFactor: 0.6,
-                ),
+                Text('${(Random().nextInt(100))}', textScaleFactor: 1),
                 const SizedBoxH(2),
-                Text('${dt.listx[x][y].st}', textScaleFactor: 0.6),
+                Text('${dt.listx[x][y].st}', textScaleFactor: 1),
               ],
             ),
           ),

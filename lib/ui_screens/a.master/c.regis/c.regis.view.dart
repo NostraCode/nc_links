@@ -31,10 +31,10 @@ class RegisView extends StatelessWidget {
                     child: OnFormBuilder(
                         listenTo: dt.rxForx,
                         builder: () {
-                          return Column(
+                          return const Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
-                            children: const [
+                            children: [
                               SizedBoxH(20),
                               RegisEmail(),
                               SizedBoxH(30),
