@@ -10,7 +10,7 @@ void main() async {
   await inits();
   runApp(
     DevicePreview(
-      enabled: PlatformType.isLinux,
+      enabled: false,
       storage: DevicePreviewStorage.preferences(),
       builder: (context) => const App(), //* Wrap your app
     ),

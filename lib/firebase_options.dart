@@ -70,7 +70,7 @@ class DefaultFirebaseOptions {
     projectId: 'fe-master',
     databaseURL: 'https://fe-master-default-rtdb.firebaseio.com',
     storageBucket: 'fe-master.appspot.com',
-    androidClientId: '835126305601-gfc64hmmmeumtnjhbomrk0f4rum4m2qv.apps.googleusercontent.com',
+    androidClientId: '835126305601-62j33lo2p2ts8egj775t0hl02168itur.apps.googleusercontent.com',
     iosClientId: '835126305601-b86ib5k6jtrm6lsg8u13vvf2qdoqr5rq.apps.googleusercontent.com',
     iosBundleId: 'com.nostracode.fe-master',
   );
@@ -82,7 +82,7 @@ class DefaultFirebaseOptions {
     projectId: 'fe-master',
     databaseURL: 'https://fe-master-default-rtdb.firebaseio.com',
     storageBucket: 'fe-master.appspot.com',
-    androidClientId: '835126305601-gfc64hmmmeumtnjhbomrk0f4rum4m2qv.apps.googleusercontent.com',
+    androidClientId: '835126305601-62j33lo2p2ts8egj775t0hl02168itur.apps.googleusercontent.com',
     iosClientId: '835126305601-b86ib5k6jtrm6lsg8u13vvf2qdoqr5rq.apps.googleusercontent.com',
     iosBundleId: 'com.nostracode.fe-master',
   );

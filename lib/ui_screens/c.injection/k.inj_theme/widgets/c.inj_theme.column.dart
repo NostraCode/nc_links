@@ -17,12 +17,66 @@ class InjThemeColumn extends StatelessWidget {
         ),
         const SizedBoxH(20),
         ElevatedButton(
-          child: const Text('Toogle ThemeMode'),
+          child: const Text('ThemeMode Toogle'),
           onPressed: () => themeRM.toggle(),
         ),
         const SizedBoxH(20),
+        const ManualButtons(),
+        // const GeneratedButtons(),
+      ],
+    );
+  }
+}
 
-        // ----- ----- ----- ----- ----- ----- ----- ----- -----
+class GeneratedButtons extends StatelessWidget {
+  const GeneratedButtons({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Column(
+              children: List.generate(
+                ThemeName.values.length,
+                (index) => InjThemeButton(
+                  label: 'light ${ThemeName.values[index].name}',
+                  fun: () {
+                    themeRM.state = ThemeName.values[index];
+                    themeRM.themeMode = ThemeMode.light;
+                  },
+                ),
+              ),
+            ),
+            const SizedBoxW(20),
+            Column(
+              children: List.generate(
+                ThemeName.values.length,
+                (index) => InjThemeButton(
+                  label: 'dark ${ThemeName.values[index].name}',
+                  fun: () {
+                    themeRM.state = ThemeName.values[index];
+                    themeRM.themeMode = ThemeMode.dark;
+                  },
+                ),
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+class ManualButtons extends StatelessWidget {
+  const ManualButtons({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -115,7 +169,7 @@ class InjThemeColumn extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             InjThemeButton(
-              label: 'Light Norxal',
+              label: 'Light Normal',
               fun: () {
                 themeRM.state = ThemeName.normal;
                 themeRM.themeMode = ThemeMode.light;
@@ -123,9 +177,31 @@ class InjThemeColumn extends StatelessWidget {
             ),
             const SizedBoxW(20),
             InjThemeButton(
-              label: 'Black Norxal',
+              label: 'Black Normal',
               fun: () {
                 themeRM.state = ThemeName.normal;
+                themeRM.themeMode = ThemeMode.dark;
+              },
+            ),
+          ],
+        ),
+        const SizedBoxH(20),
+        // ----- ----- ----- ----- ----- ----- ----- ----- -----
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            InjThemeButton(
+              label: 'Light M3',
+              fun: () {
+                themeRM.state = ThemeName.m3;
+                themeRM.themeMode = ThemeMode.light;
+              },
+            ),
+            const SizedBoxW(20),
+            InjThemeButton(
+              label: 'Black M3',
+              fun: () {
+                themeRM.state = ThemeName.m3;
                 themeRM.themeMode = ThemeMode.dark;
               },
             ),

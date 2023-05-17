@@ -7,7 +7,7 @@ Future<void> inits() async {
 
   await RM.storageInitializer(config.st.store);
 
-  if (!PlatformType.isWindows) {
+  if (PlatformType.isWeb || PlatformType.isAndroid || PlatformType.isIOS || PlatformType.isMacOS) {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );

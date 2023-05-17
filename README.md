@@ -15,6 +15,8 @@ don't use underscore. it will give an error, use '-' instead of '\_'<br/>
 -> dart pub global run rename --bundleId com.nostracode.fe_master --target android<br/>
 -> dart pub global run rename --bundleId com.nostracode.fe-master --target ios<br/>
 -> dart pub global run rename --bundleId com.nostracode.fe-master --target macOS<br/>
+-> dart pub global run rename --bundleId com.nostracode.fe-master --target windows<br/>
+-> dart pub global run rename --bundleId com.nostracode.fe-master --target linux<br/>
 -> dart pub global run rename --appname "FE Master"<br/>
 
 ## 3. connect to firebase<br/>

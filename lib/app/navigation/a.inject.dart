@@ -12,7 +12,7 @@ final nav = RM.injectNavigator(
   //   context,
   //   routerOutlet,
   // ),
-  navigatorObservers: [
-    FirebaseAnalyticsObserver(analytics: x1FbAnalytics.st.instance),
-  ],
+  navigatorObservers: PlatformType.isWindows || PlatformType.isLinux
+      ? []
+      : [FirebaseAnalyticsObserver(analytics: x1FbAnalytics.st.instance)],
 );

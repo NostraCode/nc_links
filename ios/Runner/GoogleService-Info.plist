@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>835126305601-b86ib5k6jtrm6lsg8u13vvf2qdoqr5rq.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.835126305601-b86ib5k6jtrm6lsg8u13vvf2qdoqr5rq</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>835126305601-62j33lo2p2ts8egj775t0hl02168itur.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC-jOvqiYM9TAPcA7tSjX7GVFZw6uvxrm4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>835126305601</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.nostracode.fe-master</string>
+	<key>PROJECT_ID</key>
+	<string>fe-master</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fe-master.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:835126305601:ios:3618168b8bdf3ef6fa77c0</string>
+	<key>DATABASE_URL</key>
+	<string>https://fe-master-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>
