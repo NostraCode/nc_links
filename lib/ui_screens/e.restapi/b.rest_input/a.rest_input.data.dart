@@ -6,6 +6,7 @@ class RestInputData {
   final focusScopeNode = FocusScopeNode();
 
   final rxForm = RM.injectForm(
+    autovalidateMode: AutovalidateMode.onUserInteraction,
     submit: () async {
       await Ctrl.restInput.createUser();
     },
@@ -19,13 +20,13 @@ class RestInputData {
     validators: [Validate.isNotEmpty, Validate.isEmail],
   );
 
-  final rxGender = RM.injectFormField<String>(
-    'female',
+  final rxGender = RM.injectFormField<String?>(
+    null,
     validators: [Validate.isNotEmpty],
   );
 
-  final rxStatus = RM.injectFormField<String>(
-    'inactive',
+  final rxStatus = RM.injectFormField<String?>(
+    null,
     validators: [Validate.isNotEmpty],
   );
 

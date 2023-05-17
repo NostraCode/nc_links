@@ -39,8 +39,8 @@ class RestInputCtrl {
     final userx = Userx(
       name: dt.rxName.value,
       email: dt.rxEmail.value,
-      gender: dt.rxGender.value,
-      status: dt.rxStatus.value,
+      gender: dt.rxGender.value ?? '',
+      status: dt.rxStatus.value ?? '',
     );
     try {
       await Serv.userx.createUser(userx);
