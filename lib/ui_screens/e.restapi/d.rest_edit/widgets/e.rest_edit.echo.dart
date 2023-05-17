@@ -8,15 +8,21 @@ class RestEditEcho extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OnReactive(
-      () => Center(
-        child: dt.rxForm.isWaiting
-            ? const CircularProgressIndicator()
-            : ElevatedButton(
-                child: const Text("submit"),
-                onPressed: () => ct.submit(),
-              ),
-      ),
+    return OnFormBuilder(
+      listenTo: dt.rxForm,
+      builder: () {
+        return Center(
+          child: OnFormSubmissionBuilder(
+            listenTo: dt.rxForm,
+            onSubmitting: () => const CircularProgressIndicator(),
+            child: ElevatedButton(
+              focusNode: dt.rxForm.submitFocusNode,
+              onPressed: dt.rxForm.isValid && dt.rxForm.isDirty ? () => ct.submit() : null,
+              child: const Text('Submit'),
+            ),
+          ),
+        );
+      },
     );
   }
 }

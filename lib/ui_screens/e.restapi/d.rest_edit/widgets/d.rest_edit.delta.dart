@@ -8,54 +8,59 @@ class RestEditDelta extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        OnReactive(
-          () => OnFormFieldBuilder<String>(
-            listenTo: dt.rxGender,
-            inputDecoration: InputDecoration(
-              errorText: dt.rxGender.error,
-              errorBorder: const UnderlineInputBorder(
-                borderSide: BorderSide(color: Colors.red),
+    return OnFormBuilder(
+      listenTo: dt.rxForm,
+      builder: () {
+        return Column(
+          children: [
+            OnFormFieldBuilder<String?>(
+              listenTo: dt.rxGender.st,
+              inputDecoration: InputDecoration(
+                errorText: dt.rxGender.st.error,
+                errorBorder: const UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.red),
+                ),
               ),
+              builder: (value, onChanged) {
+                return DropdownButtonFormField<String>(
+                  onChanged: onChanged,
+                  decoration: const InputDecoration(isDense: true),
+                  value: value,
+                  items: ConsList.genders
+                      .map((element) => DropdownMenuItem(
+                            value: element,
+                            child: Text(element),
+                          ))
+                      .toList(),
+                );
+              },
             ),
-            builder: (value, onChanged) {
-              return DropdownButtonFormField<String>(
-                onChanged: onChanged,
-                decoration: const InputDecoration(isDense: true),
-                value: value,
-                items: const [
-                  DropdownMenuItem(value: 'female', child: Text('female')),
-                  DropdownMenuItem(value: 'male', child: Text('male')),
-                ],
-              );
-            },
-          ),
-        ),
-        const SizedBoxH(20),
-        OnReactive(
-          () => OnFormFieldBuilder<String>(
-            listenTo: dt.rxStatus,
-            inputDecoration: InputDecoration(
-              errorText: dt.rxStatus.error,
-              errorBorder: const UnderlineInputBorder(
-                borderSide: BorderSide(color: Colors.red),
+            const SizedBoxH(20),
+            OnFormFieldBuilder<String?>(
+              listenTo: dt.rxStatus.st,
+              inputDecoration: InputDecoration(
+                errorText: dt.rxStatus.st.error,
+                errorBorder: const UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.red),
+                ),
               ),
+              builder: (value, onChanged) {
+                return DropdownButtonFormField<String>(
+                  onChanged: onChanged,
+                  decoration: const InputDecoration(isDense: true),
+                  value: value,
+                  items: ConsList.status
+                      .map((element) => DropdownMenuItem(
+                            value: element,
+                            child: Text(element),
+                          ))
+                      .toList(),
+                );
+              },
             ),
-            builder: (value, onChanged) {
-              return DropdownButtonFormField<String>(
-                onChanged: onChanged,
-                decoration: const InputDecoration(isDense: true),
-                value: value,
-                items: const [
-                  DropdownMenuItem(value: 'active', child: Text('active')),
-                  DropdownMenuItem(value: 'inactive', child: Text('inactive')),
-                ],
-              );
-            },
-          ),
-        ),
-      ],
+          ],
+        );
+      },
     );
   }
 }

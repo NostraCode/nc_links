@@ -39,6 +39,13 @@ abstract class Data {
   static Injected<ChatMessageData> get chatMessage => _chatMessageData;
 }
 
+// final _restEditData = RM.inject<RestEditData>(
+//   () => RestEditData(),
+//   debugPrintWhenNotifiedPreMessage: '',
+//   sideEffects: SideEffects(
+//     initState: () => Ctrl.restEdit.init(),
+//   ),
+// );
 final _splashData = RM1.inj(SplashData(), Ctrl.splash.init);
 final _loginData = RM1.inj(LoginData(), Ctrl.login.init);
 final _regisData = RM1.inj(RegisData(), Ctrl.regis.init);
