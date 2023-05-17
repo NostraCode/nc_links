@@ -14,11 +14,8 @@ class RestInputView extends StatelessWidget {
         child: RestInputAppbar(),
       ),
       // floatingActionButton: const RestInputFab(),
-      body: KeyboardDismisser(
-        gestures: const [
-          GestureType.onTap,
-          GestureType.onPanUpdateDownDirection,
-        ],
+      body: KeyboardDismissOnTap(
+        dismissOnCapturedTaps: true,
         child: Center(
           child: OnFormBuilder(
             listenTo: dt.rxForm,
