@@ -27,8 +27,11 @@ class HomeMisc extends StatelessWidget {
         ),
         HomeTile(
           title: 'Not Found',
-          subtitle: 'redirect to "not found page"',
-          fun: () => nav.to(Routes.blablabla),
+          subtitle: 'random route redirect to "not found" page',
+          fun: () {
+            final randomStr = generateWordPairs(maxSyllables: 2).first.join('_');
+            nav.to(randomStr.toLowerCase());
+          },
         ),
         // HomeTile(
         //   title: 'Need Login',

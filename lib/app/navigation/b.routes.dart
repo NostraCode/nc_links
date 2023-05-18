@@ -5,13 +5,13 @@ class Routes {
 
   // static const root = '/';
   //* master -- ----- ----- ----- ----- -----
-  static const home = '/';
+  static const home = '/home';
   static const splash = '/splash';
   static const login = '/login';
   static const regis = '/registration';
+  static const notFound = '/not_found';
   //* misc ----- ----- ----- ----- ----- ----
   static const popup = '/popup';
-  static const blablabla = '/blablabla';
   static const overlayWidgets = '/overlay_widgets';
   static const needLogin = '/need_login';
   static const adminOnly = '/admin_only';
