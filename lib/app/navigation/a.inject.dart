@@ -7,12 +7,13 @@ final nav = RM.injectNavigator(
   onNavigate: (data) => OnNavigate.action(data),
   onNavigateBack: (data) => OnNavigateBack.action(data),
   shouldUseCupertinoPage: true,
+  debugPrintWhenRouted: true,
+  navigatorObservers: PlatformType.isWindows || PlatformType.isLinux
+      ? []
+      : [FirebaseAnalyticsObserver(analytics: x1FbAnalytics.st.instance)],
   // builder: (routerOutlet) => routerOutlet,
   // builder: (routerOutlet) => DevicePreview.appBuilder(
   //   context,
   //   routerOutlet,
   // ),
-  navigatorObservers: PlatformType.isWindows || PlatformType.isLinux
-      ? []
-      : [FirebaseAnalyticsObserver(analytics: x1FbAnalytics.st.instance)],
 );
