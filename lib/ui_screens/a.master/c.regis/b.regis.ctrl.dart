@@ -9,10 +9,21 @@ class RegisCtrl {
 
   tooglePwdB() => dt.rxIsObscuredPwdB.toggle();
 
-  register() async {
-    dt.rxForx.submit();
-    logx.wtf(dt.rxEmail.value);
-    logx.wtf(dt.rxPwdA.value);
-    logx.wtf(dt.rxPwdB.value);
+  submit() => dt.rxForm.submit();
+
+  Future<void> createUserWithEmailAndPassword() async {
+    final email = dt.rxEmail.value;
+    final password = dt.rxPwdA.value;
+    try {
+      await Serv.auth.createUserWithEmailAndPassword(email, password);
+      Dialogs.success(
+        titlex: 'Registration Success',
+        messagex: 'Check your email for verification.',
+        labelx: 'to login page',
+        function: () => nav.toAndRemoveUntil(Routes.login),
+      );
+    } catch (obj) {
+      Fun.handleException(obj);
+    }
   }
 }

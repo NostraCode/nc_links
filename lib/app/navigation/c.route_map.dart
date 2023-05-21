@@ -7,6 +7,7 @@ class RouteMap {
     // Routes.root: (RouteData data) => const HomeView(),
     //* master -- ----- ----- ----- ----- -----
     Routes.splash: (RouteData data) => const SplashView(),
+    Routes.authSwitch: (RouteData data) => const SplashView(),
     Routes.home: (RouteData data) => const HomeView(),
     Routes.login: (RouteData data) => const LoginView(),
     Routes.regis: (RouteData data) => const RegisView(),

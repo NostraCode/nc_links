@@ -8,13 +8,25 @@ class LoginBtnSubmit extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      height: 40,
-      child: OutlinedButton(
-        child: const Text('SIGN IN'),
-        onPressed: () => ct.signInViaEmail(),
-      ),
+    return OnFormBuilder(
+      listenTo: dt.rxForm,
+      builder: () {
+        return SizedBox(
+          width: double.infinity,
+          height: 40,
+          child: OnFormSubmissionBuilder(
+            listenTo: dt.rxForm,
+            onSubmitting: () => const Center(
+              child: CircularProgressIndicator(),
+            ),
+            child: OutlinedButton(
+              focusNode: dt.rxForm.submitFocusNode,
+              onPressed: dt.rxForm.isValid ? () => ct.submit() : null,
+              child: const Text('SIGN IN'),
+            ),
+          ),
+        );
+      },
     );
   }
 }

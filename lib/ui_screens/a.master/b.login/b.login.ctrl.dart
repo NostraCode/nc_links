@@ -7,15 +7,24 @@ class LoginCtrl {
 
   tooglePwdA() => dt.rxIsObscuredPwd.toggle();
 
-  signInViaEmail() {
-    dt.rxForx.submit();
-    logx.wtf(dt.rxEmail.value);
-    logx.wtf(dt.rxPwd.value);
+  submit() => dt.rxForm.submit();
+
+  Future<void> signInWithEmailAndPassword() async {
+    final email = dt.rxEmail.value;
+    final password = dt.rxPwd.value;
+    try {
+      await Serv.auth.signInWithEmailAndPassword(email, password);
+    } catch (obj) {
+      Fun.handleException(obj);
+    }
   }
 
-  signInViaGoogle() {
-    dt.rxForx.submit();
-    logx.wtf(dt.rxEmail.value);
-    logx.wtf(dt.rxPwd.value);
+  Future<void> signInWithGoogle() async {
+    try {
+      Fun.showOverlayLoading();
+      await Serv.auth.signInWithGoogle();
+    } catch (obj) {
+      Fun.handleException(obj);
+    }
   }
 }

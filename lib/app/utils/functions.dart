@@ -78,7 +78,7 @@ class Fun {
   }
 
   static void showOverlayLoading() {
-    RM.navigate.toDialog(
+    nav.toDialog(
       const Center(child: CircularProgressIndicator()),
       barrierDismissible: false,
       barrierColor: Colors.black54,

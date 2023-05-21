@@ -30,7 +30,7 @@ class LoginBtnGoogle extends StatelessWidget {
             )
           ],
         ),
-        onPressed: () => ct.signInViaGoogle(),
+        onPressed: () => ct.signInWithGoogle(),
       ),
     );
   }

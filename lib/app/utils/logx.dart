@@ -12,16 +12,11 @@ class LogWithoutType {
 }
 
 class LogWithType {
-  void i(Type type, String msg) =>
-      developer.log('\x1B[37m${type.toString()}: $msg\x1B[0m', name: '...');
-  void s(Type type, String msg) =>
-      developer.log('\x1B[32m${type.toString()}: $msg\x1B[0m', name: '...');
-  void w(Type type, String msg) =>
-      developer.log('\x1B[33m${type.toString()}: $msg\x1B[0m', name: '...');
-  void e(Type type, String msg) =>
-      developer.log('\x1B[31m${type.toString()}: $msg\x1B[0m', name: '...');
-  void wtf(Type type, String msg) =>
-      developer.log('\x1B[35m${type.toString()}: $msg\x1B[0m', name: '...');
+  void i(Type type, String msg) => developer.log('\x1B[37m${type.toString()}: $msg\x1B[0m', name: '...');
+  void s(Type type, String msg) => developer.log('\x1B[32m${type.toString()}: $msg\x1B[0m', name: '...');
+  void w(Type type, String msg) => developer.log('\x1B[33m${type.toString()}: $msg\x1B[0m', name: '...');
+  void e(Type type, String msg) => developer.log('\x1B[31m${type.toString()}: $msg\x1B[0m', name: '...');
+  void wtf(Type type, String msg) => developer.log('\x1B[35m${type.toString()}: $msg\x1B[0m', name: '...');
 }
 
 // info - blue

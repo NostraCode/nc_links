@@ -8,4 +8,6 @@ class FbAuthCtrl {
   signInWithGoogle() => Serv.auth.signInWithGoogle();
 
   signOut() => Serv.auth.signOut();
+
+  authReload() => Serv.auth.authReload();
 }

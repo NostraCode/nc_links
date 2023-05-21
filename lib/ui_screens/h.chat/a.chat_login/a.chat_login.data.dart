@@ -5,5 +5,5 @@ class ChatLoginData {
 
   final rxInt = 0.inj();
 
-  final rxUser = Prov.auth.st.rxUser;
+  final rxUser = Prov.auth.st.rxUserApp;
 }

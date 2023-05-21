@@ -5,19 +5,20 @@ class LoginData {
 
   final rxIsObscuredPwd = true.inj();
 
-  final rxForx = RM.injectForm(
+  final rxUser = Prov.auth.st.rxUserApp;
+
+  final rxForm = RM.injectForm(
+    autovalidateMode: AutovalidateMode.onUserInteraction,
     submit: () async {
-      await Future.delayed(1.seconds);
+      await Ctrl.login.signInWithEmailAndPassword();
     },
   );
 
   final rxEmail = RM.injectTextEditing(
-    validateOnTyping: true,
     validators: [Validate.isNotEmpty, Validate.isEmail],
   );
 
   final rxPwd = RM.injectTextEditing(
-    validateOnTyping: true,
     validators: [Validate.isNotEmpty, Validate.minChars],
   );
 }

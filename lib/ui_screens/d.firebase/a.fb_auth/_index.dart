@@ -13,3 +13,4 @@ part 'widgets/b.fb_auth.fab.dart';
 part 'widgets/c.fb_auth.charlie.dart';
 part 'widgets/d.fb_auth.delta.dart';
 part 'widgets/e.fb_auth.echo.dart';
+part 'widgets/f.fb_auth.fanta.dart';

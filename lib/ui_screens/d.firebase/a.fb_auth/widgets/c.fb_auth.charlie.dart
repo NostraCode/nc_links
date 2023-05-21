@@ -10,15 +10,15 @@ class FbAuthC extends StatelessWidget {
   Widget build(BuildContext context) {
     return OnReactive(
       () => Container(
-        child: dt.rxUser.st == null
+        child: dt.rxUserApp.st == null
             ? const Text('you are not logged in yet')
             : Column(
                 children: [
-                  const Text('you are logged in'),
+                  const Text('you are logged in as:'),
                   const SizedBoxH(10),
-                  Text('${dt.rxUser.st?.email}'),
-                  const SizedBoxH(5),
-                  dt.rxUser.st?.photoURL == null
+                  Text('${dt.rxUserApp.st?.email}'),
+                  const SizedBoxH(20),
+                  dt.rxUserApp.st?.photoURL == null
                       ? const Text('no image')
                       : SizedBox(
                           width: 50,
@@ -26,7 +26,7 @@ class FbAuthC extends StatelessWidget {
                           child: CircleAvatar(
                             radius: 25,
                             backgroundImage: NetworkImage(
-                              '${dt.rxUser.st?.photoURL}',
+                              '${dt.rxUserApp.st?.photoURL}',
                             ),
                           ),
                         ),

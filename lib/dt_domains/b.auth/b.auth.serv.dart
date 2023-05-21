@@ -5,22 +5,82 @@ class AuthServ {
 
   init() {
     logxx.i(AuthServ, '...');
-    pv.rxUser.subscription = x1FbAuth.st.instance.authStateChanges().listen((event) => pv.rxUser.st = event);
+    pv.rxUserApp.initializeState();
   }
 
-  close() {
-    pv.rxUser.subscription?.cancel();
+  initUserStream() => pv.rxUserStream.initializeState();
+
+  authReload() => pv.rxUserStream.st?.reload();
+
+  addEventCounter() => pv.rxEventCounter.setState((s) => s + 1);
+
+  updateUserApp(User? userStream) {
+    if (userStream == null) {
+      pv.rxUserApp.st = null;
+    } else {
+      final old = pv.rxUserApp.st;
+      final neo = UserApp(
+        uid: userStream.uid,
+        displayName: userStream.displayName,
+        email: userStream.email,
+        photoURL: userStream.photoURL,
+        emailVerified: userStream.emailVerified,
+      );
+      if (old == null || old.emailVerified != neo.emailVerified) {
+        pv.rxUserApp.st = neo;
+      }
+    }
   }
 
-  signInWithEmailAndPassword(String email, String password) {
-    x1FbAuth.st.signInWithEmailAndPassword(email, password);
+  void switchPage() async {
+    final location = nav.routeData.location;
+    final isInitRoute = (location == Routes.splash) || (location == '/');
+    if (!isInitRoute) {
+      nav.toAndRemoveUntil(Routes.authSwitch);
+    } else {
+      logxx.wtf(AuthServ, 'set timer');
+      pv.timer?.cancel();
+      pv.timer = Timer(3.seconds, () => nav.toAndRemoveUntil(Routes.authSwitch));
+    }
   }
 
-  signInWithGoogle() {
-    x1FbAuth.st.signInWithGoogle();
+  //! ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+  Future<void> createUserWithEmailAndPassword(String email, String password) async {
+    try {
+      pv.rxEventCounter.refresh();
+      pv.rxUserStream.refresh();
+      await x1FbAuth.st.createUserWithEmailAndPassword(email, password);
+    } catch (e) {
+      rethrow;
+    }
   }
 
-  signOut() {
-    x1FbAuth.st.signOut();
+  Future<void> signInWithEmailAndPassword(String email, String password) async {
+    try {
+      pv.rxEventCounter.refresh();
+      pv.rxUserStream.refresh();
+      await x1FbAuth.st.signInWithEmailAndPassword(email, password);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<void> signInWithGoogle() async {
+    try {
+      pv.rxEventCounter.refresh();
+      await x1FbAuth.st.signInWithGoogle();
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<void> signOut() async {
+    try {
+      pv.rxEventCounter.refresh();
+      await x1FbAuth.st.signOut();
+    } catch (e) {
+      rethrow;
+    }
   }
 }

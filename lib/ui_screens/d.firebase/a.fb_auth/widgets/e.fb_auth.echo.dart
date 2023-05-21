@@ -8,6 +8,24 @@ class FbAuthE extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Column(
+      children: [
+        OnReactive(
+          () => Text(
+            dt.rxUserApp.st == null
+                ? 'user app null'
+                : dt.rxUserApp.st!.emailVerified
+                    ? 'email is verified'
+                    : 'email is not verified',
+          ),
+        ),
+        const SizedBoxH(20),
+        const Text('reload auth after verification'),
+        ElevatedButton(
+          child: const Text('auth reload'),
+          onPressed: () => ct.authReload(),
+        ),
+      ],
+    );
   }
 }

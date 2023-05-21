@@ -26,7 +26,7 @@ class RegisView extends StatelessWidget {
                   child: Container(
                     constraints: const BoxConstraints(maxWidth: 300),
                     child: OnFormBuilder(
-                        listenTo: dt.rxForx,
+                        listenTo: dt.rxForm,
                         builder: () {
                           return const Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -54,46 +54,6 @@ class RegisView extends StatelessWidget {
           ),
         ),
       ),
-      // body: KeyboardDismisser(
-      //   child: Forx(
-      //     key: dt.forxKey,
-      //     child: FocusScope(
-      //       node: dt.focusScopeNode,
-      //       child: Center(
-      //         child: SingleChildScrollView(
-      //           padding: const EdgeInsets.fromLTRB(0, 30, 0, 30),
-      //           child: Row(
-      //             mainAxisAlignment: MainAxisAlignment.center,
-      //             children: [
-      //               Flexible(
-      //                 child: Container(
-      //                   constraints: const BoxConstraints(
-      //                     maxWidth: 300,
-      //                   ),
-      //                   child: Column(
-      //                     mainAxisAlignment: MainAxisAlignment.center,
-      //                     crossAxisAlignment: CrossAxisAlignment.center,
-      //                     children: const [
-      //                       RegisForxEmail(),
-      //                       RegisForxPwdA(),
-      //                       RegisForxPwdB(),
-      //                       SizedBoxH(20),
-      //                       RegisBtnSubmit(),
-      //                       SizedBoxH(35),
-      //                       Divider(height: 1),
-      //                       SizedBoxH(20),
-      //                       RegisBtnToLogin(),
-      //                     ],
-      //                   ),
-      //                 ),
-      //               ),
-      //             ],
-      //           ),
-      //         ),
-      //       ),
-      //     ),
-      //   ),
-      // ),
     );
   }
 }

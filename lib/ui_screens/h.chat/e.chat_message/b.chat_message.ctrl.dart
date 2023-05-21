@@ -8,7 +8,7 @@ class ChatMessageCtrl {
   action() => dt.rxInt.setState((s) => s + 1);
 
   bool isSend(String ownnerID) {
-    return ownnerID == Prov.auth.st.rxUser.st?.uid;
+    return ownnerID == Prov.auth.st.rxUserApp.st?.uid;
   }
 
   bool isNip(int i) {
@@ -66,7 +66,7 @@ class ChatMessageCtrl {
   send() {
     final trimmedMessage = trimLastLine(dt.rxTxtField.controller.text);
     if (trimmedMessage.isNotEmpty) {
-      final user = Prov.auth.st.rxUser.st;
+      final user = Prov.auth.st.rxUserApp.st;
       final chatMessage = ChatMessage(
         displayName: user?.displayName ?? 'anonymous',
         idUser: user?.uid ?? 'anonymous',

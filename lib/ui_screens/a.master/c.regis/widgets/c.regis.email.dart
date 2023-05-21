@@ -9,7 +9,7 @@ class RegisEmail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OnFormBuilder(
-      listenTo: dt.rxForx,
+      listenTo: dt.rxForm,
       builder: () {
         return TextField(
           controller: dt.rxEmail.controller,

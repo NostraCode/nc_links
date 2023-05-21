@@ -26,7 +26,7 @@ class LoginView extends StatelessWidget {
                   child: Container(
                     constraints: const BoxConstraints(maxWidth: 300),
                     child: OnFormBuilder(
-                        listenTo: dt.rxForx,
+                        listenTo: dt.rxForm,
                         builder: () {
                           return const Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -53,45 +53,6 @@ class LoginView extends StatelessWidget {
             ),
           ),
         ),
-        // child: Forx(
-        //   key: dt.forxKey,
-        //   child: FocusScope(
-        //     node: dt.focusScopeNode,
-        //     child: Center(
-        //       child: SingleChildScrollView(
-        //         padding: const EdgeInsets.fromLTRB(0, 30, 0, 30),
-        //         child: Row(
-        //           mainAxisAlignment: MainAxisAlignment.center,
-        //           children: [
-        //             Flexible(
-        //               child: Container(
-        //                 constraints: const BoxConstraints(
-        //                   maxWidth: 300,
-        //                 ),
-        //                 child: Column(
-        //                   mainAxisAlignment: MainAxisAlignment.center,
-        //                   crossAxisAlignment: CrossAxisAlignment.center,
-        //                   children: const [
-        //                     LoginForxEmail(),
-        //                     LoginForxPwd(),
-        //                     SizedBoxH(20),
-        //                     LoginBtnSubmit(),
-        //                     SizedBoxH(35),
-        //                     Divider(height: 1),
-        //                     SizedBoxH(35),
-        //                     LoginBtnGoogle(),
-        //                     SizedBoxH(35),
-        //                     LoginBtnToRegis(),
-        //                   ],
-        //                 ),
-        //               ),
-        //             ),
-        //           ],
-        //         ),
-        //       ),
-        //     ),
-        //   ),
-        // ),
       ),
     );
   }

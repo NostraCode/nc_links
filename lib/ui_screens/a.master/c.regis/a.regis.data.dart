@@ -7,24 +7,22 @@ class RegisData {
 
   final rxIsObscuredPwdB = true.inj();
 
-  final rxForx = RM.injectForm(
+  final rxForm = RM.injectForm(
+    autovalidateMode: AutovalidateMode.onUserInteraction,
     submit: () async {
-      await Future.delayed(1.seconds);
+      await Ctrl.regis.createUserWithEmailAndPassword();
     },
   );
 
   final rxEmail = RM.injectTextEditing(
-    validateOnTyping: true,
     validators: [Validate.isNotEmpty, Validate.isEmail],
   );
 
   final rxPwdA = RM.injectTextEditing(
-    validateOnTyping: true,
     validators: [Validate.isNotEmpty, Validate.minChars],
   );
 
   final rxPwdB = RM.injectTextEditing(
-    validateOnTyping: true,
     validators: [Validate.isNotEmpty, Validate.minChars, Validate.pwdEquals],
   );
 }

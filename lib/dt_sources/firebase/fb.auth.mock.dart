@@ -10,6 +10,14 @@ class FbAuthMock implements FbAuth {
   );
 
   @override
+  Future<void> createUserWithEmailAndPassword(String email, String password) async {
+    await instance.createUserWithEmailAndPassword(
+      email: email,
+      password: password,
+    );
+  }
+
+  @override
   Future<void> signInWithEmailAndPassword(String email, String password) async {
     await instance.signInWithEmailAndPassword(
       email: email,
