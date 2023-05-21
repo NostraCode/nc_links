@@ -8,16 +8,16 @@ class <FTName | pascalcase>View extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const PreferredSize(
+    return const Scaffold(
+      appBar: PreferredSize(
         preferredSize: Size.fromHeight(56),
         child: <FTName | pascalcase>Appbar(),
       ),
-      floatingActionButton: const <FTName | pascalcase>Fab(),
+      floatingActionButton: <FTName | pascalcase>Fab(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
             <FTName | pascalcase>Charlie(),
             <FTName | pascalcase>Delta(),
             <FTName | pascalcase>Echo(),
