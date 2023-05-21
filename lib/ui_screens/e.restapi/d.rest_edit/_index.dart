@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
+import 'package:keyboard_dismisser/keyboard_dismisser.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
 
 import '../../../app/_index.dart';

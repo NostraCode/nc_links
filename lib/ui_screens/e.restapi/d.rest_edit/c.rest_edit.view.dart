@@ -14,8 +14,11 @@ class RestEditView extends StatelessWidget {
         child: RestEditAppbar(),
       ),
       // floatingActionButton: const RestEditFab(),
-      body: KeyboardDismissOnTap(
-        dismissOnCapturedTaps: true,
+      body: KeyboardDismisser(
+        gestures: const [
+          GestureType.onTap,
+          GestureType.onPanUpdateDownDirection,
+        ],
         child: Center(
           child: OnFormBuilder(
             listenTo: dt.rxForm,

@@ -1,10 +1,10 @@
 import 'dart:math';
 
-import 'package:fe_master/ui_widgets/spaces/_index.dart';
 import 'package:flutter/material.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
 
 import '../../../app/_index.dart';
+import '../../../ui_widgets/spaces/_index.dart';
 import '../../../xtras/_index.dart';
 
 part 'a.not_found.data.dart';

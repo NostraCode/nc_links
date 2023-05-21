@@ -14,8 +14,11 @@ class RegisView extends StatelessWidget {
       //   child: RegisxAppbar(),
       // ),
       // floatingActionButton: const RegisxFab(),
-      body: KeyboardDismissOnTap(
-        dismissOnCapturedTaps: true,
+      body: KeyboardDismisser(
+        gestures: const [
+          GestureType.onTap,
+          GestureType.onPanUpdateDownDirection,
+        ],
         child: Center(
           child: SingleChildScrollView(
             padding: const EdgeInsets.fromLTRB(0, 30, 0, 30),

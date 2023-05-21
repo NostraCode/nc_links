@@ -5,6 +5,8 @@ Future<void> inits() async {
 
   WidgetsFlutterBinding.ensureInitialized();
 
+  setPathUrlStrategy();
+
   await RM.storageInitializer(config.st.store);
 
   if (PlatformType.isWeb || PlatformType.isAndroid || PlatformType.isIOS || PlatformType.isMacOS) {
@@ -16,8 +18,6 @@ Future<void> inits() async {
   }
 
   Serv.conn.init();
-
-  setPathUrlStrategy();
 
   logx.wtf('inits success');
 }

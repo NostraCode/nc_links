@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
 import 'package:transparent_image/transparent_image.dart';
 
-import '../../../xtras/_index.dart';
 import '../../../app/_index.dart';
 import '../../../dt_domains/_index.dart';
+import '../../../xtras/_index.dart';
 
 part 'a.chat_friend.data.dart';
 part 'b.chat_friend.ctrl.dart';

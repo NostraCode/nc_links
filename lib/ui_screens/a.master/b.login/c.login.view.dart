@@ -14,8 +14,11 @@ class LoginView extends StatelessWidget {
       //   child: LoginxAppbar(),
       // ),
       // floatingActionButton: const LoginxFab(),
-      body: KeyboardDismissOnTap(
-        dismissOnCapturedTaps: true,
+      body: KeyboardDismisser(
+        gestures: const [
+          GestureType.onTap,
+          GestureType.onPanUpdateDownDirection,
+        ],
         child: Center(
           child: SingleChildScrollView(
             padding: const EdgeInsets.fromLTRB(0, 30, 0, 30),

@@ -5,9 +5,9 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
 
-import '../../../xtras/_index.dart';
 import '../../../app/_index.dart';
 import '../../../ui_widgets/spaces/_index.dart';
+import '../../../xtras/_index.dart';
 
 part 'a.fcm.data.dart';
 part 'b.fcm.ctrl.dart';
