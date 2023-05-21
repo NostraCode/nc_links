@@ -6,6 +6,8 @@ abstract class Ctrl {
   static RegisCtrl get regis => RegisCtrl();
   static HomeCtrl get home => HomeCtrl();
   static NotFoundCtrl get notFound => NotFoundCtrl();
+  static ForgetCtrl get forget => ForgetCtrl();
+
   static PopupCtrl get popup => PopupCtrl();
   static ProfileCtrl get profile => ProfileCtrl();
   static NeedLoginCtrl get needLogin => NeedLoginCtrl();

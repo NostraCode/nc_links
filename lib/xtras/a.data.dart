@@ -6,6 +6,9 @@ abstract class Data {
   static Injected<RegisData> get regis => _regisData;
   static Injected<HomeData> get home => _homeData;
   static Injected<NotFoundData> get notFound => _notFoundData;
+
+  static Injected<ForgetData> get forget => _forgetData;
+
   static Injected<PopupData> get popup => _popupData;
   static Injected<ProfileData> get profile => _profileData;
   static Injected<NeedLoginData> get needLogin => _needLoginData;
@@ -52,6 +55,7 @@ final _loginData = RM1.inj(LoginData(), Ctrl.login.init);
 final _regisData = RM1.inj(RegisData(), Ctrl.regis.init);
 final _homeData = RM1.inj(HomeData(), Ctrl.home.init);
 final _notFoundData = RM1.inj(NotFoundData(), Ctrl.notFound.init);
+final _forgetData = RM1.inj(ForgetData(), Ctrl.forget.init);
 
 final _popupData = RM1.inj(PopupData(), Ctrl.popup.init);
 final _profileData = RM1.inj(ProfileData(), Ctrl.profile.init);

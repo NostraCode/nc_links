@@ -10,6 +10,7 @@ class Routes {
   static const home = '/home';
   static const login = '/login';
   static const regis = '/registration';
+  static const forget = '/forget';
   static const notFound = '/not_found';
   //* misc ----- ----- ----- ----- ----- ----
   static const popup = '/popup';

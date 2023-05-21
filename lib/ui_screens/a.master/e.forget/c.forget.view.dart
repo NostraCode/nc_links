@@ -1,19 +1,19 @@
 part of '_index.dart';
 
-class LoginView extends StatelessWidget {
-  const LoginView({Key? key}) : super(key: key);
+class ForgetView extends StatelessWidget {
+  const ForgetView({Key? key}) : super(key: key);
 
-  LoginCtrl get ct => Ctrl.login;
-  LoginData get dt => Data.login.st;
+  ForgetCtrl get ct => Ctrl.forget;
+  ForgetData get dt => Data.forget.st;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: const PreferredSize(
+      // appBar: PreferredSize(
       //   preferredSize: Size.fromHeight(56),
-      //   child: LoginxAppbar(),
+      //   child: ForgetAppbar(),
       // ),
-      // floatingActionButton: const LoginxFab(),
+      // floatingActionButton: ForgetFab(),
       body: KeyboardDismisser(
         gestures: const [
           GestureType.onTap,
@@ -36,19 +36,17 @@ class LoginView extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               SizedBoxH(20),
-                              LoginEmail(),
+                              ForgetEmail(),
                               SizedBoxH(30),
-                              LoginPwd(),
-                              SizedBoxH(30),
-                              LoginBtnSubmit(),
-                              SizedBoxH(20),
-                              LoginBtnToForget(),
-                              SizedBoxH(20),
-                              Divider(height: 1),
+                              ForgetBtnSubmit(),
+                              // SizedBoxH(30),
+                              // RegisPwdB(),
+                              // SizedBoxH(30),
+                              // RegisBtnSubmit(),
                               SizedBoxH(35),
-                              LoginBtnGoogle(),
+                              Divider(height: 1),
                               SizedBoxH(20),
-                              LoginBtnToRegis(),
+                              ForgetBtnToLogin(),
                             ],
                           );
                         }),
@@ -59,6 +57,16 @@ class LoginView extends StatelessWidget {
           ),
         ),
       ),
+      // body: Center(
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       ForgetEmail(),
+      //       ForgetBtnSubmit(),
+      //       ForgetBtnToLogin(),
+      //     ],
+      //   ),
+      // ),
     );
   }
 }

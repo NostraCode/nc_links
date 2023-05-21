@@ -14,5 +14,6 @@ part 'widgets/b.login.fab.dart';
 part 'widgets/c.login.email.dart';
 part 'widgets/d.login.pwd.dart';
 part 'widgets/e.login.btn_submit.dart';
-part 'widgets/g.login.btn_google.dart';
-part 'widgets/h.login.btn_to_regis.dart';
+part 'widgets/g.login.btn_to_forget.dart';
+part 'widgets/h.login.btn_google.dart';
+part 'widgets/k.login.btn_to_regis.dart';

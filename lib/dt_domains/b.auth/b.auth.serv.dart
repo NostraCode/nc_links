@@ -83,4 +83,12 @@ class AuthServ {
       rethrow;
     }
   }
+
+  Future<void> sendPasswordResetEmail(String email) async {
+    try {
+      await x1FbAuth.st.instance.sendPasswordResetEmail(email: email);
+    } catch (e) {
+      rethrow;
+    }
+  }
 }

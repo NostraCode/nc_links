@@ -11,6 +11,7 @@ class RouteMap {
     Routes.home: (RouteData data) => const HomeView(),
     Routes.login: (RouteData data) => const LoginView(),
     Routes.regis: (RouteData data) => const RegisView(),
+    Routes.forget: (RouteData data) => const ForgetView(),
     Routes.notFound: (RouteData data) => NotFoundView(routeData: data),
     //* misc ---- ----- ----- ----- ----- -----
     Routes.popup: (RouteData data) => const PopupView(),
