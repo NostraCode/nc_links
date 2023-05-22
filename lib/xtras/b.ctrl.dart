@@ -4,9 +4,10 @@ abstract class Ctrl {
   static SplashCtrl get splash => SplashCtrl();
   static LoginCtrl get login => LoginCtrl();
   static RegisCtrl get regis => RegisCtrl();
+  static ForgetCtrl get forget => ForgetCtrl();
+  static OtpCtrl get otp => OtpCtrl();
   static HomeCtrl get home => HomeCtrl();
   static NotFoundCtrl get notFound => NotFoundCtrl();
-  static ForgetCtrl get forget => ForgetCtrl();
 
   static PopupCtrl get popup => PopupCtrl();
   static ProfileCtrl get profile => ProfileCtrl();

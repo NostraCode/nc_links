@@ -7,10 +7,11 @@ class Routes {
   //* master -- ----- ----- ----- ----- -----
   static const splash = '/splash';
   static const authSwitch = '/auth_switch';
-  static const home = '/home';
   static const login = '/login';
   static const regis = '/registration';
   static const forget = '/forget';
+  static const otp = '/otp';
+  static const home = '/home';
   static const notFound = '/not_found';
   //* misc ----- ----- ----- ----- ----- ----
   static const popup = '/popup';

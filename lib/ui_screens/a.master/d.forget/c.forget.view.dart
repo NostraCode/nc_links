@@ -57,16 +57,6 @@ class ForgetView extends StatelessWidget {
           ),
         ),
       ),
-      // body: Center(
-      //   child: Column(
-      //     mainAxisAlignment: MainAxisAlignment.center,
-      //     children: [
-      //       ForgetEmail(),
-      //       ForgetBtnSubmit(),
-      //       ForgetBtnToLogin(),
-      //     ],
-      //   ),
-      // ),
     );
   }
 }

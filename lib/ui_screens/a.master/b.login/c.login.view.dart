@@ -31,24 +31,37 @@ class LoginView extends StatelessWidget {
                     child: OnFormBuilder(
                         listenTo: dt.rxForm,
                         builder: () {
-                          return const Column(
+                          return Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              SizedBoxH(20),
-                              LoginEmail(),
-                              SizedBoxH(30),
-                              LoginPwd(),
-                              SizedBoxH(30),
-                              LoginBtnSubmit(),
-                              SizedBoxH(20),
-                              LoginBtnToForget(),
-                              SizedBoxH(20),
-                              Divider(height: 1),
-                              SizedBoxH(35),
-                              LoginBtnGoogle(),
-                              SizedBoxH(20),
-                              LoginBtnToRegis(),
+                              const SizedBoxH(20),
+                              const LoginEmail(),
+                              const SizedBoxH(30),
+                              const LoginPwd(),
+                              const SizedBoxH(30),
+                              const LoginBtnSubmit(),
+                              const SizedBoxH(20),
+                              LoginBtnText(
+                                label: 'forget password',
+                                function: () => nav.toReplacement(Routes.forget),
+                              ),
+                              const SizedBoxH(20),
+                              const Divider(height: 1),
+                              const SizedBoxH(20),
+                              LoginBtnText(
+                                label: 'phone login',
+                                function: () => nav.toReplacement(Routes.otp),
+                              ),
+                              const SizedBoxH(20),
+                              const Divider(height: 1),
+                              const SizedBoxH(35),
+                              const LoginBtnGoogle(),
+                              const SizedBoxH(20),
+                              LoginBtnText(
+                                label: 'don\'t have any account?',
+                                function: () => nav.toReplacement(Routes.regis),
+                              ),
                             ],
                           );
                         }),

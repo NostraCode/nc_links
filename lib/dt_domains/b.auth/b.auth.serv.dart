@@ -5,6 +5,7 @@ class AuthServ {
 
   init() {
     logxx.i(AuthServ, '...');
+
     pv.rxUserApp.initializeState();
   }
 
@@ -87,6 +88,35 @@ class AuthServ {
   Future<void> sendPasswordResetEmail(String email) async {
     try {
       await x1FbAuth.st.instance.sendPasswordResetEmail(email: email);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<void> verifyPhoneNumber(String phoneNumber) async {
+    try {
+      await x1FbAuth.st.instance.verifyPhoneNumber(
+        verificationCompleted: (phoneAuthCredential) {},
+        verificationFailed: (error) {},
+        codeSent: (verificationId, forceResendingToken) {},
+        codeAutoRetrievalTimeout: (verificationId) {},
+      );
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<void> signInWithPhoneNumber(String phoneNumber) async {
+    try {
+      pv.confirmationResult.st = await x1FbAuth.st.instance.signInWithPhoneNumber(phoneNumber);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<void> confirmCode(String code) async {
+    try {
+      pv.userCredential = await pv.confirmationResult.st?.confirm(code);
     } catch (e) {
       rethrow;
     }
