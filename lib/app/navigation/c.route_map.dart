@@ -5,6 +5,7 @@ class RouteMap {
 
   static final data = {
     // Routes.root: (RouteData data) => const HomeView(),
+    Routes.coba: (RouteData data) => const CobaView(),
     //* master -- ----- ----- ----- ----- -----
     Routes.splash: (RouteData data) => const SplashView(),
     Routes.authSwitch: (RouteData data) => const SplashView(),

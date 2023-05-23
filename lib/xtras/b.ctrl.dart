@@ -1,6 +1,8 @@
 part of '_index.dart';
 
 abstract class Ctrl {
+  static CobaCtrl get coba => CobaCtrl();
+
   static SplashCtrl get splash => SplashCtrl();
   static LoginCtrl get login => LoginCtrl();
   static RegisCtrl get regis => RegisCtrl();

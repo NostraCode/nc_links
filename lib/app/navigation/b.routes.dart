@@ -4,6 +4,7 @@ class Routes {
   Routes._();
 
   // static const root = '/';
+  static const coba = '/coba';
   //* master -- ----- ----- ----- ----- -----
   static const splash = '/splash';
   static const authSwitch = '/auth_switch';

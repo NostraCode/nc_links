@@ -1,6 +1,8 @@
 part of '_index.dart';
 
 abstract class Data {
+  static Injected<CobaData> get coba => _cobaData;
+
   static Injected<SplashData> get splash => _splashData;
   static Injected<LoginData> get login => _loginData;
   static Injected<RegisData> get regis => _regisData;
@@ -50,12 +52,14 @@ abstract class Data {
 //     initState: () => Ctrl.restEdit.init(),
 //   ),
 // );
+
+final _cobaData = RM1.inj(CobaData(), Ctrl.coba.init);
+
 final _splashData = RM1.inj(SplashData(), Ctrl.splash.init);
 final _loginData = RM1.inj(LoginData(), Ctrl.login.init);
 final _regisData = RM1.inj(RegisData(), Ctrl.regis.init);
 final _forgetData = RM1.inj(ForgetData(), Ctrl.forget.init);
 final _otpData = RM1.inj(OtpData(), Ctrl.otp.init);
-
 final _homeData = RM1.inj(HomeData(), Ctrl.home.init);
 final _notFoundData = RM1.inj(NotFoundData(), Ctrl.notFound.init);
 
