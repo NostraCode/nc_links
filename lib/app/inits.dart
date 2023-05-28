@@ -13,6 +13,11 @@ Future<void> inits() async {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
+    await FirebaseAppCheck.instance.activate(
+      webRecaptchaSiteKey: '6LdIbTUmAAAAAC-jQ2pWHwT0Y8NxEfpvmjfRqTjR',
+      androidProvider: AndroidProvider.debug,
+      // appleProvider: AppleProvider.debug,
+    );
     Serv.fcm.init();
     Serv.auth.init();
   }

@@ -62,6 +62,10 @@ class LoginView extends StatelessWidget {
                                 label: 'don\'t have any account?',
                                 function: () => nav.toReplacement(Routes.regis),
                               ),
+                              LoginBtnText(
+                                label: 'appcheck',
+                                function: () => nav.to(Routes.appCheck),
+                              ),
                             ],
                           );
                         }),

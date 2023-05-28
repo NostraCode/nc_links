@@ -3,7 +3,10 @@ part of '_index.dart';
 class OtpCtrl {
   OtpData get dt => Data.otp.st;
 
-  init() => logxx.i(OtpCtrl, '...');
+  init() {
+    logxx.i(OtpCtrl, '...');
+    dt.rxPhone.controller.text = '81111122222';
+  }
 
   action() => dt.rxInt.setState((s) => s + 1);
 
@@ -12,14 +15,13 @@ class OtpCtrl {
   submitCode() => dt.rxFormCode.submit();
 
   Future<void> signInWithPhoneNumber() async {
+    final phoneNumber = '+62${dt.rxPhone.value}';
     try {
-      await Serv.auth.signInWithPhoneNumber('+62${dt.rxPhone.value}');
-      Dialogs.success(
-        titlex: 'Success',
-        messagex: 'OTP has been sent to phoneNumber.',
-        labelx: 'OK',
-        function: () => nav.back(),
-      );
+      if (PlatformType.isWeb) {
+        await Serv.auth.signInWithPhoneNumber(phoneNumber);
+      } else {
+        await Serv.auth.verifyPhoneNumber(phoneNumber);
+      }
     } catch (obj) {
       Fun.handleException(obj);
     }
@@ -27,16 +29,14 @@ class OtpCtrl {
 
   Future<void> confirmCode() async {
     try {
-      await Serv.auth.confirmCode(dt.rxCode.value);
-      Dialogs.success(
-        titlex: 'Success',
-        messagex: 'wait for something',
-        labelx: 'OK',
-        function: () => nav.back(),
-      );
+      if (PlatformType.isWeb) {
+        await Serv.auth.confirmCodeOnWeb(dt.rxCode.value);
+      } else {
+        logx.wtf(dt.rxCode.value);
+        await Serv.auth.confirmCodeOnMobile(dt.rxCode.value);
+      }
     } catch (obj) {
       Fun.handleException(obj);
     }
   }
 }
-// 85171543248

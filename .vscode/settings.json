@@ -11,8 +11,6 @@
     ".metadata": true,
     ".vscode": true,
     "analysis_options.yaml": true,
-    "android": true,
-    "assets": true,
     "build": true,
     "firebase.json": true,
     "integration_test": true,
@@ -21,11 +19,11 @@
     "linux": true,
     "macos": true,
     "pubspec.lock": true,
-    "pubspec.yaml": true,
-    "README.md": true,
     "test": true,
     "test_utils": true,
     "web": true,
-    "windows": true
+    "windows": true,
+    "assets": true,
+    "android": true
   }
 }

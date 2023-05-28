@@ -6,7 +6,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "fe_master",
+      "name": "-> default",
       "request": "launch",
       "type": "dart",
       "args": [
@@ -15,7 +15,7 @@
       ],
     },
     {
-      "name": "fe_master (web debug)",
+      "name": "-> d=chrome:5000",
       "request": "launch",
       "type": "dart",
       "flutterMode": "debug",
@@ -28,13 +28,26 @@
       ],
     },
     {
-      "name": "fe_master (profile mode)",
+      "name": "-> d=chrome:80",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "debug",
+      "deviceId": "chrome",
+      "args": [
+        // "-d=chrome",
+        "--web-hostname=localhost",
+        "--web-port=80",
+        "--web-renderer=html"
+      ],
+    },
+    {
+      "name": "-> profile mode",
       "request": "launch",
       "type": "dart",
       "flutterMode": "profile"
     },
     {
-      "name": "fe_master (release mode)",
+      "name": "-> release mode",
       "request": "launch",
       "type": "dart",
       "flutterMode": "release"

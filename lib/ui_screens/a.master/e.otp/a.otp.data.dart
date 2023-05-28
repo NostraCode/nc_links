@@ -5,7 +5,11 @@ class OtpData {
 
   final rxInt = 0.inj();
 
-  final confirmationResult = Prov.auth.st.confirmationResult;
+  final confirmationResult = Prov.auth.st.rxConfirmationResult;
+
+  final phoneAuthCredential = Prov.auth.st.rxPhoneAuthCredential;
+
+  final verificationId = Prov.auth.st.rxVerificationId;
 
   final rxFormPhone = RM.injectForm(
     autovalidateMode: AutovalidateMode.onUserInteraction,

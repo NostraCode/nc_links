@@ -14,3 +14,11 @@ part 'widgets/b.coba.fab.dart';
 part 'widgets/c.coba.charlie.dart';
 part 'widgets/d.coba.delta.dart';
 part 'widgets/e.coba.echo.dart';
+
+
+
+// static CobaCtrl get coba => CobaCtrl();
+// final _cobaData = RM1.inj(CobaData(), Ctrl.coba.init);
+// static Injected<CobaData> get coba => _cobaData;
+// export 'coba/_index.dart';
+

@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "835126305601-gfc64hmmmeumtnjhbomrk0f4rum4m2qv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nostracode.fe_master",
+            "certificate_hash": "d14d63eb24448c5dbca90b46a3064d0a1bb5f580"
+          }
+        },
+        {
           "client_id": "835126305601-9jio1k5otc87j4iaqbmt9jhcnf4ca1d4.apps.googleusercontent.com",
           "client_type": 3
         }

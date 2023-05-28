@@ -1,3 +1,5 @@
+// ignore_for_file: invalid_use_of_visible_for_testing_member
+
 part of '_index.dart';
 
 class AuthServ {
@@ -26,6 +28,7 @@ class AuthServ {
         email: userStream.email,
         photoURL: userStream.photoURL,
         emailVerified: userStream.emailVerified,
+        phoneNumber: userStream.phoneNumber,
       );
       if (old == null || old.emailVerified != neo.emailVerified) {
         pv.rxUserApp.st = neo;
@@ -42,7 +45,14 @@ class AuthServ {
       logxx.wtf(AuthServ, 'set timer');
       pv.timer?.cancel();
       pv.timer = Timer(3.seconds, () => nav.toAndRemoveUntil(Routes.authSwitch));
+      // preventMultipleAsync(() => nav.toAndRemoveUntil(Routes.authSwitch));
     }
+  }
+
+  preventMultipleAsync(void Function() callback) {
+    logxx.wtf(AuthServ, 'set timer');
+    pv.timer?.cancel();
+    pv.timer = Timer(3.seconds, callback);
   }
 
   //! ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
@@ -93,32 +103,78 @@ class AuthServ {
     }
   }
 
+  //! phone login for web ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+  Future<void> signInWithPhoneNumber(String phoneNumber) async {
+    try {
+      pv.rxConfirmationResult.st = await x1FbAuth.st.signInWithPhoneNumber(phoneNumber);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<void> confirmCodeOnWeb(String code) async {
+    try {
+      pv.rxUserCredential.st = await pv.rxConfirmationResult.st?.confirm(code);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  //! phone login for mobile ----- ----- ----- ----- ----- ----- ----- -----
+
   Future<void> verifyPhoneNumber(String phoneNumber) async {
     try {
-      await x1FbAuth.st.instance.verifyPhoneNumber(
-        verificationCompleted: (phoneAuthCredential) {},
-        verificationFailed: (error) {},
-        codeSent: (verificationId, forceResendingToken) {},
-        codeAutoRetrievalTimeout: (verificationId) {},
+      await x1FbAuth.st.verifyPhoneNumber(
+        phoneNumber: phoneNumber,
+        verificationFailed: (e) => onVerificationFailed(e),
+        codeSent: (verificationId, resendToken) => onCodeSent(verificationId, resendToken),
+        codeAutoRetrievalTimeout: (verificationId) => onCodeAutoRetrievalTimeout(verificationId),
+        verificationCompleted: (phoneAuthCred) => onVerificationCompleted(phoneAuthCred),
+        timeout: const Duration(seconds: 120),
+        autoRetrievedSmsCodeForTesting: '111222',
       );
     } catch (e) {
       rethrow;
     }
   }
 
-  Future<void> signInWithPhoneNumber(String phoneNumber) async {
-    try {
-      pv.confirmationResult.st = await x1FbAuth.st.instance.signInWithPhoneNumber(phoneNumber);
-    } catch (e) {
-      rethrow;
+  Future<void> signInWithCredential() async {
+    final phoneAuthCredential = pv.rxPhoneAuthCredential.st;
+    if (phoneAuthCredential != null) {
+      pv.rxUserCredential.st = await x1FbAuth.st.signInWithCredential(phoneAuthCredential);
     }
   }
 
-  Future<void> confirmCode(String code) async {
-    try {
-      pv.userCredential = await pv.confirmationResult.st?.confirm(code);
-    } catch (e) {
-      rethrow;
+  onVerificationFailed(FirebaseAuthException e) {
+    logxx.e(AuthServ, 'verification failed => ${e.code}');
+  }
+
+  onCodeAutoRetrievalTimeout(String verificationId) {
+    logxx.i(AuthServ, 'auto-resolution timed out......');
+  }
+
+  onCodeSent(String verificationId, int? resendToken) {
+    logxx.i(AuthServ, 'code sent...');
+    pv.rxResendToken.st = resendToken;
+    pv.rxVerificationId.st = verificationId;
+  }
+
+  onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
+    final smsCode = phoneAuthCredential.smsCode;
+    logx.e(smsCode.toString());
+    logxx.i(AuthServ, 'on verification completed...');
+    pv.rxPhoneAuthCredential.st = phoneAuthCredential;
+  }
+
+  confirmCodeOnMobile(String code) {
+    final verificationId = pv.rxVerificationId.st;
+    if (pv.rxPhoneAuthCredential.st == null && verificationId != null) {
+      pv.rxPhoneAuthCredential.st = PhoneAuthProvider.credential(
+        smsCode: code,
+        verificationId: verificationId,
+      );
     }
+    signInWithCredential();
   }
 }

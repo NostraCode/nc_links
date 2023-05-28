@@ -17,6 +17,8 @@ class FbAuthC extends StatelessWidget {
                   const Text('you are logged in as:'),
                   const SizedBoxH(10),
                   Text('${dt.rxUserApp.st?.email}'),
+                  const SizedBoxH(10),
+                  Text('${dt.rxUserApp.st?.phoneNumber}'),
                   const SizedBoxH(20),
                   dt.rxUserApp.st?.photoURL == null
                       ? const Text('no image')

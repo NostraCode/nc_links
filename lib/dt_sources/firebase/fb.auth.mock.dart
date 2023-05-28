@@ -40,4 +40,32 @@ class FbAuthMock implements FbAuth {
   Future<void> signOut() async {
     await instance.signOut();
   }
+
+  @override
+  Future<void> sendPasswordResetEmail(String email) async {
+    await instance.sendPasswordResetEmail(email: email);
+  }
+
+  @override
+  Future<UserCredential> signInWithCredential(PhoneAuthCredential phoneAuthCredential) {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<ConfirmationResult> signInWithPhoneNumber(String phoneNumber) {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> verifyPhoneNumber({
+    required String phoneNumber,
+    required void Function(FirebaseAuthException p1) verificationFailed,
+    required void Function(PhoneAuthCredential p1) verificationCompleted,
+    required void Function(String p1, int? p2) codeSent,
+    required void Function(String p1) codeAutoRetrievalTimeout,
+    String? autoRetrievedSmsCodeForTesting,
+    Duration timeout = const Duration(seconds: 30),
+  }) {
+    throw UnimplementedError();
+  }
 }

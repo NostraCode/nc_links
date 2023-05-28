@@ -1,0 +1,10 @@
+[abang] emulator-subsystem:
+683bc401-049f-4f2e-bc55-19aebb000232
+
+[abang] emulator-android:
+3a2b6e55-6a6a-414d-b2ba-c060bf48c240
+
+[abang] xiaomi:
+0e423336-9377-47f2-ac3f-5272bcf6bfec
+
+// +6285171543248

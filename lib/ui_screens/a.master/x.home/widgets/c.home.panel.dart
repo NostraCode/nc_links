@@ -3,11 +3,13 @@ part of '../_index.dart';
 class HomePanel extends StatelessWidget {
   final int index;
   final String title;
+  final String subtitle;
   final Widget widget;
   const HomePanel({
     Key? key,
     required this.index,
     required this.title,
+    required this.subtitle,
     required this.widget,
   }) : super(key: key);
 
@@ -29,6 +31,7 @@ class HomePanel extends StatelessWidget {
               isExpanded: dt.listOfStatus[index].st,
               headerBuilder: (context, isExpanded) => ListTile(
                 title: Text(title),
+                subtitle: subtitle.isEmpty ? null : Text(subtitle),
               ),
               body: Container(
                 color: Colors.grey.withOpacity(0.5),

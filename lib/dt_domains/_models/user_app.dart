@@ -5,12 +5,14 @@ class UserApp {
   final String? email;
   final String? displayName;
   final String? photoURL;
+  final String? phoneNumber;
   final bool emailVerified;
   UserApp({
     this.uid = '',
     this.email,
     this.displayName,
     this.photoURL,
+    this.phoneNumber,
     this.emailVerified = false,
   });
 
@@ -19,6 +21,7 @@ class UserApp {
     this.email,
     this.displayName,
     this.photoURL,
+    this.phoneNumber,
     this.emailVerified = false,
   });
 
@@ -27,6 +30,7 @@ class UserApp {
     this.email = 'mock email',
     this.displayName = 'mock display name',
     this.photoURL = 'mock photo url',
+    this.phoneNumber = 'mock phone number',
     this.emailVerified = true,
   });
 
@@ -35,6 +39,7 @@ class UserApp {
     String? email,
     String? displayName,
     String? photoURL,
+    String? phoneNumber,
     bool? emailVerified,
   }) {
     return UserApp(
@@ -42,6 +47,7 @@ class UserApp {
       email: email ?? this.email,
       displayName: displayName ?? this.displayName,
       photoURL: photoURL ?? this.photoURL,
+      phoneNumber: phoneNumber ?? this.phoneNumber,
       emailVerified: emailVerified ?? this.emailVerified,
     );
   }
@@ -59,6 +65,9 @@ class UserApp {
     if (photoURL != null) {
       result.addAll({'photo_u_r_l': photoURL});
     }
+    if (phoneNumber != null) {
+      result.addAll({'phone_number': phoneNumber});
+    }
     result.addAll({'email_verified': emailVerified});
 
     return result;
@@ -70,6 +79,7 @@ class UserApp {
       email: map['email'],
       displayName: map['display_name'],
       photoURL: map['photo_u_r_l'],
+      phoneNumber: map['phone_number'],
       emailVerified: map['email_verified'] ?? false,
     );
   }
@@ -80,7 +90,7 @@ class UserApp {
 
   @override
   String toString() {
-    return 'UserApp(uid: $uid, email: $email, displayName: $displayName, photoURL: $photoURL, emailVerified: $emailVerified)';
+    return 'UserApp(uid: $uid, email: $email, displayName: $displayName, photoURL: $photoURL, phoneNumber: $phoneNumber, emailVerified: $emailVerified)';
   }
 
   @override
@@ -92,11 +102,17 @@ class UserApp {
         other.email == email &&
         other.displayName == displayName &&
         other.photoURL == photoURL &&
+        other.phoneNumber == phoneNumber &&
         other.emailVerified == emailVerified;
   }
 
   @override
   int get hashCode {
-    return uid.hashCode ^ email.hashCode ^ displayName.hashCode ^ photoURL.hashCode ^ emailVerified.hashCode;
+    return uid.hashCode ^
+        email.hashCode ^
+        displayName.hashCode ^
+        photoURL.hashCode ^
+        phoneNumber.hashCode ^
+        emailVerified.hashCode;
   }
 }

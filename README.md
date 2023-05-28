@@ -32,7 +32,12 @@ for first config we don't need "google-services.json" anymore<br/>
 ## 4. add fingerprint to firebase (android)<br/>
 
 generate sha1 & sha256 before download google-services.json file<br/>
-on mac run this command on terminal<br/>
+make sure java jre on your path => C:\Program Files\Android\Android Studio\jre\bin
+
+on cmd windows:<br/>
+run => keytool -list -v -keystore "%USERPROFILE%\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android
+
+on mac:<br/>
 -> keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android<br/>
 
 ## 5. google-services.json (android)<br/>

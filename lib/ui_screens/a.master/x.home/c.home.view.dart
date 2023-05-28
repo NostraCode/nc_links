@@ -8,12 +8,12 @@ class HomeView extends StatelessWidget {
 
   List<List<dynamic>> get items {
     return [
-      ['Misc', const HomeMisc()],
-      ['Injection', const HomeInj()],
-      ['Firebase [disabled on windows or linux]', const HomeFirebase()],
-      ['Rest API', const HomeRestapi()],
-      ['Training', const HomeTraining()],
-      ['Chat (not finished yet)', const HomeChat()],
+      ['Misc', '', const HomeMisc()],
+      ['Injection', '', const HomeInj()],
+      ['Firebase', '[disabled on windows or linux]', const HomeFirebase()],
+      ['Rest API', '', const HomeRestapi()],
+      ['Training', '', const HomeTraining()],
+      ['Chat', '[unfinished]', const HomeChat()],
     ];
   }
 
@@ -35,7 +35,8 @@ class HomeView extends StatelessWidget {
                 return HomePanel(
                   index: index,
                   title: items[index][0],
-                  widget: items[index][1],
+                  subtitle: items[index][1],
+                  widget: items[index][2],
                 );
               },
             ),
