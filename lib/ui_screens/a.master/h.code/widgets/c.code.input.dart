@@ -11,10 +11,13 @@ class CodeInput extends StatelessWidget {
     return OnFormBuilder(
       listenTo: dt.rxFormCode,
       builder: () {
+        // logx.e(dt.rxAutoSmsCode.st.toString());
+
         return PlatformType.isWeb
             ? OnReactive(
                 () => TextField(
-                  controller: dt.rxCode.st.controller,
+                  // controller: dt.rxCode.st.controller,
+                  controller: dt.rxCode.st.controllerWithInitialText(dt.rxAutoSmsCode.st ?? ''),
                   focusNode: dt.rxCode.st.focusNode,
                   keyboardType: TextInputType.number,
                   onEditingComplete: () => dt.rxCode.st.focusNode.unfocus(),
@@ -28,7 +31,8 @@ class CodeInput extends StatelessWidget {
               )
             : OnReactive(
                 () => TextField(
-                  controller: dt.rxCode.st.controller,
+                  // controller: dt.rxCode.st.controller,
+                  controller: dt.rxCode.st.controllerWithInitialText(dt.rxAutoSmsCode.st ?? ''),
                   focusNode: dt.rxCode.st.focusNode,
                   keyboardType: TextInputType.number,
                   onEditingComplete: () => dt.rxCode.st.focusNode.unfocus(),

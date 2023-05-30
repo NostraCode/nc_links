@@ -5,8 +5,6 @@ class CodeData {
 
   final rxInt = 0.inj();
 
-  // final message = Prov.auth.st.rxMessage;
-
   final rxConfirmationResult = Prov.auth.st.rxConfirmationResult;
 
   final rxPhoneAuthCredential = Prov.auth.st.rxPhoneAuthCredential;
