@@ -13,6 +13,8 @@ class RouteMap {
     Routes.regis: (RouteData data) => const RegisView(),
     Routes.forget: (RouteData data) => const ForgetView(),
     Routes.otp: (RouteData data) => const OtpView(),
+    Routes.phone: (RouteData data) => const PhoneView(),
+    Routes.code: (RouteData data) => const CodeView(),
     Routes.appCheck: (RouteData data) => const AppCheckView(),
     Routes.home: (RouteData data) => const HomeView(),
     Routes.notFound: (RouteData data) => NotFoundView(routeData: data),

@@ -6,7 +6,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "-> default",
+      "name": "@default",
       "request": "launch",
       "type": "dart",
       "args": [
@@ -15,7 +15,7 @@
       ],
     },
     {
-      "name": "-> d=chrome:5000",
+      "name": "@chrome:5000",
       "request": "launch",
       "type": "dart",
       "flutterMode": "debug",
@@ -28,7 +28,7 @@
       ],
     },
     {
-      "name": "-> d=chrome:80",
+      "name": "@chrome:80",
       "request": "launch",
       "type": "dart",
       "flutterMode": "debug",
@@ -41,13 +41,13 @@
       ],
     },
     {
-      "name": "-> profile mode",
+      "name": "@profile mode",
       "request": "launch",
       "type": "dart",
       "flutterMode": "profile"
     },
     {
-      "name": "-> release mode",
+      "name": "@release mode",
       "request": "launch",
       "type": "dart",
       "flutterMode": "release"

@@ -8,6 +8,8 @@ abstract class Ctrl {
   static RegisCtrl get regis => RegisCtrl();
   static ForgetCtrl get forget => ForgetCtrl();
   static OtpCtrl get otp => OtpCtrl();
+  static PhoneCtrl get phone => PhoneCtrl();
+  static CodeCtrl get code => CodeCtrl();
   static HomeCtrl get home => HomeCtrl();
   static AppCheckCtrl get appCheck => AppCheckCtrl();
   static NotFoundCtrl get notFound => NotFoundCtrl();

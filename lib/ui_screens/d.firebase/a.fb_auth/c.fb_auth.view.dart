@@ -18,13 +18,11 @@ class FbAuthView extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            FbAuthC(),
+            FbAuthCharlie(),
             SizedBoxH(50),
-            FbAuthD(),
+            FbAuthDelta(),
             SizedBoxH(50),
-            FbAuthE(),
-            SizedBoxH(50),
-            FbAuthF(),
+            FbAuthEcho(),
           ],
         ),
       ),

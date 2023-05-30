@@ -1,7 +1,7 @@
 part of '../_index.dart';
 
-class FbAuthD extends StatelessWidget {
-  const FbAuthD({Key? key}) : super(key: key);
+class FbAuthDelta extends StatelessWidget {
+  const FbAuthDelta({Key? key}) : super(key: key);
 
   FbAuthCtrl get ct => Ctrl.fbAuth;
   FbAuthData get dt => Data.fbAuth.st;
@@ -9,15 +9,32 @@ class FbAuthD extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OnReactive(
-      () => dt.rxUserApp.st == null
-          ? ElevatedButton(
-              child: const Text('sign in with google'),
-              onPressed: () => ct.signInWithGoogle(),
-            )
-          : ElevatedButton(
-              child: const Text('sign out'),
-              onPressed: () => ct.signOut(),
-            ),
+      () => Container(
+        child: dt.rxUserApp.st == null
+            ? const Text('you are not logged in yet')
+            : Column(
+                children: [
+                  const Text('logged in as:'),
+                  const SizedBoxH(10),
+                  Text(dt.rxUserApp.st?.email ?? 'no email'),
+                  const SizedBoxH(10),
+                  Text('${dt.rxUserApp.st?.phoneNumber}'),
+                  const SizedBoxH(10),
+                  dt.rxUserApp.st?.photoURL == null
+                      ? const Text('no image')
+                      : SizedBox(
+                          width: 50,
+                          height: 50,
+                          child: CircleAvatar(
+                            radius: 25,
+                            backgroundImage: NetworkImage(
+                              '${dt.rxUserApp.st?.photoURL}',
+                            ),
+                          ),
+                        ),
+                ],
+              ),
+      ),
     );
   }
 }

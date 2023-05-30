@@ -51,7 +51,7 @@ class LoginView extends StatelessWidget {
                               const SizedBoxH(20),
                               LoginBtnText(
                                 label: 'phone login',
-                                function: () => nav.toReplacement(Routes.otp),
+                                function: () => nav.toReplacement(Routes.phone),
                               ),
                               const SizedBoxH(20),
                               const Divider(height: 1),

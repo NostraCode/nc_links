@@ -12,6 +12,8 @@ class Routes {
   static const regis = '/registration';
   static const forget = '/forget';
   static const otp = '/otp';
+  static const phone = '/phone';
+  static const code = '/code';
   static const appCheck = '/app_check';
   static const home = '/home';
   static const notFound = '/not_found';

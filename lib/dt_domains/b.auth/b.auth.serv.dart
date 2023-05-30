@@ -103,78 +103,95 @@ class AuthServ {
     }
   }
 
-  //! phone login for web ----- ----- ----- ----- ----- ----- ----- ----- -----
+  Future<void> confirmSmsCode(String code) async {
+    try {
+      if (PlatformType.isWeb) {
+        final confirmationResult = pv.rxConfirmationResult.st;
+        if (confirmationResult != null) {
+          pv.rxUserCredential.st = await confirmationResult.confirm(code);
+        }
+      } else {
+        validatePhoneAuthCredential(code);
+        final phoneAuthCredential = pv.rxPhoneAuthCredential.st;
+        if (phoneAuthCredential != null) {
+          pv.rxUserCredential.st = await x1FbAuth.st.signInWithCredential(phoneAuthCredential);
+        }
+      }
+    } catch (e) {
+      rethrow;
+    }
+  }
 
+  // phone login for web
   Future<void> signInWithPhoneNumber(String phoneNumber) async {
     try {
       pv.rxConfirmationResult.st = await x1FbAuth.st.signInWithPhoneNumber(phoneNumber);
+      goToCodePage();
+      setMessage('insert the code on sms');
     } catch (e) {
       rethrow;
     }
   }
 
-  Future<void> confirmCodeOnWeb(String code) async {
-    try {
-      pv.rxUserCredential.st = await pv.rxConfirmationResult.st?.confirm(code);
-    } catch (e) {
-      rethrow;
-    }
-  }
-
-  //! phone login for mobile ----- ----- ----- ----- ----- ----- ----- -----
-
+  // phone login for mobile
   Future<void> verifyPhoneNumber(String phoneNumber) async {
     try {
       await x1FbAuth.st.verifyPhoneNumber(
         phoneNumber: phoneNumber,
         verificationFailed: (e) => onVerificationFailed(e),
         codeSent: (verificationId, resendToken) => onCodeSent(verificationId, resendToken),
-        codeAutoRetrievalTimeout: (verificationId) => onCodeAutoRetrievalTimeout(verificationId),
         verificationCompleted: (phoneAuthCred) => onVerificationCompleted(phoneAuthCred),
-        timeout: const Duration(seconds: 120),
-        autoRetrievedSmsCodeForTesting: '111222',
+        codeAutoRetrievalTimeout: (verificationId) => onCodeAutoRetrievalTimeout(verificationId),
+        autoRetrievedSmsCodeForTesting: phoneNumber == '+6285211221122' ? '111222' : null,
+        timeout: const Duration(seconds: 30),
       );
     } catch (e) {
       rethrow;
     }
   }
 
-  Future<void> signInWithCredential() async {
-    final phoneAuthCredential = pv.rxPhoneAuthCredential.st;
-    if (phoneAuthCredential != null) {
-      pv.rxUserCredential.st = await x1FbAuth.st.signInWithCredential(phoneAuthCredential);
-    }
+  setMessage(String message) {
+    logxx.i(AuthServ, message);
+    toast(message);
+  }
+
+  goToCodePage() {
+    nav.backUntil(Routes.phone);
+    nav.to(Routes.code);
   }
 
   onVerificationFailed(FirebaseAuthException e) {
-    logxx.e(AuthServ, 'verification failed => ${e.code}');
+    nav.backUntil(Routes.phone);
+    setMessage('verification failed => ${e.code}');
   }
 
   onCodeAutoRetrievalTimeout(String verificationId) {
-    logxx.i(AuthServ, 'auto-resolution timed out......');
-  }
-
-  onCodeSent(String verificationId, int? resendToken) {
-    logxx.i(AuthServ, 'code sent...');
-    pv.rxResendToken.st = resendToken;
-    pv.rxVerificationId.st = verificationId;
+    goToCodePage();
+    setMessage('auto-retrieve timed out, please insert code manually.');
   }
 
   onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
-    final smsCode = phoneAuthCredential.smsCode;
-    logx.e(smsCode.toString());
-    logxx.i(AuthServ, 'on verification completed...');
     pv.rxPhoneAuthCredential.st = phoneAuthCredential;
+    pv.rxAutoSmsCode.st = phoneAuthCredential.smsCode;
+    goToCodePage();
+    setMessage('auto-retrieve success.');
   }
 
-  confirmCodeOnMobile(String code) {
-    final verificationId = pv.rxVerificationId.st;
-    if (pv.rxPhoneAuthCredential.st == null && verificationId != null) {
-      pv.rxPhoneAuthCredential.st = PhoneAuthProvider.credential(
-        smsCode: code,
-        verificationId: verificationId,
-      );
+  onCodeSent(String verificationId, int? resendToken) {
+    pv.rxResendToken.st = resendToken;
+    pv.rxVerificationId.st = verificationId;
+    setMessage('code has been sent, try to auto-retrieve.');
+  }
+
+  validatePhoneAuthCredential(String code) {
+    if (pv.rxPhoneAuthCredential.st == null) {
+      final verificationId = pv.rxVerificationId.st;
+      if (verificationId != null) {
+        pv.rxPhoneAuthCredential.st = PhoneAuthProvider.credential(
+          smsCode: code,
+          verificationId: verificationId,
+        );
+      }
     }
-    signInWithCredential();
   }
 }

@@ -22,7 +22,7 @@ class OtpCode extends StatelessWidget {
                   textAlign: TextAlign.center,
                   decoration: InputDecoration(
                     labelText: 'Code',
-                    hintText: 'insert OTP code',
+                    hintText: 'insert code',
                     errorText: dt.rxCode.error,
                   ),
                 ),
@@ -38,7 +38,7 @@ class OtpCode extends StatelessWidget {
                   textAlign: TextAlign.center,
                   decoration: InputDecoration(
                     labelText: 'Code',
-                    hintText: 'insert OTP code',
+                    hintText: 'insert code',
                     errorText: dt.rxCode.error,
                   ),
                 ),

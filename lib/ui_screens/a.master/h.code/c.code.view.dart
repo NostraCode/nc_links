@@ -1,19 +1,19 @@
 part of '_index.dart';
 
-class OtpView extends StatelessWidget {
-  const OtpView({Key? key}) : super(key: key);
+class CodeView extends StatelessWidget {
+  const CodeView({Key? key}) : super(key: key);
 
-  OtpCtrl get ct => Ctrl.otp;
-  OtpData get dt => Data.otp.st;
+  CodeCtrl get ct => Ctrl.code;
+  CodeData get dt => Data.code.st;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: PreferredSize(
+      // appBar: const PreferredSize(
       //   preferredSize: Size.fromHeight(56),
-      //   child: OtpAppbar(),
+      //   child: CodeAppbar(),
       // ),
-      // floatingActionButton: OtpFab(),
+      // floatingActionButton: const CodeFab(),
       body: KeyboardDismisser(
         gestures: const [
           GestureType.onTap,
@@ -31,37 +31,21 @@ class OtpView extends StatelessWidget {
                     child: Column(
                       children: [
                         OnFormBuilder(
-                          listenTo: dt.rxFormPhone,
+                          listenTo: dt.rxFormCode,
                           builder: () {
                             return const Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 SizedBoxH(20),
-                                Text('[debug] +62811-2222-3333'),
+                                Opacity(
+                                  opacity: 0.5,
+                                  child: Text('[debug] 111222'),
+                                ),
                                 SizedBoxH(20),
-                                OtpPhone(),
+                                CodeInput(),
                                 SizedBoxH(20),
-                                OtpBtnPhone(),
-                                SizedBoxH(30),
-                                Divider(height: 1),
-                              ],
-                            );
-                          },
-                        ),
-                        OnFormBuilder(
-                          listenTo: dt.rxFormPhone,
-                          builder: () {
-                            return const Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                SizedBoxH(30),
-                                Text('[debug] 112233'),
-                                SizedBoxH(20),
-                                OtpCode(),
-                                SizedBoxH(20),
-                                OtpBtnCode(),
+                                CodeSubmit(),
                                 SizedBoxH(30),
                                 Divider(height: 1),
                               ],
@@ -69,7 +53,7 @@ class OtpView extends StatelessWidget {
                           },
                         ),
                         const SizedBoxH(20),
-                        const OtpBtnToLogin(),
+                        const CodeNav(),
                       ],
                     ),
                   ),
