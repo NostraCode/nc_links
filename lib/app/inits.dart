@@ -14,9 +14,16 @@ Future<void> inits() async {
       options: DefaultFirebaseOptions.currentPlatform,
     );
     await FirebaseAppCheck.instance.activate(
-      webRecaptchaSiteKey: '6LdIbTUmAAAAAC-jQ2pWHwT0Y8NxEfpvmjfRqTjR',
-      androidProvider: AndroidProvider.debug,
-      // appleProvider: AppleProvider.debug,
+      // ! bugs at "AppCheck":
+      // ! in firebase appCheck console => "reCaptcha" can not be registered
+      // ! in firebase appCheck console => "reCaptcha enterprise" can be registered
+      // ! works with "reCaptcha keys from classic v3" registered to "firebase reCaptcha enterprise"
+      // !
+      // ! AppCheck Authentication is "unEnforced" because of BETA status
+      // * app check via playIntegrity is OK for "Storage, RealtimeDB, CloudFirestore"
+      webRecaptchaSiteKey: '6LdGfVUmAAAAAB_TGJ13vQshxIGTvXTjdSVr_sUx',
+      androidProvider: AndroidProvider.playIntegrity,
+      appleProvider: AppleProvider.debug,
     );
     Serv.fcm.init();
     Serv.auth.init();

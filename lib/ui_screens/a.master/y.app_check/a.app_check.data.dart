@@ -10,10 +10,7 @@ class AppCheckData {
   final rxAppCheck = RM.injectStream<String?>(
     () => x1FbAppCheck.st.instance.onTokenChange,
     sideEffects: SideEffects.onData(
-      (data) {
-        logx.i('wkwkwkkwkw');
-        Ctrl.appCheck.setEventToken(data);
-      },
+      (data) => Ctrl.appCheck.setEventToken(data),
     ),
   );
 

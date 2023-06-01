@@ -4,7 +4,20 @@
 [abang] emulator-android:
 3a2b6e55-6a6a-414d-b2ba-c060bf48c240
 
-[abang] xiaomi:
+[abang] xiaomi usb:
 0e423336-9377-47f2-ac3f-5272bcf6bfec
 
-// +6285171543248
+[abang] xiaomi wifi:
+54e4d227-1966-44d5-ab3a-9d7fb66a4a61
+
+[abang] chrome localhost:80:
+fbce39cf-5e5c-4eae-9798-8f76c96836ee
+
+[abang] chrome localhost:5000:
+cb7d7479-fc21-48e0-a12d-78122b3752a9
+
+
+// I/PlayCore( 6653): UID: [10309]  PID: [6653] 
+IntegrityService : requestIntegrityToken(IntegrityTokenRequest{
+nonce=AaK4wXAdDeItEapAE8Gu4ycSX_Amr9Z_XR7K9Qn3yucLCXG37pJjF12Zks5-GT7G4OqcwpwSXaWLA3vyBL-WbXMWqmnasuQYQJcPT9NsjpZlrqkP3PLAHfMhQG9TfRbLDZPlGXRyt9lUL_Wjt1GD3mP9LpyoFoYrLrYzwBqpJ01AAHg=, 
+cloudProjectNumber=835126305601})

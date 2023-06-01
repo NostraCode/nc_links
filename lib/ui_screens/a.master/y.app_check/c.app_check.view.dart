@@ -40,10 +40,11 @@ class AppCheckView extends StatelessWidget {
             ),
             const SizedBoxH(20),
             const Text('Token received from tokenChanges() API:'),
-            OnBuilder.data(
-              listenTo: dt.rxAppCheck,
-              builder: (data) => Text('$data'),
-            ),
+            OnReactive(() => Text(dt.rxAppCheck.st ?? 'null')),
+            // OnBuilder.data(
+            //   listenTo: dt.rxAppCheck,
+            //   builder: (data) => Text('$data'),
+            // ),
           ],
         ),
       ),

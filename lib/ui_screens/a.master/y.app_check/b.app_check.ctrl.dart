@@ -9,6 +9,7 @@ class AppCheckCtrl {
 
   setMessage(String message) {
     dt.rxMessage.st = message;
+    logxx.i(AppCheckCtrl, message.toString());
   }
 
   setEventToken(String? token) {
@@ -17,30 +18,53 @@ class AppCheckCtrl {
 
   // to check whether the request was validated on the Firebase console
   tryAppCheck() async {
-    // gets first document in collection
-    final result = await x1FbFirestore.instance.collection('products').limit(1).get();
-    setMessage(result.docs.isNotEmpty ? 'Document found' : 'Document not found');
+    try {
+      // gets first document in collection
+      final result = await x1FbFirestore.instance.collection('products').limit(1).get();
+      setMessage(result.docs.isNotEmpty ? 'Document found' : 'Document not found');
+    } catch (obj) {
+      Fun.handleException(obj);
+    }
   }
 
   void activate() async {
     if (PlatformType.isWeb) {
       logx.w('Pass in your "webRecaptchaSiteKey" key found on you Firebase Console.');
     }
-    await x1FbAppCheck.st.instance.activate(
-      webRecaptchaSiteKey: '6LdIbTUmAAAAAC-jQ2pWHwT0Y8NxEfpvmjfRqTjR',
-      androidProvider: AndroidProvider.debug,
-      // appleProvider: AppleProvider.appAttest,
-    );
-    setMessage('activated!!');
+    try {
+      await x1FbAppCheck.st.instance.activate(
+        // ! bugs at "AppCheck":
+        // ! in firebase appCheck console => "reCaptcha" can not be registered
+        // ! in firebase appCheck console => "reCaptcha enterprise" can be registered
+        // ! works with "reCaptcha keys from classic v3" registered to "firebase reCaptcha enterprise"
+        // !
+        // ! AppCheck Authentication is "unEnforced" because of BETA status
+        // * app check via playIntegrity is OK for "Storage, RealtimeDB, CloudFirestore"
+        webRecaptchaSiteKey: '6LdGfVUmAAAAAB_TGJ13vQshxIGTvXTjdSVr_sUx',
+        androidProvider: AndroidProvider.playIntegrity,
+        appleProvider: AppleProvider.debug,
+      );
+      setMessage('activated!!');
+    } catch (obj) {
+      Fun.handleException(obj);
+    }
   }
 
   void getToken() async {
-    final token = await x1FbAppCheck.st.instance.getToken(true);
-    logx.i(token.toString());
+    try {
+      final token = await x1FbAppCheck.st.instance.getToken();
+      setMessage(token.toString());
+    } catch (obj) {
+      Fun.handleException(obj);
+    }
   }
 
   void setTokenAutoRefreshEnabled() async {
-    await x1FbAppCheck.st.instance.setTokenAutoRefreshEnabled(true);
-    setMessage('successfully set auto token refresh!!');
+    try {
+      await x1FbAppCheck.st.instance.setTokenAutoRefreshEnabled(true);
+      setMessage('successfully set auto token refresh!!');
+    } catch (obj) {
+      Fun.handleException(obj);
+    }
   }
 }

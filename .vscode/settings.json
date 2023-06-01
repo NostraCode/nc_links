@@ -12,7 +12,6 @@
     ".vscode": true,
     "analysis_options.yaml": true,
     "android": true,
-    "appcheck_debug_tokens.txt": true,
     "assets": true,
     "firebase.json": true,
     "integration_test": true,
@@ -24,7 +23,6 @@
     "README.md": true,
     "test": true,
     "test_utils": true,
-    "web": true,
     "windows": true
   }
 }
