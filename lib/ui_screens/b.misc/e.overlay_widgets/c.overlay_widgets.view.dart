@@ -45,30 +45,33 @@ class OverlayWidgetsView extends StatelessWidget {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      showOverlay((_, t) {
-                        return Theme(
+                      showOverlay(
+                        (_, t) => Theme(
                           data: Theme.of(context),
                           child: Opacity(
                             opacity: t,
                             child: const IosStyleToast(),
                           ),
-                        );
-                      }, key: const ValueKey('hello'));
+                        ),
+                        key: const ValueKey('hello'),
+                      );
                     },
                     child: const Text('iOS Style Dialog'),
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      showOverlay((context, t) {
-                        return CustomAnimationToast(value: t);
-                      }, key: const ValueKey('hello'), curve: Curves.decelerate);
+                      showOverlay(
+                        (context, t) => CustomAnimationToast(value: t),
+                        key: const ValueKey('hello'),
+                        curve: Curves.decelerate,
+                      );
                     },
                     child: const Text('custom animation overlay'),
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      showOverlay((context, t) {
-                        return Container(
+                      showOverlay(
+                        (context, t) => Container(
                           color: Color.lerp(Colors.transparent, Colors.black54, t),
                           child: FractionalTranslation(
                             translation: Offset.lerp(const Offset(0, -1), const Offset(0, 0), t)!,
@@ -84,8 +87,9 @@ class OverlayWidgetsView extends StatelessWidget {
                               ],
                             ),
                           ),
-                        );
-                      }, duration: Duration.zero);
+                        ),
+                        duration: Duration.zero,
+                      );
                     },
                     child: const Text('notification with barrier'),
                   ),
@@ -156,15 +160,16 @@ class OverlayWidgetsView extends StatelessWidget {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      showOverlayNotification((context) {
-                        return MessageNotification(
+                      showOverlayNotification(
+                        (context) => MessageNotification(
                           message: messages[3],
                           onReply: () {
                             OverlaySupportEntry.of(context)!.dismiss();
                             toast('you checked this message');
                           },
-                        );
-                      }, duration: const Duration(milliseconds: 4000));
+                        ),
+                        duration: const Duration(milliseconds: 4000),
+                      );
                     },
                     child: const Text('custom message notification'),
                   ),
@@ -173,7 +178,7 @@ class OverlayWidgetsView extends StatelessWidget {
                       final random = Random();
                       for (var i = 0; i < messages.length; i++) {
                         await Future.delayed(Duration(milliseconds: 200 + random.nextInt(200)));
-                        showOverlayNotification((context) {
+                        showOverlayNotification((_) {
                           return MessageNotification(
                             message: messages[i],
                             onReply: () {

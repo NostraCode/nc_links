@@ -11,3 +11,4 @@ part 'conn_notification.dart';
 part 'modal_settings.dart';
 part 'notification_badge.dart';
 part 'placeholderx.dart';
+part 'toast_x.dart';

@@ -14,6 +14,7 @@ class CodeCtrl {
       Fun.showOverlayLoading();
       await Serv.auth.confirmSmsCode(dt.rxCode.st.value);
     } catch (obj) {
+      nav.back();
       Fun.handleException(obj);
     }
   }

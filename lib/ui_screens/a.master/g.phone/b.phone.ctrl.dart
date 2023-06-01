@@ -19,6 +19,7 @@ class PhoneCtrl {
         await Serv.auth.verifyPhoneNumber(phoneNumber);
       }
     } catch (obj) {
+      nav.back();
       Fun.handleException(obj);
     }
   }

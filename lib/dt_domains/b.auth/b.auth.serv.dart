@@ -111,7 +111,7 @@ class AuthServ {
           pv.rxUserCredential.st = await confirmationResult.confirm(code);
         }
       } else {
-        validatePhoneAuthCredential(code);
+        checkPhoneAuthCredential(code);
         final phoneAuthCredential = pv.rxPhoneAuthCredential.st;
         if (phoneAuthCredential != null) {
           pv.rxUserCredential.st = await x1FbAuth.st.signInWithCredential(phoneAuthCredential);
@@ -126,8 +126,7 @@ class AuthServ {
   Future<void> signInWithPhoneNumber(String phoneNumber) async {
     try {
       pv.rxConfirmationResult.st = await x1FbAuth.st.signInWithPhoneNumber(phoneNumber);
-      goToCodePage();
-      setMessage('insert the code on sms');
+      toNextPage('insert the code on sms');
     } catch (e) {
       rethrow;
     }
@@ -150,40 +149,34 @@ class AuthServ {
     }
   }
 
-  setMessage(String message) {
-    logxx.i(AuthServ, message);
-    toast(message);
-  }
-
-  goToCodePage() {
-    nav.backUntil(Routes.phone);
-    nav.to(Routes.code);
-  }
-
   onVerificationFailed(FirebaseAuthException e) {
-    nav.backUntil(Routes.phone);
-    setMessage('verification failed => ${e.code}');
+    nav.back();
+    Fun.handleException(e);
+  }
+
+  toNextPage(String message) async {
+    Fun.showToastX(message);
+    await Future.delayed(1.seconds);
+    return nav.to(Routes.code);
   }
 
   onCodeAutoRetrievalTimeout(String verificationId) {
-    goToCodePage();
-    setMessage('auto-retrieve timed out, please insert code manually.');
+    toNextPage('auto-retrieve timed out, please insert code manually.');
   }
 
   onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
     pv.rxPhoneAuthCredential.st = phoneAuthCredential;
     pv.rxAutoSmsCode.st = phoneAuthCredential.smsCode;
-    goToCodePage();
-    setMessage('auto-retrieve success.');
+    toNextPage('auto-retrieve success.');
   }
 
   onCodeSent(String verificationId, int? resendToken) {
     pv.rxResendToken.st = resendToken;
     pv.rxVerificationId.st = verificationId;
-    setMessage('code has been sent, try to auto-retrieve.');
+    Fun.showToastX('code has been sent, try to auto-retrieve.');
   }
 
-  validatePhoneAuthCredential(String code) {
+  checkPhoneAuthCredential(String code) {
     if (pv.rxPhoneAuthCredential.st == null) {
       final verificationId = pv.rxVerificationId.st;
       if (verificationId != null) {

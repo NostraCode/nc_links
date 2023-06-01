@@ -39,7 +39,7 @@ class Fun {
       str = 'Something really unknown: ${obj.toString()}';
     }
     Dialogs.alert(str);
-    logx.e(str);
+    logx.e('handleException => $str');
   }
 
   static String dioErrorMessage(DioError e) {
@@ -79,9 +79,24 @@ class Fun {
 
   static void showOverlayLoading() {
     nav.toDialog(
-      const Center(child: CircularProgressIndicator()),
+      const Center(
+        child: CircularProgressIndicator(),
+      ),
       barrierDismissible: false,
       barrierColor: Colors.black54,
+    );
+  }
+
+  static void showToastX(String message) async {
+    logx.i('toastX => $message');
+    showOverlay(
+      (context, t) => ToastX(
+        value: t,
+        message: message,
+      ),
+      key: ValueKey(message),
+      curve: Curves.decelerate,
+      duration: 4.seconds,
     );
   }
 }
