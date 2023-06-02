@@ -20,7 +20,10 @@ class AppCheckView extends StatelessWidget {
             const SizedBoxH(10),
             ElevatedButton(
               onPressed: () => ct.tryAppCheck(),
-              child: const Text('try app check'),
+              child: const Text(
+                'try appCheck & firestore rule',
+                textAlign: TextAlign.center,
+              ),
             ),
             ElevatedButton(
               onPressed: () => ct.activate(),

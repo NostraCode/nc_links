@@ -8,16 +8,13 @@
 0e423336-9377-47f2-ac3f-5272bcf6bfec
 
 [abang] xiaomi wifi:
-54e4d227-1966-44d5-ab3a-9d7fb66a4a61
+68837018-07d8-4765-a4ab-52ee14ef9f31
 
 [abang] chrome localhost:80:
-fbce39cf-5e5c-4eae-9798-8f76c96836ee
+c2db29a2-6e8f-4b45-b488-f60d262a0280
 
 [abang] chrome localhost:5000:
-cb7d7479-fc21-48e0-a12d-78122b3752a9
+5e3cbc8d-c081-4d73-90be-3ef0d4cf214f
 
-
-// I/PlayCore( 6653): UID: [10309]  PID: [6653] 
-IntegrityService : requestIntegrityToken(IntegrityTokenRequest{
-nonce=AaK4wXAdDeItEapAE8Gu4ycSX_Amr9Z_XR7K9Qn3yucLCXG37pJjF12Zks5-GT7G4OqcwpwSXaWLA3vyBL-WbXMWqmnasuQYQJcPT9NsjpZlrqkP3PLAHfMhQG9TfRbLDZPlGXRyt9lUL_Wjt1GD3mP9LpyoFoYrLrYzwBqpJ01AAHg=, 
-cloudProjectNumber=835126305601})
+[abang] chrome femaster.web.app:
+662e1d0e-875b-47d0-965f-ef4e6782653c

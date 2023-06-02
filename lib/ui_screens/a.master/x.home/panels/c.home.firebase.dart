@@ -47,6 +47,12 @@ class HomeFirebase extends StatelessWidget {
           enabled: checkEnabled(),
           fun: () => nav.to(Routes.analytics),
         ),
+        HomeTile(
+          title: 'Firebase AppCheck',
+          subtitle: 'provides attestation of app or device authenticity.',
+          enabled: checkEnabled(),
+          fun: () => nav.to(Routes.appCheck),
+        ),
       ],
     );
   }

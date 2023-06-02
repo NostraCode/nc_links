@@ -155,9 +155,9 @@ class AuthServ {
   }
 
   toNextPage(String message) async {
+    nav.to(Routes.code);
+    await Future.delayed(800.milliseconds);
     Fun.showToastX(message);
-    await Future.delayed(1.seconds);
-    return nav.to(Routes.code);
   }
 
   onCodeAutoRetrievalTimeout(String verificationId) {
