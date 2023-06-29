@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
 
-import '../../../xtras/_index.dart';
 import '../../../app/_index.dart';
+import '../../../xtras/_index.dart';
 
 part 'a.inj_anim.data.dart';
 part 'b.inj_anim.ctrl.dart';

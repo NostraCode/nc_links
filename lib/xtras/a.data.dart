@@ -46,6 +46,11 @@ abstract class Data {
   static Injected<ChatFriendData> get chatFriend => _chatFriendData;
   static Injected<ChatRoomData> get chatRoom => _chatRoomData;
   static Injected<ChatMessageData> get chatMessage => _chatMessageData;
+
+  static Injected<TodoEditData> get todoEdit => _todoEditData;
+  static Injected<TodoDetailData> get todoDetail => _todoDetailData;
+  static Injected<TodoInputData> get todoInput => _todoInputData;
+  static Injected<TodoListData> get todoList => _todoListData;
 }
 
 // final _restEditData = RM.inject<RestEditData>(
@@ -101,3 +106,8 @@ final _chatUserData = RM1.inj(ChatUserData(), Ctrl.chatUser.init);
 final _chatFriendData = RM1.inj(ChatFriendData(), Ctrl.chatFriend.init);
 final _chatRoomData = RM1.inj(ChatRoomData(), Ctrl.chatRoom.init);
 final _chatMessageData = RM1.inj(ChatMessageData(), Ctrl.chatMessage.init);
+
+final _todoEditData = RM1.inj(TodoEditData(), Ctrl.todoEdit.init);
+final _todoDetailData = RM1.inj(TodoDetailData(), Ctrl.todoDetail.init);
+final _todoInputData = RM1.inj(TodoInputData(), Ctrl.todoInput.init);
+final _todoListData = RM1.inj(TodoListData(), Ctrl.todoList.init);

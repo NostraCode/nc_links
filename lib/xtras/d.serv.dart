@@ -8,4 +8,6 @@ abstract class Serv {
   static UserxServ get userx => UserxServ();
   static FcmServ get fcm => FcmServ();
   static ChatServ get chat => ChatServ();
+
+  static TodoServ get todo => TodoServ();
 }

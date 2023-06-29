@@ -8,6 +8,8 @@ abstract class Prov {
   static Injected<UserxProv> get userx => _userxProv;
   static Injected<FcmProv> get fcm => _fcmProv;
   static Injected<ChatProv> get chat => _chatProv;
+
+  static Injected<TodoProv> get todo => _todoProv;
 }
 
 final _connProv = RM2.inj(ConnProv());
@@ -17,3 +19,5 @@ final _productProv = RM2.inj(ProductProv());
 final _userxProv = RM2.inj(UserxProv());
 final _fcmProv = RM2.inj(FcmProv());
 final _chatProv = RM2.inj(ChatProv());
+
+final _todoProv = RM2.inj(TodoProv());

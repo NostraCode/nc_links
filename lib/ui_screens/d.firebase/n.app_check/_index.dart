@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:fe_master/ui_widgets/_index.dart';
+import '../../../ui_widgets/_index.dart';
 import 'package:flutter/material.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
 

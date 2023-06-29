@@ -8,6 +8,7 @@ part 'chat_message.dart';
 part 'chat_room.dart';
 part 'chat_user.dart';
 part 'product.dart';
+part 'todo.dart';
 part 'push_notification.dart';
 part 'user_app.dart';
 part 'userx.dart';

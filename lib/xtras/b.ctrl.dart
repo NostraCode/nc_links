@@ -46,4 +46,9 @@ abstract class Ctrl {
   static ChatFriendCtrl get chatFriend => ChatFriendCtrl();
   static ChatRoomCtrl get chatRoom => ChatRoomCtrl();
   static ChatMessageCtrl get chatMessage => ChatMessageCtrl();
+
+  static TodoEditCtrl get todoEdit => TodoEditCtrl();
+  static TodoDetailCtrl get todoDetail => TodoDetailCtrl();
+  static TodoInputCtrl get todoInput => TodoInputCtrl();
+  static TodoListCtrl get todoList => TodoListCtrl();
 }
