@@ -47,6 +47,11 @@ class RouteMap {
     Routes.restInput: (RouteData data) => const RestInputView(),
     Routes.restDetail: (RouteData data) => const RestDetailView(),
     Routes.restEdit: (RouteData data) => const RestEditView(),
+    //* restapi ------- ----- ----- ----- -----
+    Routes.todoList: (RouteData data) => const TodoListView(),
+    Routes.todoInput: (RouteData data) => const TodoInputView(),
+    Routes.todoDetail: (RouteData data) => const TodoDetailView(),
+    Routes.todoEdit: (RouteData data) => const TodoEditView(),
     //* training ------- ----- ----- ----- -----
     Routes.snake: (RouteData data) => const SnakeView(),
     //* chat --- ------- ----- ----- ----- -----

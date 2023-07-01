@@ -3,26 +3,25 @@ part of '_index.dart';
 class TodoListView extends StatelessWidget {
   const TodoListView({Key? key}) : super(key: key);
 
-  TodoListCtrl get ct => Ctrl.todoList;
-  TodoListData get dt => Data.todoList.st;
-
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: PreferredSize(
+    return Scaffold(
+      appBar: const PreferredSize(
         preferredSize: Size.fromHeight(56),
         child: TodoListAppbar(),
       ),
-      floatingActionButton: TodoListFab(),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TodoListCharlie(),
-            TodoListDelta(),
-            TodoListEcho(),
-          ],
-        ),
+      floatingActionButton: const TodoListFab(),
+      body: Column(
+        children: [
+          const TodoListIndicator(),
+          Expanded(
+            child: Center(
+              child: _dt.rxTodo.onOrElse(
+                orElse: (data) => const TodoListItems(),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

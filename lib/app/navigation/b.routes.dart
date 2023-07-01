@@ -46,6 +46,11 @@ class Routes {
   static const restInput = '/rest_input';
   static const restDetail = '/rest_detail';
   static const restEdit = '/rest_edit';
+  //* todoapi ------- ----- ----- ----- -----
+  static const todoList = '/todo_list';
+  static const todoInput = '/todo_input';
+  static const todoDetail = '/todo_detail';
+  static const todoEdit = '/todo_edit';
   //* training ------ ----- ----- ----- -----
   static const snake = '/snake';
   //* training ------ ----- ----- ----- -----
