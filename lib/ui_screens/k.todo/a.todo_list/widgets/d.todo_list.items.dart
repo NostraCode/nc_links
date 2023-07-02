@@ -8,15 +8,20 @@ class TodoListItems extends StatelessWidget {
     return RefreshIndicator(
       onRefresh: () => _ct.refresh(),
       child: OnReactive(
-        () => _dt.rxTodo.st.isEmpty
-            ? const Text('empty')
-            : ListView.builder(
-                itemCount: _dt.rxTodo.st.length + 1,
-                itemBuilder: (context, i) {
-                  if (i == _dt.rxTodo.st.length) return const TodoListLoadMore();
-                  return TodoListTile(item: _dt.rxTodo.st[i]);
-                },
-              ),
+        () => Stack(
+          children: [
+            const TodoListEmpty(),
+            ListView(
+              children: [
+                ...List.generate(
+                  _dt.rxTodo.st.length,
+                  (i) => TodoListTile(item: _dt.rxTodo.st[i]),
+                ),
+                const TodoListLoadMore(),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

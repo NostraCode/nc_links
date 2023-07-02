@@ -11,5 +11,7 @@ class TodoListData {
 
   final rxIsCreate = _pv.rxIsCreate;
 
+  final rxIsRefresh = _pv.rxIsRefresh;
+
   final rxTodo = _pv.rxTodo;
 }

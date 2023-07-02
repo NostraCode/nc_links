@@ -3,19 +3,12 @@ part of '_index.dart';
 class TodoServ {
   init() => logxx.i(TodoServ, '...');
 
-  void refresh() {
-    // _pv.rxTodo.cleanState();
-    // _pv.rxTodo.initializeState();
-    // _pv.rxTodo.refresh();
-    // _pv.rxTodo.setToIsWaiting();
-    // _pv.rxTodo.refresh();
-
-    logx.e('refreshhhh');
-
-    // _pv.rxIsRead.toggle();
-    // _pv.rxTodo.crud.read(
-    //   param: (para) => TodoPars.instance..start = 0,
-    // );
+  Future<void> refresh() async {
+    // await _pv.rxTodo.refresh();
+    _pv.rxIsRefresh.toggle();
+    await _pv.rxTodo.crud.read(
+      param: (para) => TodoPars.instance..start = 0,
+    );
   }
 
   void loadMore() {

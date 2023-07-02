@@ -5,7 +5,7 @@ class TodoListCtrl {
 
   action() => _dt.rxInt.setState((s) => s + 1);
 
-  refresh() => _sv.refresh();
+  Future<void> refresh() => _sv.refresh();
 
   loadMore() => _sv.loadMore();
 
