@@ -1,9 +1,11 @@
 part of '_index.dart';
 
 class TodoDetailCtrl {
-  TodoDetailData get dt => Data.todoDetail.st;
-
   init() => logxx.i(TodoDetailCtrl, '...');
 
-  action() => dt.rxInt.setState((s) => s + 1);
+  action() => _dt.rxInt.setState((s) => s + 1);
+
+  delete(String id) => _sv.delete(id);
+
+  update(BuildContext context, Todo todo) => _sv.update(context, todo);
 }

@@ -7,7 +7,7 @@ class TodoListFab extends StatelessWidget {
   Widget build(BuildContext context) {
     return FloatingActionButton(
       child: const Icon(Icons.add),
-      onPressed: () => _ct.create(),
+      onPressed: () => nav.to(Routes.todoInput),
     );
   }
 }

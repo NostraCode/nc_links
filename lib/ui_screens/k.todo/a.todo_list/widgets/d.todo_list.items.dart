@@ -8,17 +8,27 @@ class TodoListItems extends StatelessWidget {
     return RefreshIndicator(
       onRefresh: () => _ct.refresh(),
       child: OnReactive(
-        () => Stack(
+        () => Column(
           children: [
-            const TodoListEmpty(),
-            ListView(
-              children: [
-                ...List.generate(
-                  _dt.rxTodo.st.length,
-                  (i) => TodoListTile(item: _dt.rxTodo.st[i]),
-                ),
-                const TodoListLoadMore(),
-              ],
+            Expanded(
+              child: Stack(
+                children: [
+                  const TodoListEmpty(),
+                  ListView(
+                    children: [
+                      ...List.generate(
+                        _dt.rxTodo.st.length,
+                        (i) => _pv.itemx.inherited(
+                          key: ValueKey(_dt.rxTodo.st[i].id),
+                          item: () => _dt.rxTodo.st[i],
+                          builder: (context) => const TodoListTile(),
+                        ),
+                      ),
+                      const TodoListLoadMore(),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ],
         ),

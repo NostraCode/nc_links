@@ -8,10 +8,14 @@ class TodoListAppbar extends StatelessWidget {
     return AppBar(
       title: OnReactive(() => Text(_dt.rxTitle.st)),
       centerTitle: true,
-      actions: const [
-        // TodoListPullText(),
-        // TodoListLoadMore(),
-        SizedBox(width: 10),
+      actions: [
+        Center(
+          child: OutlinedButton(
+            onPressed: () => _ct.create(),
+            child: const Text('create'),
+          ),
+        ),
+        const SizedBox(width: 10),
       ],
     );
   }

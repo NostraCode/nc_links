@@ -11,7 +11,7 @@ class TodoListCtrl {
 
   create() => _sv.create();
 
-  delete(int id) => _sv.delete(id);
+  delete(String id) => _sv.delete(id);
 
-  update(int id) => _sv.update(id);
+  update(BuildContext context, Todo todo) => _sv.update(context, todo);
 }

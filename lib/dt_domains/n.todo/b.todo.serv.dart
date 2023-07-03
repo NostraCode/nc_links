@@ -26,18 +26,21 @@ class TodoServ {
     );
   }
 
-  void delete(int id) {
+  void delete(String id) {
     _pv.rxTodo.crud.delete(
       where: (item) => item.id == id,
       isOptimistic: false,
     );
   }
 
-  void update(int id) {
+  void update(BuildContext context, Todo todo) {
     _pv.rxTodo.crud.update(
-      where: (item) => item.id == id,
-      set: (item) => Todo.mock(id),
+      where: (item) => item.id == todo.id,
+      set: (item) => todo,
       isOptimistic: false,
+      //* ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+      onResult: (_) => _pv.itemx.call(context)!.state = todo,
+      //* ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     );
   }
 }

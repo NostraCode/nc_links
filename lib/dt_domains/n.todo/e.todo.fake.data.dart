@@ -3,23 +3,22 @@ part of '_index.dart';
 class FakeData {
   static List<Todo> list = List.generate(
     10,
-    (index) => Todo(
-      id: index,
+    (index) => Todo.mock().copyWith(
+      no: index,
       title: '$index' * 3,
       description: '$index' * 20,
-      completed: false,
     ),
   ).reversed.toList();
 
   static printx() {
     logxx.s(FakeData, '${list.length}');
-    logxx.s(FakeData, '${list.map((e) => '${e.id}. ${e.title}')}');
+    logxx.s(FakeData, '${list.map((e) => e.title)}');
   }
 
   //* ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 
   static Todo create(Todo item) {
-    final newItem = item.copyWith(id: list.first.id! + 1);
+    final newItem = item.copyWith(no: list.first.no + 1);
     list.insert(0, newItem);
     printx();
     return newItem;
