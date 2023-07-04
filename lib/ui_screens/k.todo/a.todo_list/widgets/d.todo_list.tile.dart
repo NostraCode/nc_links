@@ -2,49 +2,45 @@ part of '../_index.dart';
 
 class TodoListTile extends StatelessWidget {
   const TodoListTile({Key? key}) : super(key: key);
-  // const TodoListTile({Key? key, required this.item}) : super(key: key);
-  // final Todo item;
 
   @override
   Widget build(BuildContext context) {
-    final item = _pv.itemx.call(context)!;
+    // final datax = _dt.rxTodo.item.call(context)!;
 
-    return OnReactive(
-      () => Card(
+    return OnBuilder<Todo>.orElse(
+      listenTo: _dt.rxTodo.item.call(context)!,
+      onWaiting: () => const Text('waiting...'),
+      onError: (error, refreshError) => Text('$error'),
+      orElse: (data) => Card(
         child: ListTile(
-          title: Text('${item.st.no} # ${item.st.title} # ${item.st.description}'),
-          subtitle: Text(item.st.id),
-          onTap: () => RM.navigate.to(
-            item.reInherited(
-              context: context,
-              builder: (BuildContext context) => const TodoDetailView(),
-            ),
-          ),
+          title: Text('${data.no} # ${data.title} # ${data.description}'),
+          subtitle: Text(data.id),
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
               IconButton(
                 onPressed: () {
                   final newItem = Todo.mock().copyWith(
-                    id: item.st.id,
-                    no: item.st.no,
+                    id: data.id,
+                    no: data.no,
                   );
-                  //* ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-                  // item.st = newItem;
+                  logx.s('----- ----- ----- ----- -----');
+                  logxx.s(TodoListTile, newItem.title);
                   _ct.update(context, newItem);
-                  //* ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
                 },
                 icon: const Icon(Icons.loop),
               ),
               IconButton(
-                onPressed: () => item.undoState(),
-                icon: const Icon(Icons.undo),
-              ),
-              IconButton(
-                onPressed: () => _ct.delete(item.st.id),
+                onPressed: () => _ct.delete(data.id),
                 icon: const Icon(Icons.delete),
               ),
             ],
+          ),
+          onTap: () => RM.navigate.to(
+            _dt.rxTodo.item.reInherited(
+              context: context,
+              builder: (BuildContext context) => const TodoDetailView(),
+            ),
           ),
         ),
       ),

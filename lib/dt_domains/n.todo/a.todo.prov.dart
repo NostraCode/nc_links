@@ -9,35 +9,22 @@ class TodoProv {
 
   final rxIsRefresh = false.inj();
 
-  late final itemx = rxTodo.item;
-
   final rxTodo = RM.injectCRUD<Todo, TodoPars>(
     () => TodoRepoMock(),
     param: () => TodoPars.instance,
     readOnInitialization: true,
-    //* ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // sideEffects: SideEffects.onError(
-    //   (err, refresh) {
-    //     logx.e(err);
-    //     RM.scaffold.showSnackBar(
-    //       SnackBar(
-    //         content: Text(err.message),
-    //         action: SnackBarAction(label: 'Refresh', onPressed: refresh),
-    //       ),
-    //     );
-    //   },
-    // ),
-
-    sideEffects: SideEffects.onData((_) {
-      logxx.s(TodoProv, 'isRead => ${_pv.rxIsRead.st}');
-      logxx.s(TodoProv, 'isCreate => ${_pv.rxIsCreate.st}');
-      logxx.s(TodoProv, 'isRefresh => ${_pv.rxIsRefresh.st}');
-      _pv.rxIsRead.refresh();
-      _pv.rxIsCreate.refresh();
-      _pv.rxIsRefresh.refresh();
-    }),
-    //* ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    sideEffects: SideEffects.onData(
+      (_) {
+        logxx.s(TodoProv, 'isRead => ${_pv.rxIsRead.st}');
+        logxx.s(TodoProv, 'isCreate => ${_pv.rxIsCreate.st}');
+        logxx.s(TodoProv, 'isRefresh => ${_pv.rxIsRefresh.st}');
+        _pv.rxIsRead.refresh();
+        _pv.rxIsCreate.refresh();
+        _pv.rxIsRefresh.refresh();
+      },
+    ),
     stateInterceptor: (curr, next) {
+      if (next.hasError) return curr;
       if (!next.hasData) return next;
 
       if (_pv.rxIsRefresh.st) {

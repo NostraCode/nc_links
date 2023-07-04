@@ -26,16 +26,6 @@ class TodoRepoMock implements TodoRepo {
   Future update(List<Todo> items, TodoPars? pars) async {
     await Future.delayed(1.seconds);
     FakeData.update(items.first);
-    //* ----- ----- ----- ----- -----
-    // try {
-    //   await Future.delayed(1.seconds);
-    //   FakeData.update(items.first);
-    //   throw Exception();
-    // } catch (e) {
-    //   logx.e(e.toString());
-    //   rethrow;
-    // }
-    //* ----- ----- ----- ----- -----
   }
 
   @override

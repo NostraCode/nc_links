@@ -5,11 +5,14 @@ class TodoListEmpty extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OnReactive(
-      () => Visibility(
-        visible: _dt.rxTodo.st.isEmpty,
-        child: const Center(
-          child: Column(
+    return Center(
+      child: OnBuilder<List<Todo>>.orElse(
+        listenTo: _dt.rxTodo,
+        // onWaiting: () => const Text('waiting...'),
+        onError: (e, __) => Text('$e'),
+        orElse: (data) => Visibility(
+          visible: _dt.rxTodo.st.isEmpty,
+          child: const Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(

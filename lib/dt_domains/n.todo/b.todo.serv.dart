@@ -38,9 +38,9 @@ class TodoServ {
       where: (item) => item.id == todo.id,
       set: (item) => todo,
       isOptimistic: false,
-      //* ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-      onResult: (_) => _pv.itemx.call(context)!.state = todo,
-      //* ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+      sideEffects: SideEffects.onData((data) {
+        _pv.rxTodo.item.call(context)!.state = todo;
+      }),
     );
   }
 }

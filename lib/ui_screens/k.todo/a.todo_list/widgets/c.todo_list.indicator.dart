@@ -7,12 +7,12 @@ class TodoListIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 2,
-      child: OnReactive(
-        () => _dt.rxTodo.onOrElse(
-          onWaiting: () => const LinearProgressIndicator(
-            backgroundColor: Colors.transparent,
-          ),
-          orElse: (data) => const SizedBox.shrink(),
+      child: OnBuilder<List<Todo>>.orElse(
+        listenTo: _dt.rxTodo,
+        onError: (e, __) => Text('$e'),
+        orElse: (data) => const SizedBox.shrink(),
+        onWaiting: () => const LinearProgressIndicator(
+          backgroundColor: Colors.transparent,
         ),
       ),
     );

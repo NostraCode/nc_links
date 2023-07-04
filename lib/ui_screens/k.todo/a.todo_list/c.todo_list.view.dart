@@ -15,9 +15,19 @@ class TodoListView extends StatelessWidget {
         children: [
           const TodoListIndicator(),
           Expanded(
-            child: Center(
-              child: _dt.rxTodo.onOrElse(
-                orElse: (data) => const TodoListItems(),
+            child: RefreshIndicator(
+              onRefresh: () => _ct.refresh(),
+              child: const Column(
+                children: [
+                  Expanded(
+                    child: Stack(
+                      children: [
+                        TodoListEmpty(),
+                        TodoListItems(),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
           ),

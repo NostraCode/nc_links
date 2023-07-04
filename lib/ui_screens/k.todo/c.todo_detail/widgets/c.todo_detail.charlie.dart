@@ -5,28 +5,30 @@ class TodoDetailCharlie extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final item = _pv.itemx.call(context)!;
+    // final datax = _dt.rxTodo.item.call(context)!;
 
-    return OnReactive(
-      () => Column(
+    return OnBuilder<Todo>.orElse(
+      listenTo: _dt.rxTodo.item.call(context)!,
+      onWaiting: () => const Text('waiting...'),
+      onError: (error, refreshError) => Text('$error'),
+      orElse: (data) => Column(
         children: [
-          Text(item.st.no.toString()),
-          Text(item.st.title),
-          Text(item.st.description),
-          Text(item.st.id),
+          Text(data.no.toString()),
+          Text(data.title),
+          Text(data.description),
+          Text(data.id),
           Text(Random().nextInt(100).toString()),
           OnReactive(() => Text('${_dt.rxInt.st}')),
           ElevatedButton(
             child: const Text('update'),
             onPressed: () {
               final newItem = Todo.mock().copyWith(
-                id: item.st.id,
-                no: item.st.no,
+                id: data.id,
+                no: data.no,
               );
-              //* ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-              item.st = newItem;
+              logx.s('----- ----- ----- ----- -----');
+              logxx.s(TodoDetailCharlie, newItem.title);
               _ct.update(context, newItem);
-              //* ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
             },
           )
         ],
