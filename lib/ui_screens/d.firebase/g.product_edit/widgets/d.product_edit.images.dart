@@ -3,9 +3,6 @@ part of '../_index.dart';
 class ProductEditImages extends StatelessWidget {
   const ProductEditImages({Key? key}) : super(key: key);
 
-  ProductEditCtrl get ct => Ctrl.productEdit;
-  ProductEditData get dt => Data.productEdit.st;
-
   @override
   Widget build(BuildContext context) {
     return OnReactive(
@@ -17,13 +14,13 @@ class ProductEditImages extends StatelessWidget {
             textScaleFactor: 0.7,
           ),
           const SizedBoxH(10),
-          dt.rxProductBuffer.st.images.isEmpty
+          _dt.rxProductBuffer.st.images.isEmpty
               ? const Text('image is empty')
               : Wrap(
                   runSpacing: 3,
                   spacing: 3,
                   children: [
-                    for (var item in dt.rxProductBuffer.st.images.entries) ProductEditImage(map: item),
+                    for (var item in _dt.rxProductBuffer.st.images.entries) ProductEditImage(map: item),
                   ],
                 ),
           const SizedBoxH(30),
@@ -32,7 +29,7 @@ class ProductEditImages extends StatelessWidget {
             textScaleFactor: 0.7,
           ),
           const SizedBoxH(10),
-          for (var item in dt.rxProductBuffer.st.images.entries)
+          for (var item in _dt.rxProductBuffer.st.images.entries)
             Padding(
               padding: const EdgeInsets.all(5.0),
               child: Text(item.toString(), textScaleFactor: 0.6),

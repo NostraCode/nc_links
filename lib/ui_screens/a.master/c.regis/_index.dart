@@ -16,3 +16,6 @@ part 'widgets/d.regis.pwd_a.dart';
 part 'widgets/d.regis.pwd_b.dart';
 part 'widgets/g.regis.btn_submit.dart';
 part 'widgets/h.regis.btn_to_login.dart';
+
+RegisData get _dt => Data.regis.st;
+RegisCtrl get _ct => Ctrl.regis;

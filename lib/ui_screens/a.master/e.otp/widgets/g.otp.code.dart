@@ -3,47 +3,44 @@ part of '../_index.dart';
 class OtpCode extends StatelessWidget {
   const OtpCode({Key? key}) : super(key: key);
 
-  OtpCtrl get ct => Ctrl.otp;
-  OtpData get dt => Data.otp.st;
-
   @override
   Widget build(BuildContext context) {
     return OnFormBuilder(
-      listenTo: dt.rxFormCode,
+      listenTo: _dt.rxFormCode,
       builder: () {
         return PlatformType.isWeb
             ? OnReactive(
                 () => TextField(
-                  controller: dt.rxCode.controller,
-                  focusNode: dt.rxCode.focusNode,
+                  controller: _dt.rxCode.controller,
+                  focusNode: _dt.rxCode.focusNode,
                   keyboardType: TextInputType.number,
-                  onEditingComplete: () => dt.rxCode.focusNode.unfocus(),
-                  enabled: dt.confirmationResult.st != null,
+                  onEditingComplete: () => _dt.rxCode.focusNode.unfocus(),
+                  enabled: _dt.confirmationResult.st != null,
                   textAlign: TextAlign.center,
                   decoration: InputDecoration(
                     labelText: 'Code',
                     hintText: 'insert code',
-                    errorText: dt.rxCode.error,
+                    errorText: _dt.rxCode.error,
                   ),
                 ),
               )
             : OnBuilder<PhoneAuthCredential?>(
-                listenTo: dt.phoneAuthCredential,
+                listenTo: _dt.phoneAuthCredential,
                 builder: () => TextField(
-                  controller: dt.rxCode.controller,
-                  focusNode: dt.rxCode.focusNode,
+                  controller: _dt.rxCode.controller,
+                  focusNode: _dt.rxCode.focusNode,
                   keyboardType: TextInputType.number,
-                  onEditingComplete: () => dt.rxCode.focusNode.unfocus(),
-                  enabled: dt.phoneAuthCredential.st != null || dt.verificationId.st != null,
+                  onEditingComplete: () => _dt.rxCode.focusNode.unfocus(),
+                  enabled: _dt.phoneAuthCredential.st != null || _dt.verificationId.st != null,
                   textAlign: TextAlign.center,
                   decoration: InputDecoration(
                     labelText: 'Code',
                     hintText: 'insert code',
-                    errorText: dt.rxCode.error,
+                    errorText: _dt.rxCode.error,
                   ),
                 ),
                 sideEffects: SideEffects.onData(
-                  (data) => dt.rxCode.controller.text = data!.smsCode ?? '',
+                  (data) => _dt.rxCode.controller.text = data!.smsCode ?? '',
                 ),
               );
       },

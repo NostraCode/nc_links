@@ -3,31 +3,28 @@ part of '../_index.dart';
 class PopupFanta extends ReactiveStatelessWidget {
   const PopupFanta({Key? key}) : super(key: key);
 
-  PopupCtrl get ct => Ctrl.popup;
-  PopupData get dt => Data.popup.st;
-
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(top: 24),
-      height: dt.rxInt.st < 1 ? 200 : null,
+      height: _dt.rxInt.st < 1 ? 200 : null,
       // color: Colors.blue,
       child: DraggableScrollableSheet(
         expand: false,
-        initialChildSize: dt.rxInt.st < 1 ? 1 : 0.5,
+        initialChildSize: _dt.rxInt.st < 1 ? 1 : 0.5,
         minChildSize: 0.25,
         maxChildSize: 1,
         builder: (context, controller) => Container(
           color: Colors.green,
-          child: dt.rxInt.st < 1
+          child: _dt.rxInt.st < 1
               ? const XshowFantaHeader()
               : SingleChildScrollView(
-                  physics: dt.rxInt.st < 1 ? const NeverScrollableScrollPhysics() : null,
+                  physics: _dt.rxInt.st < 1 ? const NeverScrollableScrollPhysics() : null,
                   controller: controller,
                   child: Column(
                     children: [
                       const XshowFantaHeader(),
-                      for (var i = 0; i < dt.rxInt.st; i++)
+                      for (var i = 0; i < _dt.rxInt.st; i++)
                         Card(
                           child: Container(
                             height: 80,
@@ -45,9 +42,6 @@ class PopupFanta extends ReactiveStatelessWidget {
 class XshowFantaHeader extends ReactiveStatelessWidget {
   const XshowFantaHeader({Key? key}) : super(key: key);
 
-  PopupCtrl get ct => Ctrl.popup;
-  PopupData get dt => Data.popup.st;
-
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -58,7 +52,7 @@ class XshowFantaHeader extends ReactiveStatelessWidget {
             children: [
               Align(
                 alignment: Alignment.topCenter,
-                child: Text(dt.rxInt.st < 1 ? 'fixed' : 'dragable'),
+                child: Text(_dt.rxInt.st < 1 ? 'fixed' : 'dragable'),
               ),
               Align(
                 alignment: Alignment.topRight,
@@ -74,14 +68,14 @@ class XshowFantaHeader extends ReactiveStatelessWidget {
                   children: [
                     ElevatedButton(
                       child: const Icon(Icons.remove),
-                      onPressed: () => ct.decrease(),
+                      onPressed: () => _ct.decrease(),
                     ),
                     const SizedBoxW(20),
-                    Text('${dt.rxInt.st}', textScaleFactor: 1.5),
+                    Text('${_dt.rxInt.st}', textScaleFactor: 1.5),
                     const SizedBoxW(20),
                     ElevatedButton(
                       child: const Icon(Icons.add),
-                      onPressed: () => ct.increase(),
+                      onPressed: () => _ct.increase(),
                     ),
                   ],
                 ),

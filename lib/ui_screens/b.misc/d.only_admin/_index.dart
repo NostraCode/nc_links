@@ -14,3 +14,6 @@ part 'widgets/b.only_admin.fab.dart';
 part 'widgets/c.only_admin.charlie.dart';
 part 'widgets/d.only_admin.delta.dart';
 part 'widgets/e.only_admin.echo.dart';
+
+OnlyAdminData get _dt => Data.onlyAdmin.st;
+OnlyAdminCtrl get _ct => Ctrl.onlyAdmin;

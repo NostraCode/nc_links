@@ -21,3 +21,6 @@ part 'widgets/b.home.fab.dart';
 part 'widgets/c.home.panel.dart';
 part 'widgets/d.home.tile.dart';
 part 'widgets/e.home.bottomsheet.dart';
+
+HomeData get _dt => Data.home.st;
+HomeCtrl get _ct => Ctrl.home;

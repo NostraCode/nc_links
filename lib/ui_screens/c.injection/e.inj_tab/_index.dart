@@ -12,3 +12,6 @@ part 'widgets/b.inj_tab.fab.dart';
 part 'widgets/c.inj_tab.charlie.dart';
 part 'widgets/d.inj_tab.delta.dart';
 part 'widgets/e.inj_tab.echo.dart';
+
+InjTabData get _dt => Data.injTab.st;
+InjTabCtrl get _ct => Ctrl.injTab;

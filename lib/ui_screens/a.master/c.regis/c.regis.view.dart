@@ -3,9 +3,6 @@ part of '_index.dart';
 class RegisView extends StatelessWidget {
   const RegisView({Key? key}) : super(key: key);
 
-  RegisCtrl get ct => Ctrl.regis;
-  RegisData get dt => Data.regis.st;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +26,7 @@ class RegisView extends StatelessWidget {
                   child: Container(
                     constraints: const BoxConstraints(maxWidth: 300),
                     child: OnFormBuilder(
-                        listenTo: dt.rxForm,
+                        listenTo: _dt.rxForm,
                         builder: () {
                           return const Column(
                             mainAxisAlignment: MainAxisAlignment.center,

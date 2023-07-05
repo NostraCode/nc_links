@@ -3,20 +3,17 @@ part of '../_index.dart';
 class RestEditDelta extends StatelessWidget {
   const RestEditDelta({Key? key}) : super(key: key);
 
-  RestEditCtrl get ct => Ctrl.restEdit;
-  RestEditData get dt => Data.restEdit.st;
-
   @override
   Widget build(BuildContext context) {
     return OnFormBuilder(
-      listenTo: dt.rxForm,
+      listenTo: _dt.rxForm,
       builder: () {
         return Column(
           children: [
             OnFormFieldBuilder<String?>(
-              listenTo: dt.rxGender.st,
+              listenTo: _dt.rxGender.st,
               inputDecoration: InputDecoration(
-                errorText: dt.rxGender.st.error,
+                errorText: _dt.rxGender.st.error,
                 errorBorder: const UnderlineInputBorder(
                   borderSide: BorderSide(color: Colors.red),
                 ),
@@ -37,9 +34,9 @@ class RestEditDelta extends StatelessWidget {
             ),
             const SizedBoxH(20),
             OnFormFieldBuilder<String?>(
-              listenTo: dt.rxStatus.st,
+              listenTo: _dt.rxStatus.st,
               inputDecoration: InputDecoration(
-                errorText: dt.rxStatus.st.error,
+                errorText: _dt.rxStatus.st.error,
                 errorBorder: const UnderlineInputBorder(
                   borderSide: BorderSide(color: Colors.red),
                 ),

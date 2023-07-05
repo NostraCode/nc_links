@@ -3,25 +3,22 @@ part of '../_index.dart';
 class OtpBtnPhone extends StatelessWidget {
   const OtpBtnPhone({Key? key}) : super(key: key);
 
-  OtpCtrl get ct => Ctrl.otp;
-  OtpData get dt => Data.otp.st;
-
   @override
   Widget build(BuildContext context) {
     return OnFormBuilder(
-      listenTo: dt.rxFormPhone,
+      listenTo: _dt.rxFormPhone,
       builder: () {
         return SizedBox(
           width: double.infinity,
           height: 40,
           child: OnFormSubmissionBuilder(
-            listenTo: dt.rxFormPhone,
+            listenTo: _dt.rxFormPhone,
             onSubmitting: () => const Center(
               child: CircularProgressIndicator(),
             ),
             child: OutlinedButton(
-              focusNode: dt.rxFormPhone.submitFocusNode,
-              onPressed: dt.rxFormPhone.isValid ? () => ct.submitPhone() : null,
+              focusNode: _dt.rxFormPhone.submitFocusNode,
+              onPressed: _dt.rxFormPhone.isValid ? () => _ct.submitPhone() : null,
               child: const Text('SUBMIT'),
             ),
           ),

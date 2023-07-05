@@ -3,9 +3,6 @@ part of '_index.dart';
 class SnakeView extends StatelessWidget {
   const SnakeView({Key? key}) : super(key: key);
 
-  SnakeCtrl get ct => Ctrl.snake;
-  SnakeData get dt => Data.snake.st;
-
   @override
   Widget build(BuildContext context) {
     return const Scaffold(

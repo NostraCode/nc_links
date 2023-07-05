@@ -1,8 +1,6 @@
 part of '_index.dart';
 
 class ProductDetailCtrl {
-  ProductDetailData get dt => Data.productDetail.st;
-
   init() => logxx.i(ProductDetailCtrl, '...');
 
   action() {}

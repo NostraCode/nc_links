@@ -15,3 +15,6 @@ part 'widgets/b.rest_edit.fab.dart';
 part 'widgets/c.rest_edit.charlie.dart';
 part 'widgets/d.rest_edit.delta.dart';
 part 'widgets/e.rest_edit.echo.dart';
+
+RestEditData get _dt => Data.restEdit.st;
+RestEditCtrl get _ct => Ctrl.restEdit;

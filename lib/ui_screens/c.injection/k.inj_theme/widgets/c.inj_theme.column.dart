@@ -3,9 +3,6 @@ part of '../_index.dart';
 class InjThemeColumn extends StatelessWidget {
   const InjThemeColumn({Key? key}) : super(key: key);
 
-  InjThemeCtrl get ct => Ctrl.injTheme;
-  InjThemeData get dt => Data.injTheme.st;
-
   @override
   Widget build(BuildContext context) {
     return Column(

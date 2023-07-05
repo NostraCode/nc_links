@@ -3,9 +3,6 @@ part of '../_index.dart';
 class ProductInputFab extends ReactiveStatelessWidget {
   const ProductInputFab({Key? key}) : super(key: key);
 
-  ProductInputCtrl get ct => Ctrl.productInput;
-  ProductInputData get dt => Data.productInput.st;
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -25,7 +22,7 @@ class ProductInputFab extends ReactiveStatelessWidget {
               ),
               CupertinoDialogAction(
                 isDefaultAction: true,
-                onPressed: () => ct.create(),
+                onPressed: () => _ct.create(),
                 child: const Text("OK"),
               ),
             ],

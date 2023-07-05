@@ -16,8 +16,7 @@ part 'widgets/c.not_found.charlie.dart';
 part 'widgets/d.not_found.delta.dart';
 part 'widgets/e.not_found.echo.dart';
 
-
-
-
 // export 'not_found/_index.dart';
 
+NotFoundData get _dt => Data.notFound.st;
+NotFoundCtrl get _ct => Ctrl.notFound;

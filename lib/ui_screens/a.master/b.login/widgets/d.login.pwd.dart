@@ -3,27 +3,24 @@ part of '../_index.dart';
 class LoginPwd extends StatelessWidget {
   const LoginPwd({Key? key}) : super(key: key);
 
-  LoginCtrl get ct => Ctrl.login;
-  LoginData get dt => Data.login.st;
-
   @override
   Widget build(BuildContext context) {
     return OnFormBuilder(
-      listenTo: dt.rxForm,
+      listenTo: _dt.rxForm,
       builder: () {
         return TextField(
-          controller: dt.rxPwd.controller,
-          focusNode: dt.rxPwd.focusNode,
-          obscureText: dt.rxIsObscuredPwd.st,
-          onEditingComplete: () => dt.rxPwd.focusNode.unfocus(),
+          controller: _dt.rxPwd.controller,
+          focusNode: _dt.rxPwd.focusNode,
+          obscureText: _dt.rxIsObscuredPwd.st,
+          onEditingComplete: () => _dt.rxPwd.focusNode.unfocus(),
           decoration: InputDecoration(
-            errorText: dt.rxPwd.error,
+            errorText: _dt.rxPwd.error,
             labelText: 'Password',
             hintText: 'type your password',
             suffixIcon: IconButton(
               icon: const Icon(Icons.remove_red_eye),
               splashRadius: 22,
-              onPressed: () => ct.tooglePwdA(),
+              onPressed: () => _ct.tooglePwdA(),
             ),
             suffixIconConstraints: const BoxConstraints(
               minHeight: 40,

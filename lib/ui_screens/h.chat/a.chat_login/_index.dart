@@ -13,3 +13,6 @@ part 'widgets/b.chat_login.fab.dart';
 part 'widgets/c.chat_login.charlie.dart';
 part 'widgets/d.chat_login.delta.dart';
 part 'widgets/e.chat_login.echo.dart';
+
+ChatLoginData get _dt => Data.chatLogin.st;
+ChatLoginCtrl get _ct => Ctrl.chatLogin;

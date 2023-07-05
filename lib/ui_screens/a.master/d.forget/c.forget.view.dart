@@ -3,9 +3,6 @@ part of '_index.dart';
 class ForgetView extends StatelessWidget {
   const ForgetView({Key? key}) : super(key: key);
 
-  ForgetCtrl get ct => Ctrl.forget;
-  ForgetData get dt => Data.forget.st;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +26,7 @@ class ForgetView extends StatelessWidget {
                   child: Container(
                     constraints: const BoxConstraints(maxWidth: 300),
                     child: OnFormBuilder(
-                        listenTo: dt.rxForm,
+                        listenTo: _dt.rxForm,
                         builder: () {
                           return const Column(
                             mainAxisAlignment: MainAxisAlignment.center,

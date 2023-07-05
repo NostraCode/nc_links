@@ -14,3 +14,6 @@ part 'widgets/b.inj_pessimistic.fab.dart';
 part 'widgets/c.inj_pessimistic.charlie.dart';
 part 'widgets/d.inj_pessimistic.delta.dart';
 part 'widgets/e.inj_pessimistic.echo.dart';
+
+InjPessimisticData get _dt => Data.injPessimistic.st;
+InjPessimisticCtrl get _ct => Ctrl.injPessimistic;

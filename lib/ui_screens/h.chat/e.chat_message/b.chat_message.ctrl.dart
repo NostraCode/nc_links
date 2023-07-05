@@ -1,11 +1,9 @@
 part of '_index.dart';
 
 class ChatMessageCtrl {
-  ChatMessageData get dt => Data.chatMessage.st;
-
   init() => logxx.i(ChatMessageCtrl, '...');
 
-  action() => dt.rxInt.setState((s) => s + 1);
+  action() => _dt.rxInt.setState((s) => s + 1);
 
   bool isSend(String ownnerID) {
     return ownnerID == Prov.auth.st.rxUserApp.st?.uid;
@@ -19,9 +17,9 @@ class ChatMessageCtrl {
   }
 
   bool isEndOfGroupedList(int i) {
-    if (i < dt.rxChatMessages.st.length - 1) {
-      final currentOwennerID = dt.rxChatMessages.st[i].idUser;
-      final nextOwnnerID = dt.rxChatMessages.st[i + 1].idUser;
+    if (i < _dt.rxChatMessages.st.length - 1) {
+      final currentOwennerID = _dt.rxChatMessages.st[i].idUser;
+      final nextOwnnerID = _dt.rxChatMessages.st[i + 1].idUser;
       if (currentOwennerID != nextOwnnerID) {
         return true;
       }
@@ -30,9 +28,9 @@ class ChatMessageCtrl {
   }
 
   bool isEndOfDate(int i) {
-    if (i < dt.rxChatMessages.st.length - 1) {
-      final currentDate = getDate(dt.rxChatMessages.st[i].timestamp);
-      final nextDate = getDate(dt.rxChatMessages.st[i + 1].timestamp);
+    if (i < _dt.rxChatMessages.st.length - 1) {
+      final currentDate = getDate(_dt.rxChatMessages.st[i].timestamp);
+      final nextDate = getDate(_dt.rxChatMessages.st[i + 1].timestamp);
       if (currentDate == nextDate) {
         return false;
       }
@@ -64,7 +62,7 @@ class ChatMessageCtrl {
   }
 
   send() {
-    final trimmedMessage = trimLastLine(dt.rxTxtField.controller.text);
+    final trimmedMessage = trimLastLine(_dt.rxTxtField.controller.text);
     if (trimmedMessage.isNotEmpty) {
       final user = Prov.auth.st.rxUserApp.st;
       final chatMessage = ChatMessage(
@@ -74,7 +72,7 @@ class ChatMessageCtrl {
         message: trimmedMessage,
       );
       Serv.chat.sendMessage(chatMessage);
-      dt.rxTxtField.controller.clear();
+      _dt.rxTxtField.controller.clear();
     }
   }
 

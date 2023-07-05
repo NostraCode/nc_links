@@ -13,3 +13,6 @@ part 'widgets/b.inj_form.fab.dart';
 part 'widgets/c.inj_form.charlie.dart';
 part 'widgets/d.inj_form.delta.dart';
 part 'widgets/e.inj_form.echo.dart';
+
+InjFormData get _dt => Data.injForm.st;
+InjFormCtrl get _ct => Ctrl.injForm;

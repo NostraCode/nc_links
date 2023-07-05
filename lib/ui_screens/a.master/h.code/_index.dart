@@ -14,3 +14,6 @@ part 'widgets/b.code.fab.dart';
 part 'widgets/c.code.input.dart';
 part 'widgets/d.code.submit.dart';
 part 'widgets/e.code.nav.dart';
+
+CodeCtrl get _ct => Ctrl.code;
+CodeData get _dt => Data.code.st;

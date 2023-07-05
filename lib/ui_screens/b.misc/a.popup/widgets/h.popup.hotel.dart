@@ -3,9 +3,6 @@ part of '../_index.dart';
 class PopupHotel extends ReactiveStatelessWidget {
   const PopupHotel({Key? key}) : super(key: key);
 
-  PopupCtrl get ct => Ctrl.popup;
-  PopupData get dt => Data.popup.st;
-
   @override
   Widget build(BuildContext context) {
     return Container(

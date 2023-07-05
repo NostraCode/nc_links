@@ -16,3 +16,6 @@ part 'widgets/d.login.pwd.dart';
 part 'widgets/e.login.btn_submit.dart';
 part 'widgets/g.login.btn_google.dart';
 part 'widgets/x.login.btn_text.dart';
+
+LoginData get _dt => Data.login.st;
+LoginCtrl get _ct => Ctrl.login;

@@ -14,3 +14,6 @@ part 'widgets/b.need_login.fab.dart';
 part 'widgets/c.need_login.charlie.dart';
 part 'widgets/d.need_login.delta.dart';
 part 'widgets/e.need_login.echo.dart';
+
+NeedLoginData get _dt => Data.needLogin.st;
+NeedLoginCtrl get _ct => Ctrl.needLogin;

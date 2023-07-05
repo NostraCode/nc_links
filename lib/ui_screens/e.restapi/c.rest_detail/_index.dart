@@ -15,3 +15,6 @@ part 'widgets/b.rest_detail.fab.dart';
 part 'widgets/c.rest_detail.charlie.dart';
 part 'widgets/d.rest_detail.delta.dart';
 part 'widgets/e.rest_detail.echo.dart';
+
+RestDetailData get _dt => Data.restDetail.st;
+RestDetailCtrl get _ct => Ctrl.restDetail;

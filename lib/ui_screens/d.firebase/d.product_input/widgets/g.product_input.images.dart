@@ -7,9 +7,6 @@ class ProductInputImages extends StatelessWidget {
     required this.product,
   }) : super(key: key);
 
-  ProductInputCtrl get ct => Ctrl.productInput;
-  ProductInputData get dt => Data.productInput.st;
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(

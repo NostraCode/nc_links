@@ -1,13 +1,11 @@
 part of '_index.dart';
 
 class InjFormCtrl {
-  InjFormData get dt => Data.injForm.st;
-
   init() => logxx.i(InjFormCtrl, '...');
 
   submit() async {
-    dt.rxForx.submit();
-    logx.i(dt.rxEmail.value);
-    logx.i(dt.rxPassword.value);
+    _dt.rxForx.submit();
+    logx.i(_dt.rxEmail.value);
+    logx.i(_dt.rxPassword.value);
   }
 }

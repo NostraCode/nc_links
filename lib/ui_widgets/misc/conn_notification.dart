@@ -1,10 +1,12 @@
+// ignore_for_file: unused_element
+
 part of '_index.dart';
 
 class ConnNotification extends ReactiveStatelessWidget {
   const ConnNotification({Key? key}) : super(key: key);
 
-  ConnServ get ct => Serv.conn;
-  ConnProv get dt => Prov.conn.st;
+  ConnProv get _dt => Prov.conn.st;
+  ConnServ get _ct => Serv.conn;
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +16,9 @@ class ConnNotification extends ReactiveStatelessWidget {
 
     return AnimatedContainer(
       duration: const Duration(milliseconds: 300),
-      height: dt.rxIsShowNotification.st ? 20 : 0,
+      height: _dt.rxIsShowNotification.st ? 20 : 0,
       child: Container(
-        color: dt.rxIsOnline.st ? Colors.green[600] : Colors.grey[900],
+        color: _dt.rxIsOnline.st ? Colors.green[600] : Colors.grey[900],
         child: SizedBox(
           height: 20,
           child: ListView(
@@ -30,7 +32,7 @@ class ConnNotification extends ReactiveStatelessWidget {
                     height: 20,
                     child: Center(
                       child: Text(
-                        dt.rxIsOnline.st ? 'Back online' : 'No connection',
+                        _dt.rxIsOnline.st ? 'Back online' : 'No connection',
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 10,

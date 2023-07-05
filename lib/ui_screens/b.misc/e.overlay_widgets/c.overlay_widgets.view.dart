@@ -3,9 +3,6 @@ part of '_index.dart';
 class OverlayWidgetsView extends StatelessWidget {
   const OverlayWidgetsView({Key? key}) : super(key: key);
 
-  OverlayWidgetsCtrl get ct => Ctrl.overlayWidget;
-  OverlayWidgetsData get dt => Data.overlayWidget.st;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

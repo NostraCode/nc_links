@@ -3,36 +3,33 @@ part of '../_index.dart';
 class RestInputCharlie extends StatelessWidget {
   const RestInputCharlie({Key? key}) : super(key: key);
 
-  RestInputCtrl get ct => Ctrl.restInput;
-  RestInputData get dt => Data.restInput.st;
-
   @override
   Widget build(BuildContext context) {
     return OnFormBuilder(
-      listenTo: dt.rxForm,
+      listenTo: _dt.rxForm,
       builder: () {
         return Column(
           children: [
             TextField(
-              controller: dt.rxName.controller,
-              focusNode: dt.rxName.focusNode,
-              onEditingComplete: () => dt.focusScopeNode.nextFocus(),
+              controller: _dt.rxName.controller,
+              focusNode: _dt.rxName.focusNode,
+              onEditingComplete: () => _dt.focusScopeNode.nextFocus(),
               decoration: InputDecoration(
                 hintText: "Name",
                 labelText: 'Name',
-                errorText: dt.rxName.error,
+                errorText: _dt.rxName.error,
               ),
             ),
             const SizedBoxH(20),
             TextField(
-              controller: dt.rxEmail.controller,
-              focusNode: dt.rxEmail.focusNode,
-              onEditingComplete: () => dt.focusScopeNode.unfocus(),
+              controller: _dt.rxEmail.controller,
+              focusNode: _dt.rxEmail.focusNode,
+              onEditingComplete: () => _dt.focusScopeNode.unfocus(),
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                 hintText: "your@email.com",
                 labelText: "Email Address",
-                errorText: dt.rxEmail.error,
+                errorText: _dt.rxEmail.error,
               ),
             ),
           ],

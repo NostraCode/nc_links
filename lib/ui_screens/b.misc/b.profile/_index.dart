@@ -13,3 +13,6 @@ part 'widgets/b.profile.fab.dart';
 part 'widgets/c.profile.charlie.dart';
 part 'widgets/d.profile.delta.dart';
 part 'widgets/e.profile.echo.dart';
+
+ProfileData get _dt => Data.profile.st;
+ProfileCtrl get _ct => Ctrl.profile;

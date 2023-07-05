@@ -1,11 +1,9 @@
 part of '_index.dart';
 
 class AnalyticsCtrl {
-  AnalyticsData get dt => Data.analytics.st;
-
   init() => logxx.i(AnalyticsCtrl, '...');
 
-  action() => dt.rxInt.setState((s) => s + 1);
+  action() => _dt.rxInt.setState((s) => s + 1);
 
   AnalyticsEventItem itemCreator() {
     return AnalyticsEventItem(
@@ -36,7 +34,7 @@ class AnalyticsCtrl {
   }
 
   Future<void> sendAnalyticsEvent() async {
-    await dt.analytics.logEvent(
+    await _dt.analytics.logEvent(
       name: 'test_event',
       parameters: <String, dynamic>{
         'string': 'string',
@@ -49,53 +47,53 @@ class AnalyticsCtrl {
         'items': [itemCreator()]
       },
     );
-    dt.rxMessage.setState((s) => 'logEvent succeeded');
+    _dt.rxMessage.setState((s) => 'logEvent succeeded');
   }
 
   Future<void> testSetUserId() async {
-    await dt.analytics.setUserId(id: 'some-user');
-    dt.rxMessage.setState((s) => 'setUserId succeeded');
+    await _dt.analytics.setUserId(id: 'some-user');
+    _dt.rxMessage.setState((s) => 'setUserId succeeded');
   }
 
   Future<void> testSetCurrentScreen() async {
-    await dt.analytics.setCurrentScreen(
+    await _dt.analytics.setCurrentScreen(
       screenName: 'Analytics Demo',
       screenClassOverride: 'AnalyticsDemo',
     );
-    dt.rxMessage.setState((s) => 'setCurrentScreen succeeded');
+    _dt.rxMessage.setState((s) => 'setCurrentScreen succeeded');
   }
 
   Future<void> testSetAnalyticsCollectionEnabled() async {
-    await dt.analytics.setAnalyticsCollectionEnabled(false);
-    await dt.analytics.setAnalyticsCollectionEnabled(true);
-    dt.rxMessage.setState((s) => 'setAnalyticsCollectionEnabled succeeded');
+    await _dt.analytics.setAnalyticsCollectionEnabled(false);
+    await _dt.analytics.setAnalyticsCollectionEnabled(true);
+    _dt.rxMessage.setState((s) => 'setAnalyticsCollectionEnabled succeeded');
   }
 
   Future<void> testSetSessionTimeoutDuration() async {
-    await dt.analytics.setSessionTimeoutDuration(const Duration(milliseconds: 20000));
-    dt.rxMessage.setState((s) => 'setSessionTimeoutDuration succeeded');
+    await _dt.analytics.setSessionTimeoutDuration(const Duration(milliseconds: 20000));
+    _dt.rxMessage.setState((s) => 'setSessionTimeoutDuration succeeded');
   }
 
   Future<void> testSetUserProperty() async {
-    await dt.analytics.setUserProperty(name: 'regular', value: 'indeed');
-    dt.rxMessage.setState((s) => 'setUserProperty succeeded');
+    await _dt.analytics.setUserProperty(name: 'regular', value: 'indeed');
+    _dt.rxMessage.setState((s) => 'setUserProperty succeeded');
   }
 
   Future<void> testAllEventTypes() async {
-    await dt.analytics.logAddPaymentInfo();
-    await dt.analytics.logAddToCart(
+    await _dt.analytics.logAddPaymentInfo();
+    await _dt.analytics.logAddToCart(
       currency: 'USD',
       value: 123,
       items: [itemCreator(), itemCreator()],
     );
-    await dt.analytics.logAddToWishlist();
-    await dt.analytics.logAppOpen();
-    await dt.analytics.logBeginCheckout(
+    await _dt.analytics.logAddToWishlist();
+    await _dt.analytics.logAppOpen();
+    await _dt.analytics.logBeginCheckout(
       value: 123,
       currency: 'USD',
       items: [itemCreator(), itemCreator()],
     );
-    await dt.analytics.logCampaignDetails(
+    await _dt.analytics.logCampaignDetails(
       source: 'source',
       medium: 'medium',
       campaign: 'campaign',
@@ -104,29 +102,29 @@ class AnalyticsCtrl {
       aclid: 'aclid',
       cp1: 'cp1',
     );
-    await dt.analytics.logEarnVirtualCurrency(
+    await _dt.analytics.logEarnVirtualCurrency(
       virtualCurrencyName: 'bitcoin',
       value: 345.66,
     );
-    await dt.analytics.logGenerateLead(
+    await _dt.analytics.logGenerateLead(
       currency: 'USD',
       value: 123.45,
     );
-    await dt.analytics.logJoinGroup(
+    await _dt.analytics.logJoinGroup(
       groupId: 'test group id',
     );
-    await dt.analytics.logLevelUp(
+    await _dt.analytics.logLevelUp(
       level: 5,
       character: 'witch doctor',
     );
-    await dt.analytics.logLogin(loginMethod: 'login');
-    await dt.analytics.logPostScore(
+    await _dt.analytics.logLogin(loginMethod: 'login');
+    await _dt.analytics.logPostScore(
       score: 1000000,
       level: 70,
       character: 'tiefling cleric',
     );
-    await dt.analytics.logPurchase(currency: 'USD', transactionId: 'transaction-id');
-    await dt.analytics.logSearch(
+    await _dt.analytics.logPurchase(currency: 'USD', transactionId: 'transaction-id');
+    await _dt.analytics.logSearch(
       searchTerm: 'hotel',
       numberOfNights: 2,
       numberOfRooms: 1,
@@ -137,43 +135,43 @@ class AnalyticsCtrl {
       endDate: '2015-09-16',
       travelClass: 'test travel class',
     );
-    await dt.analytics.logSelectContent(
+    await _dt.analytics.logSelectContent(
       contentType: 'test content type',
       itemId: 'test item id',
     );
-    await dt.analytics.logSelectPromotion(
+    await _dt.analytics.logSelectPromotion(
       creativeName: 'promotion name',
       creativeSlot: 'promotion slot',
       items: [itemCreator()],
       locationId: 'United States',
     );
-    await dt.analytics.logSelectItem(
+    await _dt.analytics.logSelectItem(
       items: [itemCreator(), itemCreator()],
       itemListName: 't-shirt',
       itemListId: '1234',
     );
-    await dt.analytics.logScreenView(
+    await _dt.analytics.logScreenView(
       screenName: 'tabs-page',
     );
-    await dt.analytics.logViewCart(
+    await _dt.analytics.logViewCart(
       currency: 'USD',
       value: 123,
       items: [itemCreator(), itemCreator()],
     );
-    await dt.analytics.logShare(
+    await _dt.analytics.logShare(
       contentType: 'test content type',
       itemId: 'test item id',
       method: 'facebook',
     );
-    await dt.analytics.logSignUp(
+    await _dt.analytics.logSignUp(
       signUpMethod: 'test sign up method',
     );
-    await dt.analytics.logSpendVirtualCurrency(
+    await _dt.analytics.logSpendVirtualCurrency(
       itemName: 'test item name',
       virtualCurrencyName: 'bitcoin',
       value: 34,
     );
-    await dt.analytics.logViewPromotion(
+    await _dt.analytics.logViewPromotion(
       creativeName: 'promotion name',
       creativeSlot: 'promotion slot',
       items: [itemCreator()],
@@ -181,27 +179,27 @@ class AnalyticsCtrl {
       promotionId: '1234',
       promotionName: 'big sale',
     );
-    await dt.analytics.logRefund(
+    await _dt.analytics.logRefund(
       currency: 'USD',
       value: 123,
       items: [itemCreator(), itemCreator()],
     );
-    await dt.analytics.logTutorialBegin();
-    await dt.analytics.logTutorialComplete();
-    await dt.analytics.logUnlockAchievement(id: 'all Firebase API covered');
-    await dt.analytics.logViewItem(
+    await _dt.analytics.logTutorialBegin();
+    await _dt.analytics.logTutorialComplete();
+    await _dt.analytics.logUnlockAchievement(id: 'all Firebase API covered');
+    await _dt.analytics.logViewItem(
       currency: 'usd',
       value: 1000,
       items: [itemCreator()],
     );
-    await dt.analytics.logViewItemList(
+    await _dt.analytics.logViewItemList(
       itemListId: 't-shirt-4321',
       itemListName: 'green t-shirt',
       items: [itemCreator()],
     );
-    await dt.analytics.logViewSearchResults(
+    await _dt.analytics.logViewSearchResults(
       searchTerm: 'test search terx',
     );
-    dt.rxMessage.setState((s) => 'All standard events logged successfully');
+    _dt.rxMessage.setState((s) => 'All standard events logged successfully');
   }
 }

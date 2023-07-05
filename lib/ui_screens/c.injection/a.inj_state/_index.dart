@@ -19,3 +19,6 @@ part 'widgets/c.inj_state.columnx.dart';
 part 'widgets/d.inj_state.bigtext.dart';
 part 'widgets/e.inj_state.stream_btn_v1.dart';
 part 'widgets/f.inj_state.stream_btn_v2.dart';
+
+InjStateData get _dt => Data.injState.st;
+InjStateCtrl get _ct => Ctrl.injState;

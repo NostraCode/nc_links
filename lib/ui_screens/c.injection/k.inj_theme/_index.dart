@@ -13,3 +13,6 @@ part 'widgets/b.inj_theme.fab.dart';
 part 'widgets/c.inj_theme.column.dart';
 part 'widgets/d.inj_theme.button.dart';
 part 'widgets/e.inj_theme.echo.dart';
+
+InjThemeData get _dt => Data.injTheme.st;
+InjThemeCtrl get _ct => Ctrl.injTheme;

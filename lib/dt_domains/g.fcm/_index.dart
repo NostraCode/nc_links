@@ -1,3 +1,5 @@
+// ignore_for_file: unused_element
+
 import 'dart:async';
 
 import 'package:firebase_core/firebase_core.dart';
@@ -14,3 +16,6 @@ import '../_models/_index.dart';
 
 part 'a.fcm.prov.dart';
 part 'b.fcm.serv.dart';
+
+FcmProv get _pv => Prov.fcm.st;
+FcmServ get _sv => Serv.fcm;

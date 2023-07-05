@@ -1,19 +1,17 @@
 part of '_index.dart';
 
 class AppCheckCtrl {
-  AppCheckData get dt => Data.appCheck.st;
-
   init() => logxx.i(AppCheckCtrl, '...');
 
-  action() => dt.rxInt.setState((s) => s + 1);
+  action() => _dt.rxInt.setState((s) => s + 1);
 
   setMessage(String message) {
-    dt.rxMessage.st = message;
+    _dt.rxMessage.st = message;
     logxx.i(AppCheckCtrl, message.toString());
   }
 
   setEventToken(String? token) {
-    dt.rxEventToken.st = token ?? 'not yet';
+    _dt.rxEventToken.st = token ?? 'not yet';
   }
 
   // to check whether the request was validated on the Firebase console

@@ -3,9 +3,6 @@ part of '../_index.dart';
 class HomeMisc extends StatelessWidget {
   const HomeMisc({Key? key}) : super(key: key);
 
-  HomeCtrl get ct => Ctrl.home;
-  HomeData get dt => Data.home.st;
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -13,7 +10,7 @@ class HomeMisc extends StatelessWidget {
         HomeTile(
           title: 'Test logx',
           subtitle: 'tap then check console.',
-          fun: () => ct.taptestLogx(),
+          fun: () => _ct.taptestLogx(),
         ),
         HomeTile(
           title: 'Popup',

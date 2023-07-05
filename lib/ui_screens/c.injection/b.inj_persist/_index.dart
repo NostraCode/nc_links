@@ -16,3 +16,6 @@ part 'widgets/b.inj_persist.fab.dart';
 part 'widgets/c.inj_persist.charlie.dart';
 part 'widgets/d.inj_persist.delta.dart';
 part 'widgets/e.inj_persist.echo.dart';
+
+InjPersistData get _dt => Data.injPersist.st;
+InjPersistCtrl get _ct => Ctrl.injPersist;

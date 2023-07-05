@@ -19,3 +19,6 @@ part 'widgets/g.chat_message.nip.dart';
 part 'widgets/h.chat_message.input.dart';
 part 'widgets/k.chat_message.text_field.dart';
 part 'widgets/n.chat_message.btn.dart';
+
+ChatMessageData get _dt => Data.chatMessage.st;
+ChatMessageCtrl get _ct => Ctrl.chatMessage;

@@ -14,3 +14,6 @@ part 'widgets/b.phone.fab.dart';
 part 'widgets/c.phone.input.dart';
 part 'widgets/d.phone.submit.dart';
 part 'widgets/e.phone.nav.dart';
+
+PhoneData get _dt => Data.phone.st;
+PhoneCtrl get _ct => Ctrl.phone;

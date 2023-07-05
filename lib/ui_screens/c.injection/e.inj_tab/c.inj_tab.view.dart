@@ -3,9 +3,6 @@ part of '_index.dart';
 class InjTabView extends StatelessWidget {
   const InjTabView({Key? key}) : super(key: key);
 
-  InjTabCtrl get ct => Ctrl.injTab;
-  InjTabData get dt => Data.injTab.st;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +17,7 @@ class InjTabView extends StatelessWidget {
           children: [
             OnTabPageViewBuilder(
               builder: (index) => TabBar(
-                controller: dt.rxTab.tabController,
+                controller: _dt.rxTab.tabController,
                 // isScrollable: true,
                 indicatorColor: Colors.transparent,
                 unselectedLabelStyle: const TextStyle(color: Colors.transparent),
@@ -45,7 +42,7 @@ class InjTabView extends StatelessWidget {
       ),
       body: OnTabPageViewBuilder(
         builder: (index) => PageView(
-          controller: dt.rxTab.pageController,
+          controller: _dt.rxTab.pageController,
           children: const [
             InjTabCharlie(),
             InjTabDelta(),

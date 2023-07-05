@@ -1,8 +1,6 @@
 part of '_index.dart';
 
 class RestListCtrl {
-  RestListData get dt => Data.restList.st;
-
   init() => logxx.i(RestListCtrl, '...');
 
   Future<void> refresh() async {

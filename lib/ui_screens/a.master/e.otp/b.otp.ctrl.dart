@@ -1,18 +1,16 @@
 part of '_index.dart';
 
 class OtpCtrl {
-  OtpData get dt => Data.otp.st;
-
   init() => logxx.i(OtpCtrl, '...');
 
-  action() => dt.rxInt.setState((s) => s + 1);
+  action() => _dt.rxInt.setState((s) => s + 1);
 
-  submitPhone() => dt.rxFormPhone.submit();
+  submitPhone() => _dt.rxFormPhone.submit();
 
-  submitCode() => dt.rxFormCode.submit();
+  submitCode() => _dt.rxFormCode.submit();
 
   Future<void> signInWithPhoneNumber() async {
-    final phoneNumber = '+62${dt.rxPhone.value}';
+    final phoneNumber = '+62${_dt.rxPhone.value}';
     try {
       if (PlatformType.isWeb) {
         await Serv.auth.signInWithPhoneNumber(phoneNumber);
@@ -26,7 +24,7 @@ class OtpCtrl {
 
   Future<void> confirmCode() async {
     try {
-      await Serv.auth.confirmSmsCode(dt.rxCode.value);
+      await Serv.auth.confirmSmsCode(_dt.rxCode.value);
     } catch (obj) {
       Fun.handleException(obj);
     }

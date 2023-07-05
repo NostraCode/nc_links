@@ -13,3 +13,6 @@ part 'widgets/b.chat_room.fab.dart';
 part 'widgets/c.chat_room.cards.dart';
 part 'widgets/d.chat_room.card.dart';
 part 'widgets/e.chat_room.echo.dart';
+
+ChatRoomData get _dt => Data.chatRoom.st;
+ChatRoomCtrl get _ct => Ctrl.chatRoom;

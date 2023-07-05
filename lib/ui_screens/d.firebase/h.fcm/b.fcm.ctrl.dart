@@ -1,15 +1,13 @@
 part of '_index.dart';
 
 class FcmCtrl {
-  FcmData get dt => Data.fcm.st;
-
   init() => logxx.i(FcmCtrl, '...');
 
   void send() {
-    dt.rxInt.setState((s) => s + 1);
+    _dt.rxInt.setState((s) => s + 1);
     callOnFcmApiSendPushNotifications(
-      title: 'fcm by api${dt.rxInt.st}',
-      body: 'its working fine${dt.rxInt.st}',
+      title: 'fcm by api${_dt.rxInt.st}',
+      body: 'its working fine${_dt.rxInt.st}',
       id: 'Order',
       type: '123',
       route: Routes.restList,
@@ -25,7 +23,7 @@ class FcmCtrl {
   }) async {
     const postUrl = 'https://fcm.googleapis.com/fcm/send';
     final data = {
-      "to": "/topics/${dt.rxTopic.st}",
+      "to": "/topics/${_dt.rxTopic.st}",
       "notification": {
         "title": title,
         "body": body,

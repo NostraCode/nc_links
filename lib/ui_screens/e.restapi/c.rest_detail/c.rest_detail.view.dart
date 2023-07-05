@@ -3,9 +3,6 @@ part of '_index.dart';
 class RestDetailView extends StatelessWidget {
   const RestDetailView({Key? key}) : super(key: key);
 
-  RestDetailCtrl get ct => Ctrl.restDetail;
-  RestDetailData get dt => Data.restDetail.st;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +13,7 @@ class RestDetailView extends StatelessWidget {
       floatingActionButton: const RestDetailFab(),
       body: Center(
         child: OnBuilder<Userx?>.all(
-          listenTo: dt.rxUserFuture,
+          listenTo: _dt.rxUserFuture,
           onWaiting: () => const CircularProgressIndicator(),
           onError: (e, s) => const Text('error'),
           onData: (data) {

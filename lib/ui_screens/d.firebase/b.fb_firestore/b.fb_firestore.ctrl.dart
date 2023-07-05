@@ -1,8 +1,6 @@
 part of '_index.dart';
 
 class FbFirestoreCtrl {
-  FbFirestoreData get dt => Data.fbFirestore.st;
-
   init() {
     logxx.i(FbFirestoreCtrl, '...');
     Serv.product.initProduct(Product.init().id);

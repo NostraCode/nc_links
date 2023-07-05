@@ -12,3 +12,6 @@ part 'widgets/b.inj_anim.fab.dart';
 part 'widgets/c.inj_anim.charlie.dart';
 part 'widgets/d.inj_anim.delta.dart';
 part 'widgets/e.inj_anim.echo.dart';
+
+InjAnimData get _dt => Data.injAnim.st;
+InjAnimCtrl get _ct => Ctrl.injAnim;

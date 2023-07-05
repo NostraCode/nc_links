@@ -3,9 +3,6 @@ part of '../_index.dart';
 class ChatMessageTextBtn extends StatelessWidget {
   const ChatMessageTextBtn({Key? key}) : super(key: key);
 
-  ChatMessageCtrl get ct => Ctrl.chatMessage;
-  ChatMessageData get dt => Data.chatMessage.st;
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -18,7 +15,7 @@ class ChatMessageTextBtn extends StatelessWidget {
             padding: const EdgeInsets.all(12),
           ),
           child: const Icon(Icons.send),
-          onPressed: () => ct.send(),
+          onPressed: () => _ct.send(),
         ),
       ),
     );

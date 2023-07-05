@@ -1,17 +1,15 @@
 part of '_index.dart';
 
 class LoginCtrl {
-  LoginData get dt => Data.login.st;
-
   init() => logxx.i(LoginCtrl, '...');
 
-  tooglePwdA() => dt.rxIsObscuredPwd.toggle();
+  tooglePwdA() => _dt.rxIsObscuredPwd.toggle();
 
-  submit() => dt.rxForm.submit();
+  submit() => _dt.rxForm.submit();
 
   Future<void> signInWithEmailAndPassword() async {
-    final email = dt.rxEmail.value;
-    final password = dt.rxPwd.value;
+    final email = _dt.rxEmail.value;
+    final password = _dt.rxPwd.value;
     try {
       await Serv.auth.signInWithEmailAndPassword(email, password);
     } catch (obj) {

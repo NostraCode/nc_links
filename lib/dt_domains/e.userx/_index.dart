@@ -1,3 +1,5 @@
+// ignore_for_file: unused_element
+
 import 'package:dio/dio.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
 
@@ -10,3 +12,6 @@ part 'a.userx.prov.dart';
 part 'b.userx.serv.dart';
 part 'c.userx.repo.dart';
 part 'd.userx.repo.mock.dart';
+
+UserxProv get _pv => Prov.userx.st;
+UserxServ get _sv => Serv.userx;

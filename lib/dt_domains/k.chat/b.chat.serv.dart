@@ -1,8 +1,6 @@
 part of '_index.dart';
 
 class ChatServ {
-  ChatProv get pv => Prov.chat.st;
-
   init() {
     logxx.i(ChatServ, '...');
     addToUsers();
@@ -14,9 +12,9 @@ class ChatServ {
 
   updateChatUser(User? user) {
     if (user == null) {
-      pv.rxChatUser.st = null;
+      _pv.rxChatUser.st = null;
     } else {
-      pv.rxChatUser.st = ChatUser(
+      _pv.rxChatUser.st = ChatUser(
         // idUser: '${user.email}'.replaceAll('.', ''),
         idUser: user.uid,
         displayName: '${user.displayName}',
@@ -26,14 +24,14 @@ class ChatServ {
   }
 
   addToUsers() {
-    final chatUser = pv.rxChatUser.st;
+    final chatUser = _pv.rxChatUser.st;
     if (chatUser != null) {
       Repo.chat.st.addToUsers(chatUser);
     }
   }
 
   addToContacts(ChatUser friend) {
-    final chatUser = pv.rxChatUser.st;
+    final chatUser = _pv.rxChatUser.st;
     if (chatUser != null) {
       Repo.chat.st.addToContacts(chatUser.idUser, friend);
     }
@@ -42,46 +40,46 @@ class ChatServ {
   //* ----- ----- ----- ----- ----- ----- ----- ----- -----
 
   listenUsers() {
-    pv.rxChatUsers.subscription = Repo.chat.st.listenUsers().listen((event) => pv.rxChatUsers.st = event);
+    _pv.rxChatUsers.subscription = Repo.chat.st.listenUsers().listen((event) => _pv.rxChatUsers.st = event);
   }
 
   listenFriends() {
-    final chatUser = pv.rxChatUser.st;
+    final chatUser = _pv.rxChatUser.st;
     if (chatUser != null) {
-      pv.rxChatFriends.subscription =
-          Repo.chat.st.listenContacts(chatUser).listen((event) => pv.rxChatFriends.st = event);
+      _pv.rxChatFriends.subscription =
+          Repo.chat.st.listenContacts(chatUser).listen((event) => _pv.rxChatFriends.st = event);
     }
   }
 
   listenRooms() {
-    final chatUser = pv.rxChatUser.st;
+    final chatUser = _pv.rxChatUser.st;
     if (chatUser != null) {
-      pv.rxChatRooms.subscription = Repo.chat.st.listenRooms(chatUser).listen((event) => pv.rxChatRooms.st = event);
+      _pv.rxChatRooms.subscription = Repo.chat.st.listenRooms(chatUser).listen((event) => _pv.rxChatRooms.st = event);
     }
   }
 
   // listenMembers() {
-  //   final chatUser = dt.rxChatUser.st;
+  //   final chatUser = _dt.rxChatUser.st;
   //   if (chatUser != null) {
-  //     dt.rxChatMembers.subscription = Repo.chat.st
+  //     _dt.rxChatMembers.subscription = Repo.chat.st
   //         .listenMembers(chatUser)
-  //         .listen((event) => dt.rxChatMembers.st = event);
+  //         .listen((event) => _dt.rxChatMembers.st = event);
   //   }
   // }
 
   //* ----- ----- ----- ----- ----- ----- ----- ----- -----
 
   listenMessages() {
-    pv.rxChatMessages.subscription = Repo.chat.st.listenChatMessages().listen(
+    _pv.rxChatMessages.subscription = Repo.chat.st.listenChatMessages().listen(
       (event) {
-        pv.rxChatMessages.setState((s) => event);
+        _pv.rxChatMessages.setState((s) => event);
         if (event.isNotEmpty) {}
       },
     );
   }
 
   sendMessage(ChatMessage chatMessage) {
-    final chatUser = pv.rxChatUser.st;
+    final chatUser = _pv.rxChatUser.st;
     final chatRoom = ChatRoom(
       lastMessage: chatMessage.message,
       timestamp: chatMessage.timestamp,
@@ -90,7 +88,7 @@ class ChatServ {
     if (chatUser != null) {
       Repo.chat.st.sendMessage(
         idUser: chatUser.idUser,
-        idRoom: pv.rxActiveIdRoom.st,
+        idRoom: _pv.rxActiveIdRoom.st,
         chatMessage: chatMessage,
         chatRoom: chatRoom,
       );

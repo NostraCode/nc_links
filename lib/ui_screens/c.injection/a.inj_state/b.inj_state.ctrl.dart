@@ -1,14 +1,12 @@
 part of '_index.dart';
 
 class InjStateCtrl {
-  InjStateData get dt => Data.injState.st;
-
   init() => logxx.i(InjStateCtrl, '...');
 
   increase() {
-    dt.int0 = dt.int0 + 1;
-    dt.rxInt1.st = dt.rxInt1.st + 1;
-    dt.rxInt2.st = dt.rxInt2.st + 1;
+    _dt.int0 = _dt.int0 + 1;
+    _dt.rxInt1.st = _dt.rxInt1.st + 1;
+    _dt.rxInt2.st = _dt.rxInt2.st + 1;
   }
 
   refresh() => Serv.dummy.futureInit();

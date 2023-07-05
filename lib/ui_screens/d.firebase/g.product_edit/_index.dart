@@ -23,3 +23,6 @@ part 'widgets/d.product_edit.images.dart';
 part 'widgets/e.product_edit.image.dart';
 part 'widgets/f.product_edit.reset.dart';
 part 'widgets/g.product_edit.pick.dart';
+
+ProductEditData get _dt => Data.productEdit.st;
+ProductEditCtrl get _ct => Ctrl.productEdit;

@@ -15,3 +15,6 @@ part 'widgets/b.snake.fab.dart';
 part 'widgets/c.snake.buttons.dart';
 part 'widgets/d.snake.grid.dart';
 part 'widgets/e.snake.echo.dart';
+
+SnakeData get _dt => Data.snake.st;
+SnakeCtrl get _ct => Ctrl.snake;

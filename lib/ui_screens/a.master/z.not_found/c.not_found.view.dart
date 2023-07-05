@@ -5,9 +5,6 @@ class NotFoundView extends StatelessWidget {
 
   final RouteData routeData;
 
-  NotFoundCtrl get ct => Ctrl.notFound;
-  NotFoundData get dt => Data.notFound.st;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

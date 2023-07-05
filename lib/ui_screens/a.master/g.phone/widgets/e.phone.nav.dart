@@ -3,9 +3,6 @@ part of '../_index.dart';
 class PhoneNav extends StatelessWidget {
   const PhoneNav({Key? key}) : super(key: key);
 
-  PhoneCtrl get ct => Ctrl.phone;
-  PhoneData get dt => Data.phone.st;
-
   @override
   Widget build(BuildContext context) {
     return Column(

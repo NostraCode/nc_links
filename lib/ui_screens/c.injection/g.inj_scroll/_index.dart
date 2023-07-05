@@ -12,3 +12,6 @@ part 'widgets/b.inj_scroll.fab.dart';
 part 'widgets/c.inj_scroll.charlie.dart';
 part 'widgets/d.inj_scroll.delta.dart';
 part 'widgets/e.inj_scroll.echo.dart';
+
+InjScrollData get _dt => Data.injScroll.st;
+InjScrollCtrl get _ct => Ctrl.injScroll;

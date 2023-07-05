@@ -14,3 +14,6 @@ part 'widgets/c.rest_list.cards.dart';
 part 'widgets/d.rest_list.card.dart';
 part 'widgets/e.rest_list.loadmore.dart';
 part 'widgets/g.rest_list.pull_text.dart';
+
+RestListData get _dt => Data.restList.st;
+RestListCtrl get _ct => Ctrl.restList;

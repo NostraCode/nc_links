@@ -3,13 +3,10 @@ part of '../_index.dart';
 class ProductListCards extends StatelessWidget {
   const ProductListCards({Key? key}) : super(key: key);
 
-  ProductListCtrl get ct => Ctrl.productList;
-  ProductListData get dt => Data.productList.st;
-
   @override
   Widget build(BuildContext context) {
     return RefreshIndicator(
-      onRefresh: () => ct.refresh(),
+      onRefresh: () => _ct.refresh(),
       child: OnReactive(
         () => ListView(
           children: [
@@ -22,7 +19,7 @@ class ProductListCards extends StatelessWidget {
                 ),
               ),
             ),
-            for (var item in dt.rxProductList.st) ProductListCard(product: item),
+            for (var item in _dt.rxProductList.st) ProductListCard(product: item),
             const ProductListLoadmore(),
           ],
         ),

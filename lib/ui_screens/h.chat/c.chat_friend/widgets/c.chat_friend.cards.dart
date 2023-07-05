@@ -3,9 +3,6 @@ part of '../_index.dart';
 class ChatFriendCards extends StatelessWidget {
   const ChatFriendCards({Key? key}) : super(key: key);
 
-  ChatFriendCtrl get ct => Ctrl.chatFriend;
-  ChatFriendData get dt => Data.chatFriend.st;
-
   @override
   Widget build(BuildContext context) {
     return Expanded(

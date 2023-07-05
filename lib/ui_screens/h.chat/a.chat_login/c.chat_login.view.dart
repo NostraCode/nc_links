@@ -3,9 +3,6 @@ part of '_index.dart';
 class ChatLoginView extends StatelessWidget {
   const ChatLoginView({Key? key}) : super(key: key);
 
-  ChatLoginCtrl get ct => Ctrl.chatLogin;
-  ChatLoginData get dt => Data.chatLogin.st;
-
   @override
   Widget build(BuildContext context) {
     return const Scaffold(

@@ -17,3 +17,6 @@ part 'widgets/b.rest_input.fab.dart';
 part 'widgets/c.rest_input.charlie.dart';
 part 'widgets/d.rest_input.delta.dart';
 part 'widgets/e.rest_input.echo.dart';
+
+RestInputData get _dt => Data.restInput.st;
+RestInputCtrl get _ct => Ctrl.restInput;

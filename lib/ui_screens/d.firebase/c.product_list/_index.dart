@@ -13,3 +13,6 @@ part 'widgets/b.product_list.fab.dart';
 part 'widgets/c.product_list.cards.dart';
 part 'widgets/d.product_list.card.dart';
 part 'widgets/e.product_list.loadmore.dart';
+
+ProductListData get _dt => Data.productList.st;
+ProductListCtrl get _ct => Ctrl.productList;

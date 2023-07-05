@@ -3,9 +3,6 @@ part of '_index.dart';
 class OtpView extends StatelessWidget {
   const OtpView({Key? key}) : super(key: key);
 
-  OtpCtrl get ct => Ctrl.otp;
-  OtpData get dt => Data.otp.st;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +28,7 @@ class OtpView extends StatelessWidget {
                     child: Column(
                       children: [
                         OnFormBuilder(
-                          listenTo: dt.rxFormPhone,
+                          listenTo: _dt.rxFormPhone,
                           builder: () {
                             return const Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -50,7 +47,7 @@ class OtpView extends StatelessWidget {
                           },
                         ),
                         OnFormBuilder(
-                          listenTo: dt.rxFormPhone,
+                          listenTo: _dt.rxFormPhone,
                           builder: () {
                             return const Column(
                               mainAxisAlignment: MainAxisAlignment.center,

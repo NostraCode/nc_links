@@ -17,3 +17,6 @@ part 'widgets/b.fcm.fab.dart';
 part 'widgets/c.fcm.subscriber.dart';
 part 'widgets/d.fcm.sender.dart';
 part 'widgets/e.fcm.echo.dart';
+
+FcmData get _dt => Data.fcm.st;
+FcmCtrl get _ct => Ctrl.fcm;

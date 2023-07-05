@@ -3,14 +3,11 @@ part of '../_index.dart';
 class InjStateAppbar extends StatelessWidget {
   const InjStateAppbar({Key? key}) : super(key: key);
 
-  InjStateCtrl get ct => Ctrl.injState;
-  InjStateData get dt => Data.injState.st;
-
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: OnReactive(() => Text(dt.title)),
-      // title: OnReactive(() => Text(dt.title)),
+      title: OnReactive(() => Text(_dt.title)),
+      // title: OnReactive(() => Text(_dt.title)),
 
       // bottom: PreferredSize(
       //   preferredSize: const Size(0, 40),

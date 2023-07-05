@@ -3,9 +3,6 @@ part of '_index.dart';
 class PhoneView extends StatelessWidget {
   const PhoneView({Key? key}) : super(key: key);
 
-  PhoneCtrl get ct => Ctrl.phone;
-  PhoneData get dt => Data.phone.st;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +28,7 @@ class PhoneView extends StatelessWidget {
                     child: Column(
                       children: [
                         OnFormBuilder(
-                          listenTo: dt.rxFormPhone,
+                          listenTo: _dt.rxFormPhone,
                           builder: () {
                             return const Column(
                               mainAxisAlignment: MainAxisAlignment.center,

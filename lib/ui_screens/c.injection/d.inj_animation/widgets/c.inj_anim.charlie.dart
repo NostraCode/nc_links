@@ -3,13 +3,10 @@ part of '../_index.dart';
 class InjAnimCharlie extends StatelessWidget {
   const InjAnimCharlie({Key? key}) : super(key: key);
 
-  InjAnimCtrl get ct => Ctrl.injAnim;
-  InjAnimData get dt => Data.injAnim.st;
-
   @override
   Widget build(BuildContext context) {
     return OnAnimationBuilder(
-      listenTo: dt.animation1,
+      listenTo: _dt.animation1,
       builder: (animate) {
         final widthx = animate.fromTween(
           (currentValue) => Tween(begin: 200.0, end: 100.0),

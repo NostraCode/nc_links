@@ -14,3 +14,6 @@ part 'widgets/b.chat_friend.fab.dart';
 part 'widgets/c.chat_friend.cards.dart';
 part 'widgets/d.chat_friend.card.dart';
 part 'widgets/e.chat_friend.echo.dart';
+
+ChatFriendData get _dt => Data.chatFriend.st;
+ChatFriendCtrl get _ct => Ctrl.chatFriend;

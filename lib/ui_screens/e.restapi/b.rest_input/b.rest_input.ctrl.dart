@@ -1,14 +1,12 @@
 part of '_index.dart';
 
 class RestInputCtrl {
-  RestInputData get dt => Data.restInput.st;
-
   init() => logxx.i(RestInputCtrl, '...');
 
-  submit() => dt.rxForm.submit();
+  submit() => _dt.rxForm.submit();
 
   Future<void> pickImages() async {
-    dt.rxPickedFile.setState(
+    _dt.rxPickedFile.setState(
       (s) => ImagePicker().pickImage(source: ImageSource.gallery),
     );
   }
@@ -17,7 +15,7 @@ class RestInputCtrl {
     // todo: don't forget to modify the key name (ex: "productImage")
     // todo: it is needed by server
     // todo: to identify the data when hanlde the request
-    final file = dt.rxPickedFile.st;
+    final file = _dt.rxPickedFile.st;
     if (file != null) {
       try {
         String fileName = file.path.split('/').last;
@@ -28,7 +26,7 @@ class RestInputCtrl {
           ),
         });
         final result = await Serv.userx.upload(formData);
-        dt.rxImageUrl.setState((s) => result.data['data']['image_url']);
+        _dt.rxImageUrl.setState((s) => result.data['data']['image_url']);
       } catch (obj) {
         Fun.handleException(obj);
       }
@@ -37,10 +35,10 @@ class RestInputCtrl {
 
   Future<void> createUser() async {
     final userx = Userx(
-      name: dt.rxName.value,
-      email: dt.rxEmail.value,
-      gender: dt.rxGender.value ?? '',
-      status: dt.rxStatus.value ?? '',
+      name: _dt.rxName.value,
+      email: _dt.rxEmail.value,
+      gender: _dt.rxGender.value ?? '',
+      status: _dt.rxStatus.value ?? '',
     );
     try {
       await Serv.userx.createUser(userx);

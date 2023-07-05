@@ -11,12 +11,9 @@ class ChatMessageBalloon extends StatelessWidget {
     required this.isNip,
   }) : super(key: key);
 
-  ChatMessageCtrl get ct => Ctrl.chatMessage;
-  ChatMessageData get dt => Data.chatMessage.st;
-
   @override
   Widget build(BuildContext context) {
-    final item = dt.rxChatMessages.st[index];
+    final item = _dt.rxChatMessages.st[index];
 
     return Padding(
       padding: EdgeInsets.only(top: isNip ? 8 : 1.5),
@@ -75,7 +72,7 @@ class ChatMessageBalloon extends StatelessWidget {
                           child: Opacity(
                             opacity: 0.6,
                             child: Text(
-                              ct.getTime(item.timestamp),
+                              _ct.getTime(item.timestamp),
                               textScaleFactor: 0.80,
                             ),
                           ),

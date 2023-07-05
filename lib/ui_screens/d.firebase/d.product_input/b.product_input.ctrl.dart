@@ -1,46 +1,44 @@
 part of '_index.dart';
 
 class ProductInputCtrl {
-  ProductInputData get dt => Data.productInput.st;
-
   init() => logxx.i(ProductInputCtrl, '...');
 
   // * animated list ----- ----- ----- ----- ----- ----- -----
 
-  clearProducts() => dt.products.st = [];
+  clearProducts() => _dt.products.st = [];
 
   addAt(int index) {
-    dt.products.st = [...dt.products.st]..insert(index, Product.random());
+    _dt.products.st = [..._dt.products.st]..insert(index, Product.random());
     animateIn(index);
   }
 
   removeAt(int index) {
-    final productx = dt.products.st[index];
+    final productx = _dt.products.st[index];
     animateOut(index, productx);
-    dt.products.st = [...dt.products.st]..removeAt(index);
+    _dt.products.st = [..._dt.products.st]..removeAt(index);
   }
 
   removeById(String id) {
-    final index = dt.products.st.indexWhere((item) => item.id == id);
-    final productx = dt.products.st[index];
+    final index = _dt.products.st.indexWhere((item) => item.id == id);
+    final productx = _dt.products.st[index];
     animateOut(index, productx);
-    dt.products.st = [...dt.products.st]..removeWhere((item) => item.id == id);
+    _dt.products.st = [..._dt.products.st]..removeWhere((item) => item.id == id);
   }
 
   removeAll() {
-    for (var i = 0; i < dt.products.st.length; i++) {
-      final productx = dt.products.st[i];
+    for (var i = 0; i < _dt.products.st.length; i++) {
+      final productx = _dt.products.st[i];
       animateOut(0, productx);
     }
     clearProducts();
   }
 
   animateIn(int index) {
-    dt.listKey.currentState?.insertItem(index);
+    _dt.listKey.currentState?.insertItem(index);
   }
 
   animateOut(int animIndex, Product product) {
-    dt.listKey.currentState?.removeItem(
+    _dt.listKey.currentState?.removeItem(
       animIndex,
       (context, animation) => ProductInputTile(
         product: product,
@@ -54,9 +52,9 @@ class ProductInputCtrl {
   Future<void> pickImages(String id) async {
     List<String> listImages = [];
     Map<String, String> mapImages = {};
-    final index = dt.products.st.indexWhere((element) => element.id == id);
+    final index = _dt.products.st.indexWhere((element) => element.id == id);
 
-    dt.products.st[index].images.forEach((key, value) {
+    _dt.products.st[index].images.forEach((key, value) {
       listImages.add(value);
     });
     final pickedFiles = await ImagePicker().pickMultiImage();
@@ -64,15 +62,15 @@ class ProductInputCtrl {
       listImages.add(item.path);
     }
     listImages.asMap().forEach((key, value) {
-      mapImages['${dt.colId}/$id/$id-${key.toString()}'] = value;
+      mapImages['${_dt.colId}/$id/$id-${key.toString()}'] = value;
     });
 
-    final newProduct = dt.products.st[index].copyWith(images: mapImages);
-    final newProducts = [...dt.products.st]
+    final newProduct = _dt.products.st[index].copyWith(images: mapImages);
+    final newProducts = [..._dt.products.st]
       ..removeAt(index)
       ..insert(index, newProduct);
 
-    dt.products.st = newProducts;
+    _dt.products.st = newProducts;
   }
 
   // * create ----- ----- ----- ----- ----- ----- ----- -----
@@ -84,7 +82,7 @@ class ProductInputCtrl {
       barrierDismissible: false,
       barrierColor: Colors.black54,
     );
-    for (var product in dt.products.st) {
+    for (var product in _dt.products.st) {
       await Serv.product.createProduct(product);
       removeById(product.id);
     }

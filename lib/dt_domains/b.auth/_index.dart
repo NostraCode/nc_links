@@ -1,3 +1,5 @@
+// ignore_for_file: unused_element
+
 import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
@@ -10,3 +12,6 @@ import '../_models/_index.dart';
 
 part 'a.auth.prov.dart';
 part 'b.auth.serv.dart';
+
+AuthProv get _pv => Prov.auth.st;
+AuthServ get _sv => Serv.auth;

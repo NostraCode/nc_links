@@ -1,25 +1,23 @@
 part of '_index.dart';
 
 class ProductServ {
-  ProductProv get pv => Prov.product.st;
-
   init() => logxx.i(ProductServ, '...');
 
   // ----- ----- ----- ----- ----- ----- ----- ----- -----
 
   // setAppCheck() async {
-  //   await dt.appCheck.activate();
+  //   await _dt.appCheck.activate();
   //   logxx.(ProductxService).wtf('activated!!');
-  //   await dt.appCheck.setTokenAutoRefreshEnabled(true);
-  //   final token = await dt.appCheck.getToken(true);
+  //   await _dt.appCheck.setTokenAutoRefreshEnabled(true);
+  //   final token = await _dt.appCheck.getToken(true);
   //   logxx.(ProductxService).wtf('your token: $token');
   // }
 
   // ----- ----- ----- ----- ----- ----- ----- ----- -----
 
   initProduct(String id) {
-    pv.rxSelectedId.refresh();
-    pv.rxSelectedId.st = id;
+    _pv.rxSelectedId.refresh();
+    _pv.rxSelectedId.st = id;
   }
 
   Future<void> createProduct(Product product) {
@@ -27,7 +25,7 @@ class ProductServ {
   }
 
   readProduct() {
-    pv.rxProductFuture.stateAsync = Repo.product.st.readProduct();
+    _pv.rxProductFuture.stateAsync = Repo.product.st.readProduct();
   }
 
   Future<void> updateProduct(Product product) {
@@ -39,44 +37,45 @@ class ProductServ {
   }
 
   listenProduct() {
-    pv.rxProductStream.initializeState();
-    pv.rxProductStream.subscription = Repo.product.st.streamProduct().listen((event) => pv.rxProductStream.st = event);
+    _pv.rxProductStream.initializeState();
+    _pv.rxProductStream.subscription =
+        Repo.product.st.streamProduct().listen((event) => _pv.rxProductStream.st = event);
   }
 
   // ----- ----- ----- ----- ----- ----- ----- ----- -----
 
   initProducts() {
-    pv.rxIsFirstEvent.st = true;
+    _pv.rxIsFirstEvent.st = true;
     listenProducts();
     refreshProducts();
   }
 
   refreshProducts() {
-    pv.rxIsEnd.st = false;
-    pv.rxProductList.st = [];
-    pv.rxSelectedId.st = '';
+    _pv.rxIsEnd.st = false;
+    _pv.rxProductList.st = [];
+    _pv.rxSelectedId.st = '';
     readProducts();
   }
 
   readProducts() {
-    pv.rxLoadMore.stateAsync = Repo.product.st.readProducts();
+    _pv.rxLoadMore.stateAsync = Repo.product.st.readProducts();
   }
 
   addToList(List<Product> moreProducts) {
-    pv.rxProductList.st = [...pv.rxProductList.st, ...moreProducts];
-    if (moreProducts.length < pv.limit) {
-      pv.rxIsEnd.st = true;
+    _pv.rxProductList.st = [..._pv.rxProductList.st, ...moreProducts];
+    if (moreProducts.length < _pv.limit) {
+      _pv.rxIsEnd.st = true;
     }
   }
 
   listenProducts() {
-    pv.rxProductList.subscription = Repo.product.st.streamProductsX().listen(
+    _pv.rxProductList.subscription = Repo.product.st.streamProductsX().listen(
       (event) {
         if (event.isNotEmpty) {
-          if (pv.rxIsFirstEvent.st) {
-            pv.rxIsFirstEvent.st = false;
+          if (_pv.rxIsFirstEvent.st) {
+            _pv.rxIsFirstEvent.st = false;
           } else {
-            pv.rxProductList.st = newListProducts(event);
+            _pv.rxProductList.st = newListProducts(event);
           }
         }
       },
@@ -84,7 +83,7 @@ class ProductServ {
   }
 
   List<Product> newListProducts(List<Map<String, Product>> event) {
-    var newList = [...pv.rxProductList.st];
+    var newList = [..._pv.rxProductList.st];
     for (var map in event) {
       final changeType = map.entries.first.key;
       final product = map.entries.first.value;

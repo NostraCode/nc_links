@@ -3,16 +3,13 @@ part of '../_index.dart';
 class InjForxDelta extends StatelessWidget {
   const InjForxDelta({Key? key}) : super(key: key);
 
-  InjFormCtrl get ct => Ctrl.injForm;
-  InjFormData get dt => Data.injForm.st;
-
   @override
   Widget build(BuildContext context) {
     return OnReactive(
       () => OnFormFieldBuilder<bool>(
-        listenTo: dt.rxCheck,
+        listenTo: _dt.rxCheck,
         inputDecoration: InputDecoration(
-          errorText: dt.rxCheck.error,
+          errorText: _dt.rxCheck.error,
           errorBorder: const UnderlineInputBorder(
             borderSide: BorderSide(color: Colors.red),
           ),

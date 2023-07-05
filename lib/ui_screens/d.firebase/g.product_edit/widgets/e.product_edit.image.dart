@@ -7,9 +7,6 @@ class ProductEditImage extends StatelessWidget {
     required this.map,
   }) : super(key: key);
 
-  ProductEditCtrl get ct => Ctrl.productEdit;
-  ProductEditData get dt => Data.productEdit.st;
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -41,7 +38,7 @@ class ProductEditImage extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
-                  onDoubleTap: () => ct.removeImage(map.key),
+                  onDoubleTap: () => _ct.removeImage(map.key),
                 )
               : const SizedBox.shrink(),
         ],

@@ -12,3 +12,6 @@ part 'widgets/b.inj_i18n.fab.dart';
 part 'widgets/c.inj_i18n.charlie.dart';
 part 'widgets/d.inj_i18n.delta.dart';
 part 'widgets/e.inj_i18n.echo.dart';
+
+InjI18nData get _dt => Data.injI18n.st;
+InjI18nCtrl get _ct => Ctrl.injI18n;

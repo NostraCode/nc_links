@@ -3,9 +3,6 @@ part of '_index.dart';
 class ProductDetailView extends StatelessWidget {
   const ProductDetailView({Key? key}) : super(key: key);
 
-  ProductDetailCtrl get ct => Ctrl.productDetail;
-  ProductDetailData get dt => Data.productDetail.st;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

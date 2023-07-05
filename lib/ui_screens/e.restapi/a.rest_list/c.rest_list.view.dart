@@ -3,9 +3,6 @@ part of '_index.dart';
 class RestListView extends StatelessWidget {
   const RestListView({Key? key}) : super(key: key);
 
-  RestListCtrl get ct => Ctrl.restList;
-  RestListData get dt => Data.restList.st;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,8 +16,8 @@ class RestListView extends StatelessWidget {
         child2: const RestListLoadmore(),
         builder: (child1, child2) {
           return OnBuilder.data(
-            listenTo: dt.rxUserList,
-            builder: (data) => dt.rxUserList.st.isNotEmpty ? child1 : child2,
+            listenTo: _dt.rxUserList,
+            builder: (data) => _dt.rxUserList.st.isNotEmpty ? child1 : child2,
           );
         },
       ),

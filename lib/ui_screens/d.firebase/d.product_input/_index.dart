@@ -20,3 +20,6 @@ part 'widgets/d.product_input.list.dart';
 part 'widgets/e.product_input.tile.dart';
 part 'widgets/f.product_input.infos.dart';
 part 'widgets/g.product_input.images.dart';
+
+ProductInputData get _dt => Data.productInput.st;
+ProductInputCtrl get _ct => Ctrl.productInput;

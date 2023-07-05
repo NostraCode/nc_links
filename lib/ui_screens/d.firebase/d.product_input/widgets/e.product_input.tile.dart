@@ -9,9 +9,6 @@ class ProductInputTile extends StatelessWidget {
     required this.animation,
   }) : super(key: key);
 
-  ProductInputCtrl get ct => Ctrl.productInput;
-  ProductInputData get dt => Data.productInput.st;
-
   @override
   Widget build(BuildContext context) {
     return SizeTransition(
@@ -37,8 +34,8 @@ class ProductInputTile extends StatelessWidget {
               ],
             ),
           ),
-          onDoubleTap: () => ct.removeById(product.id),
-          onTap: () => ct.pickImages(product.id),
+          onDoubleTap: () => _ct.removeById(product.id),
+          onTap: () => _ct.pickImages(product.id),
         ),
       ),
     );

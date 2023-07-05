@@ -3,9 +3,6 @@ part of '../_index.dart';
 class LoginBtnGoogle extends StatelessWidget {
   const LoginBtnGoogle({Key? key}) : super(key: key);
 
-  LoginCtrl get ct => Ctrl.login;
-  LoginData get dt => Data.login.st;
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -30,7 +27,7 @@ class LoginBtnGoogle extends StatelessWidget {
             )
           ],
         ),
-        onPressed: () => ct.signInWithGoogle(),
+        onPressed: () => _ct.signInWithGoogle(),
       ),
     );
   }

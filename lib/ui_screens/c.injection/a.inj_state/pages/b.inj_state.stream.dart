@@ -3,9 +3,6 @@ part of '../_index.dart';
 class InjStateStream extends StatelessWidget {
   const InjStateStream({Key? key}) : super(key: key);
 
-  InjStateCtrl get ct => Ctrl.injState;
-  InjStateData get dt => Data.injState.st;
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -19,7 +16,7 @@ class InjStateStream extends StatelessWidget {
         const InjStateStreamBtnV1(),
         const SizedBoxH(50),
         OnBuilder<int>.orElse(
-          listenTo: dt.rxIntStream,
+          listenTo: _dt.rxIntStream,
           onWaiting: () => const CircularProgressIndicator(),
           onIdle: () => const Text('idle'),
           orElse: (data) => Text('$data', textScaleFactor: 2),

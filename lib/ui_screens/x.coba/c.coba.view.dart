@@ -3,9 +3,6 @@ part of '_index.dart';
 class CobaView extends StatelessWidget {
   const CobaView({Key? key}) : super(key: key);
 
-  CobaCtrl get ct => Ctrl.coba;
-  CobaData get dt => Data.coba.st;
-
   @override
   Widget build(BuildContext context) {
     return const Scaffold(

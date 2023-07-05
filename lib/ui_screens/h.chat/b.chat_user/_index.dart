@@ -14,3 +14,6 @@ part 'widgets/b.chat_user.fab.dart';
 part 'widgets/c.chat_user.cards.dart';
 part 'widgets/d.chat_user.card.dart';
 part 'widgets/e.chat_user.echo.dart';
+
+ChatUserData get _dt => Data.chatUser.st;
+ChatUserCtrl get _ct => Ctrl.chatUser;

@@ -1,3 +1,5 @@
+// ignore_for_file: unused_element
+
 import 'dart:convert';
 
 import 'package:firebase_auth/firebase_auth.dart';
@@ -13,3 +15,6 @@ part 'a.chat.prov.dart';
 part 'b.chat.serv.dart';
 part 'c.chat.repo.dart';
 part 'd.chat.repo.mock.dart';
+
+ChatProv get _pv => Prov.chat.st;
+ChatServ get _sv => Serv.chat;

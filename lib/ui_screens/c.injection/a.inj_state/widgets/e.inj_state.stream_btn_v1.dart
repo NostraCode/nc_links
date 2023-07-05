@@ -3,9 +3,6 @@ part of '../_index.dart';
 class InjStateStreamBtnV1 extends StatelessWidget {
   const InjStateStreamBtnV1({Key? key}) : super(key: key);
 
-  InjStateCtrl get ct => Ctrl.injState;
-  InjStateData get dt => Data.injState.st;
-
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -13,19 +10,19 @@ class InjStateStreamBtnV1 extends StatelessWidget {
       children: [
         ElevatedButton(
           child: const Text('start'),
-          onPressed: () => ct.start(),
+          onPressed: () => _ct.start(),
         ),
         ElevatedButton(
           child: const Text('stop'),
-          onPressed: () => ct.stop(),
+          onPressed: () => _ct.stop(),
         ),
         ElevatedButton(
           child: const Text('pause'),
-          onPressed: () => ct.pause(),
+          onPressed: () => _ct.pause(),
         ),
         ElevatedButton(
           child: const Text('resume'),
-          onPressed: () => ct.resume(),
+          onPressed: () => _ct.resume(),
         ),
       ],
     );

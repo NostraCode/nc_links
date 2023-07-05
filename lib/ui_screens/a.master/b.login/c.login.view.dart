@@ -3,9 +3,6 @@ part of '_index.dart';
 class LoginView extends StatelessWidget {
   const LoginView({Key? key}) : super(key: key);
 
-  LoginCtrl get ct => Ctrl.login;
-  LoginData get dt => Data.login.st;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +26,7 @@ class LoginView extends StatelessWidget {
                   child: Container(
                     constraints: const BoxConstraints(maxWidth: 300),
                     child: OnFormBuilder(
-                        listenTo: dt.rxForm,
+                        listenTo: _dt.rxForm,
                         builder: () {
                           return Column(
                             mainAxisAlignment: MainAxisAlignment.center,

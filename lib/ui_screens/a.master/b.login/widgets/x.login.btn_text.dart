@@ -9,9 +9,6 @@ class LoginBtnText extends StatelessWidget {
     required this.label,
   }) : super(key: key);
 
-  LoginCtrl get ct => Ctrl.login;
-  LoginData get dt => Data.login.st;
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(

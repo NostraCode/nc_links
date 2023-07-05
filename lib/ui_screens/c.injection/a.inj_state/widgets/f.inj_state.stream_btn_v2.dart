@@ -3,16 +3,13 @@ part of '../_index.dart';
 class InjStateStreamBtnV2 extends StatelessWidget {
   const InjStateStreamBtnV2({Key? key}) : super(key: key);
 
-  InjStateCtrl get ct => Ctrl.injState;
-  InjStateData get dt => Data.injState.st;
-
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         OnBuilder<String>.data(
-          listenTo: dt.rxSubsStatus,
+          listenTo: _dt.rxSubsStatus,
           builder: (data) {
             Icon icon;
             Function() func;
@@ -20,19 +17,19 @@ class InjStateStreamBtnV2 extends StatelessWidget {
             switch (data) {
               case 'pause':
                 icon = const Icon(Icons.play_arrow, color: Colors.orange);
-                func = () => ct.resume();
+                func = () => _ct.resume();
                 break;
               case 'start':
                 icon = const Icon(Icons.pause, color: Colors.orange);
-                func = () => ct.pause();
+                func = () => _ct.pause();
                 break;
               case 'resume':
                 icon = const Icon(Icons.pause, color: Colors.orange);
-                func = () => ct.pause();
+                func = () => _ct.pause();
                 break;
               default:
                 icon = const Icon(Icons.play_arrow, color: Colors.green);
-                func = () => ct.start();
+                func = () => _ct.start();
             }
 
             return IconButton(
@@ -42,14 +39,14 @@ class InjStateStreamBtnV2 extends StatelessWidget {
           },
         ),
         OnBuilder<String>.data(
-          listenTo: dt.rxSubsStatus,
+          listenTo: _dt.rxSubsStatus,
           builder: (data) {
             return IconButton(
               icon: Icon(
                 Icons.stop,
                 color: data == 'stop' ? null : Colors.red,
               ),
-              onPressed: data == 'stop' ? null : () => ct.stop(),
+              onPressed: data == 'stop' ? null : () => _ct.stop(),
             );
           },
         ),

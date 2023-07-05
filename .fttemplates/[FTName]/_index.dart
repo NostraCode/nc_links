@@ -15,7 +15,8 @@ part 'widgets/c.[FTName].charlie.dart';
 part 'widgets/d.[FTName].delta.dart';
 part 'widgets/e.[FTName].echo.dart';
 
-
+  <FTName | pascalcase>Data get _dt => Data.<FTName | camelcase>.st;
+  <FTName | pascalcase>Ctrl get _ct => Ctrl.<FTName | camelcase>;
 
 // static <FTName | pascalcase>Ctrl get <FTName | camelcase> => <FTName | pascalcase>Ctrl();
 // final _<FTName | camelcase>Data = RM1.inj(<FTName | pascalcase>Data(), Ctrl.<FTName | camelcase>.init);

@@ -13,9 +13,6 @@ class HomePanel extends StatelessWidget {
     required this.widget,
   }) : super(key: key);
 
-  HomeCtrl get ct => Ctrl.home;
-  HomeData get dt => Data.home.st;
-
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -28,7 +25,7 @@ class HomePanel extends StatelessWidget {
           children: [
             ExpansionPanel(
               canTapOnHeader: true,
-              isExpanded: dt.listOfStatus[index].st,
+              isExpanded: _dt.listOfStatus[index].st,
               headerBuilder: (context, isExpanded) => ListTile(
                 title: Text(title),
                 subtitle: subtitle.isEmpty ? null : Text(subtitle),
@@ -40,7 +37,7 @@ class HomePanel extends StatelessWidget {
               ),
             )
           ],
-          expansionCallback: (_, __) => ct.togglePanel(index),
+          expansionCallback: (_, __) => _ct.togglePanel(index),
         ),
       ),
     );

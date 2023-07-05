@@ -1,8 +1,6 @@
 part of '_index.dart';
 
 class RestDetailCtrl {
-  RestDetailData get dt => Data.restDetail.st;
-
   init() => logxx.i(RestDetailCtrl, '...');
 
   Future<void> refresh() async {

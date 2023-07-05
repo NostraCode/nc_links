@@ -16,3 +16,6 @@ part 'widgets/b.overlay_widgets.fab.dart';
 part 'widgets/c.overlay_widgets.charlie.dart';
 part 'widgets/d.overlay_widgets.delta.dart';
 part 'widgets/e.overlay_widgets.echo.dart';
+
+OverlayWidgetsData get _dt => Data.overlayWidget.st;
+OverlayWidgetsCtrl get _ct => Ctrl.overlayWidget;

@@ -3,13 +3,10 @@ part of '../_index.dart';
 class InjStateFuture extends StatelessWidget {
   const InjStateFuture({Key? key}) : super(key: key);
 
-  InjStateCtrl get ct => Ctrl.injState;
-  InjStateData get dt => Data.injState.st;
-
   @override
   Widget build(BuildContext context) {
     return RefreshIndicator(
-      onRefresh: () => ct.refresh(),
+      onRefresh: () => _ct.refresh(),
       child: ListView(
         children: [
           const SizedBoxH(10),
@@ -25,13 +22,13 @@ class InjStateFuture extends StatelessWidget {
           const SizedBoxH(50),
           Center(
             child: OnReactive(
-              () => Text('${dt.rxIntList.st}'),
+              () => Text('${_dt.rxIntList.st}'),
             ),
           ),
           const SizedBoxH(50),
           Center(
             child: OnBuilder<int>.orElse(
-              listenTo: dt.rxIntFuture,
+              listenTo: _dt.rxIntFuture,
               onWaiting: () => const Text('loading...'),
               orElse: (data) => Text('$data'),
             ),
@@ -42,17 +39,17 @@ class InjStateFuture extends StatelessWidget {
             children: [
               ElevatedButton(
                 child: const Text('increase'),
-                onPressed: () => ct.futureIncrease(),
+                onPressed: () => _ct.futureIncrease(),
               ),
               const SizedBoxW(10),
               ElevatedButton(
                 child: const Text('random'),
-                onPressed: () => ct.futureRandom(),
+                onPressed: () => _ct.futureRandom(),
               ),
               const SizedBoxW(10),
               ElevatedButton(
                 child: const Text('refresh'),
-                onPressed: () => ct.refresh(),
+                onPressed: () => _ct.refresh(),
               ),
             ],
           ),

@@ -16,3 +16,6 @@ part 'widgets/b.app_check.fab.dart';
 part 'widgets/c.app_check.charlie.dart';
 part 'widgets/d.app_check.delta.dart';
 part 'widgets/e.app_check.echo.dart';
+
+AppCheckData get _dt => Data.appCheck.st;
+AppCheckCtrl get _ct => Ctrl.appCheck;

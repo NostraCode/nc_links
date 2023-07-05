@@ -3,9 +3,6 @@ part of '../_index.dart';
 class InjStateWidgets extends StatelessWidget {
   const InjStateWidgets({Key? key}) : super(key: key);
 
-  InjStateCtrl get ct => Ctrl.injState;
-  InjStateData get dt => Data.injState.st;
-
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -33,14 +30,14 @@ class InjStateWidgets extends StatelessWidget {
                 textA: 'mutable',
                 textB: 'rx0',
                 child: OnReactive(
-                  () => InjStateBigText('${dt.int0}'),
+                  () => InjStateBigText('${_dt.int0}'),
                 ),
               ),
               InjStateColumnX(
                 textA: 'immutable',
                 textB: 'rx1',
                 child: OnReactive(
-                  () => InjStateBigText('${dt.rxInt1.st}'),
+                  () => InjStateBigText('${_dt.rxInt1.st}'),
                 ),
               ),
             ],
@@ -59,7 +56,7 @@ class InjStateWidgets extends StatelessWidget {
                 textA: 'widget-like',
                 textB: 'rx1',
                 child: OnBuilder<int>.all(
-                  listenTo: dt.rxInt1,
+                  listenTo: _dt.rxInt1,
                   onWaiting: () => const Text('loading...'),
                   onError: (_, __) => const Text('error'),
                   onData: (data) => InjStateBigText('$data'),
@@ -68,7 +65,7 @@ class InjStateWidgets extends StatelessWidget {
               InjStateColumnX(
                 textA: 'method-like',
                 textB: 'rx1',
-                child: dt.rxInt1.rebuild.onAll(
+                child: _dt.rxInt1.rebuild.onAll(
                   onWaiting: () => const Text('loading...'),
                   onError: (_, __) => const Text('error'),
                   onData: (data) => InjStateBigText('$data'),
@@ -80,7 +77,7 @@ class InjStateWidgets extends StatelessWidget {
           const SizedBoxH(20),
           ElevatedButton(
             child: const Text('increase'),
-            onPressed: () => ct.increase(),
+            onPressed: () => _ct.increase(),
           ),
         ],
       ),
@@ -90,9 +87,6 @@ class InjStateWidgets extends StatelessWidget {
 
 class InjStateCharlieX extends ReactiveStatelessWidget {
   const InjStateCharlieX({Key? key}) : super(key: key);
-
-  InjStateCtrl get ct => Ctrl.injState;
-  InjStateData get dt => Data.injState.st;
 
   @override
   Widget build(BuildContext context) {
@@ -111,12 +105,12 @@ class InjStateCharlieX extends ReactiveStatelessWidget {
             InjStateColumnX(
               textA: 'mutable',
               textB: 'rx0',
-              child: InjStateBigText('${dt.int0}'),
+              child: InjStateBigText('${_dt.int0}'),
             ),
             InjStateColumnX(
               textA: 'immutable',
               textB: 'rx1',
-              child: InjStateBigText('${dt.rxInt1.st}'),
+              child: InjStateBigText('${_dt.rxInt1.st}'),
             ),
           ],
         ),

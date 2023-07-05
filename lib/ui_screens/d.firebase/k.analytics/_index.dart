@@ -15,3 +15,6 @@ part 'widgets/b.analytics.fab.dart';
 part 'widgets/c.analytics.charlie.dart';
 part 'widgets/d.analytics.delta.dart';
 part 'widgets/e.analytics.echo.dart';
+
+AnalyticsData get _dt => Data.analytics.st;
+AnalyticsCtrl get _ct => Ctrl.analytics;

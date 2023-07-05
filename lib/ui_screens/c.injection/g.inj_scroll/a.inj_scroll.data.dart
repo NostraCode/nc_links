@@ -11,14 +11,14 @@ class InjScrollData {
     endScrollDelay: 300,
     onScrolling: (scroll) {
       if (scroll.hasReachedMinExtent) {
-        Ctrl.injScroll.dt.rxShowFab.st = false;
+        _dt.rxShowFab.st = false;
         logxx.i(
           InjScrollData,
           'Scrolling vertical list is in its top position',
         );
       }
       if (scroll.hasReachedMaxExtent) {
-        Ctrl.injScroll.dt.rxShowFab.st = true;
+        _dt.rxShowFab.st = true;
         logxx.i(
           InjScrollData,
           'Scrolling vertical list is in its bottom position',

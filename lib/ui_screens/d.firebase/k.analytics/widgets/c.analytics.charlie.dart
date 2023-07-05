@@ -3,9 +3,6 @@ part of '../_index.dart';
 class AnalyticsCharlie extends StatelessWidget {
   const AnalyticsCharlie({Key? key}) : super(key: key);
 
-  AnalyticsCtrl get ct => Ctrl.analytics;
-  AnalyticsData get dt => Data.analytics.st;
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -13,36 +10,36 @@ class AnalyticsCharlie extends StatelessWidget {
         Column(
           children: [
             OnReactive(
-              () => Text(dt.rxMessage.st),
+              () => Text(_dt.rxMessage.st),
             ),
             const SizedBoxH(20),
             OutlinedButton(
               child: const Text('Test logEvent'),
-              onPressed: () => ct.sendAnalyticsEvent(),
+              onPressed: () => _ct.sendAnalyticsEvent(),
             ),
             OutlinedButton(
               child: const Text('Test standard event types'),
-              onPressed: () => ct.testAllEventTypes(),
+              onPressed: () => _ct.testAllEventTypes(),
             ),
             OutlinedButton(
               child: const Text('Test setUserId'),
-              onPressed: () => ct.testSetUserId(),
+              onPressed: () => _ct.testSetUserId(),
             ),
             OutlinedButton(
               child: const Text('Test setCurrentScreen'),
-              onPressed: () => ct.testSetCurrentScreen(),
+              onPressed: () => _ct.testSetCurrentScreen(),
             ),
             OutlinedButton(
               child: const Text('Test setAnalyticsCollectionEnabled'),
-              onPressed: () => ct.testSetAnalyticsCollectionEnabled(),
+              onPressed: () => _ct.testSetAnalyticsCollectionEnabled(),
             ),
             OutlinedButton(
               child: const Text('Test setSessionTimeoutDuration'),
-              onPressed: () => ct.testSetSessionTimeoutDuration(),
+              onPressed: () => _ct.testSetSessionTimeoutDuration(),
             ),
             OutlinedButton(
               child: const Text('Test setUserProperty'),
-              onPressed: () => ct.testSetUserProperty(),
+              onPressed: () => _ct.testSetUserProperty(),
             ),
           ],
         )

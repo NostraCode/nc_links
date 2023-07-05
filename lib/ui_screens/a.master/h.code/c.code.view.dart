@@ -3,9 +3,6 @@ part of '_index.dart';
 class CodeView extends StatelessWidget {
   const CodeView({Key? key}) : super(key: key);
 
-  CodeCtrl get ct => Ctrl.code;
-  CodeData get dt => Data.code.st;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +28,7 @@ class CodeView extends StatelessWidget {
                     child: Column(
                       children: [
                         OnFormBuilder(
-                          listenTo: dt.rxFormCode,
+                          listenTo: _dt.rxFormCode,
                           builder: () {
                             return const Column(
                               mainAxisAlignment: MainAxisAlignment.center,

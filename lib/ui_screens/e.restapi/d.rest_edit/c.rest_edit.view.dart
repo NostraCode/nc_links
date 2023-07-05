@@ -3,9 +3,6 @@ part of '_index.dart';
 class RestEditView extends StatelessWidget {
   const RestEditView({Key? key}) : super(key: key);
 
-  RestEditCtrl get ct => Ctrl.restEdit;
-  RestEditData get dt => Data.restEdit.st;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,10 +18,10 @@ class RestEditView extends StatelessWidget {
         ],
         child: Center(
           child: OnFormBuilder(
-            listenTo: dt.rxForm,
+            listenTo: _dt.rxForm,
             builder: () {
               return FocusScope(
-                node: dt.focusScopeNode,
+                node: _dt.focusScopeNode,
                 child: ListView(
                   padding: const EdgeInsets.all(12),
                   children: [
@@ -35,7 +32,7 @@ class RestEditView extends StatelessWidget {
                     const SizedBoxH(20),
                     const RestEditEcho(),
                     const SizedBoxH(10),
-                    if (dt.rxForm.isDirty)
+                    if (_dt.rxForm.isDirty)
                       const Center(
                         child: Text('The form is changed but not submitted yet!'),
                       )

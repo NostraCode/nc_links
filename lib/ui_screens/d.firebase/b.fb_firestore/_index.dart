@@ -14,3 +14,6 @@ part 'widgets/b.fb_firestore.fab.dart';
 part 'widgets/c.fb_firestore.charlie.dart';
 part 'widgets/d.fb_firestore.delta.dart';
 part 'widgets/e.fb_firestore.echo.dart';
+
+FbFirestoreData get _dt => Data.fbFirestore.st;
+FbFirestoreCtrl get _ct => Ctrl.fbFirestore;

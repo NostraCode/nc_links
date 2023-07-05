@@ -3,9 +3,6 @@ part of '_index.dart';
 class AppCheckView extends StatelessWidget {
   const AppCheckView({Key? key}) : super(key: key);
 
-  AppCheckCtrl get ct => Ctrl.appCheck;
-  AppCheckData get dt => Data.appCheck.st;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,33 +16,33 @@ class AppCheckView extends StatelessWidget {
           children: [
             const SizedBoxH(10),
             ElevatedButton(
-              onPressed: () => ct.tryAppCheck(),
+              onPressed: () => _ct.tryAppCheck(),
               child: const Text(
                 'try appCheck & firestore rule',
                 textAlign: TextAlign.center,
               ),
             ),
             ElevatedButton(
-              onPressed: () => ct.activate(),
+              onPressed: () => _ct.activate(),
               child: const Text('activate'),
             ),
             ElevatedButton(
-              onPressed: () => ct.getToken(),
+              onPressed: () => _ct.getToken(),
               child: const Text('get token'),
             ),
             ElevatedButton(
-              onPressed: () => ct.setTokenAutoRefreshEnabled(),
+              onPressed: () => _ct.setTokenAutoRefreshEnabled(),
               child: const Text('set token auto refresh enabled'),
             ),
             const SizedBoxH(20),
             OnReactive(
-              () => Text(dt.rxMessage.st),
+              () => Text(_dt.rxMessage.st),
             ),
             const SizedBoxH(20),
             const Text('Token received from tokenChanges() API:'),
-            OnReactive(() => Text(dt.rxAppCheck.st ?? 'null')),
+            OnReactive(() => Text(_dt.rxAppCheck.st ?? 'null')),
             // OnBuilder.data(
-            //   listenTo: dt.rxAppCheck,
+            //   listenTo: _dt.rxAppCheck,
             //   builder: (data) => Text('$data'),
             // ),
           ],

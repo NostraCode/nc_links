@@ -1,20 +1,18 @@
 part of '_index.dart';
 
 class InjPessimisticCtrl {
-  InjPessimisticData get dt => Data.injPessimistic.st;
-
   init() => logxx.i(InjPessimisticCtrl, '...');
 
   action() {
-    dt.rxInt.stateAsync = dt.rxInt.setState((s) => actionTry());
+    _dt.rxInt.stateAsync = _dt.rxInt.setState((s) => actionTry());
   }
 
   Future<dynamic> actionTry() async {
     try {
       final initInt = await actionRethrow();
-      dt.rxInt.setToHasData(initInt);
+      _dt.rxInt.setToHasData(initInt);
     } catch (e) {
-      dt.rxInt.setToHasError(e);
+      _dt.rxInt.setToHasError(e);
       return Fun.handleException(e);
     }
   }

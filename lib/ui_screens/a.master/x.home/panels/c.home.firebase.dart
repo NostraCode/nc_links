@@ -3,9 +3,6 @@ part of '../_index.dart';
 class HomeFirebase extends StatelessWidget {
   const HomeFirebase({Key? key}) : super(key: key);
 
-  HomeCtrl get ct => Ctrl.home;
-  HomeData get dt => Data.home.st;
-
   checkEnabled() {
     if (PlatformType.isWindows || PlatformType.isLinux) {
       return false;

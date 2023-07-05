@@ -3,9 +3,6 @@ part of '_index.dart';
 class InjStateView extends StatelessWidget {
   const InjStateView({Key? key}) : super(key: key);
 
-  InjStateCtrl get ct => Ctrl.injState;
-  InjStateData get dt => Data.injState.st;
-
   @override
   Widget build(BuildContext context) {
     return OnReactive(
@@ -21,7 +18,7 @@ class InjStateView extends StatelessWidget {
             children: [
               OnTabPageViewBuilder(
                 builder: (index) => TabBar(
-                  controller: dt.rxTab.tabController,
+                  controller: _dt.rxTab.tabController,
                   isScrollable: true,
                   indicatorColor: Colors.transparent,
                   unselectedLabelColor: Colors.grey.withOpacity(0.5),
@@ -37,7 +34,7 @@ class InjStateView extends StatelessWidget {
         ),
         body: OnTabPageViewBuilder(
           builder: (index) => PageView(
-            controller: dt.rxTab.pageController,
+            controller: _dt.rxTab.pageController,
             children: const [
               InjStateWidgets(),
               InjStateStream(),

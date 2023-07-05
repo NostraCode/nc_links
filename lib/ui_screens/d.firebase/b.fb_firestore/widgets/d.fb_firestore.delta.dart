@@ -3,9 +3,6 @@ part of '../_index.dart';
 class FbFirestoreD extends StatelessWidget {
   const FbFirestoreD({Key? key}) : super(key: key);
 
-  FbFirestoreCtrl get ct => Ctrl.fbFirestore;
-  FbFirestoreData get dt => Data.fbFirestore.st;
-
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -13,22 +10,22 @@ class FbFirestoreD extends StatelessWidget {
       children: [
         ElevatedButton(
           child: const Text('create'),
-          onPressed: () => ct.createItem(),
+          onPressed: () => _ct.createItem(),
         ),
         const SizedBoxW(5),
         ElevatedButton(
           child: const Text('read'),
-          onPressed: () => ct.readItem(),
+          onPressed: () => _ct.readItem(),
         ),
         const SizedBoxW(5),
         ElevatedButton(
           child: const Text('update'),
-          onPressed: () => ct.updateItem(),
+          onPressed: () => _ct.updateItem(),
         ),
         const SizedBoxW(5),
         ElevatedButton(
           child: const Text('delete'),
-          onPressed: () => ct.deleteItem(),
+          onPressed: () => _ct.deleteItem(),
         ),
       ],
     );

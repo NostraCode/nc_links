@@ -18,3 +18,6 @@ part 'widgets/b.product_detail.fab.dart';
 part 'widgets/c.product_detail.infos.dart';
 part 'widgets/d.product_detail.images.dart';
 part 'widgets/e.product_detail.echo.dart';
+
+ProductDetailData get dt => Data.productDetail.st;
+ProductDetailCtrl get ct => Ctrl.productDetail;

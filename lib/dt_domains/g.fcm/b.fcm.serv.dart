@@ -1,8 +1,6 @@
 part of '_index.dart';
 
 class FcmServ {
-  FcmProv get pv => Prov.fcm.st;
-
   init() async {
     logxx.i(FcmServ, '...');
     registerNotification();
@@ -12,10 +10,10 @@ class FcmServ {
 
   void registerNotification() async {
     await Firebase.initializeApp();
-    pv.messaging = FirebaseMessaging.instance;
+    _pv.messaging = FirebaseMessaging.instance;
 
     FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
-    final settings = await pv.messaging.requestPermission(
+    final settings = await _pv.messaging.requestPermission(
       alert: true,
       badge: true,
       provisional: false,
@@ -41,16 +39,16 @@ class FcmServ {
       dataType: message.data['type'],
       dataScreen: message.data['screen'],
     );
-    pv.rxPushNotification.st = notification;
-    pv.rxTotalNotifications.setState((s) => s + 1);
-    logxx.wtf(FcmServ, pv.rxPushNotification.st.toString());
+    _pv.rxPushNotification.st = notification;
+    _pv.rxTotalNotifications.setState((s) => s + 1);
+    logxx.wtf(FcmServ, _pv.rxPushNotification.st.toString());
   }
 
   displayNotif() {
     showSimpleNotification(
-      Text(pv.rxPushNotification.st!.title!),
-      leading: NotificationBadge(total: pv.rxTotalNotifications.st),
-      subtitle: Text(pv.rxPushNotification.st!.body!),
+      Text(_pv.rxPushNotification.st!.title!),
+      leading: NotificationBadge(total: _pv.rxTotalNotifications.st),
+      subtitle: Text(_pv.rxPushNotification.st!.body!),
       background: Colors.cyan.shade700,
       duration: const Duration(seconds: 2),
     );
@@ -65,7 +63,7 @@ class FcmServ {
   }
 
   goToScreen() {
-    final screen = pv.rxPushNotification.st?.dataScreen;
+    final screen = _pv.rxPushNotification.st?.dataScreen;
     if (screen != null) {
       nav.to(screen);
       cleanNotificationState();
@@ -73,7 +71,7 @@ class FcmServ {
   }
 
   cleanNotificationState() {
-    pv.rxPushNotification.st = null;
+    _pv.rxPushNotification.st = null;
   }
 
   listenOnMessage() {
@@ -82,7 +80,7 @@ class FcmServ {
       logxx.wtf(FcmServ, 'Message body: ${message.notification?.body}');
       logxx.wtf(FcmServ, 'Message data: ${message.data}');
       updateState(message);
-      if (pv.rxPushNotification.st != null) {
+      if (_pv.rxPushNotification.st != null) {
         displayNotif();
         cleanNotificationState();
         logxx.wtf(FcmServ, 'foreground..!!!');

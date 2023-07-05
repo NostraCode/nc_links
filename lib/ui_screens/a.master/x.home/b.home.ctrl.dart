@@ -1,17 +1,15 @@
 part of '_index.dart';
 
 class HomeCtrl {
-  HomeData get dt => Data.home.st;
-
   init() => logxx.i(HomeCtrl, '...');
 
   togglePanel(int index) {
-    if (!dt.listOfStatus[index].st) {
-      for (var element in dt.listOfStatus) {
+    if (!_dt.listOfStatus[index].st) {
+      for (var element in _dt.listOfStatus) {
         element.refresh();
       }
     }
-    dt.listOfStatus[index].toggle();
+    _dt.listOfStatus[index].toggle();
   }
 
   taptestLogx() {
@@ -30,10 +28,10 @@ class HomeCtrl {
   toogleSwitch(BuildContext context) {
     if (debugBtnIsShow()) {
       dismissDebugBtn();
-      dt.rxSwitch.st = false;
+      _dt.rxSwitch.st = false;
     } else {
       showDebugBtn(context);
-      dt.rxSwitch.st = true;
+      _dt.rxSwitch.st = true;
     }
   }
 

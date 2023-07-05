@@ -14,3 +14,6 @@ part 'widgets/b.forget.fab.dart';
 part 'widgets/c.forget.email.dart';
 part 'widgets/d.forget.btn_submit.dart';
 part 'widgets/e.forget.btn_to_login.dart';
+
+ForgetData get _dt => Data.forget.st;
+ForgetCtrl get _ct => Ctrl.forget;

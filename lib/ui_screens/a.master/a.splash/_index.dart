@@ -1,3 +1,5 @@
+// ignore_for_file: unused_element
+
 import 'package:flutter/material.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
 
@@ -13,3 +15,6 @@ part 'widgets/b.splash.fab.dart';
 part 'widgets/c.splash.logo.dart';
 part 'widgets/d.splash.text.dart';
 part 'widgets/e.splash.echo.dart';
+
+SplashData get _dt => Data.splash.st;
+SplashCtrl get _ct => Ctrl.splash;

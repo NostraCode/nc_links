@@ -3,18 +3,15 @@ part of '../_index.dart';
 class FbAuthEcho extends StatelessWidget {
   const FbAuthEcho({Key? key}) : super(key: key);
 
-  FbAuthCtrl get ct => Ctrl.fbAuth;
-  FbAuthData get dt => Data.fbAuth.st;
-
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         OnReactive(
           () => Text(
-            dt.rxUserApp.st == null
+            _dt.rxUserApp.st == null
                 ? 'user app null'
-                : dt.rxUserApp.st!.emailVerified
+                : _dt.rxUserApp.st!.emailVerified
                     ? 'email is verified'
                     : 'email is not verified',
           ),
@@ -22,13 +19,13 @@ class FbAuthEcho extends StatelessWidget {
         const SizedBoxH(10),
         ElevatedButton(
           child: const Text('auth reload'),
-          onPressed: () => ct.authReload(),
+          onPressed: () => _ct.authReload(),
         ),
         const Text('reload auth after verification'),
         const SizedBoxH(50),
         const Text('auth stream counter'),
         OnReactive(
-          () => Text(dt.rxCounterStream.st.toString()),
+          () => Text(_dt.rxCounterStream.st.toString()),
         ),
       ],
     );

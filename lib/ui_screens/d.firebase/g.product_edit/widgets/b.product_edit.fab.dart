@@ -3,9 +3,6 @@ part of '../_index.dart';
 class ProductEditFab extends StatelessWidget {
   const ProductEditFab({Key? key}) : super(key: key);
 
-  ProductEditCtrl get ct => Ctrl.productEdit;
-  ProductEditData get dt => Data.productEdit.st;
-
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
@@ -24,7 +21,7 @@ class ProductEditFab extends StatelessWidget {
             ),
             CupertinoDialogAction(
               isDefaultAction: true,
-              onPressed: () => ct.update(),
+              onPressed: () => _ct.update(),
               child: const Text("OK"),
             ),
           ],

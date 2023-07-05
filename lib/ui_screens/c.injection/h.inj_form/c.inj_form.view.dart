@@ -3,9 +3,6 @@ part of '_index.dart';
 class InjFormView extends ReactiveStatelessWidget {
   const InjFormView({Key? key}) : super(key: key);
 
-  InjFormCtrl get ct => Ctrl.injForm;
-  InjFormData get dt => Data.injForm.st;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +15,7 @@ class InjFormView extends ReactiveStatelessWidget {
         padding: const EdgeInsets.all(12),
         child: Center(
           child: OnFormBuilder(
-            listenTo: dt.rxForx,
+            listenTo: _dt.rxForx,
             builder: () {
               return ListView(
                 children: [
@@ -29,7 +26,7 @@ class InjFormView extends ReactiveStatelessWidget {
                   const SizedBoxH(10),
                   const InjFormEcho(),
                   const SizedBoxH(10),
-                  if (dt.rxForx.isDirty) const Text('The form is changed but not submitted yet!')
+                  if (_dt.rxForx.isDirty) const Text('The form is changed but not submitted yet!')
                 ],
               );
             },

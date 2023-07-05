@@ -13,3 +13,6 @@ part 'widgets/b.fb_auth.fab.dart';
 part 'widgets/d.fb_auth.delta.dart';
 part 'widgets/c.fb_auth.charlie.dart';
 part 'widgets/e.fb_auth.echo.dart';
+
+FbAuthData get _dt => Data.fbAuth.st;
+FbAuthCtrl get _ct => Ctrl.fbAuth;

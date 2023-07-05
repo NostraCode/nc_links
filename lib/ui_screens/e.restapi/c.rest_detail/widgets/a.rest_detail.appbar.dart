@@ -3,13 +3,10 @@ part of '../_index.dart';
 class RestDetailAppbar extends StatelessWidget {
   const RestDetailAppbar({Key? key}) : super(key: key);
 
-  RestDetailCtrl get ct => Ctrl.restDetail;
-  RestDetailData get dt => Data.restDetail.st;
-
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: OnReactive(() => Text(dt.title)),
+      title: OnReactive(() => Text(_dt.title)),
       actions: [
         ButtonAppbarX(
           iconDatax: Icons.delete,
@@ -30,7 +27,7 @@ class RestDetailAppbar extends StatelessWidget {
                   isDefaultAction: true,
                   onPressed: () {
                     RM.navigate.back();
-                    ct.delete();
+                    _ct.delete();
                   },
                   child: const Text("DELETE"),
                 ),

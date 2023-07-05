@@ -3,9 +3,6 @@ part of '_index.dart';
 class ChatMessageView extends StatelessWidget {
   const ChatMessageView({Key? key}) : super(key: key);
 
-  ChatMessageCtrl get ct => Ctrl.chatMessage;
-  ChatMessageData get dt => Data.chatMessage.st;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +18,7 @@ class ChatMessageView extends StatelessWidget {
             children: [
               Expanded(
                 child: OnBuilder<List<ChatMessage>>.all(
-                  listenTo: dt.rxChatMessages,
+                  listenTo: _dt.rxChatMessages,
                   onWaiting: () => const Text('waiting...'),
                   onError: (_, __) => const Text('error...'),
                   onData: (data) => data.isEmpty

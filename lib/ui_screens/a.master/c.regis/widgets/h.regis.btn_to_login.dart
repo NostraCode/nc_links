@@ -3,9 +3,6 @@ part of '../_index.dart';
 class RegisBtnToLogin extends StatelessWidget {
   const RegisBtnToLogin({Key? key}) : super(key: key);
 
-  RegisCtrl get ct => Ctrl.regis;
-  RegisData get dt => Data.regis.st;
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(

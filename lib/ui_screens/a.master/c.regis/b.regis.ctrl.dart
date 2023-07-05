@@ -1,19 +1,17 @@
 part of '_index.dart';
 
 class RegisCtrl {
-  RegisData get dt => Data.regis.st;
-
   init() => logxx.i(RegisCtrl, '...');
 
-  tooglePwdA() => dt.rxIsObscuredPwdA.toggle();
+  tooglePwdA() => _dt.rxIsObscuredPwdA.toggle();
 
-  tooglePwdB() => dt.rxIsObscuredPwdB.toggle();
+  tooglePwdB() => _dt.rxIsObscuredPwdB.toggle();
 
-  submit() => dt.rxForm.submit();
+  submit() => _dt.rxForm.submit();
 
   Future<void> createUserWithEmailAndPassword() async {
-    final email = dt.rxEmail.value;
-    final password = dt.rxPwdA.value;
+    final email = _dt.rxEmail.value;
+    final password = _dt.rxPwdA.value;
     try {
       await Serv.auth.createUserWithEmailAndPassword(email, password);
       // Dialogs.success(

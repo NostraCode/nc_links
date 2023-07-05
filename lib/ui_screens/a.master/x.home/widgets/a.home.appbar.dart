@@ -3,19 +3,16 @@ part of '../_index.dart';
 class HomeAppbar extends StatelessWidget {
   const HomeAppbar({Key? key}) : super(key: key);
 
-  HomeCtrl get ct => Ctrl.home;
-  HomeData get dt => Data.home.st;
-
   @override
   Widget build(BuildContext context) {
     return AppBar(
       centerTitle: true,
-      title: OnReactive(() => Text(dt.title)),
+      title: OnReactive(() => Text(_dt.title)),
       actions: [
         OnReactive(
           () => Checkbox(
-            value: dt.rxSwitch.st,
-            onChanged: (_) => ct.toogleSwitch(context),
+            value: _dt.rxSwitch.st,
+            onChanged: (_) => _ct.toogleSwitch(context),
           ),
         ),
         IconButton(
@@ -39,8 +36,8 @@ class HomeAppbar extends StatelessWidget {
         const SizedBoxW(4),
         // OnReactive(
         //   () => Switch(
-        //     value: dt.rxSwitch.st,
-        //     onChanged: (_) => ct.toogleSwitch(context),
+        //     value: _dt.rxSwitch.st,
+        //     onChanged: (_) => _ct.toogleSwitch(context),
         //   ),
         // ),
         //   ButtonAppbarX(

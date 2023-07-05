@@ -7,9 +7,6 @@ class InjStateBigText extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  InjStateCtrl get ct => Ctrl.injState;
-  InjStateData get dt => Data.injState.st;
-
   @override
   Widget build(BuildContext context) {
     return Text(text, textScaleFactor: 1.5);

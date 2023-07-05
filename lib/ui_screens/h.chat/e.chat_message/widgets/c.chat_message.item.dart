@@ -7,22 +7,19 @@ class ChatMessageItem extends StatelessWidget {
     required this.index,
   }) : super(key: key);
 
-  ChatMessageCtrl get ct => Ctrl.chatMessage;
-  ChatMessageData get dt => Data.chatMessage.st;
-
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
         Visibility(
-          visible: ct.isEndOfDate(index),
+          visible: _ct.isEndOfDate(index),
           child: ChatMessageDate(index: index),
         ),
         ChatMessageBalloon(
           index: index,
-          isSend: ct.isSend(dt.rxChatMessages.st[index].idUser),
-          isNip: ct.isNip(index),
+          isSend: _ct.isSend(_dt.rxChatMessages.st[index].idUser),
+          isNip: _ct.isNip(index),
         ),
       ],
     );

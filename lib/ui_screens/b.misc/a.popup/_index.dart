@@ -17,3 +17,6 @@ part 'widgets/e.popup.echo.dart';
 part 'widgets/f.popup.fanta.dart';
 part 'widgets/g.popup.golf.dart';
 part 'widgets/h.popup.hotel.dart';
+
+PopupData get _dt => Data.popup.st;
+PopupCtrl get _ct => Ctrl.popup;

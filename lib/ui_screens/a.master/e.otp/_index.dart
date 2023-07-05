@@ -17,3 +17,6 @@ part 'widgets/d.otp.btn_phone.dart';
 part 'widgets/g.otp.code.dart';
 part 'widgets/h.otp.btn_code.dart';
 part 'widgets/x.otp.btn_to_login.dart';
+
+OtpData get _dt => Data.otp.st;
+OtpCtrl get _ct => Ctrl.otp;

@@ -3,9 +3,6 @@ part of '../_index.dart';
 class InjTabEcho extends StatelessWidget {
   const InjTabEcho({Key? key}) : super(key: key);
 
-  InjTabCtrl get ct => Ctrl.injTab;
-  InjTabData get dt => Data.injTab.st;
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,11 +14,11 @@ class InjTabEcho extends StatelessWidget {
             const Text('Echo'),
             ElevatedButton(
               child: const Text('previouse'),
-              onPressed: () => dt.rxTab.previousView(),
+              onPressed: () => _dt.rxTab.previousView(),
             ),
             ElevatedButton(
               child: const Text('first'),
-              onPressed: () => dt.rxTab.animateTo(0),
+              onPressed: () => _dt.rxTab.animateTo(0),
             ),
           ],
         ),
