@@ -2,10 +2,10 @@ import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
 
-import '../../../xtras/_index.dart';
 import '../../../app/_index.dart';
 import '../../../dt_sources/_index.dart';
 import '../../../ui_widgets/_index.dart';
+import '../../../xtras/_index.dart';
 
 part 'a.analytics.data.dart';
 part 'b.analytics.ctrl.dart';

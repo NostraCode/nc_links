@@ -9,5 +9,5 @@ class TodoListData {
 
   final rxTodo = _pv.rxTodo;
 
-  final rxTodoBuffer = RM.inject(() => Todo.mock());
+  final rxTodoBuffer = RM.inject<Todo>(() => Todo.mock());
 }

@@ -14,15 +14,17 @@ class TodoInputView extends StatelessWidget {
         child: TodoInputAppbar(),
       ),
       floatingActionButton: TodoInputFab(),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TodoInputCharlie(),
-            TodoInputDelta(),
-            TodoInputEcho(),
-          ],
-        ),
+      body: Column(
+        children: [
+          TodoInputIndicator(),
+          Expanded(
+            child: Center(
+              child: TodoInputContent(),
+            ),
+          ),
+          // TodoInputDelta(),
+          // TodoInputEcho(),
+        ],
       ),
     );
   }

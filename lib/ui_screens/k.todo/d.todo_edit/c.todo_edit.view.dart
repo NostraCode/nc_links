@@ -14,15 +14,16 @@ class TodoEditView extends StatelessWidget {
         child: TodoEditAppbar(),
       ),
       floatingActionButton: TodoEditFab(),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TodoEditCharlie(),
-            TodoEditDelta(),
-            TodoEditEcho(),
-          ],
-        ),
+      body: Column(
+        children: [
+          TodoEditIndicator(),
+          Expanded(
+            child: Center(
+              child: TodoEditContent(),
+            ),
+          ),
+          // TodoEditEcho(),
+        ],
       ),
     );
   }

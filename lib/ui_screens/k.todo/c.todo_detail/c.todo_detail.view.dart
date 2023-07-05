@@ -11,15 +11,16 @@ class TodoDetailView extends StatelessWidget {
         child: TodoDetailAppbar(),
       ),
       floatingActionButton: TodoDetailFab(),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TodoDetailCharlie(),
-            TodoDetailDelta(),
-            TodoDetailEcho(),
-          ],
-        ),
+      body: Column(
+        children: [
+          TodoDetailIndicator(),
+          Expanded(
+            child: Center(
+              child: TodoDetailContent(),
+            ),
+          ),
+          // TodoDetailEcho(),
+        ],
       ),
     );
   }

@@ -8,9 +8,14 @@ class TodoInputFab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FloatingActionButton(
-      child: const Icon(Icons.add),
-      onPressed: () => ct.action(),
+    return OnReactive(
+      () => Visibility(
+        visible: _dt.rxTodoBuffer.st != null,
+        child: FloatingActionButton(
+          child: const Icon(Icons.upload),
+          onPressed: () => _ct.create(_dt.rxTodoBuffer.st!),
+        ),
+      ),
     );
   }
 }

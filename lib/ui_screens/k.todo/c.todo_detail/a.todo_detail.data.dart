@@ -8,6 +8,4 @@ class TodoDetailData {
   final rxIsEnd = _pv.rxIsEnd;
 
   final rxTodo = _pv.rxTodo;
-
-  final rxTodoBuffer = RM.inject(() => Todo.mock());
 }

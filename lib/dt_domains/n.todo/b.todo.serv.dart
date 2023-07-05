@@ -34,6 +34,7 @@ class TodoServ {
         final lastItem = data.removeLast();
         data.insert(0, lastItem);
       }),
+      onResult: (_) => nav.back(),
     );
   }
 
@@ -41,6 +42,7 @@ class TodoServ {
     _pv.rxTodo.crud.delete(
       where: (item) => item.id == id,
       isOptimistic: false,
+      onResult: (_) => nav.back(),
     );
   }
 
@@ -52,6 +54,7 @@ class TodoServ {
       sideEffects: SideEffects.onData((data) {
         _pv.rxTodo.item.call(context)!.state = todo;
       }),
+      onResult: (_) => nav.back(),
     );
   }
 }
