@@ -24,4 +24,14 @@ class TodoListCtrl {
     _dt.rxTodoBuffer.st = Todo.mock().copyWith(id: id, no: no);
     logxx.s(TodoDetailCtrl, 'item new title => ${_dt.rxTodoBuffer.st.title}');
   }
+
+  onTap(BuildContext context, String id) {
+    _dt.rxSelectedId.st = id;
+    RM.navigate.to(
+      _dt.rxTodo.item.reInherited(
+        context: context,
+        builder: (BuildContext context) => const TodoDetailView(),
+      ),
+    );
+  }
 }

@@ -15,7 +15,7 @@ class FakeData {
     logxx.s(FakeData, '${list.map((e) => e.title)}');
   }
 
-  //* ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+  //* ----- ----- ----- ----- ----- ----- ----- ----- -----
 
   static Todo create(Todo item) {
     final newItem = item.copyWith(no: list.first.no + 1);

@@ -6,17 +6,13 @@ class TodoListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OnBuilder<Todo>.orElse(
-      listenTo: _dt.rxTodo.item.call(context)!,
+      listenToMany: [_dt.rxSelectedId, _dt.rxTodo.item.call(context)!],
       onWaiting: () => const Text('waiting...'),
       onError: (error, refreshError) => Text('$error'),
       orElse: (data) => Card(
         child: ListTile(
-          onTap: () => RM.navigate.to(
-            _dt.rxTodo.item.reInherited(
-              context: context,
-              builder: (BuildContext context) => const TodoDetailView(),
-            ),
-          ),
+          selected: data.id == _dt.rxSelectedId.st,
+          onTap: () => _ct.onTap(context, data.id),
           title: Text('${data.no} # ${data.title} # ${data.description}'),
           subtitle: Text(data.id),
           trailing: Row(

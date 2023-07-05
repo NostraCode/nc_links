@@ -10,17 +10,13 @@ class TodoServ {
     );
   }
 
-  void checkIsEnd(int nextLength) {
-    if (nextLength < TodoPara.instance.limit) {
-      _pv.rxIsEnd.st = true;
-    }
-  }
-
   void loadMore() {
     _pv.rxTodo.crud.read(
       param: (para) => para!..start = _pv.rxTodo.st.length,
       middleState: (state, nextState) {
-        checkIsEnd(nextState.length);
+        if (nextState.length < TodoPara.instance.limit) {
+          _pv.rxIsEnd.st = true;
+        }
         return [...state, ...nextState];
       },
     );
