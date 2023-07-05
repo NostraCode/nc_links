@@ -4,25 +4,36 @@ class TodoServ {
   init() => logxx.i(TodoServ, '...');
 
   Future<void> refresh() async {
-    // await _pv.rxTodo.refresh();
-    _pv.rxIsRefresh.toggle();
+    _pv.rxIsEnd.refresh();
     await _pv.rxTodo.crud.read(
-      param: (para) => TodoPars.instance..start = 0,
+      param: (para) => para!..start = 0,
     );
+  }
+
+  void checkIsEnd(int nextLength) {
+    if (nextLength < TodoPara.instance.limit) {
+      _pv.rxIsEnd.st = true;
+    }
   }
 
   void loadMore() {
-    _pv.rxIsRead.toggle();
     _pv.rxTodo.crud.read(
-      param: (para) => TodoPars.instance..start = _pv.rxTodo.st.length,
+      param: (para) => para!..start = _pv.rxTodo.st.length,
+      middleState: (state, nextState) {
+        checkIsEnd(nextState.length);
+        return [...state, ...nextState];
+      },
     );
   }
 
-  void create() {
-    _pv.rxIsCreate.toggle();
+  void create(Todo todo) {
     _pv.rxTodo.crud.create(
-      Todo.mock(),
+      todo,
       isOptimistic: false,
+      sideEffects: SideEffects.onData((data) {
+        final lastItem = data.removeLast();
+        data.insert(0, lastItem);
+      }),
     );
   }
 

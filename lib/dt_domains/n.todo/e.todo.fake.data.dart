@@ -24,9 +24,9 @@ class FakeData {
     return newItem;
   }
 
-  static List<Todo> read(TodoPars pars) {
+  static List<Todo> read(TodoPara pars) {
     final start = pars.start;
-    final target = start + TodoPars.instance.limit;
+    final target = start + TodoPara.instance.limit;
     final end = math.min(target, list.length);
     printx();
     return list.sublist(start, end);

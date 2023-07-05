@@ -1,6 +1,6 @@
 part of '_index.dart';
 
-class TodoRepo implements ICRUD<Todo, TodoPars> {
+class TodoRepo implements ICRUD<Todo, TodoPara> {
   @override
   void dispose() {}
 
@@ -10,22 +10,22 @@ class TodoRepo implements ICRUD<Todo, TodoPars> {
   }
 
   @override
-  Future<Todo> create(Todo item, TodoPars? param) {
+  Future<Todo> create(Todo item, TodoPara? param) {
     throw UnimplementedError();
   }
 
   @override
-  Future delete(List<Todo> items, TodoPars? param) {
+  Future delete(List<Todo> items, TodoPara? param) {
     throw UnimplementedError();
   }
 
   @override
-  Future<List<Todo>> read(TodoPars? param) {
+  Future<List<Todo>> read(TodoPara? param) {
     throw UnimplementedError();
   }
 
   @override
-  Future update(List<Todo> items, TodoPars? param) {
+  Future update(List<Todo> items, TodoPara? param) {
     throw UnimplementedError();
   }
 }

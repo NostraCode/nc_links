@@ -10,7 +10,7 @@ part 'chat_room.dart';
 part 'chat_user.dart';
 part 'product.dart';
 part 'todo.dart';
-part 'todo.pars.dart';
+part 'todo.para.dart';
 part 'push_notification.dart';
 part 'user_app.dart';
 part 'userx.dart';

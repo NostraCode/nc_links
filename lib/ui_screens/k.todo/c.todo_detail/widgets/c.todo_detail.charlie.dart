@@ -5,8 +5,6 @@ class TodoDetailCharlie extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final datax = _dt.rxTodo.item.call(context)!;
-
     return OnBuilder<Todo>.orElse(
       listenTo: _dt.rxTodo.item.call(context)!,
       onWaiting: () => const Text('waiting...'),
@@ -22,13 +20,8 @@ class TodoDetailCharlie extends StatelessWidget {
           ElevatedButton(
             child: const Text('update'),
             onPressed: () {
-              final newItem = Todo.mock().copyWith(
-                id: data.id,
-                no: data.no,
-              );
-              logx.s('----- ----- ----- ----- -----');
-              logxx.s(TodoDetailCharlie, newItem.title);
-              _ct.update(context, newItem);
+              _ct.setBufferUpdate(data.id, data.no);
+              _ct.update(context, _dt.rxTodoBuffer.st);
             },
           )
         ],

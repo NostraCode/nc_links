@@ -11,7 +11,10 @@ class TodoListAppbar extends StatelessWidget {
       actions: [
         Center(
           child: OutlinedButton(
-            onPressed: () => _ct.create(),
+            onPressed: () {
+              _ct.setBufferNew();
+              _ct.create(_dt.rxTodoBuffer.st);
+            },
             child: const Text('create'),
           ),
         ),
