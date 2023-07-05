@@ -55,6 +55,11 @@ class HomeInj extends StatelessWidget {
           subtitle: 'injected Internationalization',
           fun: () => nav.to(Routes.injI18n),
         ),
+        HomeTile(
+          title: 'Inj CRUD',
+          subtitle: 'injected CRUD',
+          fun: () => nav.to(Routes.todoList),
+        ),
       ],
     );
   }

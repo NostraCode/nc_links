@@ -9,11 +9,11 @@ class TodoListCtrl {
 
   loadMore() => _sv.loadMore();
 
-  create(Todo todo) => _sv.create(todo);
+  create(Todo todo) => _sv.create(todo, isNavBack: false);
 
-  delete(String id) => _sv.delete(id);
+  delete(String id) => _sv.delete(id, isNavBack: false);
 
-  update(BuildContext context, Todo todo) => _sv.update(context, todo);
+  update(BuildContext context, Todo todo) => _sv.update(context, todo, isNavBack: false);
 
   setBufferNew() {
     _dt.rxTodoBuffer.st = Todo.mock();
