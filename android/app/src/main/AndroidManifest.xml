@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.fe_master">
    <application
-        android:label="FE Master"
+        android:label="NC FE Master"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
